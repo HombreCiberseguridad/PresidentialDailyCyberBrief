@@ -1,0 +1,294 @@
+{
+  "date": "2026-03-23",
+  "display_date": "March 23, 2026",
+  "title": "PDCB \u2014 President's Daily Cybersecurity Briefing",
+  "subtitle": "Data-driven briefing generated from daily intelligence inputs for MSP technical staff.",
+  "executive_summary": [
+    {
+      "title": "Trivy supply-chain attack escalates into full ecosystem compromise",
+      "text": "The Trivy open-source vulnerability scanner was breached twice in under a month, with the TeamPCP group hijacking 75 GitHub Actions tags to deliver a credential-stealing infostealer. The attack spawned the self-spreading CanisterWorm across 47 npm packages and deployed a Kubernetes wiper payload \u2014 making this the most consequential supply chain incident of the week. Any CI/CD pipeline that used Trivy during the compromise window should be treated as fully compromised and all secrets rotated immediately. [TheHackerNews, BleepingComputer]"
+    },
+    {
+      "title": "Messaging apps and email under coordinated nation-state attack",
+      "text": "Russian intelligence-linked actors are phishing Signal and WhatsApp users to seize account control \u2014 bypassing encryption by targeting the account layer \u2014 while a separate IRS phishing campaign has hit 29,000 users, deploying RMM malware for persistent backdoor access rather than simply stealing credentials. Both campaigns are active this week and particularly dangerous for finance, HR, and government-adjacent client environments. [TheHackerNews, TheHackerNews IRS]"
+    },
+    {
+      "title": "Critical patch urgency across Cisco, Oracle, Langflow, Quest KACE, and Apple",
+      "text": "CISA's KEV catalog added five new entries including Apple iOS flaws (DarkSword exploit kit), Craft CMS, and Laravel Livewire bugs \u2014 all due April 3. A max-severity Cisco FMC flaw (CVE-2026-20131) was already exploited by Interlock ransomware as a zero-day and its CISA KEV deadline passed March 22. Oracle patched an unauthenticated RCE in Identity Manager (CVE-2026-21992), and Langflow's critical CVE-2026-33017 was weaponized within 20 hours of public disclosure. [TheHackerNews CISA KEV, BleepingComputer]"
+    },
+    {
+      "title": "VoidStealer defeats Chrome's Application-Bound Encryption using debugger trick",
+      "text": "A new infostealer has bypassed one of Chrome's most significant recent security controls by using Chrome's own debugging protocol to extract the master key for stored credentials, cookies, and payment data. This technique requires no elevated privileges and renders browser-stored credentials insecure regardless of Chrome version. MSPs should push Group Policy to disable browser password saving and recommend dedicated password managers for all clients. [BleepingComputer]"
+    },
+    {
+      "title": "Feds dismantle three-million-device IoT botnet infrastructure behind record DDoS attacks",
+      "text": "A joint U.S., German, and Canadian law enforcement action (Operation AISURU) disrupted the C2 infrastructure of the AISURU, KimWolf, JackSkid, and Mossad botnets \u2014 collectively responsible for record-setting 31.4 Tbps DDoS attacks. The botnets primarily compromised unpatched IoT devices including routers and IP cameras. Organizations with internet-exposed IoT devices should audit firmware currency and change any default credentials immediately. [TheHackerNews, KrebsOnSecurity]"
+    }
+  ],
+  "cyber_news": [
+    {
+      "id": "trivy-supply-chain-worm",
+      "title": "Trivy Supply Chain Attack Spawns Self-Spreading Worm, Kubernetes Wiper, and npm Backdoors",
+      "category": "Campaign",
+      "summary": "The Trivy open-source vulnerability scanner was compromised twice in under a month, with attackers known as TeamPCP hijacking 75 GitHub Actions tags to deliver a credential-stealing infostealer.",
+      "expanded": "The attack escalated dramatically \u2014 spawning the self-spreading CanisterWorm across 47 npm packages and deploying a Kubernetes wiper payload that deletes cluster resources. For MSPs managing development pipelines or DevSecOps tooling for clients, affected environments should be treated as fully compromised: rotate CI/CD secrets, audit GitHub Actions workflows, scan dependency trees, and review Kubernetes logs.",
+      "sources": [
+        {
+          "name": "TheHackerNews - Trivy Hack Spreads Infostealer",
+          "url": "https://thehackernews.com/2026/03/trivy-hack-spreads-infostealer-via.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/trivy-vulnerability-scanner-breach-pushed-infostealer-via-github-actions/"
+        }
+      ]
+    },
+    {
+      "id": "irs-phishing-rmm-malware",
+      "title": "IRS Phishing Campaign Hits 29,000 Users, Installs RMM Malware for Persistent Access",
+      "category": "Campaign",
+      "summary": "Microsoft warned of an active tax-season phishing campaign using fake IRS refund notices and payroll forms to lure victims.",
+      "expanded": "Rather than simply stealing credentials, the campaign installs RMM tools to establish persistent access that blends into legitimate IT activity. MSP actions: increase finance and HR phishing awareness, block unauthorized RMM installers, and review remote access logs for anomalous connections.",
+      "sources": [
+        {
+          "name": "TheHackerNews",
+          "url": "https://thehackernews.com/2026/03/microsoft-warns-irs-phishing-hits-29000.html"
+        }
+      ]
+    },
+    {
+      "id": "russian-signal-whatsapp-phishing",
+      "title": "FBI Warns Russian Intelligence Targeting Signal and WhatsApp Users in Mass Phishing Campaign",
+      "category": "Threat",
+      "summary": "Threat actors affiliated with Russian intelligence services are targeting the account layer of encrypted messaging apps rather than the encryption itself.",
+      "expanded": "The campaign includes SIM-swapping, malicious QR codes, and phishing pages that mimic official flows. MSP guidance: enable Signal registration lock, harden phone-account protections, and audit linked-device access for sensitive users.",
+      "sources": [
+        {
+          "name": "TheHackerNews",
+          "url": "https://thehackernews.com/2026/03/fbi-warns-russian-hackers-target-signal.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/fbi-links-signal-phishing-attacks-to-russian-intelligence-services/"
+        }
+      ]
+    },
+    {
+      "id": "voidstealer-chrome-abe-bypass",
+      "title": "VoidStealer Bypasses Chrome's Application-Bound Encryption Using Debugger Trick",
+      "category": "Campaign",
+      "summary": "A new infostealer uses Chrome's debugging interface to extract the browser master key and decrypt stored secrets.",
+      "expanded": "Because Chrome performs the decryption itself, Application-Bound Encryption checks still pass. MSP response: disable browser password saving via policy, recommend dedicated password managers, and alert on suspicious Chrome remote-debugging activity.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/voidstealer-malware-steals-chrome-master-key-via-debugger-trick/"
+        },
+        {
+          "name": "CSO Online",
+          "url": "https://www.csoonline.com/article/4148601/chrome-abe-bypass-discovered-new-voidstealer-malware-steals-passwords-and-cookies.html"
+        }
+      ]
+    },
+    {
+      "id": "handala-hackers-telegram",
+      "title": "FBI Warns of Iranian-Linked Handala Hackers Using Telegram for Malware Distribution",
+      "category": "Threat",
+      "summary": "Handala is using Telegram channels to distribute malware, bypassing traditional email gateways and web filters.",
+      "expanded": "The malware includes destructive and data-exfiltration tooling. MSP actions: audit Telegram presence on managed endpoints, consider blocking if unnecessary, and include chat-app malware delivery in awareness training.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/fbi-warns-of-handala-hackers-using-telegram-in-malware-attacks/"
+        }
+      ]
+    },
+    {
+      "id": "54-edr-killers-byovd",
+      "title": "54 Active EDR Killers Exploit Signed Vulnerable Drivers Using BYOVD Technique",
+      "category": "Threat",
+      "summary": "Researchers documented 54 EDR-killing tools abusing signed vulnerable drivers to disable endpoint security before payload deployment.",
+      "expanded": "The prevalence of BYOVD tooling shows EDR evasion has become commoditized. MSP actions: enable driver blocklists, anti-tamper protections, HVCI where possible, and review driver-load telemetry from unusual paths.",
+      "sources": [
+        {
+          "name": "TheHackerNews",
+          "url": "https://thehackernews.com/2026/03/54-edr-killers-use-byovd-to-exploit-34.html"
+        }
+      ]
+    },
+    {
+      "id": "beast-gang-ransomware-opsec-fail",
+      "title": "Beast Gang Ransomware OpSec Failure Exposes Server, Revealing Backup-Destruction TTP",
+      "category": "Threat",
+      "summary": "An exposed Beast ransomware server revealed playbooks focused on destroying backups before encryption begins.",
+      "expanded": "The leak confirms backup destruction is a first-order objective in modern ransomware operations. MSP actions: verify immutable or air-gapped backups, test restoration regularly, and isolate backup-admin credentials from domain-admin accounts.",
+      "sources": [
+        {
+          "name": "DarkReading",
+          "url": "https://www.darkreading.com/threat-intelligence/opsec-beast-gang-exposes-ransomware-server"
+        }
+      ]
+    },
+    {
+      "id": "interlock-ransomware-cisco-firewall-zero-day",
+      "title": "Interlock Ransomware Exploited Cisco Firewall Zero-Day Weeks Before Public Disclosure",
+      "category": "Threat",
+      "summary": "Interlock exploited CVE-2026-20131 in Cisco Secure Firewall Management Center as a zero-day prior to disclosure.",
+      "expanded": "A compromised FMC can let attackers alter firewall rules, disable logging, and pivot laterally. MSP response: patch immediately, limit management-plane exposure, and review historical FMC logs for suspicious access.",
+      "sources": [
+        {
+          "name": "DarkReading",
+          "url": "https://www.darkreading.com/threat-intelligence/interlock-ransomware-targets-cisco-enterprise-firewalls"
+        },
+        {
+          "name": "CSO Online",
+          "url": "https://www.csoonline.com/article/4147770/ransomware-group-exploited-cisco-firewall-vulnerability-as-a-zero-day-weeks-before-a-patch-appeared.html"
+        }
+      ]
+    },
+    {
+      "id": "north-korean-fake-it-worker-xdr",
+      "title": "North Korean Fake IT Worker Caught Within 10 Days Using Behavioral XDR and Threat Intelligence",
+      "category": "Threat",
+      "summary": "Behavioral analytics and threat intelligence identified a North Korean fake IT worker during onboarding within 10 days.",
+      "expanded": "The case highlights onboarding as a key detection window. MSP actions: apply least privilege to new hires, monitor onboarding behavior closely, and validate geography, identity, and contractor payment indicators.",
+      "sources": [
+        {
+          "name": "CSO Online",
+          "url": "https://www.csoonline.com/article/4148279/behavioral-xdr-and-threat-intel-nab-north-korean-fake-it-worker-within-10-days-of-hire.html"
+        }
+      ]
+    },
+    {
+      "id": "google-android-sideloading-24h",
+      "title": "Google Adds Mandatory 24-Hour Wait for Unverified App Sideloading on Android",
+      "category": "Hardening",
+      "summary": "Google's new Android sideloading flow imposes a 24-hour delay before installing apps from unverified developers.",
+      "expanded": "The cooling-off period is designed to disrupt real-time social-engineering attacks that pressure users into immediate APK installs. MSP action: prefer managed Google Play and use the delay as a defense-in-depth control, not a replacement for MTD.",
+      "sources": [
+        {
+          "name": "TheHackerNews",
+          "url": "https://thehackernews.com/2026/03/google-adds-24-hour-wait-for-unverified.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/google-adds-advanced-flow-for-safe-apk-sideloading-on-android/"
+        }
+      ]
+    },
+    {
+      "id": "microsoft-zero-trust-ai",
+      "title": "Microsoft Announces Zero Trust for AI Framework with New Assessment Tool and Architecture Guidance",
+      "category": "Hardening",
+      "summary": "Microsoft added a dedicated AI pillar to its Zero Trust framework and released updated guidance plus a self-assessment tool.",
+      "expanded": "The framework focuses on least-privilege AI agent access, monitoring, data-pipeline security, and third-party AI tool evaluation. MSP action: inventory which enterprise data sources are exposed to AI systems and apply governance before broad rollout.",
+      "sources": [
+        {
+          "name": "Microsoft Security Blog",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/03/19/new-tools-and-guidance-announcing-zero-trust-for-ai/"
+        }
+      ]
+    },
+    {
+      "id": "ai-rsac-innovation-sandbox",
+      "title": "AI Tools Dominate RSAC 2026 Innovation Sandbox Finalists, Signaling Security Market Shift",
+      "category": "General",
+      "summary": "All 10 RSAC 2026 Innovation Sandbox finalists are AI-focused security companies, signaling a clear market shift.",
+      "expanded": "The cohort suggests the industry is moving from AI-enhanced tooling to AI-native security architectures. MSPs should expect vendor roadmap acceleration, acquisition activity, and more mature AI security products across the next 12\u201324 months.",
+      "sources": [
+        {
+          "name": "DarkReading",
+          "url": "https://www.darkreading.com/cybersecurity-operations/ai-dominates-rsac-innovation-sandbox"
+        }
+      ]
+    }
+  ],
+  "deep_dive": {
+    "label": "Most Referenced Story",
+    "title": "The Trivy Supply Chain Attack: How a Security Scanner Became the Weapon",
+    "body": "The compromise of Aqua Security's Trivy vulnerability scanner represents a textbook escalation of a supply chain attack \u2014 and a cautionary tale about implicit trust in open-source security tooling. Trivy is used by hundreds of thousands of developers and CI/CD pipelines to scan containers, infrastructure-as-code, and source repositories for vulnerabilities. That ubiquity made it an ideal target for TeamPCP, who gained write access to the Trivy GitHub repository and poisoned 75 release tags with binaries that exfiltrated CI/CD secrets: cloud provider tokens, GitHub Personal Access Tokens, and Kubernetes service account credentials. The attack didn't stop there. Researchers subsequently discovered malicious artifacts on Docker Hub, and a self-spreading worm (CanisterWorm) that propagated to 47 npm packages \u2014 effectively turning each compromised developer environment into a vector for further spread. Most alarmingly, a Kubernetes-targeted payload capable of deleting cluster resources was embedded in the malicious releases, indicating the attacker had destructive as well as exfiltrative objectives. For MSPs managing DevOps pipelines or providing DevSecOps services, the response priority is immediate containment, broad credential rotation, dependency review, and cluster log analysis.",
+    "actions": [
+      "Identify all environments running Trivy between March 10\u201321.",
+      "Treat those environments as fully compromised and rotate every secret they could access.",
+      "Audit GitHub Actions workflows for references to tampered Trivy tags.",
+      "Scan npm dependency trees against the published IOC list.",
+      "Review Kubernetes audit logs for unauthorized API calls during the exposure window."
+    ],
+    "referenced_by": [
+      "TheHackerNews \u2014 Trivy Worm",
+      "TheHackerNews \u2014 CanisterWorm npm",
+      "TheHackerNews \u2014 GitHub Actions Breach",
+      "BleepingComputer",
+      "CSO Online"
+    ]
+  },
+  "vulnerabilities": {
+    "items": [
+      {
+        "cve": "CVE-2026-20131",
+        "product": "Cisco Secure Firewall Management Center (FMC)",
+        "cvss": "10.0",
+        "severity": "CRITICAL",
+        "exploited": true,
+        "description": "Maximum-severity deserialization vulnerability enabling unauthenticated RCE. Exploited by Interlock ransomware as a zero-day weeks before patch. CISA KEV deadline March 22 \u2014 overdue for federal agencies."
+      },
+      {
+        "cve": "CVE-2025-32975",
+        "product": "Quest KACE Systems Management Appliance (SMA)",
+        "cvss": "10.0",
+        "severity": "CRITICAL",
+        "exploited": true,
+        "description": "Maximum-severity vulnerability in Quest KACE SMA actively exploited by threat actors according to Arctic Wolf. KACE SMA is widely used by MSPs for endpoint management."
+      },
+      {
+        "cve": "CVE-2026-21992",
+        "product": "Oracle Identity Manager / Web Services Manager",
+        "cvss": "9.8",
+        "severity": "CRITICAL",
+        "exploited": true,
+        "description": "Unauthenticated remote code execution in Oracle Identity Manager and Web Services Manager. Oracle issued an emergency out-of-band patch. Internet-exposed instances are at immediate risk."
+      },
+      {
+        "cve": "CVE-2026-33017",
+        "product": "Langflow (AI workflow builder)",
+        "cvss": "9.8",
+        "severity": "CRITICAL",
+        "exploited": true,
+        "description": "Critical vulnerability in Langflow AI workflow builder weaponized within 20 hours of public disclosure. Organizations running self-hosted Langflow instances should patch immediately."
+      },
+      {
+        "cve": "CVE-2025-32432",
+        "product": "Craft CMS",
+        "cvss": "9.1",
+        "severity": "CRITICAL",
+        "exploited": true,
+        "description": "Code injection vulnerability in Craft CMS added to CISA KEV catalog. Federal agencies must patch by April 3, 2026. Active exploitation confirmed in the wild."
+      },
+      {
+        "cve": "CVE-2025-54068",
+        "product": "Laravel Livewire",
+        "cvss": "9.1",
+        "severity": "CRITICAL",
+        "exploited": true,
+        "description": "Code injection vulnerability in Laravel Livewire added to CISA KEV catalog. Due April 3 for federal agencies. Affects PHP web applications using the Livewire component framework."
+      },
+      {
+        "cve": "CVE-2025-43510 / CVE-2025-43520 / CVE-2025-31277",
+        "product": "Apple iOS / iPadOS (DarkSword Exploit Kit)",
+        "cvss": "8.8",
+        "severity": "HIGH",
+        "exploited": true,
+        "description": "Three Apple iOS/iPadOS vulnerabilities targeted by the Coruna and DarkSword exploit kits in cryptocurrency theft and cyberespionage campaigns. CISA KEV addition; federal agencies must patch by April 3."
+      },
+      {
+        "cve": "N/A (Magento PolyShell)",
+        "product": "Magento / Adobe Commerce REST API",
+        "cvss": "9.8",
+        "severity": "CRITICAL",
+        "exploited": false,
+        "description": "Critical unauthenticated file upload and RCE vulnerability in Magento's REST API. Patch or disable REST API exposure immediately."
+      }
+    ],
+    "footnote": "Vulnerability data sourced from CISA KEV Catalog and RSS intelligence feeds. CISA KEV items require federal agency patching by stated due dates."
+  }
+}

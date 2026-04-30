@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDCB — President's Daily Cybersecurity Briefing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="eyebrow">PDCB</div>
+        <h1>President's Daily Cybersecurity Briefing</h1>
+        <div class="badge">MSP // INTERNAL</div>
+      </div>
+
+      <nav class="side-nav">
+        <div class="nav-title">Sections</div>
+        <a href="#summary">Executive Summary</a>
+        <a href="#news">Cyber News</a>
+        <a href="#deep-dive">Deep Dive</a>
+        <a href="#vulns">Vulnerabilities</a>
+      </nav>
+
+      <div class="meta-card">
+        <div class="meta-label">Brief Date</div>
+        <div id="brief-date" class="meta-value">Loading…</div>
+      </div>
+
+      <div class="meta-card">
+        <div class="meta-label">Archive</div>
+        <select id="archive-select" aria-label="Select archived briefing date">
+          <option value="latest">Latest</option>
+        </select>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="hero">
+        <p class="hero-kicker">PDCB — President's Daily Cybersecurity Briefing</p>
+        <h2 id="brief-title">Loading briefing…</h2>
+        <p id="brief-subtitle" class="hero-subtitle">Fetching the latest data set.</p>
+      </header>
+
+      <section id="summary" class="panel">
+        <div class="section-heading">
+          <span>◆</span>
+          <h3>Executive Summary</h3>
+        </div>
+        <div id="executive-summary" class="summary-list"></div>
+      </section>
+
+      <section id="news" class="panel">
+        <div class="section-heading section-heading-spread">
+          <div>
+            <span>◈</span>
+            <h3>Cyber News</h3>
+          </div>
+          <div id="news-filters" class="pill-row"></div>
+        </div>
+        <div id="news-grid" class="news-grid"></div>
+      </section>
+
+      <section id="deep-dive" class="panel">
+        <div class="section-heading">
+          <span>◉</span>
+          <h3>Deep Dive</h3>
+        </div>
+        <article id="deep-dive-card" class="deep-dive-card"></article>
+      </section>
+
+      <section id="vulns" class="panel">
+        <div class="section-heading">
+          <span>⬡</span>
+          <h3>Vulnerabilities</h3>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>CVE</th>
+                <th>Product</th>
+                <th>CVSS</th>
+                <th>Severity</th>
+                <th>Exploited</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody id="vuln-table-body"></tbody>
+          </table>
+        </div>
+        <p id="vuln-footnote" class="footnote"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
