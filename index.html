@@ -1,310 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>President's Daily Cybersecurity Briefing</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presidential Daily Cybersecurity Briefing</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar left-sidebar">
-      <div class="brand">
-        <p class="eyebrow">Daily Intelligence</p>
-        <h1>PDCB</h1>
-        <p class="subtitle">President's Daily Cybersecurity Briefing</p>
-      </div>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1>🛡️ Presidential Daily Cybersecurity Briefing</h1>
+                    <p class="classification">FOR OFFICIAL USE ONLY | <span id="briefing-date"></span></p>
+                </div>
+                <div class="header-right">
+                    <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">
+                        <span>🌙</span>
+                    </button>
+                </div>
+            </div>
+        </header>
 
-      <nav class="section-nav">
-        <h2>Sections</h2>
-        <a href="#executive-summary">Executive Summary</a>
-        <a href="#cyber-news">Cyber News</a>
-        <a href="#deep-dive">Deep Dive</a>
-        <a href="#vulnerabilities">Vulnerabilities</a>
-      </nav>
+        <!-- Main Content -->
+        <div class="main-wrapper">
+            <!-- Left Sidebar -->
+            <aside class="sidebar left-sidebar">
+                <nav class="nav-section">
+                    <h3>Navigation</h3>
+                    <ul class="nav-list">
+                        <li><a href="#executive-summary" class="nav-link active">Executive Summary</a></li>
+                        <li><a href="#cyber-news" class="nav-link">Cyber News</a></li>
+                        <li><a href="#deep-dive" class="nav-link">Deep Dive Analysis</a></li>
+                        <li><a href="#vulnerabilities" class="nav-link">Vulnerabilities</a></li>
+                        <li><a href="#action-items" class="nav-link">Action Items</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="info-box">
+                    <h4>Distribution</h4>
+                    <p>MSP Technical Staff<br>Security Operations<br>Technical Leadership</p>
+                </div>
+            </aside>
 
-      <div class="theme-card">
-        <h2>Display</h2>
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark and light mode">
-          Toggle Theme
-        </button>
-      </div>
-    </aside>
+            <!-- Center Content -->
+            <main class="main-content">
+                <!-- Executive Summary -->
+                <section id="executive-summary" class="content-section">
+                    <h2>Executive Summary</h2>
+                    <div class="summary-cards">
+                        <div id="summary-list"></div>
+                    </div>
+                </section>
 
-    <main class="main-content">
-      <header class="hero">
-        <div>
-          <p class="eyebrow">Executive Intelligence Brief</p>
-          <h2>President's Daily Cybersecurity Briefing</h2>
-          <p class="hero-text">
-            A concise, operations-focused briefing on active cyber threats, major incidents, exploitable vulnerabilities, and strategic risk themes affecting enterprise and MSP environments.
-          </p>
+                <!-- Cyber News -->
+                <section id="cyber-news" class="content-section">
+                    <h2>Cyber News & Threats</h2>
+                    
+                    <div class="filter-bar">
+                        <button class="filter-btn active" data-filter="All">All</button>
+                        <button class="filter-btn" data-filter="Threat">Threat</button>
+                        <button class="filter-btn" data-filter="Campaign">Campaign</button>
+                        <button class="filter-btn" data-filter="Hardening">Hardening</button>
+                        <button class="filter-btn" data-filter="365_Threats">M365 Threats</button>
+                        <button class="filter-btn" data-filter="General">General</button>
+                    </div>
+
+                    <div id="cyber-news-list" class="news-list">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Deep Dive -->
+                <section id="deep-dive" class="content-section">
+                    <h2>Deep Dive Analysis</h2>
+                    <div id="deep-dive-content" class="deep-dive-box">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Vulnerabilities -->
+                <section id="vulnerabilities" class="content-section">
+                    <h2>Critical Vulnerabilities</h2>
+                    <div class="vulnerabilities-table-wrapper">
+                        <table id="vuln-table" class="vulnerabilities-table">
+                            <thead>
+                                <tr>
+                                    <th>CVE</th>
+                                    <th>Product</th>
+                                    <th>Severity</th>
+                                    <th>CVSS</th>
+                                    <th>Active</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vuln-tbody">
+                                <!-- Will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Action Items -->
+                <section id="action-items" class="content-section">
+                    <h2>Immediate Action Items</h2>
+                    <div class="action-items-list">
+                        <div class="action-item urgent">
+                            <div class="action-number">1</div>
+                            <div class="action-content">
+                                <h4>Audit SolarWinds Orion Instances</h4>
+                                <p>Conduct immediate inventory across all customer environments for CVE-2026-9901; prioritize patching within 24-48 hours. Check for suspicious API access patterns in logs.</p>
+                                <span class="priority-badge urgent">URGENT</span>
+                            </div>
+                        </div>
+                        
+                        <div class="action-item urgent">
+                            <div class="action-number">2</div>
+                            <div class="action-content">
+                                <h4>Patch Apache Struts Applications</h4>
+                                <p>Emergency patching required by May 15, 2026 per CISA Binding Operational Directive. Conduct inventory of Struts-based applications today and create patching plan.</p>
+                                <span class="priority-badge urgent">URGENT</span>
+                            </div>
+                        </div>
+                        
+                        <div class="action-item high">
+                            <div class="action-number">3</div>
+                            <div class="action-content">
+                                <h4>Review Microsoft 365 Conditional Access</h4>
+                                <p>Audit conditional access policies to prevent session token theft attacks. Enable passwordless sign-in options and implement token binding where possible.</p>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                        </div>
+                        
+                        <div class="action-item high">
+                            <div class="action-number">4</div>
+                            <div class="action-content">
+                                <h4>Scan CI/CD Pipelines for PyUtils</h4>
+                                <p>Identify PyUtils dependencies in enterprise build environments. Audit environment variable exposure and rotate any exposed credentials from affected builds.</p>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar right-sidebar">
+                <!-- Recent Headlines -->
+                <div class="sidebar-section">
+                    <h3>Recent Headlines</h3>
+                    <div id="headlines-list" class="headlines-list">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Biggest Hacks -->
+                <div class="sidebar-section">
+                    <h3>⚠️ Biggest Hacks</h3>
+                    <div id="hacks-list" class="hacks-list">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Source Statistics -->
+                <div class="sidebar-section sources-section">
+                    <h3>Information Sources</h3>
+                    <div id="sources-list" class="sources-list">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </aside>
         </div>
-      </header>
 
-      <section id="executive-summary" class="panel">
-        <div class="panel-header">
-          <h3>Executive Summary</h3>
-        </div>
-        <ul id="executiveSummaryList" class="summary-list"></ul>
-      </section>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Presidential Daily Cybersecurity Briefing | Classification: FOR OFFICIAL USE ONLY | Distribution: MSP Technical Staff</p>
+            <p>Last Updated: <span id="footer-date"></span></p>
+        </footer>
+    </div>
 
-      <section id="cyber-news" class="panel">
-        <div class="panel-header stacked-mobile">
-          <h3>Cyber News</h3>
-          <div id="filterBar" class="filter-bar"></div>
-        </div>
-        <div id="newsContainer" class="news-grid"></div>
-      </section>
-
-      <section id="deep-dive" class="panel">
-        <div class="panel-header">
-          <h3>Deep Dive</h3>
-        </div>
-        <article class="deep-dive-card">
-          <p class="story-category category-threat">Priority Analysis</p>
-          <h4 id="deepDiveTitle"></h4>
-          <p id="deepDiveContent"></p>
-          <p class="source-line">
-            Source:
-            <span id="deepDiveSource"></span>
-          </p>
-        </article>
-      </section>
-
-      <section id="vulnerabilities" class="panel">
-        <div class="panel-header">
-          <h3>Vulnerabilities</h3>
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>CVE</th>
-                <th>Product</th>
-                <th>Severity</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody id="vulnerabilitiesTable"></tbody>
-          </table>
-        </div>
-      </section>
-    </main>
-
-    <aside class="sidebar right-sidebar">
-      <section class="sidebar-card">
-        <h3>Recent Headlines</h3>
-        <ul id="recentHeadlines" class="headline-list"></ul>
-      </section>
-
-      <section class="sidebar-card">
-        <h3>Biggest Hacks</h3>
-        <div id="biggestHacks" class="hack-list"></div>
-      </section>
-
-      <section class="sidebar-card">
-        <h3>Most Referenced Sources</h3>
-        <ul id="sourceCounts" class="source-list"></ul>
-      </section>
-    </aside>
-  </div>
-
-  <script src="data.js"></script>
-  <script>
-    const root = document.documentElement;
-    const themeToggle = document.getElementById('themeToggle');
-    const storageKey = 'pdcb-theme';
-
-    function applyTheme(theme) {
-      root.setAttribute('data-theme', theme);
-      localStorage.setItem(storageKey, theme);
-    }
-
-    const savedTheme = localStorage.getItem(storageKey);
-    if (savedTheme) {
-      applyTheme(savedTheme);
-    } else {
-      applyTheme('dark');
-    }
-
-    themeToggle.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme') || 'dark';
-      applyTheme(current === 'dark' ? 'light' : 'dark');
-    });
-
-    const executiveSummaryList = document.getElementById('executiveSummaryList');
-    const newsContainer = document.getElementById('newsContainer');
-    const filterBar = document.getElementById('filterBar');
-    const deepDiveTitle = document.getElementById('deepDiveTitle');
-    const deepDiveContent = document.getElementById('deepDiveContent');
-    const deepDiveSource = document.getElementById('deepDiveSource');
-    const vulnerabilitiesTable = document.getElementById('vulnerabilitiesTable');
-    const recentHeadlines = document.getElementById('recentHeadlines');
-    const biggestHacks = document.getElementById('biggestHacks');
-    const sourceCounts = document.getElementById('sourceCounts');
-
-    const filters = ['All', 'Campaign', 'Threat', 'Hardening', 'Tools', '365_Threats', 'Laws', 'General'];
-    let activeFilter = 'All';
-
-    function slugify(value) {
-      return value.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-    }
-
-    function categoryClass(category) {
-      const normalized = (category || 'General').toLowerCase();
-      if (normalized === 'campaign') return 'category-campaign';
-      if (normalized === 'threat') return 'category-threat';
-      if (normalized === 'hardening') return 'category-hardening';
-      if (normalized === 'tools') return 'category-tools';
-      if (normalized === '365_threats') return 'category-365';
-      if (normalized === 'laws') return 'category-laws';
-      return 'category-general';
-    }
-
-    function renderExecutiveSummary() {
-      executiveSummaryList.innerHTML = '';
-      briefingData.executive_summary.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item;
-        executiveSummaryList.appendChild(li);
-      });
-    }
-
-    function renderFilters() {
-      filterBar.innerHTML = '';
-      filters.forEach(filter => {
-        const button = document.createElement('button');
-        button.className = `filter-btn ${activeFilter === filter ? 'active' : ''}`;
-        button.textContent = filter.replace('_', ' ');
-        button.addEventListener('click', () => {
-          activeFilter = filter;
-          renderFilters();
-          renderNews();
-        });
-        filterBar.appendChild(button);
-      });
-    }
-
-    function renderNews() {
-      newsContainer.innerHTML = '';
-      const items = briefingData.cyber_news.filter(item =>
-        activeFilter === 'All' ? true : item.category === activeFilter
-      );
-
-      if (!items.length) {
-        newsContainer.innerHTML = '<div class="empty-state">No stories match this category.</div>';
-        return;
-      }
-
-      items.forEach((story, index) => {
-        const card = document.createElement('article');
-        card.className = 'news-card';
-
-        const detailsId = `details-${slugify(story.title)}-${index}`;
-        const catClass = categoryClass(story.category);
-
-        card.innerHTML = `
-          <div class="news-top">
-            <span class="story-category ${catClass}">${story.category}</span>
-            <span class="story-source">${story.source}</span>
-          </div>
-          <h4>${story.title}</h4>
-          <p class="story-blurb">${story.blurb}</p>
-          <div class="story-actions">
-            <button class="expand-btn" aria-expanded="false" aria-controls="${detailsId}">Expand</button>
-            <a href="${story.link}" target="_blank" rel="noopener noreferrer" class="read-link">Read Original</a>
-          </div>
-          <div id="${detailsId}" class="story-details" hidden>
-            <p>${story.expand_content}</p>
-          </div>
-        `;
-
-        const expandBtn = card.querySelector('.expand-btn');
-        const details = card.querySelector('.story-details');
-        expandBtn.addEventListener('click', () => {
-          const expanded = expandBtn.getAttribute('aria-expanded') === 'true';
-          expandBtn.setAttribute('aria-expanded', String(!expanded));
-          expandBtn.textContent = expanded ? 'Expand' : 'Collapse';
-          details.hidden = expanded;
-        });
-
-        newsContainer.appendChild(card);
-      });
-    }
-
-    function renderDeepDive() {
-      deepDiveTitle.textContent = briefingData.deep_dive.title;
-      deepDiveContent.textContent = briefingData.deep_dive.content;
-      deepDiveSource.textContent = briefingData.deep_dive.source;
-    }
-
-    function severityClass(severity) {
-      const value = (severity || '').toLowerCase();
-      if (value === 'critical') return 'sev-critical';
-      if (value === 'high') return 'sev-high';
-      if (value === 'medium') return 'sev-medium';
-      return 'sev-low';
-    }
-
-    function renderVulnerabilities() {
-      vulnerabilitiesTable.innerHTML = '';
-      briefingData.vulnerabilities.forEach(vuln => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td>${vuln.cve_id}</td>
-          <td>${vuln.product}</td>
-          <td><span class="severity-pill ${severityClass(vuln.severity)}">${vuln.severity}</span></td>
-          <td>${vuln.active_exploitation_status}</td>
-        `;
-        vulnerabilitiesTable.appendChild(tr);
-      });
-    }
-
-    function renderRecentHeadlines() {
-      recentHeadlines.innerHTML = '';
-      briefingData.recent_headlines.forEach(item => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>`;
-        recentHeadlines.appendChild(li);
-      });
-    }
-
-    function renderBiggestHacks() {
-      biggestHacks.innerHTML = '';
-      briefingData.biggest_hacks.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'hack-card';
-        card.innerHTML = `
-          <div class="hack-header">
-            <span class="severity-pill ${severityClass(item.severity)}">${item.severity}</span>
-            <span class="story-source">${item.source}</span>
-          </div>
-          <h4>${item.title}</h4>
-          <p>${item.brief}</p>
-          <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="read-link">Read Original</a>
-        `;
-        biggestHacks.appendChild(card);
-      });
-    }
-
-    function renderSourceCounts() {
-      sourceCounts.innerHTML = '';
-      briefingData.source_counts.forEach(item => {
-        const li = document.createElement('li');
-        li.innerHTML = `<span>${item.source}</span><strong>${item.count}</strong>`;
-        sourceCounts.appendChild(li);
-      });
-    }
-
-    renderExecutiveSummary();
-    renderFilters();
-    renderNews();
-    renderDeepDive();
-    renderVulnerabilities();
-    renderRecentHeadlines();
-    renderBiggestHacks();
-    renderSourceCounts();
-  </script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
