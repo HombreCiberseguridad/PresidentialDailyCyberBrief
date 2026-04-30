@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>President's Daily Cybersecurity Briefing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar left-sidebar">
+      <div class="brand">
+        <p class="eyebrow">Daily Intelligence</p>
+        <h1>PDCB</h1>
+        <p class="subtitle">President's Daily Cybersecurity Briefing</p>
+      </div>
+
+      <nav class="section-nav">
+        <h2>Sections</h2>
+        <a href="#executive-summary">Executive Summary</a>
+        <a href="#cyber-news">Cyber News</a>
+        <a href="#deep-dive">Deep Dive</a>
+        <a href="#vulnerabilities">Vulnerabilities</a>
+      </nav>
+
+      <div class="theme-card">
+        <h2>Display</h2>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark and light mode">
+          Toggle Theme
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Executive Intelligence Brief</p>
+          <h2>President's Daily Cybersecurity Briefing</h2>
+          <p class="hero-text">
+            A concise, operations-focused briefing on active cyber threats, major incidents, exploitable vulnerabilities, and strategic risk themes affecting enterprise and MSP environments.
+          </p>
+        </div>
+      </header>
+
+      <section id="executive-summary" class="panel">
+        <div class="panel-header">
+          <h3>Executive Summary</h3>
+        </div>
+        <ul id="executiveSummaryList" class="summary-list"></ul>
+      </section>
+
+      <section id="cyber-news" class="panel">
+        <div class="panel-header stacked-mobile">
+          <h3>Cyber News</h3>
+          <div id="filterBar" class="filter-bar"></div>
+        </div>
+        <div id="newsContainer" class="news-grid"></div>
+      </section>
+
+      <section id="deep-dive" class="panel">
+        <div class="panel-header">
+          <h3>Deep Dive</h3>
+        </div>
+        <article class="deep-dive-card">
+          <p class="story-category category-threat">Priority Analysis</p>
+          <h4 id="deepDiveTitle"></h4>
+          <p id="deepDiveContent"></p>
+          <p class="source-line">
+            Source:
+            <span id="deepDiveSource"></span>
+          </p>
+        </article>
+      </section>
+
+      <section id="vulnerabilities" class="panel">
+        <div class="panel-header">
+          <h3>Vulnerabilities</h3>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>CVE</th>
+                <th>Product</th>
+                <th>Severity</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="vulnerabilitiesTable"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar right-sidebar">
+      <section class="sidebar-card">
+        <h3>Recent Headlines</h3>
+        <ul id="recentHeadlines" class="headline-list"></ul>
+      </section>
+
+      <section class="sidebar-card">
+        <h3>Biggest Hacks</h3>
+        <div id="biggestHacks" class="hack-list"></div>
+      </section>
+
+      <section class="sidebar-card">
+        <h3>Most Referenced Sources</h3>
+        <ul id="sourceCounts" class="source-list"></ul>
+      </section>
+    </aside>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const storageKey = 'pdcb-theme';
+
+    function applyTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem(storageKey, theme);
+    }
+
+    const savedTheme = localStorage.getItem(storageKey);
+    if (savedTheme) {
+      applyTheme(savedTheme);
+    } else {
+      applyTheme('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') || 'dark';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    const executiveSummaryList = document.getElementById('executiveSummaryList');
+    const newsContainer = document.getElementById('newsContainer');
+    const filterBar = document.getElementById('filterBar');
+    const deepDiveTitle = document.getElementById('deepDiveTitle');
+    const deepDiveContent = document.getElementById('deepDiveContent');
+    const deepDiveSource = document.getElementById('deepDiveSource');
+    const vulnerabilitiesTable = document.getElementById('vulnerabilitiesTable');
+    const recentHeadlines = document.getElementById('recentHeadlines');
+    const biggestHacks = document.getElementById('biggestHacks');
+    const sourceCounts = document.getElementById('sourceCounts');
+
+    const filters = ['All', 'Campaign', 'Threat', 'Hardening', 'Tools', '365_Threats', 'Laws', 'General'];
+    let activeFilter = 'All';
+
+    function slugify(value) {
+      return value.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    }
+
+    function categoryClass(category) {
+      const normalized = (category || 'General').toLowerCase();
+      if (normalized === 'campaign') return 'category-campaign';
+      if (normalized === 'threat') return 'category-threat';
+      if (normalized === 'hardening') return 'category-hardening';
+      if (normalized === 'tools') return 'category-tools';
+      if (normalized === '365_threats') return 'category-365';
+      if (normalized === 'laws') return 'category-laws';
+      return 'category-general';
+    }
+
+    function renderExecutiveSummary() {
+      executiveSummaryList.innerHTML = '';
+      briefingData.executive_summary.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        executiveSummaryList.appendChild(li);
+      });
+    }
+
+    function renderFilters() {
+      filterBar.innerHTML = '';
+      filters.forEach(filter => {
+        const button = document.createElement('button');
+        button.className = `filter-btn ${activeFilter === filter ? 'active' : ''}`;
+        button.textContent = filter.replace('_', ' ');
+        button.addEventListener('click', () => {
+          activeFilter = filter;
+          renderFilters();
+          renderNews();
+        });
+        filterBar.appendChild(button);
+      });
+    }
+
+    function renderNews() {
+      newsContainer.innerHTML = '';
+      const items = briefingData.cyber_news.filter(item =>
+        activeFilter === 'All' ? true : item.category === activeFilter
+      );
+
+      if (!items.length) {
+        newsContainer.innerHTML = '<div class="empty-state">No stories match this category.</div>';
+        return;
+      }
+
+      items.forEach((story, index) => {
+        const card = document.createElement('article');
+        card.className = 'news-card';
+
+        const detailsId = `details-${slugify(story.title)}-${index}`;
+        const catClass = categoryClass(story.category);
+
+        card.innerHTML = `
+          <div class="news-top">
+            <span class="story-category ${catClass}">${story.category}</span>
+            <span class="story-source">${story.source}</span>
+          </div>
+          <h4>${story.title}</h4>
+          <p class="story-blurb">${story.blurb}</p>
+          <div class="story-actions">
+            <button class="expand-btn" aria-expanded="false" aria-controls="${detailsId}">Expand</button>
+            <a href="${story.link}" target="_blank" rel="noopener noreferrer" class="read-link">Read Original</a>
+          </div>
+          <div id="${detailsId}" class="story-details" hidden>
+            <p>${story.expand_content}</p>
+          </div>
+        `;
+
+        const expandBtn = card.querySelector('.expand-btn');
+        const details = card.querySelector('.story-details');
+        expandBtn.addEventListener('click', () => {
+          const expanded = expandBtn.getAttribute('aria-expanded') === 'true';
+          expandBtn.setAttribute('aria-expanded', String(!expanded));
+          expandBtn.textContent = expanded ? 'Expand' : 'Collapse';
+          details.hidden = expanded;
+        });
+
+        newsContainer.appendChild(card);
+      });
+    }
+
+    function renderDeepDive() {
+      deepDiveTitle.textContent = briefingData.deep_dive.title;
+      deepDiveContent.textContent = briefingData.deep_dive.content;
+      deepDiveSource.textContent = briefingData.deep_dive.source;
+    }
+
+    function severityClass(severity) {
+      const value = (severity || '').toLowerCase();
+      if (value === 'critical') return 'sev-critical';
+      if (value === 'high') return 'sev-high';
+      if (value === 'medium') return 'sev-medium';
+      return 'sev-low';
+    }
+
+    function renderVulnerabilities() {
+      vulnerabilitiesTable.innerHTML = '';
+      briefingData.vulnerabilities.forEach(vuln => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${vuln.cve_id}</td>
+          <td>${vuln.product}</td>
+          <td><span class="severity-pill ${severityClass(vuln.severity)}">${vuln.severity}</span></td>
+          <td>${vuln.active_exploitation_status}</td>
+        `;
+        vulnerabilitiesTable.appendChild(tr);
+      });
+    }
+
+    function renderRecentHeadlines() {
+      recentHeadlines.innerHTML = '';
+      briefingData.recent_headlines.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>`;
+        recentHeadlines.appendChild(li);
+      });
+    }
+
+    function renderBiggestHacks() {
+      biggestHacks.innerHTML = '';
+      briefingData.biggest_hacks.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'hack-card';
+        card.innerHTML = `
+          <div class="hack-header">
+            <span class="severity-pill ${severityClass(item.severity)}">${item.severity}</span>
+            <span class="story-source">${item.source}</span>
+          </div>
+          <h4>${item.title}</h4>
+          <p>${item.brief}</p>
+          <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="read-link">Read Original</a>
+        `;
+        biggestHacks.appendChild(card);
+      });
+    }
+
+    function renderSourceCounts() {
+      sourceCounts.innerHTML = '';
+      briefingData.source_counts.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span>${item.source}</span><strong>${item.count}</strong>`;
+        sourceCounts.appendChild(li);
+      });
+    }
+
+    renderExecutiveSummary();
+    renderFilters();
+    renderNews();
+    renderDeepDive();
+    renderVulnerabilities();
+    renderRecentHeadlines();
+    renderBiggestHacks();
+    renderSourceCounts();
+  </script>
+</body>
+</html>
