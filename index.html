@@ -11,46 +11,43 @@
 </head>
 <body>
   <div class="page-shell">
-    <aside class="sidebar">
+
+    <!-- LEFT SIDEBAR: nav + meta -->
+    <aside class="sidebar-left">
       <div class="brand-block">
-        <div class="eyebrow">PDCB</div>
-        <h1>President's Daily Cybersecurity Briefing</h1>
-        <div class="badge">MSP // INTERNAL</div>
+        <div class="brand-icon">&#9673;</div>
+        <div>
+          <div class="brand-title">PDCB</div>
+          <div class="brand-sub">President's Daily Cybersecurity Briefing</div>
+        </div>
       </div>
 
+      <div class="sidebar-meta">
+        <div class="meta-label">DATE</div>
+        <div id="brief-date" class="meta-value">Loading…</div>
+        <div class="meta-label" style="margin-top:0.75rem">CLASSIFICATION</div>
+        <div class="meta-badge">MSP // INTERNAL</div>
+      </div>
+
+      <div class="meta-label" style="padding:0 1rem;margin-top:1rem">ARCHIVE</div>
+      <select id="archive-select" aria-label="Select archived briefing date">
+        <option value="latest">Latest</option>
+      </select>
+
+      <div class="nav-label">SECTIONS</div>
       <nav class="side-nav">
-        <div class="nav-title">Sections</div>
         <a href="#summary">Executive Summary</a>
         <a href="#news">Cyber News</a>
         <a href="#deep-dive">Deep Dive</a>
         <a href="#vulns">Vulnerabilities</a>
-        <a href="#biggest-hacks">Biggest Hacks</a>
-        <a href="#headlines">Headlines</a>
       </nav>
-
-      <div class="meta-card">
-        <div class="meta-label">Brief Date</div>
-        <div id="brief-date" class="meta-value">Loading…</div>
-      </div>
-
-      <div class="meta-card">
-        <div class="meta-label">Archive</div>
-        <select id="archive-select" aria-label="Select archived briefing date">
-          <option value="latest">Latest</option>
-        </select>
-      </div>
     </aside>
 
-    <main class="content">
-      <header class="hero">
-        <p class="hero-kicker">PDCB — President's Daily Cybersecurity Briefing</p>
-        <h2 id="brief-title">Loading briefing…</h2>
-        <p id="brief-subtitle" class="hero-subtitle">Fetching the latest data set.</p>
-      </header>
-
+    <!-- CENTER: main content -->
+    <main class="content-main">
       <section id="summary" class="panel">
         <div class="section-heading">
-          <span>◆</span>
+          <span class="section-icon">&#9670;</span>
           <h3>Executive Summary</h3>
         </div>
         <div id="executive-summary" class="summary-list"></div>
@@ -58,8 +55,8 @@
 
       <section id="news" class="panel">
         <div class="section-heading section-heading-spread">
-          <div>
-            <span>◈</span>
+          <div style="display:flex;align-items:center;gap:0.5rem">
+            <span class="section-icon">&#9672;</span>
             <h3>Cyber News</h3>
           </div>
           <div id="news-filters" class="pill-row"></div>
@@ -69,7 +66,7 @@
 
       <section id="deep-dive" class="panel">
         <div class="section-heading">
-          <span>◉</span>
+          <span class="section-icon">&#9673;</span>
           <h3>Deep Dive</h3>
         </div>
         <article id="deep-dive-card" class="deep-dive-card"></article>
@@ -77,7 +74,7 @@
 
       <section id="vulns" class="panel">
         <div class="section-heading">
-          <span>⬡</span>
+          <span class="section-icon">&#11041;</span>
           <h3>Vulnerabilities</h3>
         </div>
         <div class="table-wrap">
@@ -97,25 +94,28 @@
         </div>
         <p id="vuln-footnote" class="footnote"></p>
       </section>
+    </main>
 
-      <section id="biggest-hacks" class="panel">
-        <div class="section-heading">
-          <span>⚠</span>
-          <h3>Biggest Hacks</h3>
-        </div>
-        <div id="biggest-hacks-list" class="hacks-list"></div>
-      </section>
-
-      <section id="headlines" class="panel">
-        <div class="section-heading">
-          <span>→</span>
-          <h3>Recent Headlines</h3>
+    <!-- RIGHT SIDEBAR: headlines + hacks -->
+    <aside class="sidebar-right">
+      <div class="sidebar-right-section">
+        <div class="sidebar-right-heading">
+          <span class="sidebar-right-icon">&#8594;</span>
+          RECENT HEADLINES
         </div>
         <div id="headlines-list" class="headlines-list"></div>
-      </section>
-    </main>
-  </div>
+      </div>
 
+      <div class="sidebar-right-section" style="margin-top:1.5rem">
+        <div class="sidebar-right-heading">
+          <span class="sidebar-right-icon warn">&#9651;</span>
+          BIGGEST HACKS
+        </div>
+        <div id="biggest-hacks-list" class="hacks-list"></div>
+      </div>
+    </aside>
+
+  </div>
   <script src="app.js"></script>
 </body>
 </html>
