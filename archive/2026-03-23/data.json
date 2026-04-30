@@ -1,0 +1,139 @@
+{
+  "date": "2026-03-23",
+  "generated_at": "2026-03-23T00:00:00Z",
+  "executive_summary": [
+    "Trivy supply chain attack escalates into self-spreading worm and Kubernetes wiper — MSPs should rotate all CI/CD secrets and audit npm dependencies immediately.",
+    "IRS phishing campaign delivers RMM malware for persistent access — tax season social engineering is active, especially targeting finance and HR teams.",
+    "Russian intelligence targeting Signal and WhatsApp accounts via phishing — account takeover, not encryption break, is the threat vector.",
+    "VoidStealer defeats Chrome's Application-Bound Encryption using debugger trick — browser-stored credentials remain at risk despite new protections.",
+    "54 EDR-killing tools now use BYOVD to disable endpoint security — tamper protection and driver blocklists are essential defenses."
+  ],
+  "cyber_news": [
+    {
+      "id": "trivy-supply-chain-worm",
+      "title": "Trivy Supply Chain Attack Spawns Self-Spreading Worm, Kubernetes Wiper, and npm Backdoors",
+      "category": "Campaign",
+      "summary": "The Trivy open-source vulnerability scanner was compromised twice in under a month, with attackers known as TeamPCP hijacking 75 GitHub Actions tags to deliver a credential-stealing infostealer. The attack escalated dramatically - spawning the self-spreading CanisterWorm across 47 npm packages and deploying a Kubernetes wiper payload that deletes cluster resources.",
+      "expanded": "This is one of the most significant supply chain incidents of 2026. Aqua Security's Trivy scanner - used in millions of CI/CD pipelines for container and code scanning - was backdoored by a group called TeamPCP. In the initial breach, 75 GitHub Actions release tags were hijacked to push malicious binaries that exfiltrated CI/CD secrets including cloud provider tokens, GitHub PATs, and Kubernetes credentials. The blast radius widened considerably: researchers subsequently found malicious Docker Hub artifacts and a self-propagating worm (CanisterWorm) that spread across 47 npm packages, poisoning developer dependency chains. A particularly alarming payload targeted Kubernetes environments with a wiper designed to delete cluster resources - a destructive capability rarely seen in supply chain attacks.",
+      "sources": [
+        {"name": "TheHackerNews", "url": "https://thehackernews.com/2026/03/trivy-hack-spreads-infostealer-via.html"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/trivy-vulnerability-scanner-breach-pushed-infostealer-via-github-actions/"},
+        {"name": "CSO Online", "url": "https://www.csoonline.com/article/4148317/trivy-vulnerability-scanner-backdoored-with-credential-stealer-in-supply-chain-attack.html"}
+      ]
+    },
+    {
+      "id": "irs-phishing-rmm-malware",
+      "title": "IRS Phishing Campaign Hits 29,000 Users, Installs RMM Malware for Persistent Access",
+      "category": "Campaign",
+      "summary": "Microsoft has warned of an active tax-season phishing campaign that has already reached 29,000 users, using fake IRS refund notices and payroll forms to lure victims. Unlike typical credential-harvesters, this campaign delivers remote monitoring and management (RMM) software to establish persistent backdoor access - a technique favored by ransomware precursors.",
+      "expanded": "Tax season represents one of the most reliable social engineering windows of the year, and this campaign is exploiting it with unusual sophistication. Rather than simply stealing credentials, the threat actors are deploying RMM tools - the same category of software MSPs use to remotely manage client endpoints. This technique, sometimes called 'living off the land via legitimate tools,' grants attackers persistent, low-profile access that blends into normal IT activity and evades many endpoint detection rules tuned for known malware signatures.",
+      "sources": [
+        {"name": "TheHackerNews", "url": "https://thehackernews.com/2026/03/microsoft-warns-irs-phishing-hits-29000.html"}
+      ]
+    },
+    {
+      "id": "russian-signal-whatsapp-phishing",
+      "title": "FBI Warns Russian Intelligence Targeting Signal and WhatsApp Users in Mass Phishing Campaign",
+      "category": "Threat",
+      "summary": "The FBI has issued a warning that threat actors affiliated with Russian intelligence services are conducting phishing attacks specifically targeting users of encrypted messaging apps including Signal and WhatsApp. The campaign aims to seize control of accounts rather than break encryption - a tactics shift toward account compromise as the attack surface.",
+      "expanded": "End-to-end encryption protects message content in transit, but it cannot protect against an attacker who controls the account itself. Russian intelligence-linked actors have adapted to this reality, launching phishing operations that target the account authentication layer of Signal and WhatsApp rather than attempting to decrypt communications. This includes SIM-swapping attacks, malicious QR codes (the 'linked devices' feature of Signal is a known target), and credential phishing pages mimicking official login flows.",
+      "sources": [
+        {"name": "TheHackerNews", "url": "https://thehackernews.com/2026/03/fbi-warns-russian-hackers-target-signal.html"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/fbi-links-signal-phishing-attacks-to-russian-intelligence-services/"}
+      ]
+    },
+    {
+      "id": "voidstealer-chrome-abe-bypass",
+      "title": "VoidStealer Bypasses Chrome's Application-Bound Encryption Using Debugger Trick",
+      "category": "Campaign",
+      "summary": "A new infostealer called VoidStealer has introduced a novel technique to defeat Chrome's Application-Bound Encryption (ABE) - a security control Google added specifically to stop credential theft from browser storage. The bypass exploits a Chrome debugging interface to extract the master decryption key, unlocking saved passwords, cookies, and credit card data.",
+      "expanded": "Google introduced Application-Bound Encryption in Chrome 127 as a direct response to the infostealer epidemic, binding stored secrets to the application identity to prevent extraction by malicious processes running as the same user. VoidStealer's debugger-based bypass represents the latest escalation in the ongoing cat-and-mouse game between browser security and credential theft tooling.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/voidstealer-malware-steals-chrome-master-key-via-debugger-trick/"},
+        {"name": "CSO Online", "url": "https://www.csoonline.com/article/4148601/chrome-abe-bypass-discovered-new-voidstealer-malware-steals-passwords-and-cookies.html"}
+      ]
+    },
+    {
+      "id": "interlock-ransomware-cisco-firewall-zero-day",
+      "title": "Interlock Ransomware Exploited Cisco Firewall Zero-Day Weeks Before Public Disclosure",
+      "category": "Threat",
+      "summary": "The Interlock ransomware group exploited CVE-2026-20131, a maximum-severity deserialization vulnerability in Cisco Secure Firewall Management Center (FMC), as a zero-day - gaining access to enterprise networks weeks before Cisco disclosed the vulnerability. CISA has added the flaw to its KEV catalog with a deadline that has already passed.",
+      "expanded": "Zero-day exploitation by ransomware actors marks a significant evolution in the threat landscape. Interlock, known for double-extortion attacks, demonstrated the operational capability to discover and weaponize a critical Cisco FMC vulnerability before it was publicly known. The flaw (CVSS 10.0) enables unauthenticated remote code execution on the Cisco FMC, which manages firewall policy for entire enterprise environments.",
+      "sources": [
+        {"name": "DarkReading", "url": "https://www.darkreading.com/threat-intelligence/interlock-ransomware-targets-cisco-enterprise-firewalls"},
+        {"name": "CSO Online", "url": "https://www.csoonline.com/article/4147770/ransomware-group-exploited-cisco-firewall-vulnerability-as-a-zero-day-weeks-before-a-patch-appeared.html"}
+      ]
+    },
+    {
+      "id": "microsoft-zero-trust-ai",
+      "title": "Microsoft Announces Zero Trust for AI Framework with New Assessment Tool and Architecture Guidance",
+      "category": "Hardening",
+      "summary": "Microsoft has unveiled 'Zero Trust for AI,' adding a dedicated AI pillar to its Zero Trust framework with updated reference architecture, enhanced guidance, and a new self-assessment tool. The announcement, timed with RSAC 2026, addresses the security challenges introduced by agentic AI systems that have direct access to enterprise data and APIs.",
+      "expanded": "As organizations deploy AI agents with access to enterprise data stores, CRM systems, cloud APIs, and communication platforms, the traditional network-perimeter and identity-focused Zero Trust controls are insufficient. An AI agent with broad tool-calling permissions represents a new attack surface: prompt injection attacks, tool misuse, and data exfiltration via AI reasoning chains are emergent threat patterns not addressed by existing Zero Trust implementations.",
+      "sources": [
+        {"name": "Microsoft Security Blog", "url": "https://www.microsoft.com/en-us/security/blog/2026/03/19/new-tools-and-guidance-announcing-zero-trust-for-ai/"}
+      ]
+    }
+  ],
+  "deep_dive": {
+    "title": "Trivy Supply Chain Attack: TeamPCP Hijacks 75 GitHub Actions Tags",
+    "content": "The Trivy open-source vulnerability scanner was compromised twice in under a month, with attackers known as TeamPCP hijacking 75 GitHub Actions tags to deliver a credential-stealing infostealer. The attack escalated dramatically - spawning the self-spreading CanisterWorm across 47 npm packages and deploying a Kubernetes wiper payload that deletes cluster resources. This is one of the most significant supply chain incidents of 2026. Aqua Security's Trivy scanner - used in millions of CI/CD pipelines for container and code scanning - was backdoored by a group called TeamPCP. In the initial breach, 75 GitHub Actions release tags were hijacked to push malicious binaries that exfiltrated CI/CD secrets including cloud provider tokens, GitHub PATs, and Kubernetes credentials. The blast radius widened considerably: researchers subsequently found malicious Docker Hub artifacts and a self-propagating worm (CanisterWorm) that spread across 47 npm packages, poisoning developer dependency chains. A particularly alarming payload targeted Kubernetes environments with a wiper designed to delete cluster resources - a destructive capability rarely seen in supply chain attacks. For MSPs managing development pipelines or DevSecOps tooling for clients, action is urgent. Any environment that ran Trivy between the compromise window should be treated as fully compromised: rotate all CI/CD secrets, audit GitHub Actions workflows for unauthorized tag references, and scan npm dependency trees for the known malicious packages.",
+    "sources": [
+      {"name": "TheHackerNews", "url": "https://thehackernews.com/2026/03/trivy-hack-spreads-infostealer-via.html"},
+      {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/trivy-vulnerability-scanner-breach-pushed-infostealer-via-github-actions/"},
+      {"name": "CSO Online", "url": "https://www.csoonline.com/article/4148317/trivy-vulnerability-scanner-backdoored-with-credential-stealer-in-supply-chain-attack.html"}
+    ]
+  },
+  "biggest_hacks": [
+    {
+      "title": "Trivy / Aqua Security Supply Chain Breach — CI/CD Secrets and npm Ecosystem Compromised",
+      "link": "https://thehackernews.com/2026/03/trivy-hack-spreads-infostealer-via.html",
+      "source": "TheHackerNews",
+      "severity": "Critical",
+      "summary": "The Trivy open-source vulnerability scanner was backdoored by the TeamPCP group. Stage one hijacked 75 GitHub Actions release tags. Stage two spawned CanisterWorm across 47 npm packages."
+    },
+    {
+      "title": "Interlock Ransomware Exploited Cisco Firewall Zero-Day",
+      "link": "https://www.darkreading.com/threat-intelligence/interlock-ransomware-targets-cisco-enterprise-firewalls",
+      "source": "DarkReading",
+      "severity": "Critical",
+      "summary": "Interlock ransomware group exploited CVE-2026-20131 in Cisco Secure Firewall Management Center as a zero-day weeks before public disclosure."
+    },
+    {
+      "title": "Beast Gang Ransomware OpSec Failure Exposes Server",
+      "link": "https://www.darkreading.com/threat-intelligence/opsec-beast-gang-exposes-ransomware-server",
+      "source": "DarkReading",
+      "severity": "High",
+      "summary": "Operational security failure by the Beast ransomware gang exposed their central cloud server, revealing backup-destruction TTPs."
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "cve": "CVE-2026-20131",
+      "product": "Cisco Secure Firewall Management Center (FMC)",
+      "severity": "Critical",
+      "description": "Maximum-severity deserialization vulnerability enabling unauthenticated RCE. Exploited by Interlock ransomware as a zero-day.",
+      "active_exploitation": true,
+      "source": "CISA KEV"
+    }
+  ],
+  "recent_headlines": [
+    {"title": "Trivy Supply Chain Attack Spawns Self-Spreading Worm", "link": "https://thehackernews.com/2026/03/trivy-hack-spreads-infostealer-via.html", "source": "TheHackerNews"},
+    {"title": "IRS Phishing Campaign Hits 29,000 Users", "link": "https://thehackernews.com/2026/03/microsoft-warns-irs-phishing-hits-29000.html", "source": "TheHackerNews"},
+    {"title": "FBI Warns Russian Intelligence Targeting Signal and WhatsApp", "link": "https://thehackernews.com/2026/03/fbi-warns-russian-hackers-target-signal.html", "source": "TheHackerNews"},
+    {"title": "VoidStealer Bypasses Chrome's Application-Bound Encryption", "link": "https://www.bleepingcomputer.com/news/security/voidstealer-malware-steals-chrome-master-key-via-debugger-trick/", "source": "BleepingComputer"},
+    {"title": "Interlock Ransomware Exploited Cisco Firewall Zero-Day", "link": "https://www.darkreading.com/threat-intelligence/interlock-ransomware-targets-cisco-enterprise-firewalls", "source": "DarkReading"},
+    {"title": "Microsoft Announces Zero Trust for AI Framework", "link": "https://www.microsoft.com/en-us/security/blog/2026/03/19/new-tools-and-guidance-announcing-zero-trust-for-ai/", "source": "Microsoft Security Blog"},
+    {"title": "AI Tools Dominate RSAC 2026 Innovation Sandbox Finalists", "link": "https://www.darkreading.com/cybersecurity-operations/ai-dominates-rsac-innovation-sandbox", "source": "DarkReading"},
+    {"title": "Google Adds 24-Hour Wait for Unverified App Sideloading", "link": "https://thehackernews.com/2026/03/google-adds-24-hour-wait-for-unverified.html", "source": "TheHackerNews"},
+    {"title": "54 EDR Killers Use BYOVD to Exploit Vulnerable Drivers", "link": "https://thehackernews.com/2026/03/54-edr-killers-use-byovd-to-exploit-34.html", "source": "TheHackerNews"},
+    {"title": "North Korean Fake IT Worker Caught Within 10 Days", "link": "https://www.csoonline.com/article/4148279/behavioral-xdr-and-threat-intel-nab-north-korean-fake-it-worker-within-10-days-of-hire.html", "source": "CSO Online"}
+  ],
+  "source_counts": {
+    "TheHackerNews": 5,
+    "BleepingComputer": 2,
+    "DarkReading": 3,
+    "CSO Online": 2,
+    "Microsoft Security Blog": 1
+  }
+}
