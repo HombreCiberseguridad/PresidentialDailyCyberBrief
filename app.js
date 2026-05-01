@@ -92,12 +92,15 @@ function renderNews(items) {
     const tc = tagClass(item.category);
     const expandId = 'exp-' + idx;
     const hasExpanded = item.expanded && item.expanded.trim().length > 0;
+
     const expandBtn = hasExpanded
-      ? '<button class="expand-btn" data-target="' + expandId + '">Expand ▸</button>'
+      ? '<button class="expand-btn" data-target="' + expandId + '">Read More <i class="chevron">▾</i></button>'
       : '';
     const expandDiv = hasExpanded
       ? '<div class="news-expanded" id="' + expandId + '">' + esc(item.expanded) + '</div>'
       : '';
+
+    const srcs = sourcesHtml(item.sources);
 
     return (
       '<article class="news-card">' +
@@ -108,18 +111,21 @@ function renderNews(items) {
         '<p class="news-summary">' + esc(item.summary) + '</p>' +
         expandBtn +
         expandDiv +
-        '<div class="sources">' + sourcesHtml(item.sources) + '</div>' +
+        (srcs ? '<div class="sources">' + srcs + '</div>' : '') +
       '</article>'
     );
   }).join('');
 
-  // Wire expand buttons
+  // Wire expand buttons after DOM insertion
   els.newsGrid.querySelectorAll('.expand-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const target = document.getElementById(btn.dataset.target);
       if (!target) return;
-      const open = target.classList.toggle('open');
-      btn.textContent = open ? 'Collapse ▴' : 'Expand ▸';
+      const isOpen = target.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.innerHTML = isOpen
+        ? 'Collapse <i class="chevron">▾</i>'
+        : 'Read More <i class="chevron">▾</i>';
     });
   });
 }
