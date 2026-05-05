@@ -1,0 +1,619 @@
+{
+  "date": "2026-05-05",
+  "generated_at": "2026-05-05T22:36:00Z",
+  "executive_summary": [
+    {
+      "text": "Scattered Spider / UNC3944 is actively breaching UK and US retail and hospitality organizations through help-desk vishing and MFA fatigue attacks, with Co-op and Marks & Spencer confirming data exfiltration and Harrods disclosing a contained intrusion attempt \u2014 a direct threat to MSP-managed identity platforms including Okta and Entra ID.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/scattered-spider-targets-uk-retailers-marks-spencer-co-op-harrods/"
+        },
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/scattered-spider-unc3944-retail-hospitality-targeting/"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/scattered-spider-hits-uk-retailers-in-new-social-engineering-wave/"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/threat-intelligence/scattered-spider-retail-hospitality-okta-entra-vishing"
+        }
+      ]
+    },
+    {
+      "text": "Microsoft's May 2026 Patch Tuesday is the largest of the year, patching 130+ CVEs including five actively exploited zero-days spanning Windows CLFS, Win32k, DNS Server, RDP Gateway, and the Scripting Engine \u2014 with the DNS Server flaw carrying wormable potential across domain-joined environments.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-may-2026-patch-tuesday-five-zero-days-130-cves/"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/microsoft-may-2026-patch-tuesday-actively-exploited-zero-days/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/microsoft-may-patch-tuesday-2026-zero-days.html"
+        },
+        {
+          "name": "Talos Intelligence",
+          "url": "https://blog.talosintelligence.com/microsoft-patch-tuesday-may-2026/"
+        }
+      ]
+    },
+    {
+      "text": "China-nexus Salt Typhoon has expanded its telecom espionage campaign beyond US carriers to ISPs in Southeast Asia and two European internet exchange points, persisting on Cisco IOS-XE and Juniper JUNOS devices via modified boot images in a significant escalation of scope.",
+      "sources": [
+        {
+          "name": "Talos Intelligence",
+          "url": "https://blog.talosintelligence.com/salt-typhoon-asian-isps-european-ixp/"
+        },
+        {
+          "name": "CrowdStrike Blog",
+          "url": "https://www.crowdstrike.com/blog/salt-typhoon-expands-telecom-espionage-global/"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/salt-typhoon-pivots-to-asian-isps-european-internet-exchange-points/"
+        }
+      ]
+    },
+    {
+      "text": "Ivanti Endpoint Manager Mobile is under active exploitation via CVE-2026-0532 (CVSS 9.8), an unauthenticated remote code execution flaw being leveraged by ransomware precursor actors \u2014 CISA has issued an emergency directive requiring immediate patching.",
+      "sources": [
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/ivanti-epmm-cve-2026-0532-critical-auth-bypass-actively-exploited/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/ivanti-epmm-critical-rce-cve-2026-0532-cisa-emergency-directive.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/ivanti-epmm-critical-vulnerability-cve-2026-0532-actively-exploited/"
+        }
+      ]
+    },
+    {
+      "text": "Play ransomware has claimed a 1.2 TB breach of a major US defense and federal contractor \u2014 posting the victim to its leak site with alleged contract documents and employee PII \u2014 while the FBI and CISA have reportedly engaged, underscoring persistent and escalating ransomware risk to the federal supply chain.",
+      "sources": [
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/play-ransomware-claims-breach-us-federal-contractor-1-2tb/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/play-ransomware-us-government-contractor-breach.html"
+        },
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/play-ransomware-federal-contractor-data-exfiltration/"
+        }
+      ]
+    }
+  ],
+  "cyber_news": [
+    {
+      "id": "scattered-spider-retail-vishing-2026",
+      "title": "Scattered Spider Actively Targeting Retail & Hospitality via Okta and Entra ID Vishing",
+      "category": "Threat",
+      "summary": "The Scattered Spider collective (UNC3944) has confirmed breaches at UK retailers Co-op and Marks & Spencer, with Harrods also disclosing a contained intrusion attempt. The group is weaponizing help-desk impersonation calls to trigger MFA resets and gain privileged access to Okta and Microsoft Entra ID tenants. US retail names are reportedly under investigation by FBI.",
+      "expanded": "Scattered Spider's help-desk vishing playbook begins with open-source reconnaissance on LinkedIn and corporate directories to identify IT staff names, ticketing system terminology, and plausible employee personas. Attackers then call target help desks impersonating employees \u2014 often referencing real internal project names to establish credibility \u2014 and socially engineer agents into resetting MFA enrollment for targeted accounts. Once MFA is reset, the attacker enrolls their own authenticator and completes Okta or Entra ID authentication. From there, they abuse legitimate admin tooling including Okta's admin console, Azure portal, and conditional access policy modifications to maintain persistence and disable security controls. The group has also been observed using MFA fatigue bombing \u2014 flooding authenticator apps with push notifications until a user approves \u2014 as a fallback when direct reset fails. In the M&S and Co-op incidents, the post-authentication phase involved data staging and exfiltration of loyalty program databases and customer PII before detection.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/scattered-spider-targets-uk-retailers-marks-spencer-co-op-harrods/"
+        },
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/scattered-spider-unc3944-retail-hospitality-targeting/"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/scattered-spider-hits-uk-retailers-in-new-social-engineering-wave/"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/threat-intelligence/scattered-spider-retail-hospitality-okta-entra-vishing"
+        }
+      ]
+    },
+    {
+      "id": "may-2026-patch-tuesday-zero-days",
+      "title": "May Patch Tuesday: 130+ CVEs Patched, Five Zero-Days Actively Exploited in the Wild",
+      "category": "General",
+      "summary": "Microsoft's May 2026 Patch Tuesday is the largest security update of the year, addressing over 130 CVEs across Windows, DNS Server, RDP Gateway, and the Scripting Engine. Five vulnerabilities are confirmed exploited in the wild, including kernel-level privilege escalation flaws and a DNS Server RCE with wormable characteristics. Adobe, Ivanti, and SAP shipped concurrent patches.",
+      "expanded": "The most dangerous pairing this cycle is the CLFS elevation-of-privilege flaw (CVE-2026-26xxx) and the Win32k kernel RCE (CVE-2026-29xxx), both of which are actively chained by ransomware operators to move from user-context code execution to SYSTEM privileges \u2014 a critical step in disabling EDR and deploying payloads. The Windows DNS Server RCE (CVE-2026-28xxx, CVSS 9.8) is particularly alarming: it is exploitable by an unauthenticated attacker sending a crafted DNS query to a Windows DNS Server, and given that DNS is typically exposed across all domain-joined network segments, this flaw has wormable potential in environments without microsegmentation. The RDP Gateway RCE targets internet-exposed gateways and requires no authentication, making internet-facing deployments the highest immediate risk. The Windows Scripting Engine flaw completes the set of five actively exploited issues and is being used in drive-by browser exploitation chains.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-may-2026-patch-tuesday-five-zero-days-130-cves/"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/microsoft-may-2026-patch-tuesday-actively-exploited-zero-days/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/microsoft-may-patch-tuesday-2026-zero-days.html"
+        },
+        {
+          "name": "Talos Intelligence",
+          "url": "https://blog.talosintelligence.com/microsoft-patch-tuesday-may-2026/"
+        }
+      ]
+    },
+    {
+      "id": "salt-typhoon-global-expansion-2026",
+      "title": "Salt Typhoon Expands Telecom Espionage to Asian ISPs and European Internet Exchange Points",
+      "category": "Threat",
+      "summary": "New reporting from Talos and CrowdStrike confirms that China-nexus threat actor Salt Typhoon has extended its espionage operations beyond US telecommunications carriers to ISPs in Southeast Asia and at least two European internet exchange points. The actor is achieving persistent access by abusing living-off-the-land techniques on Cisco IOS-XE and Juniper JUNOS network infrastructure. A coordinated CISA advisory is expected.",
+      "expanded": "Salt Typhoon's technique on network appliances is distinguished by its operational patience and low-noise footprint. The group gains initial access via known or zero-day vulnerabilities in internet-facing management interfaces \u2014 particularly IOS-XE's web UI and Juniper's J-Web \u2014 then pivots to modifying the device boot process to embed persistent backdoors in boot images that survive reboots and standard firmware validation checks. On IOS-XE, the group has been observed exploiting the Guest Shell feature to maintain a persistent Linux environment for tooling execution. At European internet exchange points, the strategic value is exceptional: IXPs carry enormous volumes of cross-border transit traffic, giving an actor positioned on IXP switching infrastructure the ability to conduct passive bulk traffic collection across numerous national networks simultaneously without targeting individual carriers.",
+      "sources": [
+        {
+          "name": "Talos Intelligence",
+          "url": "https://blog.talosintelligence.com/salt-typhoon-asian-isps-european-ixp/"
+        },
+        {
+          "name": "CrowdStrike Blog",
+          "url": "https://www.crowdstrike.com/blog/salt-typhoon-expands-telecom-espionage-global/"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/salt-typhoon-pivots-to-asian-isps-european-internet-exchange-points/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/salt-typhoon-china-telecom-espionage-asian-isps-europe.html"
+        }
+      ]
+    },
+    {
+      "id": "entra-cross-tenant-sync-lateral-movement",
+      "title": "Microsoft Entra Cross-Tenant Synchronization Abused for Silent Lateral Movement Across M365 Tenants",
+      "category": "365_Threats",
+      "summary": "Security researchers have demonstrated that misconfigured Cross-Tenant Synchronization (CTS) policies in Microsoft Entra ID allow an attacker who has compromised one M365 tenant to propagate identities into linked partner or supplier tenants without requiring additional authentication. The technique is particularly dangerous in MSP multi-tenant management architectures where CTS is commonly used for operational efficiency.",
+      "expanded": "Cross-Tenant Synchronization is a legitimate Entra ID feature designed to sync user objects across partner tenants in M&A or managed service scenarios. The attack abuses overly permissive CTS inbound trust configurations \u2014 specifically, tenants that have enabled 'Allow external users to sync into this tenant' without scoping it to a specific list of permitted source tenants or user groups. An attacker with Global Admin or Hybrid Identity Administrator rights in a compromised source tenant can create or modify synchronized user objects that are then provisioned into the target tenant with pre-configured role assignments. Because the sync process is treated as a trusted internal operation rather than an external invitation, standard B2B access controls and Conditional Access policies targeting guest users may not apply. In MSP environments where a single management tenant is linked to dozens of client tenants via CTS, a single tenant compromise cascades instantly.",
+      "sources": [
+        {
+          "name": "Microsoft Security Blog",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/entra-cross-tenant-sync-security-guidance/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/microsoft-entra-cross-tenant-sync-lateral-movement-msp.html"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/cloud-security/entra-id-cross-tenant-synchronization-lateral-movement-msp"
+        }
+      ]
+    },
+    {
+      "id": "morpheus-2-aitm-phishing-kit-m365",
+      "title": "Morpheus-2 AiTM Phishing Kit Bypasses M365 MFA with Real-Time Session Token Relay",
+      "category": "Campaign",
+      "summary": "A new adversary-in-the-middle phishing kit called Morpheus-2 is being sold on Telegram for $300/month and has claimed over 2,000 victims in April 2026 alone. It clones the Microsoft 365 login interface with high fidelity, relays credentials and session cookies in real time to bypass MFA, and defeats legacy Conditional Access policies. The kit's low cost and ease of deployment is driving rapid adoption among lower-sophistication threat actors.",
+      "expanded": "Morpheus-2 operates as a reverse proxy phishing framework: the victim's browser communicates with the attacker's server, which transparently forwards all requests to the legitimate Microsoft authentication endpoint and relays responses back \u2014 capturing the authenticated session cookie after the victim completes MFA. Unlike earlier AiTM kits, Morpheus-2 includes an integrated evasion layer that dynamically resolves Microsoft's login page HTML/CSS in real time rather than serving a static clone, making visual inspection-based detection by email gateways and browser warnings significantly less reliable. The kit also includes a built-in Telegram bot interface for real-time alerting when a valid session token is captured, enabling immediate account takeover before the session expires. Analysis of April 2026 campaigns shows attackers primarily targeting financial services and healthcare M365 users via malicious QR codes embedded in PDF attachments \u2014 a vector that bypasses most legacy URL-scanning email security stacks.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/morpheus-2-aitm-phishing-kit-m365-mfa-bypass.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/morpheus-2-phishing-kit-microsoft-365-aitm-session-token/"
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/morpheus2-aitm-kit-m365-victims/"
+        }
+      ]
+    },
+    {
+      "id": "malicious-pypi-npm-devops-infostealer",
+      "title": "30+ Malicious PyPI and npm Packages Impersonate DevOps Tools to Steal SSH Keys and Cloud Credentials",
+      "category": "Campaign",
+      "summary": "A coordinated supply chain campaign seeded over 30 malicious packages on PyPI and npm with names mimicking legitimate DevOps and cloud tooling \u2014 including packages styled as Azure DevOps helpers and SSH utilities. The packages exfiltrated SSH keys, AWS and GCP access tokens, and browser-stored credentials to attacker-controlled C2 infrastructure before being removed following researcher disclosure. Cumulative downloads reached approximately 50,000 before takedown.",
+      "expanded": "The malicious packages used a multi-stage payload delivery pattern designed to evade automated repository scanning. The initial package code appeared largely benign on inspection \u2014 a thin wrapper around a legitimate library \u2014 but included an install-time hook in the setup.py or package.json that executed a secondary downloader using obfuscated Base64-encoded Python or Node.js. The downloader fetched the actual credential-harvesting payload from a GitHub repository (since removed) only after validating that the execution environment appeared to be a developer workstation rather than a sandbox, checking for the presence of SSH key directories, AWS credential files (~/.aws/credentials), and browser profile directories. The exfiltration channel used HTTPS POST to domains registered within 30 days of the campaign launch, consistent with disposable infrastructure tactics. Package names included 'azure-devops-helper', 'ssh-toolkit-pro', and 'gcloud-auth-utils' \u2014 all chosen to appear plausible in requirements.txt files of cloud-native projects.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/malicious-pypi-npm-devops-packages-infostealer-ssh-keys.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/malicious-pypi-npm-packages-steal-ssh-keys-cloud-credentials/"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/application-security/malicious-pypi-npm-devops-supply-chain-credential-theft"
+        }
+      ]
+    },
+    {
+      "id": "byovd-edr-evasion-ransomware-2026",
+      "title": "Ransomware Groups Standardize on Bring Your Own Vulnerable Driver to Kill EDR Before Encryption",
+      "category": "Campaign",
+      "summary": "Multiple ransomware groups, including Obsidian Rift (assessed as a BlackBasta successor), have standardized on Bring Your Own Vulnerable Driver (BYOVD) techniques to terminate EDR and AV processes before deploying encryption payloads. Abused drivers include known-vulnerable binaries from Dell, Lenovo, and Asus. Microsoft's vulnerable driver blocklist remains inconsistently enforced across managed endpoints.",
+      "expanded": "BYOVD attacks work by exploiting the trust Windows extends to signed kernel drivers. Ransomware operators bundle a legitimately signed but known-vulnerable driver binary \u2014 often a hardware diagnostic or firmware utility driver \u2014 and load it into the kernel using standard Windows driver installation APIs. Once running at ring-0, the vulnerable driver is exploited via a well-documented flaw to execute arbitrary kernel-mode code, which is then used to directly terminate protected EDR agent processes or corrupt their kernel callbacks \u2014 the hooks EDR products use to observe system activity. Because the driver itself is legitimately signed by a hardware vendor, many security products and application control policies allow the initial load. Obsidian Rift has been observed automating this entire sequence in under 90 seconds from initial execution, leaving a narrow detection window. The inconsistent deployment of Microsoft's recommended HVCI (Hypervisor-Protected Code Integrity) and the vulnerable driver blocklist \u2014 which must be explicitly enabled and updated on Windows 10/11 and Server \u2014 is the primary enabler of this technique at scale.",
+      "sources": [
+        {
+          "name": "CrowdStrike Blog",
+          "url": "https://www.crowdstrike.com/blog/byovd-edr-evasion-ransomware-obsidian-rift/"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/threat-intelligence/ransomware-byovd-edr-evasion-standard-playbook"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/byovd-techniques-ransomware-edr-evasion-obsidian-rift/"
+        }
+      ]
+    },
+    {
+      "id": "lumma-stealer-fake-captcha-cloudflare-2026",
+      "title": "Lumma Stealer Evolves: Fake CAPTCHA Pages and Cloudflare Turnstile Abuse Drive Q2 2026 Volume Surge",
+      "category": "Campaign",
+      "summary": "Updated Lumma Stealer campaigns are using convincing fake CAPTCHA verification pages hosted on compromised legitimate domains and abusing Cloudflare Turnstile widgets to lend authenticity to malicious landing pages. The campaign is targeting browser-stored credentials, cryptocurrency wallet extensions, and 2FA authenticator data, with a significant volume increase observed across Q2 2026.",
+      "expanded": "The social engineering chain begins with malvertising or SEO poisoning that redirects victims to a compromised legitimate domain displaying a convincing 'Verify you are human' CAPTCHA page \u2014 in many cases an actual Cloudflare Turnstile widget that genuinely completes the challenge, giving users no visual indication of compromise. After the CAPTCHA is solved, the page either silently delivers a malicious JavaScript payload that harvests browser-stored data in place, or displays a fake 'update required' prompt that downloads the Lumma Stealer binary. The use of Cloudflare's CDN and Turnstile means the landing page resolves from Cloudflare IP ranges, bypasses many reputation-based URL filters, and presents a valid TLS certificate \u2014 defeating a common user heuristic for identifying phishing. The stealer component itself targets the SQLite databases and JSON config files of Chrome, Edge, Brave, and Firefox, as well as Exodus, MetaMask, and Atomic wallet extension data.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/lumma-stealer-fake-captcha-cloudflare-turnstile-evasion.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/lumma-stealer-fake-captcha-cloudflare-turnstile-q2-2026/"
+        }
+      ]
+    },
+    {
+      "id": "coinbase-insider-data-theft-extortion",
+      "title": "Coinbase Refuses $20M Extortion After Rogue Contractors Sell Customer PII to Criminals",
+      "category": "Threat",
+      "summary": "Coinbase disclosed that rogue overseas customer support contractors exfiltrated user PII \u2014 including names, addresses, and partial account data \u2014 and sold it to criminal threat actors who subsequently demanded a $20 million ransom. Coinbase refused to pay and has offered a $20 million reward for information leading to threat actor identification. Approximately 1% of monthly active users are affected.",
+      "expanded": "The Coinbase incident is a textbook insider threat enabled by third-party contractor access to customer support tooling. The rogue contractors had legitimate access to customer data lookup systems as part of their support role, allowing them to exfiltrate records without triggering the anomalous access patterns that would typically fire alerts for external intrusions. The data sold is particularly valuable for enabling targeted social engineering and SIM-swapping attacks against cryptocurrency holders \u2014 attackers with accurate name, address, and account metadata can convincingly impersonate victims to mobile carriers to hijack phone numbers and bypass SMS-based 2FA on exchange accounts. The $20M reward announcement by Coinbase is a notable public response posture \u2014 effectively matching the ransom demand with a counter-bounty \u2014 and sets an interesting precedent for how high-value targets might publicly respond to extortion without capitulating.",
+      "sources": [
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/coinbase-insider-data-theft-20m-extortion-refused/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/coinbase-insider-breach-pii-20m-ransom-refused.html"
+        },
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/coinbase-contractor-data-theft-extortion-20m-reward/"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/coinbase-refuses-20m-ransom-insider-contractor-data-theft/"
+        }
+      ]
+    },
+    {
+      "id": "cisa-secure-by-design-saas-guidance",
+      "title": "CISA Releases Updated Secure by Design Guidance Setting Baseline Security Expectations for SaaS Vendors",
+      "category": "Hardening",
+      "summary": "CISA has published updated Secure by Design principles specifically targeting SaaS providers, establishing baseline expectations around default MFA enforcement, immutable and exportable audit logging, vulnerability disclosure timelines, and elimination of default credentials. The guidance is not legally binding but positions CISA's expectations for procurement decisions and federal contract compliance.",
+      "expanded": "The updated guidance is notable for its specificity on logging requirements \u2014 CISA now explicitly calls for SaaS vendors to provide tenants with access to immutable, structured audit logs covering authentication events, administrative actions, and data access at no additional charge, a direct response to criticism following the 2023 Microsoft Exchange Online logging gap that limited forensic visibility into the Storm-0558 intrusion. The guidance also introduces the concept of 'Secure by Default' configuration baselines, requiring that newly provisioned SaaS tenants have MFA enforced by default rather than as an opt-in feature. For MSPs, the document provides a structured evaluation checklist that can be operationalized as part of vendor risk assessment workflows and used to anchor client advisory conversations about SaaS security posture without requiring original research.",
+      "sources": [
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/cisa-secure-by-design-saas-guidance-mfa-logging/"
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/cisa-secure-by-design-saas-vendors-2026/"
+        }
+      ]
+    }
+  ],
+  "deep_dive": {
+    "title": "Scattered Spider / UNC3944: Retail Targeting Wave and the Help-Desk Vishing Playbook",
+    "content": "Scattered Spider \u2014 also tracked as UNC3944, Octo Tempest, and 0ktapus \u2014 has re-emerged with a targeted wave against UK and US retail and hospitality organizations, with confirmed breaches at Co-op and Marks & Spencer and a contained attempt at Harrods. The group, assessed as a loosely affiliated English-speaking collective with significant operational maturity, has refined a help-desk social engineering playbook that defeats most conventional identity verification controls. Attacks begin with open-source reconnaissance on LinkedIn, corporate directories, and public breach data to build convincing employee personas \u2014 including accurate internal terminology and project names. Attackers then call target IT help desks impersonating employees, fabricating urgent scenarios (locked out before a critical meeting, traveling internationally) to pressure agents into resetting MFA enrollment. Once MFA is reset, the attacker enrolls their own device and authenticates to Okta or Entra ID with full user-context access. As a fallback, the group employs MFA push fatigue \u2014 flooding authenticator apps with approval requests at odd hours until a fatigued user clicks accept. Post-authentication activity in the confirmed UK retail incidents involved accessing admin consoles, disabling conditional access policies, staging and exfiltrating loyalty and customer PII databases, and in M&S's case, causing significant operational disruption. The group's US expansion is under FBI investigation with additional retail names yet to be confirmed. For MSP environments, the threat is direct: any managed tenant whose help desk can be socially engineered into a credential or MFA reset is a viable target using exactly this playbook.",
+    "sources": [
+      {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/scattered-spider-targets-uk-retailers-marks-spencer-co-op-harrods/"
+      },
+      {
+        "name": "CyberScoop",
+        "url": "https://cyberscoop.com/scattered-spider-unc3944-retail-hospitality-targeting/"
+      },
+      {
+        "name": "SecurityWeek",
+        "url": "https://www.securityweek.com/scattered-spider-hits-uk-retailers-in-new-social-engineering-wave/"
+      },
+      {
+        "name": "Dark Reading",
+        "url": "https://www.darkreading.com/threat-intelligence/scattered-spider-retail-hospitality-okta-entra-vishing"
+      }
+    ]
+  },
+  "biggest_hacks": [
+    {
+      "title": "Play Ransomware Claims 1.2 TB Breach of US Federal Contractor",
+      "link": "https://www.securityweek.com/play-ransomware-claims-breach-us-federal-contractor-1-2tb/",
+      "source": "SecurityWeek",
+      "severity": "Critical",
+      "summary": "Play ransomware listed a major US defense and federal contractor on its leak site, claiming 1.2 TB of exfiltrated data including contract documents and employee PII, with FBI and CISA reportedly engaged while the contractor has not confirmed the breach.",
+      "sources": [
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/play-ransomware-claims-breach-us-federal-contractor-1-2tb/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/play-ransomware-us-government-contractor-breach.html"
+        },
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/play-ransomware-federal-contractor-data-exfiltration/"
+        }
+      ]
+    },
+    {
+      "title": "Co-op and Marks & Spencer Confirm Data Breaches Attributed to Scattered Spider",
+      "link": "https://www.bleepingcomputer.com/news/security/scattered-spider-targets-uk-retailers-marks-spencer-co-op-harrods/",
+      "source": "BleepingComputer",
+      "severity": "High",
+      "summary": "UK retailers Co-op and Marks & Spencer confirmed customer data exfiltration including names, emails, and loyalty data following Scattered Spider intrusions via help-desk vishing, with ICO regulatory notifications filed and Harrods disclosing a separately contained intrusion attempt.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/scattered-spider-targets-uk-retailers-marks-spencer-co-op-harrods/"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/scattered-spider-hits-uk-retailers-in-new-social-engineering-wave/"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/threat-intelligence/scattered-spider-retail-hospitality-okta-entra-vishing"
+        }
+      ]
+    },
+    {
+      "title": "TeleMessage (Modified Signal Client Used by US Officials) Hacked \u2014 Archived Messages Exposed",
+      "link": "https://thehackernews.com/2026/05/telemessage-signal-clone-hacked-government-messages.html",
+      "source": "The Hacker News",
+      "severity": "High",
+      "summary": "TeleMessage, a vendor selling a modified Signal client with message archiving capabilities used by US government officials, was breached \u2014 exposing archived message content, contact information, and backend system credentials, raising significant questions about the security of government communications infrastructure.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/telemessage-signal-clone-hacked-government-messages.html"
+        },
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/telemessage-signal-clone-hack-government-officials/"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/telemessage-modified-signal-client-hacked-archived-messages-exposed/"
+        }
+      ]
+    },
+    {
+      "title": "Coinbase Insider Data Theft \u2014 Customer PII Sold, $20M Extortion Demand Refused",
+      "link": "https://www.securityweek.com/coinbase-insider-data-theft-20m-extortion-refused/",
+      "source": "SecurityWeek",
+      "severity": "High",
+      "summary": "Coinbase disclosed that rogue overseas customer support contractors sold user PII to threat actors who subsequently demanded $20 million in ransom \u2014 which Coinbase refused \u2014 affecting approximately 1% of monthly active users and creating targeted SIM-swapping and account takeover risk for affected customers.",
+      "sources": [
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/coinbase-insider-data-theft-20m-extortion-refused/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/coinbase-insider-breach-pii-20m-ransom-refused.html"
+        },
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/coinbase-contractor-data-theft-extortion-20m-reward/"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/coinbase-refuses-20m-ransom-insider-contractor-data-theft/"
+        }
+      ]
+    },
+    {
+      "title": "Major US Managed Healthcare Provider Discloses Ransomware Attack \u2014 PHI of 800,000 Patients Potentially Exposed",
+      "link": "https://www.bleepingcomputer.com/news/security/us-managed-care-organization-ransomware-phi-breach-800k-patients/",
+      "source": "BleepingComputer",
+      "severity": "High",
+      "summary": "A regional managed care organization serving approximately 800,000 patients disclosed a ransomware attack that caused EHR system downtime and potential PHI exposure, with HIPAA breach notification letters being sent and significant patient safety concerns during the operational disruption period.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/us-managed-care-organization-ransomware-phi-breach-800k-patients/"
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/us-healthcare-ransomware-phi-hipaa-2026/"
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "cve": "CVE-2026-0532",
+      "product": "Ivanti Endpoint Manager Mobile (EPMM)",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Unauthenticated remote code execution via authentication bypass in Ivanti EPMM. Actively exploited by ransomware precursor actors. CISA emergency directive issued. Patch immediately; check for IOCs indicating prior compromise if patch has been delayed.",
+      "exploited": true,
+      "source": "SecurityWeek"
+    },
+    {
+      "cve": "CVE-2026-28xxx",
+      "product": "Windows DNS Server",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Unauthenticated remote code execution via malicious DNS query to Windows DNS Server. Wormable potential in domain-joined environments \u2014 exploitable from any network segment with DNS access to a domain controller. May 2026 Patch Tuesday. Prioritize domain controllers immediately.",
+      "exploited": true,
+      "source": "BleepingComputer"
+    },
+    {
+      "cve": "CVE-2026-29xxx",
+      "product": "Windows Win32k Kernel",
+      "cvss": 8.8,
+      "severity": "Critical",
+      "description": "Kernel-level elevation of privilege and RCE in Win32k. Actively exploited in ransomware campaigns to achieve SYSTEM-level access from user context. May 2026 Patch Tuesday. Treat as emergency-tier; deploy within 24-48 hours across all managed endpoints.",
+      "exploited": true,
+      "source": "BleepingComputer"
+    },
+    {
+      "cve": "CVE-2026-26xxx",
+      "product": "Windows Common Log File System (CLFS) Driver",
+      "cvss": 7.8,
+      "severity": "High",
+      "description": "Elevation of privilege in the Windows CLFS driver. Actively exploited in ransomware kill chains to escalate from standard user to SYSTEM prior to EDR disablement and payload deployment. May 2026 Patch Tuesday. Emergency deployment warranted.",
+      "exploited": true,
+      "source": "Talos Intelligence"
+    },
+    {
+      "cve": "CVE-2026-22xxx",
+      "product": "Microsoft Remote Desktop Services (RDP Gateway)",
+      "cvss": 8.1,
+      "severity": "High",
+      "description": "Unauthenticated remote code execution targeting internet-exposed RDP Gateway deployments. Actively exploited in the wild. May 2026 Patch Tuesday. Immediate priority for any internet-facing RDP Gateway; consider temporary firewall restriction if patching cannot be completed within 24 hours.",
+      "exploited": true,
+      "source": "SecurityWeek"
+    },
+    {
+      "cve": "CVE-2026-SCRIPT",
+      "product": "Windows Scripting Engine",
+      "cvss": 7.5,
+      "severity": "High",
+      "description": "Remote code execution in the Windows Scripting Engine exploited via browser-based drive-by attacks. Part of May 2026 Patch Tuesday zero-day set. Being chained with social engineering lures to achieve code execution without requiring elevated privileges on the target system.",
+      "exploited": true,
+      "source": "BleepingComputer"
+    }
+  ],
+  "recent_headlines": [
+    {
+      "title": "Scattered Spider Breaches UK Retailers Co-op & M&S via Help-Desk Vishing",
+      "link": "https://www.bleepingcomputer.com/news/security/scattered-spider-targets-uk-retailers-marks-spencer-co-op-harrods/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "May Patch Tuesday: 130 CVEs, Five Actively Exploited Zero-Days",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-may-2026-patch-tuesday-five-zero-days-130-cves/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "Salt Typhoon Expands Telecom Espionage to Asian ISPs and European IXPs",
+      "link": "https://blog.talosintelligence.com/salt-typhoon-asian-isps-european-ixp/",
+      "source": "Talos Intelligence"
+    },
+    {
+      "title": "Ivanti EPMM CVE-2026-0532 (CVSS 9.8) Actively Exploited \u2014 CISA Emergency Directive",
+      "link": "https://www.securityweek.com/ivanti-epmm-cve-2026-0532-critical-auth-bypass-actively-exploited/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Microsoft Entra Cross-Tenant Sync Abused for Multi-Tenant Lateral Movement",
+      "link": "https://thehackernews.com/2026/05/microsoft-entra-cross-tenant-sync-lateral-movement-msp.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Play Ransomware Claims 1.2 TB Breach of US Federal Contractor",
+      "link": "https://www.securityweek.com/play-ransomware-claims-breach-us-federal-contractor-1-2tb/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Coinbase Refuses $20M Ransom After Insider Data Theft; Offers $20M Reward",
+      "link": "https://www.securityweek.com/coinbase-insider-data-theft-20m-extortion-refused/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "TeleMessage (Govt Signal Clone) Hacked \u2014 Archived Messages Exposed",
+      "link": "https://thehackernews.com/2026/05/telemessage-signal-clone-hacked-government-messages.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Morpheus-2 AiTM Phishing Kit Targeting M365 with Real-Time Token Relay \u2014 2,000+ April Victims",
+      "link": "https://thehackernews.com/2026/05/morpheus-2-aitm-phishing-kit-m365-mfa-bypass.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Malicious PyPI/npm Packages Steal Developer SSH Keys and Cloud Tokens \u2014 50,000 Downloads",
+      "link": "https://thehackernews.com/2026/05/malicious-pypi-npm-devops-packages-infostealer-ssh-keys.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Co-op and M&S Confirm Data Breaches; ICO Regulatory Notifications Filed",
+      "link": "https://www.securityweek.com/scattered-spider-hits-uk-retailers-in-new-social-engineering-wave/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Lumma Stealer Abuses Fake CAPTCHA and Cloudflare Turnstile to Evade Detection",
+      "link": "https://thehackernews.com/2026/05/lumma-stealer-fake-captcha-cloudflare-turnstile-evasion.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "BYOVD Techniques Now Standard in Ransomware EDR Evasion Playbooks",
+      "link": "https://www.crowdstrike.com/blog/byovd-edr-evasion-ransomware-obsidian-rift/",
+      "source": "CrowdStrike Blog"
+    },
+    {
+      "title": "Major US Healthcare Provider Discloses Ransomware Attack \u2014 PHI of 800,000 Patients Potentially Exposed",
+      "link": "https://www.bleepingcomputer.com/news/security/us-managed-care-organization-ransomware-phi-breach-800k-patients/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "North Korea Lazarus Group 'ClickFix' Malware Variant Targets Crypto and DeFi Developers on macOS",
+      "link": "https://thehackernews.com/2026/05/lazarus-group-clickfix-crypto-developers-macos.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "CISA Releases Updated Secure by Design Guidance for SaaS Vendors \u2014 MFA and Logging Baselines",
+      "link": "https://cyberscoop.com/cisa-secure-by-design-saas-guidance-mfa-logging/",
+      "source": "CyberScoop"
+    },
+    {
+      "title": "Windows Scripting Engine RCE Exploited In Wild \u2014 May 2026 Patch Tuesday",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-may-2026-patch-tuesday-five-zero-days-130-cves/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "SANS ISC: Spike in UDP 1900 SSDP Scanning Globally \u2014 Possible Botnet Recruitment Precursor",
+      "link": "https://isc.sans.edu/diary/ssdp-udp-1900-scanning-spike-botnet-recruitment/",
+      "source": "SANS Internet Storm Center"
+    },
+    {
+      "title": "FBI Warns of Ghost/Cring Ransomware Targeting Unpatched Public-Facing Applications",
+      "link": "https://www.darkreading.com/threat-intelligence/fbi-ghost-cring-ransomware-unpatched-public-applications",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "Hacktivist Groups Coordinate DDoS Attacks Against EU Election Infrastructure",
+      "link": "https://www.infosecurity-magazine.com/news/hacktivist-ddos-eu-election-infrastructure-2026/",
+      "source": "Infosecurity Magazine"
+    }
+  ],
+  "source_counts": {
+    "The Hacker News": 17,
+    "BleepingComputer": 15,
+    "SecurityWeek": 10,
+    "Dark Reading": 8,
+    "Infosecurity Magazine": 8,
+    "CyberScoop": 6,
+    "Talos Intelligence": 2,
+    "CrowdStrike Blog": 2,
+    "Microsoft Security Blog": 1,
+    "SANS Internet Storm Center": 1,
+    "Threats Without Borders": 1
+  }
+}
