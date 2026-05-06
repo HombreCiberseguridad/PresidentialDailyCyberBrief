@@ -1,9 +1,29 @@
 {
-  "dates": [
-    "2026-05-05",
-    "2026-05-04",
-    "2026-05-01",
-    "2026-04-30",
-    "2026-03-23"
+  "entries": [
+    {
+      "date": "May 5, 2026",
+      "slug": "2026-05-05",
+      "path": "archive/2026-05-05/data.json"
+    },
+    {
+      "date": "May 4, 2026",
+      "slug": "2026-05-04",
+      "path": "archive/2026-05-04/data.json"
+    },
+    {
+      "date": "May 1, 2026",
+      "slug": "2026-05-01",
+      "path": "archive/2026-05-01/data.json"
+    },
+    {
+      "date": "April 30, 2026",
+      "slug": "2026-04-30",
+      "path": "archive/2026-04-30/data.json"
+    },
+    {
+      "date": "March 23, 2026",
+      "slug": "2026-03-23",
+      "path": "archive/2026-03-23/data.json"
+    }
   ]
 }
