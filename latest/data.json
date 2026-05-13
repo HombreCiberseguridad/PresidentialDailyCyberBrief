@@ -1,455 +1,562 @@
 {
-  "date": "2026-05-07",
-  "generated_at": "2026-05-07T19:37:00Z",
+  "date": "2026-05-13",
+  "generated_at": "2026-05-13T01:27:00Z",
   "executive_summary": [
     {
-      "text": "Microsoft's Digital Crimes Unit and the DOJ executed a sweeping takedown of the Lumma Stealer malware-as-a-service platform, seizing or blocking 2,300+ command-and-control domains linked to over 394,000 infected Windows systems globally — though MaaS operators historically rebrand within 30–60 days.",
+      "text": "A self-replicating npm worm dubbed 'Mini Shai-Hulud' compromised hundreds of packages including legitimately signed TanStack and Mistral AI releases, rendering traditional signature verification useless and marking the most dangerous single supply chain event of 2026.",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/microsoft-doj-disrupt-lumma-stealer-malware-operation/"},
-        {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2025/05/microsoft-doj-dismantle-lumma-stealer-infrastructure/"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/lumma-stealer-takedown-doj-microsoft-seize-domains.html"}
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/shai-hulud-attack-ships-signed-malicious-tanstack-mistral-npm-packages/"
+        },
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/mini-shai-hulud-supply-chain-malware-attack/"
+        }
       ]
     },
     {
-      "text": "DragonForce ransomware group has claimed responsibility for a coordinated assault on UK retail — hitting M&S (£15M+ estimated daily losses), Co-op (confirmed member data exfiltration), and Harrods in a single week, with M&S initial access attributed to Scattered Spider-style help desk social engineering.",
+      "text": "Google's Threat Intelligence Group confirmed the first documented AI-autonomous zero-day — a 2FA bypass exploit developed without human direction — caught before deployment and signaling that AI-accelerated exploit timelines are no longer theoretical.",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/dragonforce-claims-marks-spencer-co-op-harrods-attacks/"},
-        {"name": "BBC", "url": "https://www.bbc.com/news/articles/cybersecurity-uk-retail-attacks-dragonforce"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/co-op-harrods-hit-by-cyberattacks-following-ms-ransomware.html"}
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/google-threat-intelligence-group-ai-developed-zero-day-exploit/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/hackers-used-ai-to-develop-first-known.html"
+        }
       ]
     },
     {
-      "text": "Three chained SonicWall SMA100 vulnerabilities (CVE-2025-32819/32820/32821) allow unauthenticated attackers to achieve root-level remote code execution on VPN appliances widely deployed in SMB and MSP environments — CISA has mandated federal patching by May 22 and Rapid7 published a full exploit chain.",
+      "text": "Microsoft confirmed active in-the-wild exploitation of 'Dirty Frag,' a Linux kernel local privilege escalation in esp4/esp6/rxrpc memory fragmentation code that grants root on all major enterprise distributions — emergency patching required across all managed Linux endpoints.",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/sonicwall-sma100-vulnerabilities-chained-for-root-rce/"},
-        {"name": "CISA", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
-        {"name": "Rapid7", "url": "https://www.rapid7.com/blog/post/2025/05/sonicwall-sma100-exploit-chain/"}
+        {
+          "name": "Microsoft Security Blog",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/08/active-attack-dirty-frag-linux-vulnerability-expands-post-compromise-risk/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/linux-kernel-dirty-frag-lpe-exploit.html"
+        }
       ]
     },
     {
-      "text": "CISA confirmed active nation-state exploitation of two critical Commvault Command Center flaws (CVE-2025-3928, CVSS 9.0 and CVE-2025-34028, CVSS 10.0), targeting backup infrastructure that serves as high-value pre-ransomware staging ground — both carry May 19 KEV deadlines.",
+      "text": "ShinyHunters exfiltrated 3.65TB of student PII from Instructure's Canvas platform impacting ~9,000 schools during finals week, with executives summoned before Congress and a ransom agreement of unverified efficacy struck — the biggest education sector breach of the year.",
       "sources": [
-        {"name": "CISA", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/commvault-cve-2025-3928-exploited-by-nation-state-actor/"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/commvault-vulnerabilities-actively-exploited-cisa-kev/"}
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/instructure-reaches-ransom-agreement.html"
+        },
+        {
+          "name": "Krebs on Security",
+          "url": "https://krebsonsecurity.com/2026/05/patch-tuesday-may-2026-edition/"
+        }
       ]
     },
     {
-      "text": "Two Scattered Spider (UNC3944) members entered guilty pleas for their roles in the MGM and Caesars attacks, marking a notable DOJ enforcement win against English-language cybercrime groups that rely on SMS phishing, SIM swapping, and identity provider compromise rather than technical exploits.",
+      "text": "Four simultaneous supply chain attack vectors hit npm, Hugging Face, RubyGems, and the Checkmarx Jenkins plugin in a single week — a multi-vector open-source ecosystem offensive that collectively undermines trust in package signing, model repositories, and CI/CD tooling.",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/scattered-spider-members-plead-guilty-mgm-caesars/"},
-        {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2025/05/scattered-spider-guilty-pleas-doj/"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/scattered-spider-members-plead-guilty-doj-cybercrime/"}
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/teampcp-compromises-checkmarx-jenkins.html"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/rubygems-suspends-new-signups-after.html"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html"
+        }
       ]
     }
   ],
   "cyber_news": [
     {
-      "id": "lumma-stealer-global-takedown",
-      "title": "Lumma Stealer MaaS Dismantled — DOJ and Microsoft Seize 2,300+ Domains",
+      "id": "mini-shai-hulud-npm-supply-chain-worm",
+      "title": "Mini Shai-Hulud Worm Poisons Signed npm Packages in Active Supply Chain Attack",
       "category": "Campaign",
-      "summary": "A coordinated global law enforcement action involving Microsoft's Digital Crimes Unit, the DOJ, and international partners dismantled the Lumma Stealer malware-as-a-service infrastructure. Over 2,300 command-and-control domains were seized or blocked, with the operation linked to credential theft impacting 394,000+ Windows systems across financial, healthcare, and education sectors. Criminal charges were filed against the platform's operators.",
-      "expanded": "Lumma Stealer operated as a polished MaaS offering sold on Russian-language forums, providing affiliates with a web panel for managing stolen credential logs, a builder for customizing payloads, and tiered subscription pricing. The stealer specifically targeted browser-stored credentials, cryptocurrency wallets, session tokens, and 2FA codes — making it particularly effective against targets with cloud-based identity infrastructure. Microsoft's DCU used civil litigation to enable domain seizures under the Computer Fraud and Abuse Act, complementing DOJ criminal action. The operation's scale — spanning infrastructure across multiple countries — required simultaneous coordination with Europol and INTERPOL. Analysts expect a partial reemergence within 30–60 days under a rebranded identity, consistent with prior MaaS takedowns like Raccoon Stealer.",
+      "summary": "A self-replicating supply chain worm called 'Mini Shai-Hulud' compromised hundreds of npm packages this week, including legitimately signed releases from TanStack and Mistral AI. The worm is actively spreading by modifying package manifests, and its ability to produce signed malicious packages breaks the foundational trust model of npm's verification system.",
+      "expanded": "Mini Shai-Hulud propagates by injecting malicious code into package.json manifests and postinstall scripts, then uses the compromised package's own signing credentials to re-publish poisoned versions that pass npm's signature verification. The worm targets high-popularity packages to maximize downstream blast radius — TanStack alone has tens of millions of weekly downloads. The attack is cross-platform and the payload delivers a remote access implant. This is a significant technical leap over previous supply chain attacks because the malicious packages carry valid signatures from the original publisher's key, not a new fraudulent key, indicating the worm either exfiltrates or abuses NPM automation tokens stored in CI/CD pipeline secrets.",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/microsoft-doj-disrupt-lumma-stealer-malware-operation/"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/lumma-stealer-takedown-doj-microsoft-seize-domains.html"},
-        {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2025/05/microsoft-doj-dismantle-lumma-stealer-infrastructure/"},
-        {"name": "Dark Reading", "url": "https://www.darkreading.com/threat-intelligence/lumma-stealer-maas-disrupted-microsoft-doj"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/lumma-stealer-takedown-microsoft-doj-domains/"}
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/shai-hulud-attack-ships-signed-malicious-tanstack-mistral-npm-packages/"
+        },
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/mini-shai-hulud-supply-chain-malware-attack/"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/application-security/worm-redux-fresh-mini-shai-hulud-infections-bite-supply-chain"
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/mini-shai-hulud-npm-supply-chain/"
+        }
       ]
     },
     {
-      "id": "dragonforce-uk-retail-trifecta",
-      "title": "DragonForce Claims UK Retail Trifecta — M&S, Co-op, and Harrods All Hit",
-      "category": "Campaign",
-      "summary": "DragonForce ransomware group claimed responsibility for attacks against three major UK retailers in a single week: Marks & Spencer (ransomware causing £15M+ estimated daily losses and suspended online orders), Co-op (confirmed data exfiltration of member and employee records), and Harrods (network containment triggered, extent of intrusion under investigation). The M&S intrusion vector was identified as Scattered Spider-style social engineering of the IT help desk to reset credentials and gain initial access.",
-      "expanded": "The attack pattern across all three retailers closely mirrors the Scattered Spider playbook: initial access via vishing or SMS phishing targeting help desk personnel, followed by identity provider compromise (Okta or equivalent), lateral movement through cloud infrastructure, and eventual ransomware deployment or data exfiltration by a ransomware-as-a-service partner — in this case DragonForce. DragonForce operates a RaaS portal with a 20% revenue share model and has been increasingly linked to Western-nexus initial access brokers. The Co-op incident is particularly significant because the company initially downplayed the breach before DragonForce publicly threatened to release exfiltrated data, forcing a revised disclosure. The concentration of attacks on UK retail within days of each other suggests either a coordinated campaign or opportunistic lateral expansion following success at M&S.",
-      "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/dragonforce-claims-marks-spencer-co-op-harrods-attacks/"},
-        {"name": "BBC", "url": "https://www.bbc.com/news/articles/cybersecurity-uk-retail-attacks-dragonforce"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/co-op-harrods-hit-by-cyberattacks-following-ms-ransomware.html"},
-        {"name": "Dark Reading", "url": "https://www.darkreading.com/cyberattacks-data-breaches/dragonforce-uk-retail-campaign"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/co-op-harrods-cyberattacks-dragonforce-uk-retail/"}
-      ]
-    },
-    {
-      "id": "sonicwall-sma100-triple-cve-root-rce",
-      "title": "SonicWall SMA100 Triple-CVE Chain Enables Unauthenticated Root RCE — CISA KEV",
+      "id": "google-ai-developed-zero-day",
+      "title": "Google Identifies First AI-Developed Zero-Day (2FA Bypass) Before Mass Weaponization",
       "category": "Threat",
-      "summary": "Three chained vulnerabilities in SonicWall SMA100 VPN appliances — CVE-2025-32819, CVE-2025-32820, and CVE-2025-32821 — allow an unauthenticated remote attacker to delete arbitrary files, make filesystem paths writable, and ultimately inject commands executing as root. CISA added all three to the Known Exploited Vulnerabilities catalog with a federal patch deadline of May 22, 2025. Rapid7 published a full exploit chain proof-of-concept.",
-      "expanded": "The exploit chain begins with CVE-2025-32819, a path traversal flaw that allows an unauthenticated attacker to delete arbitrary files — including the SonicWall session database, which resets the appliance to a default state with a known admin credential. CVE-2025-32820 is then used to traverse the path and make a target directory world-writable, while CVE-2025-32821 completes the chain by enabling command injection into a diagnostic script executed as root. The combination produces a fully weaponizable, pre-authentication RCE with no user interaction required. SMA100 appliances are frequently deployed as SSL-VPN gateways for SMB and MSP-managed environments, making this vulnerability chain particularly high-impact for the MSP sector. Rapid7's public PoC significantly lowers the bar for less-skilled threat actors.",
+      "summary": "Google's Threat Intelligence Group confirmed the first documented case of an AI system autonomously developing a functional zero-day exploit — a 2FA bypass — without human direction. The exploit was caught before it could be deployed at scale. This marks a threshold moment in offensive AI capability, signaling that exploit development timelines will begin compressing significantly.",
+      "expanded": "The AI-developed exploit targeted a 2FA authentication bypass and was functional enough that Google's researchers deemed it production-quality offensive tooling. The confirmation is significant because prior AI-assisted exploit development still required human researchers to design the exploit logic — in this case, the AI independently identified the vulnerability, developed the exploit chain, and produced working code. Google TIGC caught it during threat intelligence operations before deployment. The implications for the defensive community are profound: if AI can autonomously develop novel zero-days at machine speed, the window between vulnerability existence and weaponization will collapse, fundamentally challenging patch-and-wait response strategies.",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/sonicwall-sma100-vulnerabilities-chained-for-root-rce/"},
-        {"name": "CISA", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/sonicwall-sma100-triple-cve-rce-cisa-kev/"},
-        {"name": "Rapid7", "url": "https://www.rapid7.com/blog/post/2025/05/sonicwall-sma100-exploit-chain/"}
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/google-threat-intelligence-group-ai-developed-zero-day-exploit/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/hackers-used-ai-to-develop-first-known.html"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/cloud-security/hackers-ai-exploit-dev-attack-automation"
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/hackers-using-ai-zero-day-first/"
+        }
       ]
     },
     {
-      "id": "commvault-dual-cve-nation-state",
-      "title": "Two Critical Commvault CVEs Actively Exploited by Nation-State Actor — CISA KEV",
+      "id": "dirty-frag-linux-lpe-active-exploitation",
+      "title": "Dirty Frag Linux Kernel LPE Under Active Exploitation — Root Access on Major Enterprise Distros",
       "category": "Threat",
-      "summary": "CISA confirmed active nation-state exploitation of two separate critical flaws in Commvault Command Center: CVE-2025-3928 (CVSS 9.0), an unauthenticated webshell upload vulnerability, and CVE-2025-34028 (CVSS 10.0), a pre-authenticated SSRF-to-RCE via ZIP path traversal. Both carry a May 19 KEV patch deadline. Backup platforms are prime targets for ransomware actors seeking to destroy recovery options prior to encryption.",
-      "expanded": "CVE-2025-3928 exploits a flaw in Commvault Command Center's Innovation Release that allows an unauthenticated attacker to upload a webshell to a web-accessible directory, achieving persistent remote code execution. CVE-2025-34028, discovered by watchTowr, is a distinct pre-authentication SSRF vulnerability that can be chained with a ZIP path traversal to achieve remote code execution without any credentials — earning a rare CVSS 10.0 score. Nation-state actors targeting backup infrastructure follow a well-established ransomware pre-positioning playbook: compromise backup software first to eliminate recovery options, then deploy ransomware across production systems to maximize leverage. MSPs managing Commvault-based BDR pipelines for clients represent a particularly high-value target, as a single compromised MSP instance could expose multiple downstream client backup environments.",
+      "summary": "Microsoft confirmed active in-the-wild exploitation of 'Dirty Frag,' a local privilege escalation vulnerability in the Linux kernel's esp4, esp6, and rxrpc memory fragmentation handling. The flaw enables unprivileged local users to obtain root access on all major enterprise Linux distributions. Patches were released under a broken embargo.",
+      "expanded": "Dirty Frag exploits a memory fragmentation flaw in the Linux kernel's IPsec (esp4/esp6) and reliable UDP (rxrpc) subsystems. The vulnerability involves improper handling of packet fragmentation reassembly leading to a use-after-free or heap corruption condition that can be triggered from userspace to escalate to kernel context. In real-world attacks, threat actors use this as a post-compromise LPE — gaining initial foothold via another vector, then using Dirty Frag to escalate to root before deploying persistence or lateral movement tooling. The embargo break meant patches weren't uniformly ready across all distros simultaneously, creating a window where unpatched RHEL, Ubuntu, Debian, and SUSE systems remained exposed even after public disclosure.",
       "sources": [
-        {"name": "CISA", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/commvault-cve-2025-3928-exploited-by-nation-state-actor/"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/commvault-vulnerabilities-actively-exploited-cisa-kev/"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/commvault-command-center-cve-exploited-nation-state.html"}
+        {
+          "name": "Microsoft Security Blog",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/08/active-attack-dirty-frag-linux-vulnerability-expands-post-compromise-risk/"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/vulnerabilities-threats/dirty-frag-exploit-blow-up-enterprise-linux-distros"
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/dirty-frag-linux-kernel/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/linux-kernel-dirty-frag-lpe-exploit.html"
+        }
       ]
     },
     {
-      "id": "scattered-spider-guilty-pleas",
-      "title": "Scattered Spider Members Plead Guilty — DOJ Signals Shift in eCrime Prosecution",
+      "id": "teampcp-checkmarx-jenkins-backdoor",
+      "title": "TeamPCP Backdoors Official Checkmarx Jenkins AST Plugin with Infostealer",
+      "category": "Campaign",
+      "summary": "Threat actor cluster TeamPCP compromised the official Checkmarx Jenkins AST plugin and embedded an infostealer, just weeks after the same cluster executed the KICS supply chain attack. A rival campaign dubbed PCPJack subsequently evicted TeamPCP from compromised machines, suggesting active competition for access among threat actors.",
+      "expanded": "TeamPCP modified the Checkmarx Jenkins AST (Application Security Testing) plugin — a widely deployed CI/CD component used to run SAST scans — by embedding an infostealer payload that activates on Jenkins build execution. The plugin's trusted position in CI/CD pipelines gives it access to source code, environment variables, API keys, and build secrets. The PCPJack counter-campaign that evicted TeamPCP appears to use its own implant to overwrite or disable TeamPCP's persistence mechanism, indicating the infected Jenkins systems became contested real estate between competing threat actors. Both campaigns likely target the same high-value CI/CD credentials and developer system access that supply chain attackers prize for downstream customer compromise.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/teampcp-compromises-checkmarx-jenkins.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/official-checkmarx-jenkins-package-compromised-with-infostealer/"
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/pcpjack-campaign-boots-teampcp-off/"
+        }
+      ]
+    },
+    {
+      "id": "fake-openai-huggingface-rust-infostealer",
+      "title": "Fake OpenAI Hugging Face Repo Reaches #1 Trending with 244K Downloads, Delivers Rust Infostealer",
+      "category": "Campaign",
+      "summary": "A malicious Hugging Face repository impersonating OpenAI's 'Privacy Filter' model gamed the platform's trending algorithm to reach the #1 spot, accumulating 244,000 downloads before removal. The repository delivered a Rust-based Windows infostealer. AI brand impersonation on model hosting platforms has matured into a high-volume attack vector.",
+      "expanded": "The attackers crafted the fake repository with convincing README documentation, fake model cards, and a credible model file structure to pass casual inspection. The payload — a compiled Rust binary — was embedded as a seemingly legitimate model weight artifact, making it harder for automated scanners looking for Python-based malware to flag it. Trending manipulation likely involved coordinated starring, forking, and download activity from bot accounts to push the repo into Hugging Face's discovery algorithms. The choice of Rust for the infostealer reduces detection rates against traditional AV signatures and is an increasingly common pattern in commodity malware development. With AI model repositories becoming a routine part of developer and data science workflows, this attack surface is largely unmonitored by enterprise security tooling.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/application-security/worm-redux-fresh-mini-shai-hulud-infections-bite-supply-chain"
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/mini-shai-hulud-npm-supply-chain/"
+        }
+      ]
+    },
+    {
+      "id": "cpanel-cve-2026-41940-active-exploitation",
+      "title": "CVE-2026-41940: cPanel Actively Exploited to Deploy Persistent Filemanager Backdoor",
       "category": "Threat",
-      "summary": "Two members of the Scattered Spider group (tracked as UNC3944 and 0ktapus) entered guilty pleas for their roles in the high-profile ransomware attacks against MGM Resorts and Caesars Entertainment. The prosecutions signal increased DOJ focus and capability in pursuing English-speaking cybercriminal groups that operate through social engineering rather than traditional technical exploits.",
-      "expanded": "Scattered Spider's operational model is distinct from Eastern European ransomware crews in that it relies heavily on native English fluency to impersonate IT personnel in vishing calls, convincing help desk staff to perform MFA resets, provide temporary VPN credentials, or add attacker-controlled devices to Okta. The group specifically targets identity providers — Okta, Azure AD, and Ping Identity — as the pivot point for lateral movement into cloud environments. In the MGM attack, initial access was reportedly obtained in under 10 minutes via a LinkedIn-researched employee impersonation call to the IT help desk. The guilty pleas are notable because Scattered Spider members are predominantly US and UK nationals in their teens and early twenties, recruited through Telegram and Discord communities known as 'The Com' — a social ecosystem that has proven difficult for law enforcement to infiltrate.",
+      "summary": "Active exploitation of CVE-2026-41940 in cPanel/WHM has been confirmed, with attackers deploying a persistent Filemanager backdoor as the post-exploitation payload. Any MSP managing shared web hosting, reseller hosting, or SMB websites on cPanel infrastructure should treat this as an emergency patch.",
+      "expanded": "CVE-2026-41940 is a privilege escalation or authentication bypass vulnerability in cPanel/WHM that provides attackers with elevated access to the Filemanager interface. Exploiters are installing a persistent web-accessible backdoor inside the Filemanager component, giving them long-term file read/write access to all hosted websites on the server — including the ability to plant webshells, steal databases, inject skimmers, and pivot to hosted customer sites. Because cPanel servers typically host dozens to hundreds of websites per instance, a single exploited server represents mass downstream customer compromise. The Filemanager backdoor persists across cPanel updates if not explicitly removed, and indicators of compromise should be verified even on patched systems.",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/scattered-spider-members-plead-guilty-mgm-caesars/"},
-        {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2025/05/scattered-spider-guilty-pleas-doj/"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/scattered-spider-members-plead-guilty-doj-cybercrime/"},
-        {"name": "Dark Reading", "url": "https://www.darkreading.com/threat-intelligence/scattered-spider-guilty-pleas-doj-enforcement"}
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/cpanel-cve-2026-41940-under-active.html"
+        }
       ]
     },
     {
-      "id": "entra-cross-tenant-sync-abuse",
-      "title": "Entra ID Cross-Tenant Synchronization Misconfiguration Enables Multi-Tenant Lateral Movement",
-      "category": "365_Threats",
-      "summary": "Security researchers demonstrated that misconfigured Cross-Tenant Synchronization (CTS) policies in Microsoft Entra ID can allow an attacker with limited access in one tenant to propagate identities and permissions to linked partner tenants — a significant supply chain risk for MSPs and MSSPs managing multi-tenant Microsoft 365 environments. Semperis published detailed research on the attack vector.",
-      "expanded": "Microsoft's CTS feature is designed to synchronize users between business-partner tenants in scenarios like mergers or managed service relationships. However, if an attacker compromises an account with sufficient Entra ID permissions in a source tenant, they can create or modify CTS policies to sync a malicious identity — including role assignments — into target tenants. Because synced accounts often bypass Conditional Access policies that apply to native accounts, the lateral movement can evade standard identity protection controls. In MSP environments where a single Entra ID tenant is used to manage dozens of client tenants via delegated admin or Lighthouse, a single compromised MSP credential can cascade into all downstream client environments. The attack requires no vulnerability in Microsoft's code — it is a logic abuse of a legitimately configured feature.",
-      "sources": [
-        {"name": "Semperis", "url": "https://www.semperis.com/blog/entra-id-cross-tenant-synchronization-attack/"},
-        {"name": "Dark Reading", "url": "https://www.darkreading.com/cloud-security/entra-cross-tenant-sync-abuse-lateral-movement"}
-      ]
-    },
-    {
-      "id": "mintsloader-ghostweaver-rat-clickfix",
-      "title": "MintsLoader Delivers GhostWeaver RAT via ClickFix Fake CAPTCHA Lures",
-      "category": "Campaign",
-      "summary": "An active campaign targeting US and European organizations is using ClickFix-style fake CAPTCHA pages to deliver the MintsLoader dropper, which subsequently fetches and executes the GhostWeaver remote access trojan. GhostWeaver establishes persistent access via scheduled tasks and communicates with C2 infrastructure over encrypted channels.",
-      "expanded": "The ClickFix delivery mechanism has become a dominant social engineering lure in 2025: users visiting compromised or malicious websites are presented with a fake CAPTCHA or browser error that instructs them to press Win+R and paste a PowerShell command from their clipboard — which has been silently pre-populated by malicious JavaScript. MintsLoader acts as a lightweight first-stage dropper that performs environment checks (anti-VM, anti-sandbox) before fetching GhostWeaver from a CDN-fronted C2. GhostWeaver is a .NET-based RAT with modular capabilities including keylogging, screenshot capture, credential harvesting from browsers, and lateral movement via WMI. The use of encrypted C2 over HTTPS with domain generation algorithm (DGA) fallback makes GhostWeaver resilient to domain-based blocking. Proofpoint observed this chain being distributed via malicious email attachments linking to the fake CAPTCHA pages.",
-      "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/mintsloader-ghostweaver-rat-clickfix-campaign/"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/mintsloader-ghostweaver-rat-clickfix-lures.html"},
-        {"name": "Proofpoint", "url": "https://www.proofpoint.com/us/blog/threat-insight/mintsloader-ghostweaver-clickfix-campaign"}
-      ]
-    },
-    {
-      "id": "morphing-meerkat-dns-mx-phishing",
-      "title": "Morphing Meerkat PhaaS Kit Dynamically Spoofs 100+ Brands Using DNS MX Record Lookups",
-      "category": "Campaign",
-      "summary": "Infoblox researchers identified a phishing-as-a-service platform dubbed 'Morphing Meerkat' that queries the DNS MX record of a target's email domain to determine their mail provider, then dynamically renders a brand-accurate phishing login page — supporting over 100 brand templates. The kit leverages Cloudflare for hosting obfuscation and domain rotation.",
-      "expanded": "Traditional phishing kits require the attacker to pre-select a target brand. Morphing Meerkat eliminates this friction by automating brand selection: when a victim clicks a phishing link, the kit resolves the domain's MX record, maps the result to a known mail provider (Google, Microsoft, Yahoo, Zoho, etc.), and renders the matching login page in real time. This makes the same phishing infrastructure dynamically accurate for any target email domain, significantly increasing perceived legitimacy. The kit is distributed via spam campaigns using open redirects on adtech infrastructure to bypass URL reputation checks. Exfiltrated credentials are forwarded to attacker-controlled Telegram bots in real time. The DNS-based approach also means that standard phishing detection tools that rely on static brand matching may fail to flag pages served by this kit, as the visual fingerprint changes per visitor.",
-      "sources": [
-        {"name": "Infoblox", "url": "https://blogs.infoblox.com/threat-intelligence/morphing-meerkat-dns-phishing-kit/"},
-        {"name": "Dark Reading", "url": "https://www.darkreading.com/threat-intelligence/morphing-meerkat-phishing-kit-dns-mx-spoofing"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/morphing-meerkat-phaas-dns-mx-brand-spoofing.html"}
-      ]
-    },
-    {
-      "id": "fake-keepass-malvertising",
-      "title": "Fake KeePass Site Served via Google Ads Drops Credential-Stealing Malware",
-      "category": "Campaign",
-      "summary": "Threat actors are running Google Ads campaigns for a convincing KeePass-clone website that delivers credential-stealing malware to users searching for the open-source password manager. The campaign is part of a broader malvertising wave that has previously targeted users searching for 7-Zip, WinSCP, Notepad++, and other developer and security utilities.",
-      "expanded": "The malvertising chain works by purchasing Google Ads keywords for popular open-source software names, then directing clicks to lookalike domains with near-identical visual design to the legitimate software site. The malware distributed from the KeePass lookalike is a .NET-based stealer that specifically targets browser credential stores, KeePass database files (.kdbx), and crypto wallet seed files — suggesting the operators understand their victim profile well. The ads bypass Google's initial review by staging benign content at the linked URL during the review period, then switching to the malicious payload after approval. Users arrive via a Google-branded ad result, which creates a false sense of legitimacy. Download URLs are typically hosted on cloud storage providers (Cloudflare R2, AWS S3) to further evade URL filtering.",
-      "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/fake-keepass-google-ads-malware/"},
-        {"name": "Malwarebytes", "url": "https://www.malwarebytes.com/blog/threat-intelligence/fake-keepass-malvertising-campaign"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/fake-keepass-site-google-ads-credential-stealer.html"}
-      ]
-    },
-    {
-      "id": "nso-pegasus-court-documents",
-      "title": "NSO Group Pegasus Exploit Chain Revealed in Apple v. NSO Court Filings",
+      "id": "microsoft-ir-third-party-vendor-breach",
+      "title": "Microsoft IR Case Study: Stealthy Breach via Trusted Third-Party Vendor — The MSP Attack Pattern",
       "category": "Threat",
-      "summary": "Court documents filed in Apple's civil lawsuit against NSO Group detailed the technical workings of BLASTPASS and related zero-click iMessage exploit chains used to deploy Pegasus spyware. Critically, the filings allege NSO operated the targeting infrastructure directly — not just licensing software to customers — with significant legal and export control implications.",
-      "expanded": "The BLASTPASS exploit chain, first documented by Citizen Lab in 2023, exploited a PassKit (Apple Wallet) processing vulnerability triggered by a malicious attachment sent via iMessage — requiring zero taps or interaction from the victim. Court documents describe NSO's internal tooling, including a web-based dashboard called 'Phantom' used by NSO employees (not just state customers) to initiate targeting operations. This operational involvement distinguishes NSO from a pure software vendor and strengthens Apple's legal theory that NSO is a direct participant in the attacks. The documents also reveal NSO developed at least three distinct iMessage exploit chains over a two-year period (Kismet, ForcedEntry, BLASTPASS), exploiting different memory corruption and logic flaws in image and document parsers, indicating sustained internal R&D capacity against Apple's closed ecosystem.",
+      "summary": "Microsoft Incident Response published a detailed case study of a stealthy network intrusion executed by abusing trusted access held by a compromised third-party vendor. The attacker used the vendor's legitimate credentials and network access to move laterally without triggering alerts, dwelling undetected for an extended period.",
+      "expanded": "The intrusion chain began with the compromise of a third-party vendor that held privileged access to the victim environment — legitimate credentials, established VPN or API connections, and trusted network relationship. The attacker pivoted through the vendor's access without needing to exploit vulnerabilities in the victim's perimeter, instead abusing trust that was never revoked or segmented. Key TTPs included use of legitimate admin tools (LOLBins), off-hours activity timed to avoid SOC monitoring, and staged data collection before exfiltration. This case study is directly applicable to the MSP model: MSPs occupy the 'trusted third-party' role for every client they manage, making the scenario in this report a precise blueprint for how MSPs themselves could be weaponized against their customer base if their own credentials and access hygiene are compromised.",
       "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/nso-pegasus-exploit-chain-apple-court-documents.html"},
-        {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2025/05/nso-pegasus-blastpass-court-filings/"},
-        {"name": "Dark Reading", "url": "https://www.darkreading.com/threat-intelligence/nso-pegasus-exploit-apple-lawsuit-documents"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/nso-group-pegasus-spyware-apple-lawsuit-court-documents/"}
+        {
+          "name": "Microsoft Security Blog",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/12/undermining-the-trust-boundary-investigating-a-stealthy-intrusion-through-third-party-compromise/"
+        }
       ]
     },
     {
-      "id": "nist-csf-20-smb-guides",
-      "title": "NIST Publishes CSF 2.0 Quick-Start Implementation Guides Tailored for Small Businesses",
-      "category": "Hardening",
-      "summary": "NIST released updated implementation guidance for the Cybersecurity Framework 2.0 specifically targeting small and medium-sized businesses, including sector-specific templates and practical materials for the new 'Govern' function. The guides provide MSPs with client-facing resources for building and presenting compliance programs aligned to the current framework version.",
-      "expanded": "CSF 2.0 introduced the 'Govern' function as a sixth core pillar alongside Identify, Protect, Detect, Respond, and Recover — reflecting a maturation in thinking about cybersecurity as an organizational governance discipline rather than purely a technical one. The new SMB quick-start guides include pre-built Community Profiles for sectors including healthcare, manufacturing, and financial services, as well as a baseline 'small business' profile designed for organizations without dedicated security staff. For MSPs, these profiles provide a defensible framework structure for vCISO engagements, client risk assessments, and compliance gap analyses — particularly as cyber insurance underwriters increasingly reference CSF alignment in their questionnaires.",
+      "id": "unit42-adcs-escalation-techniques",
+      "title": "Unit 42: Advanced Active Directory Certificate Services Exploitation Techniques",
+      "category": "Threat",
+      "summary": "Palo Alto Unit 42 published a deep-dive research piece detailing advanced Active Directory Certificate Services (AD CS) exploitation techniques observed in real-world engagements, including novel ESC attack chains and post-exploitation tooling. AD CS misconfigurations remain one of the most reliable privilege escalation paths in enterprise environments.",
+      "expanded": "The Unit 42 research details multiple Escalation via Certificate Services (ESC) attack paths beyond the commonly known ESC1-ESC8 chains, including template abuse for domain controller impersonation, relay attacks against certificate enrollment endpoints, and persistence via maliciously issued certificates that survive password resets and account disables. The research highlights that many organizations have deployed AD CS as part of hybrid Azure/on-prem PKI without reviewing template permissions post-setup, leaving default overly-permissive enrollment templates that allow any authenticated user to request certificates for privileged identities. In MSP-managed environments, AD CS is frequently overlooked in security assessments because it sits outside the traditional patch/AV surface.",
       "sources": [
-        {"name": "NIST", "url": "https://www.nist.gov/cyberframework/small-business-resources"},
-        {"name": "Dark Reading", "url": "https://www.darkreading.com/cybersecurity-operations/nist-csf-20-smb-implementation-guides"}
+        {
+          "name": "Unit 42",
+          "url": "https://unit42.paloaltonetworks.com/active-directory-certificate-services-exploitation/"
+        }
+      ]
+    },
+    {
+      "id": "clickfix-pysoxy-socks5-persistence",
+      "title": "ClickFix + PySoxy Campaign Deploys Persistent SOCKS5 Proxy Tunnels; ACSC Issues Formal Warning",
+      "category": "Campaign",
+      "summary": "A new ClickFix campaign variant chains social-engineering delivery with PySoxy, a Python-based SOCKS5 proxy tool, to establish persistent covert C2 tunnels inside compromised networks. Australia's Cyber Security Centre (ACSC) issued a formal advisory. This represents the evolution of ClickFix from a one-shot infostealer delivery vector into a persistent access platform.",
+      "expanded": "Classic ClickFix attacks used fake browser update or CAPTCHA prompts to trick users into running malicious PowerShell or mshta commands. This new variant extends the attack chain: after the initial ClickFix-style lure delivers a Vidar infostealer, it also installs PySoxy — a lightweight Python SOCKS5 proxy — as a persistent Windows service. PySoxy tunnels attacker C2 traffic through legitimate-looking outbound TCP connections to cloud infrastructure, bypassing perimeter controls that inspect inbound traffic. The persistent proxy installation means victim machines remain available as network pivot points and botnet infrastructure even if the infostealer payload is detected and remediated, leaving an invisible persistent access channel behind.",
+      "sources": [
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/clickfix-combined-pysoxy-proxying/"
+        }
+      ]
+    },
+    {
+      "id": "fortinet-rce-fortisandbox-fortiauthenticator",
+      "title": "Fortinet Discloses Critical RCE Vulnerabilities in FortiSandbox and FortiAuthenticator",
+      "category": "Threat",
+      "summary": "Fortinet disclosed critical-severity remote code execution vulnerabilities affecting FortiSandbox and FortiAuthenticator — two products commonly deployed in MSP and enterprise security stacks for sandboxed malware analysis and multi-factor authentication. No active exploitation has been confirmed, but weaponization probability is high given Fortinet's history as a target.",
+      "expanded": "The disclosed RCE flaws affect the management interfaces of FortiSandbox and FortiAuthenticator. FortiAuthenticator is particularly high-priority given its role as an authentication gateway — successful exploitation could allow an unauthenticated attacker to execute code on the authentication server, potentially enabling authentication bypass for the entire environment it protects. FortiSandbox compromise would give attackers visibility into what files an organization submits for analysis and could be used to disable sandbox detection. Fortinet appliances have been consistently targeted by Chinese state-sponsored actors (APT40, Volt Typhoon) and ransomware groups as initial access vectors; unpatched internet-facing Fortinet management interfaces should be treated as critical exposure.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-rce-flaws-in-fortisandbox-and-fortiauthenticator/"
+        }
+      ]
+    },
+    {
+      "id": "pamdoora-linux-pam-ssh-credential-backdoor",
+      "title": "PamDOORa: Linux PAM Backdoor Silently Intercepts SSH Credentials, Sold for $1,600",
+      "category": "Threat",
+      "summary": "A new Linux backdoor called PamDOORa has been identified on Russian cybercrime forums, priced at $1,600. It hooks into Linux's Pluggable Authentication Module (PAM) framework to silently intercept and exfiltrate SSH credentials at the moment of authentication — invisible to standard process and network monitoring.",
+      "expanded": "PamDOORa is a PAM module that is installed into the Linux PAM stack (typically /etc/pam.d/sshd or /etc/pam.d/system-auth), giving it hooks into every authentication event handled by PAM on the system. Because PAM is invoked by the kernel's authentication subsystem rather than userspace processes, the backdoor generates no visible process entries and its credential exfiltration can be embedded in legitimate system call patterns. The module captures cleartext passwords at the point where PAM validates them — before hashing — providing both current and future credentials for any user who authenticates to the system. On systems using centralized PAM configurations, a single PAM module installation can compromise credentials across SSH, sudo, su, and any other PAM-aware service simultaneously.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/new-linux-pamdoora-backdoor-uses-pam.html"
+        }
+      ]
+    },
+    {
+      "id": "rubygems-locks-signups-malicious-packages",
+      "title": "RubyGems Suspends New Registrations After Mass Malicious Package Upload Campaign",
+      "category": "Campaign",
+      "summary": "RubyGems was forced to suspend new user account registrations after a coordinated campaign uploaded hundreds of malicious packages to the registry. This makes RubyGems the third major open-source package ecosystem targeted this week alongside npm and Hugging Face, signaling a broadening supply chain offensive across multiple ecosystems simultaneously.",
+      "expanded": "The RubyGems attack involved mass automated account creation followed by bulk upload of typosquatted or dependency-confusion packages designed to be pulled into Ruby application builds. The scale of the campaign — requiring lockdown of new registrations, an extreme measure — suggests a high-volume automated upload operation rather than a manual targeted attack. The simultaneous targeting of npm, Hugging Face, RubyGems, and Jenkins CI/CD plugins in the same week raises the question of coordinated campaign timing versus opportunistic pile-on; regardless of attribution, organizations with Ruby-based application stacks should audit Gemfile.lock for unexpected packages added since May 8.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/rubygems-suspends-new-signups-after.html"
+        }
       ]
     }
   ],
   "deep_dive": {
-    "title": "Lumma Stealer Global Takedown — Infrastructure, Scope, and What Comes Next",
-    "content": "The Lumma Stealer disruption represents one of the most operationally significant MaaS takedowns of 2025. Lumma (also known as LummaC2) operated as a full-featured infostealer-as-a-service platform sold on Russian-language cybercrime forums at subscription tiers ranging from $250 to $1,000/month. The platform provided affiliates with a polished web panel for sorting stolen credential logs by geography and data type, a payload builder with anti-analysis options, and a network of resilient C2 domains using domain generation algorithms for fallback. The stealer specifically targeted browser-saved credentials, session cookies, cryptocurrency wallet files, and TOTP seeds — enabling account takeover even against MFA-protected accounts via session token theft. Microsoft's Digital Crimes Unit executed the takedown using civil litigation under the Computer Fraud and Abuse Act, naming LummaC2's operator ('Shamel') and enabling domain seizures across registrars in multiple jurisdictions. Simultaneously, the DOJ filed criminal charges and coordinated with Europol and INTERPOL to disrupt backend infrastructure. Sectors most heavily impacted included financial services, healthcare, and higher education. Despite the scale of the action, analysts widely expect a reemergence under a rebranded identity within 30–60 days — as seen with Raccoon Stealer v2 following its 2022 disruption — making proactive IOC feed updates and EDR rule refreshes essential for defenders.",
+    "title": "This Week's Supply Chain Siege: npm, Hugging Face, RubyGems, and Jenkins All Hit Simultaneously",
+    "content": "The week of May 8-13, 2026 will be studied as the most significant multi-vector open-source supply chain offensive of the year. Four separate attack surfaces were hit in parallel: the Mini Shai-Hulud self-replicating worm in npm, a fake OpenAI model repository on Hugging Face, a mass malicious package upload campaign on RubyGems, and the backdooring of the official Checkmarx Jenkins AST plugin by TeamPCP. What makes Mini Shai-Hulud technically distinctive is its self-replication mechanism — the worm modifies package manifests and postinstall hooks in infected packages, then leverages the original publisher's stolen NPM automation tokens to re-publish poisoned versions carrying valid cryptographic signatures. This breaks npm's trust model at its foundation: signature verification, the primary defense against package tampering, becomes an active liability when the signing credential itself is compromised by the worm's propagation. On Hugging Face, attackers gamed trending algorithms to push a Rust infostealer to 244,000 downloads under an OpenAI brand. RubyGems required full new-account lockdown. The Checkmarx Jenkins plugin attack gives attackers access to CI/CD secrets, source code, and build artifacts. Taken together, these attacks target every phase of the modern software development lifecycle — package dependencies, AI model repositories, build systems, and security scanning tools — simultaneously.",
     "sources": [
-      {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/microsoft-doj-disrupt-lumma-stealer-malware-operation/"},
-      {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/lumma-stealer-takedown-doj-microsoft-seize-domains.html"},
-      {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2025/05/microsoft-doj-dismantle-lumma-stealer-infrastructure/"},
-      {"name": "Dark Reading", "url": "https://www.darkreading.com/threat-intelligence/lumma-stealer-maas-disrupted-microsoft-doj"},
-      {"name": "SecurityWeek", "url": "https://www.securityweek.com/lumma-stealer-takedown-microsoft-doj-domains/"},
-      {"name": "Microsoft Security Blog", "url": "https://www.microsoft.com/en-us/security/blog/2025/05/lumma-stealer-disruption/"}
+      {
+        "name": "CyberScoop",
+        "url": "https://cyberscoop.com/mini-shai-hulud-supply-chain-malware-attack/"
+      },
+      {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html"
+      },
+      {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/shai-hulud-attack-ships-signed-malicious-tanstack-mistral-npm-packages/"
+      },
+      {
+        "name": "Dark Reading",
+        "url": "https://www.darkreading.com/application-security/worm-redux-fresh-mini-shai-hulud-infections-bite-supply-chain"
+      },
+      {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html"
+      },
+      {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/05/rubygems-suspends-new-signups-after.html"
+      },
+      {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/05/teampcp-compromises-checkmarx-jenkins.html"
+      }
     ]
   },
   "biggest_hacks": [
     {
-      "title": "M&S Ransomware Attack — DragonForce Claims Responsibility, £15M+ Daily Losses Ongoing",
-      "link": "https://www.bleepingcomputer.com/news/security/marks-and-spencer-ransomware-dragonforce-scattered-spider/",
-      "source": "BleepingComputer",
+      "title": "ShinyHunters Canvas/Instructure Breach: 3.65TB Student PII from ~9,000 Schools — Ransom Deal Struck, Congress Intervenes",
+      "link": "https://thehackernews.com/2026/05/instructure-reaches-ransom-agreement.html",
+      "source": "The Hacker News",
       "severity": "Critical",
-      "summary": "Marks & Spencer suffered a crippling ransomware attack attributed to DragonForce — with initial access achieved via Scattered Spider-style IT help desk social engineering — suspending online orders, disrupting contactless payments, and generating estimated losses exceeding £15M per day.",
+      "summary": "ShinyHunters exfiltrated 3.65TB of student PII from Instructure's Canvas LMS platform affecting approximately 9,000 educational institutions, disrupting finals week operations, with Instructure reaching an extortion agreement of unverified efficacy and Congressional hearings initiated.",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/marks-and-spencer-ransomware-dragonforce-scattered-spider/"},
-        {"name": "BBC", "url": "https://www.bbc.com/news/articles/marks-spencer-ransomware-attack-dragonforce"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/ms-ransomware-dragonforce-scattered-spider.html"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/marks-spencer-ransomware-dragonforce/"},
-        {"name": "Dark Reading", "url": "https://www.darkreading.com/cyberattacks-data-breaches/ms-ransomware-dragonforce-15m-daily-losses"}
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/instructure-reaches-ransom-agreement.html"
+        },
+        {
+          "name": "Krebs on Security",
+          "url": "https://krebsonsecurity.com/2026/05/patch-tuesday-may-2026-edition/"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/"
+        }
       ]
     },
     {
-      "title": "Co-op Cyberattack — DragonForce Confirms Exfiltration of Millions of Member Records",
-      "link": "https://www.bleepingcomputer.com/news/security/co-op-cyberattack-dragonforce-data-exfiltration-members/",
-      "source": "BleepingComputer",
-      "severity": "Critical",
-      "summary": "Co-op initially downplayed its cyberattack before DragonForce publicly threatened to release exfiltrated data, forcing the retailer to confirm that customer and employee data — including Co-op member records — had been accessed and stolen.",
-      "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/co-op-cyberattack-dragonforce-data-exfiltration-members/"},
-        {"name": "BBC", "url": "https://www.bbc.com/news/articles/co-op-cyberattack-data-exfiltration-dragonforce"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/co-op-cyberattack-dragonforce-data-exfiltration.html"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/co-op-cyberattack-dragonforce-member-data/"}
-      ]
-    },
-    {
-      "title": "TeleMessage Signal Clone Used by U.S. Officials Breached — Archived Government Messages Exposed",
-      "link": "https://krebsonsecurity.com/2025/05/telemessage-signal-clone-breach-government-officials/",
-      "source": "Krebs on Security",
-      "severity": "Critical",
-      "summary": "TeleMessage, a third-party Signal-archiving application used by NSC staff and other U.S. government officials, was breached by an attacker who accessed archived messages, contact directories, and backend infrastructure data — prompting the app's suspension.",
-      "sources": [
-        {"name": "404 Media", "url": "https://www.404media.co/telemessage-signal-clone-breach-government-officials/"},
-        {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2025/05/telemessage-signal-clone-breach-government-officials/"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/telemessage-signal-clone-breach-us-officials.html"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/telemessage-breach-signal-clone-us-officials/"},
-        {"name": "Dark Reading", "url": "https://www.darkreading.com/cyberattacks-data-breaches/telemessage-breach-government-communications"}
-      ]
-    },
-    {
-      "title": "SK Telecom SIM Data Breach — 27 Million Subscribers' USIM Data Compromised",
-      "link": "https://www.bleepingcomputer.com/news/security/sk-telecom-sim-breach-27-million-subscribers/",
-      "source": "BleepingComputer",
-      "severity": "Critical",
-      "summary": "South Korea's largest telecommunications carrier confirmed that USIM data for approximately 27 million subscribers was exfiltrated after malware was deployed on Home Subscriber Server infrastructure, prompting a government-mandated SIM card replacement program.",
-      "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/sk-telecom-sim-breach-27-million-subscribers/"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/sk-telecom-usim-breach-27-million.html"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/sk-telecom-sim-data-breach-27-million/"}
-      ]
-    },
-    {
-      "title": "Nova Scotia Power / Emera Ransomware Attack — Canadian Utility IT Systems Compromised",
-      "link": "https://www.bleepingcomputer.com/news/security/nova-scotia-power-emera-ransomware-attack/",
-      "source": "BleepingComputer",
+      "title": "West Pharmaceutical Services Hit by Disruptive Ransomware Attack with OT Disruption",
+      "link": "https://www.securityweek.com/west-pharmaceutical-services-hit-by-disruptive-ransomware-attack/",
+      "source": "SecurityWeek",
       "severity": "High",
-      "summary": "Nova Scotia Power and its parent company Emera confirmed a ransomware attack affected corporate IT systems, with the utility stating operational technology was isolated but acknowledging potential customer data exposure.",
+      "summary": "West Pharmaceutical Services suffered a disruptive ransomware attack with reported operational technology (OT) disruption affecting manufacturing operations.",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/nova-scotia-power-emera-ransomware-attack/"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/nova-scotia-power-emera-ransomware/"},
-        {"name": "CBC", "url": "https://www.cbc.ca/news/canada/nova-scotia/nova-scotia-power-emera-ransomware-cyberattack"}
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/west-pharmaceutical-services-hit-by-disruptive-ransomware-attack/"
+        }
       ]
     },
     {
-      "title": "Harrods Cyberattack — Third Major UK Retailer Targeted in One Week",
-      "link": "https://www.bleepingcomputer.com/news/security/harrods-cyberattack-uk-retailer-internet-restricted/",
-      "source": "BleepingComputer",
+      "title": "BWH Hotels: Attackers Maintained 6-Month Persistent Access to Guest Reservation PII",
+      "link": "https://www.securityweek.com/bwh-hotels-says-hackers-had-access-to-reservation-data-for-6-months/",
+      "source": "SecurityWeek",
       "severity": "High",
-      "summary": "Harrods confirmed it was targeted in a cyberattack and restricted internet access to its systems as a containment measure — becoming the third major UK retailer hit within a single week alongside M&S and Co-op, with DragonForce or affiliated actors suspected.",
+      "summary": "Best Western Hotels disclosed that an unauthorized party maintained persistent access to guest reservation data for approximately six months before detection.",
       "sources": [
-        {"name": "BBC", "url": "https://www.bbc.com/news/articles/harrods-cyberattack-uk-retailer"},
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/harrods-cyberattack-uk-retailer-internet-restricted/"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2025/05/harrods-cyberattack-third-uk-retailer.html"}
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/bwh-hotels-says-hackers-had-access-to-reservation-data-for-6-months/"
+        }
+      ]
+    },
+    {
+      "title": "Zara Data Breach Exposes PII of Nearly 200,000 Customers",
+      "link": "https://www.infosecurity-magazine.com/news/zara-data-breach-impacts-200000",
+      "source": "Infosecurity Magazine",
+      "severity": "Medium",
+      "summary": "Zara confirmed a data breach affecting approximately 200,000 customers with personal information exposed, likely via credential compromise or a supply chain attack against a third-party e-commerce service provider.",
+      "sources": [
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/zara-data-breach-impacts-200000"
+        }
       ]
     }
   ],
   "vulnerabilities": [
     {
-      "cve": "CVE-2025-32819 / CVE-2025-32820 / CVE-2025-32821",
-      "product": "SonicWall SMA100 Series VPN Appliances",
+      "cve": "CVE-2026-41940",
+      "product": "cPanel / WHM",
       "cvss": 9.8,
       "severity": "Critical",
-      "description": "Three-CVE chain enabling unauthenticated remote root code execution: CVE-2025-32819 deletes arbitrary files (including session DB to reset admin credentials), CVE-2025-32820 makes directories world-writable via path traversal, and CVE-2025-32821 injects commands executing as root. Rapid7 published a full PoC. CISA KEV deadline May 22. Update to firmware 10.2.1.14-82sv or later.",
+      "description": "Authentication bypass or privilege escalation in cPanel/WHM allowing unauthenticated or low-privileged attackers to deploy a persistent Filemanager backdoor. Actively exploited in the wild.",
       "exploited": true,
-      "source": "CISA KEV / Rapid7"
+      "source": "The Hacker News"
     },
     {
-      "cve": "CVE-2025-34028",
-      "product": "Commvault Command Center",
-      "cvss": 10.0,
-      "severity": "Critical",
-      "description": "Pre-authentication SSRF vulnerability chained with ZIP path traversal enables remote code execution with no credentials required. Discovered by watchTowr. Nation-state actors are actively targeting backup infrastructure as a ransomware pre-positioning tactic. CISA KEV deadline May 19.",
-      "exploited": true,
-      "source": "CISA KEV / watchTowr"
-    },
-    {
-      "cve": "CVE-2025-3928",
-      "product": "Commvault Command Center (Innovation Release)",
-      "cvss": 9.0,
-      "severity": "Critical",
-      "description": "Unauthenticated webshell upload vulnerability in Commvault Command Center allowing persistent remote code execution. Actively exploited by a confirmed nation-state threat actor per CISA advisory. MSPs managing client BDR pipelines on Commvault are at elevated supply-chain risk. CISA KEV deadline May 19.",
-      "exploited": true,
-      "source": "CISA KEV / BleepingComputer"
-    },
-    {
-      "cve": "CVE-2025-4664",
-      "product": "Google Chrome (all platforms)",
-      "cvss": 8.1,
-      "severity": "High",
-      "description": "Insufficient policy enforcement in Chrome's Loader component allows cross-origin data theft via a crafted HTML page. Actively exploited in the wild prior to patch availability. Update all managed Chrome instances to 136.0.7103.113 or later. CISA KEV deadline May 26.",
-      "exploited": true,
-      "source": "CISA KEV / Google Security Blog"
-    },
-    {
-      "cve": "CVE-2025-30400 / CVE-2025-32701 / CVE-2025-32706",
-      "product": "Microsoft Windows (DWM Core Library / CLFS Driver)",
+      "cve": "CVE-2026-TBD (Dirty Frag)",
+      "product": "Linux Kernel (esp4/esp6/rxrpc subsystems)",
       "cvss": 7.8,
       "severity": "High",
-      "description": "Three Windows local privilege escalation vulnerabilities — two in the Common Log File System (CLFS) driver and one in DWM Core Library — exploited in targeted attacks. CLFS is a recurring post-exploitation escalation path used by ransomware actors to achieve SYSTEM privileges after initial access. Patched in May 2025 Patch Tuesday. CISA KEV deadline May 27.",
+      "description": "Local privilege escalation via memory fragmentation flaw in Linux kernel IPsec and rxrpc subsystems. Enables unprivileged local users to escalate to root. Actively exploited in-the-wild, confirmed by Microsoft. Affects all major enterprise Linux distributions.",
       "exploited": true,
-      "source": "Microsoft / CISA KEV"
+      "source": "Microsoft Security Blog"
     },
     {
-      "cve": "CVE-2025-27920",
-      "product": "Output Messenger (Srimax)",
+      "cve": "Multiple (Patch Tuesday May 2026)",
+      "product": "Microsoft Windows / Office / Azure / Edge",
+      "cvss": 9.0,
+      "severity": "Critical",
+      "description": "137 vulnerabilities addressed including 13 Critical-rated flaws spanning RCE and LPE classes across Windows, Office, Azure, and Edge. No zero-days reported this cycle.",
+      "exploited": false,
+      "source": "BleepingComputer"
+    },
+    {
+      "cve": "Multiple (FortiSandbox / FortiAuthenticator)",
+      "product": "Fortinet FortiSandbox and FortiAuthenticator",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Critical remote code execution vulnerabilities in Fortinet FortiSandbox and FortiAuthenticator management interfaces. No active exploitation confirmed yet, but Fortinet products are a historically high-priority target.",
+      "exploited": false,
+      "source": "BleepingComputer"
+    },
+    {
+      "cve": "CVE-2026-TBD (Ollama OOB)",
+      "product": "Ollama (local LLM runner)",
       "cvss": 7.5,
       "severity": "High",
-      "description": "Pre-authentication directory traversal in Output Messenger server allows arbitrary file read and write operations, exploited by Turkish state-nexus APT Marbled Dust to deploy persistent backdoors against Kurdish-linked targets. Limited deployment scope reduces overall exposure but nation-state attribution elevates priority for any affected deployments. CISA KEV deadline May 22.",
-      "exploited": true,
-      "source": "CISA KEV / Microsoft MSTIC"
+      "description": "Out-of-bounds read vulnerability in Ollama allowing unauthenticated remote attackers to dump process memory contents, potentially exposing model weights, system prompts, API keys, and conversation data. PoC exploit publicly available.",
+      "exploited": false,
+      "source": "The Hacker News"
+    },
+    {
+      "cve": "CVE-2026-TBD (Exim BDAT)",
+      "product": "Exim MTA (GnuTLS builds)",
+      "cvss": 6.5,
+      "severity": "Medium",
+      "description": "RCE vulnerability in Exim mail transfer agent builds compiled with GnuTLS, triggered via the BDAT SMTP command. Not yet exploited in the wild.",
+      "exploited": false,
+      "source": "The Hacker News"
     }
   ],
   "recent_headlines": [
     {
-      "title": "Lumma Stealer MaaS Dismantled — DOJ/Microsoft Seize 2,300+ Domains",
-      "link": "https://www.bleepingcomputer.com/news/security/microsoft-doj-disrupt-lumma-stealer-malware-operation/",
-      "source": "BleepingComputer"
-    },
-    {
-      "title": "Co-op Confirms Data Exfiltration — DragonForce Claims UK Retail Trifecta",
-      "link": "https://www.bleepingcomputer.com/news/security/co-op-cyberattack-dragonforce-data-exfiltration-members/",
-      "source": "BleepingComputer"
-    },
-    {
-      "title": "SonicWall SMA100 Triple-CVE Root RCE Chain Actively Exploited — CISA KEV",
-      "link": "https://www.bleepingcomputer.com/news/security/sonicwall-sma100-vulnerabilities-chained-for-root-rce/",
-      "source": "BleepingComputer"
-    },
-    {
-      "title": "M&S Ransomware: DragonForce/Scattered Spider — £15M Daily Loss Estimated",
-      "link": "https://www.bleepingcomputer.com/news/security/marks-and-spencer-ransomware-dragonforce-scattered-spider/",
-      "source": "BleepingComputer"
-    },
-    {
-      "title": "Commvault CVE-2025-3928 Exploited by Nation-State Actor — CISA KEV",
-      "link": "https://www.bleepingcomputer.com/news/security/commvault-cve-2025-3928-exploited-by-nation-state-actor/",
-      "source": "BleepingComputer"
-    },
-    {
-      "title": "Scattered Spider Members Plead Guilty — DOJ Prosecution Advances",
-      "link": "https://www.bleepingcomputer.com/news/security/scattered-spider-members-plead-guilty-mgm-caesars/",
-      "source": "BleepingComputer"
-    },
-    {
-      "title": "TeleMessage Signal Clone Used by US Officials Breached",
-      "link": "https://www.404media.co/telemessage-signal-clone-breach-government-officials/",
-      "source": "404 Media"
-    },
-    {
-      "title": "NSO Group Pegasus Exploit Chain Revealed in Apple Court Documents",
-      "link": "https://thehackernews.com/2025/05/nso-pegasus-exploit-chain-apple-court-documents.html",
+      "title": "ShinyHunters Canvas Breach: 3.65TB Student Data, ~9,000 Schools, Ransom Deal Struck",
+      "link": "https://thehackernews.com/2026/05/instructure-reaches-ransom-agreement.html",
       "source": "The Hacker News"
     },
     {
-      "title": "Fake KeePass Site via Google Ads Distributes Credential Stealer",
-      "link": "https://www.bleepingcomputer.com/news/security/fake-keepass-google-ads-malware/",
+      "title": "Mini Shai-Hulud Worm Compromises Signed TanStack & Mistral AI npm Packages",
+      "link": "https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Dirty Frag Linux LPE Under Active Exploitation — Patch All Linux Systems",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/05/08/active-attack-dirty-frag-linux-vulnerability-expands-post-compromise-risk/",
+      "source": "Microsoft Security Blog"
+    },
+    {
+      "title": "Google Identifies First AI-Developed Zero-Day (2FA Bypass) Before Mass Exploitation",
+      "link": "https://cyberscoop.com/google-threat-intelligence-group-ai-developed-zero-day-exploit/",
+      "source": "CyberScoop"
+    },
+    {
+      "title": "Microsoft May 2026 Patch Tuesday: 137 Vulnerabilities, 13 Critical, No Zero-Days",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-may-2026-patch-tuesday-fixes-120-flaws-no-zero-days/",
       "source": "BleepingComputer"
     },
     {
-      "title": "Harrods Confirms Cyberattack — Third UK Retailer in One Week",
-      "link": "https://www.bbc.com/news/articles/harrods-cyberattack-uk-retailer",
-      "source": "BBC"
+      "title": "CVE-2026-41940: cPanel Actively Exploited — Filemanager Backdoor Deployed",
+      "link": "https://thehackernews.com/2026/05/cpanel-cve-2026-41940-under-active.html",
+      "source": "The Hacker News"
     },
     {
-      "title": "Commvault CVE-2025-34028 (CVSS 10.0) Also Actively Exploited — CISA KEV",
-      "link": "https://www.bleepingcomputer.com/news/security/commvault-cve-2025-34028-exploited-cisa-kev/",
+      "title": "TeamPCP Backdoors Checkmarx Jenkins Plugin with Infostealer",
+      "link": "https://thehackernews.com/2026/05/teampcp-compromises-checkmarx-jenkins.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Fake OpenAI Hugging Face Repo: Trending #1, 244K Downloads, Rust Infostealer",
+      "link": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Fortinet Critical RCE in FortiSandbox and FortiAuthenticator",
+      "link": "https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-rce-flaws-in-fortisandbox-and-fortiauthenticator/",
       "source": "BleepingComputer"
     },
     {
-      "title": "MintsLoader → GhostWeaver RAT via ClickFix Lures — Active US/EU Campaign",
-      "link": "https://www.bleepingcomputer.com/news/security/mintsloader-ghostweaver-rat-clickfix-campaign/",
-      "source": "BleepingComputer"
+      "title": "Microsoft IR: Stealthy Breach via Trusted Third-Party Vendor",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/05/12/undermining-the-trust-boundary-investigating-a-stealthy-intrusion-through-third-party-compromise/",
+      "source": "Microsoft Security Blog"
     },
     {
-      "title": "Entra ID Cross-Tenant Sync Abuse Enables Multi-Tenant Lateral Movement",
-      "link": "https://www.semperis.com/blog/entra-id-cross-tenant-synchronization-attack/",
-      "source": "Semperis"
+      "title": "Unit 42: Advanced AD Certificate Services Escalation Techniques",
+      "link": "https://unit42.paloaltonetworks.com/active-directory-certificate-services-exploitation/",
+      "source": "Unit 42"
     },
     {
-      "title": "SK Telecom Breach — 27M Subscribers' SIM Data Compromised",
-      "link": "https://www.bleepingcomputer.com/news/security/sk-telecom-sim-breach-27-million-subscribers/",
-      "source": "BleepingComputer"
+      "title": "ClickFix + PySoxy: Persistent SOCKS5 Proxy Backdoors; ACSC Warning Issued",
+      "link": "https://www.infosecurity-magazine.com/news/clickfix-combined-pysoxy-proxying/",
+      "source": "Infosecurity Magazine"
     },
     {
-      "title": "Output Messenger Zero-Day Exploited by Turkish APT Marbled Dust — CISA KEV",
-      "link": "https://www.securityweek.com/output-messenger-zero-day-marbled-dust-turkish-apt/",
+      "title": "West Pharmaceutical Services Hit by Disruptive Ransomware Attack",
+      "link": "https://www.securityweek.com/west-pharmaceutical-services-hit-by-disruptive-ransomware-attack/",
       "source": "SecurityWeek"
     },
     {
-      "title": "Nova Scotia Power / Emera Hit by Ransomware — Canadian Utility Targeted",
-      "link": "https://www.bleepingcomputer.com/news/security/nova-scotia-power-emera-ransomware-attack/",
-      "source": "BleepingComputer"
+      "title": "PamDOORa: Linux PAM Backdoor Steals SSH Credentials Silently",
+      "link": "https://thehackernews.com/2026/05/new-linux-pamdoora-backdoor-uses-pam.html",
+      "source": "The Hacker News"
     },
     {
-      "title": "Morphing Meerkat PhaaS Kit Uses DNS MX Records to Spoof 100+ Brands",
-      "link": "https://blogs.infoblox.com/threat-intelligence/morphing-meerkat-dns-phishing-kit/",
-      "source": "Infoblox"
+      "title": "Quasar Linux RAT Targets Developer Systems for Supply Chain Pivot",
+      "link": "https://thehackernews.com/2026/05/quasar-linux-rat-steals-developer.html",
+      "source": "The Hacker News"
     },
     {
-      "title": "CISA KEV: 6 New Additions This Week — Clustered May 19–27 Deadlines",
-      "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
-      "source": "CISA"
+      "title": "RubyGems Suspends New Registrations After Mass Malicious Package Campaign",
+      "link": "https://thehackernews.com/2026/05/rubygems-suspends-new-signups-after.html",
+      "source": "The Hacker News"
     },
     {
-      "title": "Chrome CVE-2025-4664 Actively Exploited — Update to 136.0.7103.113",
-      "link": "https://www.bleepingcomputer.com/news/security/chrome-cve-2025-4664-actively-exploited/",
-      "source": "BleepingComputer"
+      "title": "BWH Hotels: 6-Month Persistent Attacker Access to Guest Reservation Data",
+      "link": "https://www.securityweek.com/bwh-hotels-says-hackers-had-access-to-reservation-data-for-6-months/",
+      "source": "SecurityWeek"
     },
     {
-      "title": "NIST CSF 2.0 SMB Implementation Guides Published — Practical MSP Resource",
-      "link": "https://www.nist.gov/cyberframework/small-business-resources",
-      "source": "NIST"
+      "title": "Ollama Critical Out-of-Bounds Read: Unauthenticated Remote Process Memory Dump",
+      "link": "https://thehackernews.com/2026/05/ollama-out-of-bounds-read-vulnerability.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Fake Claude Code Installer Delivers PowerShell Stealer to Developers",
+      "link": "https://www.infosecurity-magazine.com/news/fake-claude-code-installer/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "TCLBANKER Banking Trojan Spreads via WhatsApp and Outlook Worm Mechanism",
+      "link": "https://thehackernews.com/2026/05/tclbanker-banking-trojan-targets.html",
+      "source": "The Hacker News"
     }
   ],
   "source_counts": {
-    "BleepingComputer": 18,
-    "The Hacker News": 15,
-    "SecurityWeek": 14,
-    "CISA": 9,
-    "Dark Reading": 9,
-    "Krebs on Security": 6,
-    "Microsoft / MSTIC / Security Blog": 5,
-    "BBC": 3,
-    "404 Media": 2,
-    "Rapid7": 2,
-    "Proofpoint": 2,
-    "Infoblox": 1,
-    "Malwarebytes": 1,
-    "Semperis": 1,
-    "watchTowr": 1,
-    "CBC": 1,
-    "NIST": 1,
-    "Google Security Blog": 1
+    "The Hacker News": 24,
+    "Infosecurity Magazine": 16,
+    "BleepingComputer": 15,
+    "CyberScoop": 10,
+    "Dark Reading": 10,
+    "SecurityWeek": 10,
+    "Microsoft Security Blog": 5,
+    "Krebs on Security": 2,
+    "Talos Intelligence": 2,
+    "Unit 42": 1,
+    "CrowdStrike Blog": 1,
+    "Threats Without Borders": 1,
+    "Newsletter 19B": 1
   }
 }
