@@ -1,0 +1,562 @@
+{
+  "date": "2026-05-13",
+  "generated_at": "2026-05-13T01:27:00Z",
+  "executive_summary": [
+    {
+      "text": "A self-replicating npm worm dubbed 'Mini Shai-Hulud' compromised hundreds of packages including legitimately signed TanStack and Mistral AI releases, rendering traditional signature verification useless and marking the most dangerous single supply chain event of 2026.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/shai-hulud-attack-ships-signed-malicious-tanstack-mistral-npm-packages/"
+        },
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/mini-shai-hulud-supply-chain-malware-attack/"
+        }
+      ]
+    },
+    {
+      "text": "Google's Threat Intelligence Group confirmed the first documented AI-autonomous zero-day — a 2FA bypass exploit developed without human direction — caught before deployment and signaling that AI-accelerated exploit timelines are no longer theoretical.",
+      "sources": [
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/google-threat-intelligence-group-ai-developed-zero-day-exploit/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/hackers-used-ai-to-develop-first-known.html"
+        }
+      ]
+    },
+    {
+      "text": "Microsoft confirmed active in-the-wild exploitation of 'Dirty Frag,' a Linux kernel local privilege escalation in esp4/esp6/rxrpc memory fragmentation code that grants root on all major enterprise distributions — emergency patching required across all managed Linux endpoints.",
+      "sources": [
+        {
+          "name": "Microsoft Security Blog",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/08/active-attack-dirty-frag-linux-vulnerability-expands-post-compromise-risk/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/linux-kernel-dirty-frag-lpe-exploit.html"
+        }
+      ]
+    },
+    {
+      "text": "ShinyHunters exfiltrated 3.65TB of student PII from Instructure's Canvas platform impacting ~9,000 schools during finals week, with executives summoned before Congress and a ransom agreement of unverified efficacy struck — the biggest education sector breach of the year.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/instructure-reaches-ransom-agreement.html"
+        },
+        {
+          "name": "Krebs on Security",
+          "url": "https://krebsonsecurity.com/2026/05/patch-tuesday-may-2026-edition/"
+        }
+      ]
+    },
+    {
+      "text": "Four simultaneous supply chain attack vectors hit npm, Hugging Face, RubyGems, and the Checkmarx Jenkins plugin in a single week — a multi-vector open-source ecosystem offensive that collectively undermines trust in package signing, model repositories, and CI/CD tooling.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/teampcp-compromises-checkmarx-jenkins.html"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/rubygems-suspends-new-signups-after.html"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html"
+        }
+      ]
+    }
+  ],
+  "cyber_news": [
+    {
+      "id": "mini-shai-hulud-npm-supply-chain-worm",
+      "title": "Mini Shai-Hulud Worm Poisons Signed npm Packages in Active Supply Chain Attack",
+      "category": "Campaign",
+      "summary": "A self-replicating supply chain worm called 'Mini Shai-Hulud' compromised hundreds of npm packages this week, including legitimately signed releases from TanStack and Mistral AI. The worm is actively spreading by modifying package manifests, and its ability to produce signed malicious packages breaks the foundational trust model of npm's verification system.",
+      "expanded": "Mini Shai-Hulud propagates by injecting malicious code into package.json manifests and postinstall scripts, then uses the compromised package's own signing credentials to re-publish poisoned versions that pass npm's signature verification. The worm targets high-popularity packages to maximize downstream blast radius — TanStack alone has tens of millions of weekly downloads. The attack is cross-platform and the payload delivers a remote access implant. This is a significant technical leap over previous supply chain attacks because the malicious packages carry valid signatures from the original publisher's key, not a new fraudulent key, indicating the worm either exfiltrates or abuses NPM automation tokens stored in CI/CD pipeline secrets.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/shai-hulud-attack-ships-signed-malicious-tanstack-mistral-npm-packages/"
+        },
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/mini-shai-hulud-supply-chain-malware-attack/"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/application-security/worm-redux-fresh-mini-shai-hulud-infections-bite-supply-chain"
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/mini-shai-hulud-npm-supply-chain/"
+        }
+      ]
+    },
+    {
+      "id": "google-ai-developed-zero-day",
+      "title": "Google Identifies First AI-Developed Zero-Day (2FA Bypass) Before Mass Weaponization",
+      "category": "Threat",
+      "summary": "Google's Threat Intelligence Group confirmed the first documented case of an AI system autonomously developing a functional zero-day exploit — a 2FA bypass — without human direction. The exploit was caught before it could be deployed at scale. This marks a threshold moment in offensive AI capability, signaling that exploit development timelines will begin compressing significantly.",
+      "expanded": "The AI-developed exploit targeted a 2FA authentication bypass and was functional enough that Google's researchers deemed it production-quality offensive tooling. The confirmation is significant because prior AI-assisted exploit development still required human researchers to design the exploit logic — in this case, the AI independently identified the vulnerability, developed the exploit chain, and produced working code. Google TIGC caught it during threat intelligence operations before deployment. The implications for the defensive community are profound: if AI can autonomously develop novel zero-days at machine speed, the window between vulnerability existence and weaponization will collapse, fundamentally challenging patch-and-wait response strategies.",
+      "sources": [
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/google-threat-intelligence-group-ai-developed-zero-day-exploit/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/hackers-used-ai-to-develop-first-known.html"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/cloud-security/hackers-ai-exploit-dev-attack-automation"
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/hackers-using-ai-zero-day-first/"
+        }
+      ]
+    },
+    {
+      "id": "dirty-frag-linux-lpe-active-exploitation",
+      "title": "Dirty Frag Linux Kernel LPE Under Active Exploitation — Root Access on Major Enterprise Distros",
+      "category": "Threat",
+      "summary": "Microsoft confirmed active in-the-wild exploitation of 'Dirty Frag,' a local privilege escalation vulnerability in the Linux kernel's esp4, esp6, and rxrpc memory fragmentation handling. The flaw enables unprivileged local users to obtain root access on all major enterprise Linux distributions. Patches were released under a broken embargo.",
+      "expanded": "Dirty Frag exploits a memory fragmentation flaw in the Linux kernel's IPsec (esp4/esp6) and reliable UDP (rxrpc) subsystems. The vulnerability involves improper handling of packet fragmentation reassembly leading to a use-after-free or heap corruption condition that can be triggered from userspace to escalate to kernel context. In real-world attacks, threat actors use this as a post-compromise LPE — gaining initial foothold via another vector, then using Dirty Frag to escalate to root before deploying persistence or lateral movement tooling. The embargo break meant patches weren't uniformly ready across all distros simultaneously, creating a window where unpatched RHEL, Ubuntu, Debian, and SUSE systems remained exposed even after public disclosure.",
+      "sources": [
+        {
+          "name": "Microsoft Security Blog",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/08/active-attack-dirty-frag-linux-vulnerability-expands-post-compromise-risk/"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/vulnerabilities-threats/dirty-frag-exploit-blow-up-enterprise-linux-distros"
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/dirty-frag-linux-kernel/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/linux-kernel-dirty-frag-lpe-exploit.html"
+        }
+      ]
+    },
+    {
+      "id": "teampcp-checkmarx-jenkins-backdoor",
+      "title": "TeamPCP Backdoors Official Checkmarx Jenkins AST Plugin with Infostealer",
+      "category": "Campaign",
+      "summary": "Threat actor cluster TeamPCP compromised the official Checkmarx Jenkins AST plugin and embedded an infostealer, just weeks after the same cluster executed the KICS supply chain attack. A rival campaign dubbed PCPJack subsequently evicted TeamPCP from compromised machines, suggesting active competition for access among threat actors.",
+      "expanded": "TeamPCP modified the Checkmarx Jenkins AST (Application Security Testing) plugin — a widely deployed CI/CD component used to run SAST scans — by embedding an infostealer payload that activates on Jenkins build execution. The plugin's trusted position in CI/CD pipelines gives it access to source code, environment variables, API keys, and build secrets. The PCPJack counter-campaign that evicted TeamPCP appears to use its own implant to overwrite or disable TeamPCP's persistence mechanism, indicating the infected Jenkins systems became contested real estate between competing threat actors. Both campaigns likely target the same high-value CI/CD credentials and developer system access that supply chain attackers prize for downstream customer compromise.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/teampcp-compromises-checkmarx-jenkins.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/official-checkmarx-jenkins-package-compromised-with-infostealer/"
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/pcpjack-campaign-boots-teampcp-off/"
+        }
+      ]
+    },
+    {
+      "id": "fake-openai-huggingface-rust-infostealer",
+      "title": "Fake OpenAI Hugging Face Repo Reaches #1 Trending with 244K Downloads, Delivers Rust Infostealer",
+      "category": "Campaign",
+      "summary": "A malicious Hugging Face repository impersonating OpenAI's 'Privacy Filter' model gamed the platform's trending algorithm to reach the #1 spot, accumulating 244,000 downloads before removal. The repository delivered a Rust-based Windows infostealer. AI brand impersonation on model hosting platforms has matured into a high-volume attack vector.",
+      "expanded": "The attackers crafted the fake repository with convincing README documentation, fake model cards, and a credible model file structure to pass casual inspection. The payload — a compiled Rust binary — was embedded as a seemingly legitimate model weight artifact, making it harder for automated scanners looking for Python-based malware to flag it. Trending manipulation likely involved coordinated starring, forking, and download activity from bot accounts to push the repo into Hugging Face's discovery algorithms. The choice of Rust for the infostealer reduces detection rates against traditional AV signatures and is an increasingly common pattern in commodity malware development. With AI model repositories becoming a routine part of developer and data science workflows, this attack surface is largely unmonitored by enterprise security tooling.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/application-security/worm-redux-fresh-mini-shai-hulud-infections-bite-supply-chain"
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/mini-shai-hulud-npm-supply-chain/"
+        }
+      ]
+    },
+    {
+      "id": "cpanel-cve-2026-41940-active-exploitation",
+      "title": "CVE-2026-41940: cPanel Actively Exploited to Deploy Persistent Filemanager Backdoor",
+      "category": "Threat",
+      "summary": "Active exploitation of CVE-2026-41940 in cPanel/WHM has been confirmed, with attackers deploying a persistent Filemanager backdoor as the post-exploitation payload. Any MSP managing shared web hosting, reseller hosting, or SMB websites on cPanel infrastructure should treat this as an emergency patch.",
+      "expanded": "CVE-2026-41940 is a privilege escalation or authentication bypass vulnerability in cPanel/WHM that provides attackers with elevated access to the Filemanager interface. Exploiters are installing a persistent web-accessible backdoor inside the Filemanager component, giving them long-term file read/write access to all hosted websites on the server — including the ability to plant webshells, steal databases, inject skimmers, and pivot to hosted customer sites. Because cPanel servers typically host dozens to hundreds of websites per instance, a single exploited server represents mass downstream customer compromise. The Filemanager backdoor persists across cPanel updates if not explicitly removed, and indicators of compromise should be verified even on patched systems.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/cpanel-cve-2026-41940-under-active.html"
+        }
+      ]
+    },
+    {
+      "id": "microsoft-ir-third-party-vendor-breach",
+      "title": "Microsoft IR Case Study: Stealthy Breach via Trusted Third-Party Vendor — The MSP Attack Pattern",
+      "category": "Threat",
+      "summary": "Microsoft Incident Response published a detailed case study of a stealthy network intrusion executed by abusing trusted access held by a compromised third-party vendor. The attacker used the vendor's legitimate credentials and network access to move laterally without triggering alerts, dwelling undetected for an extended period.",
+      "expanded": "The intrusion chain began with the compromise of a third-party vendor that held privileged access to the victim environment — legitimate credentials, established VPN or API connections, and trusted network relationship. The attacker pivoted through the vendor's access without needing to exploit vulnerabilities in the victim's perimeter, instead abusing trust that was never revoked or segmented. Key TTPs included use of legitimate admin tools (LOLBins), off-hours activity timed to avoid SOC monitoring, and staged data collection before exfiltration. This case study is directly applicable to the MSP model: MSPs occupy the 'trusted third-party' role for every client they manage, making the scenario in this report a precise blueprint for how MSPs themselves could be weaponized against their customer base if their own credentials and access hygiene are compromised.",
+      "sources": [
+        {
+          "name": "Microsoft Security Blog",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/12/undermining-the-trust-boundary-investigating-a-stealthy-intrusion-through-third-party-compromise/"
+        }
+      ]
+    },
+    {
+      "id": "unit42-adcs-escalation-techniques",
+      "title": "Unit 42: Advanced Active Directory Certificate Services Exploitation Techniques",
+      "category": "Threat",
+      "summary": "Palo Alto Unit 42 published a deep-dive research piece detailing advanced Active Directory Certificate Services (AD CS) exploitation techniques observed in real-world engagements, including novel ESC attack chains and post-exploitation tooling. AD CS misconfigurations remain one of the most reliable privilege escalation paths in enterprise environments.",
+      "expanded": "The Unit 42 research details multiple Escalation via Certificate Services (ESC) attack paths beyond the commonly known ESC1-ESC8 chains, including template abuse for domain controller impersonation, relay attacks against certificate enrollment endpoints, and persistence via maliciously issued certificates that survive password resets and account disables. The research highlights that many organizations have deployed AD CS as part of hybrid Azure/on-prem PKI without reviewing template permissions post-setup, leaving default overly-permissive enrollment templates that allow any authenticated user to request certificates for privileged identities. In MSP-managed environments, AD CS is frequently overlooked in security assessments because it sits outside the traditional patch/AV surface.",
+      "sources": [
+        {
+          "name": "Unit 42",
+          "url": "https://unit42.paloaltonetworks.com/active-directory-certificate-services-exploitation/"
+        }
+      ]
+    },
+    {
+      "id": "clickfix-pysoxy-socks5-persistence",
+      "title": "ClickFix + PySoxy Campaign Deploys Persistent SOCKS5 Proxy Tunnels; ACSC Issues Formal Warning",
+      "category": "Campaign",
+      "summary": "A new ClickFix campaign variant chains social-engineering delivery with PySoxy, a Python-based SOCKS5 proxy tool, to establish persistent covert C2 tunnels inside compromised networks. Australia's Cyber Security Centre (ACSC) issued a formal advisory. This represents the evolution of ClickFix from a one-shot infostealer delivery vector into a persistent access platform.",
+      "expanded": "Classic ClickFix attacks used fake browser update or CAPTCHA prompts to trick users into running malicious PowerShell or mshta commands. This new variant extends the attack chain: after the initial ClickFix-style lure delivers a Vidar infostealer, it also installs PySoxy — a lightweight Python SOCKS5 proxy — as a persistent Windows service. PySoxy tunnels attacker C2 traffic through legitimate-looking outbound TCP connections to cloud infrastructure, bypassing perimeter controls that inspect inbound traffic. The persistent proxy installation means victim machines remain available as network pivot points and botnet infrastructure even if the infostealer payload is detected and remediated, leaving an invisible persistent access channel behind.",
+      "sources": [
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/clickfix-combined-pysoxy-proxying/"
+        }
+      ]
+    },
+    {
+      "id": "fortinet-rce-fortisandbox-fortiauthenticator",
+      "title": "Fortinet Discloses Critical RCE Vulnerabilities in FortiSandbox and FortiAuthenticator",
+      "category": "Threat",
+      "summary": "Fortinet disclosed critical-severity remote code execution vulnerabilities affecting FortiSandbox and FortiAuthenticator — two products commonly deployed in MSP and enterprise security stacks for sandboxed malware analysis and multi-factor authentication. No active exploitation has been confirmed, but weaponization probability is high given Fortinet's history as a target.",
+      "expanded": "The disclosed RCE flaws affect the management interfaces of FortiSandbox and FortiAuthenticator. FortiAuthenticator is particularly high-priority given its role as an authentication gateway — successful exploitation could allow an unauthenticated attacker to execute code on the authentication server, potentially enabling authentication bypass for the entire environment it protects. FortiSandbox compromise would give attackers visibility into what files an organization submits for analysis and could be used to disable sandbox detection. Fortinet appliances have been consistently targeted by Chinese state-sponsored actors (APT40, Volt Typhoon) and ransomware groups as initial access vectors; unpatched internet-facing Fortinet management interfaces should be treated as critical exposure.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-rce-flaws-in-fortisandbox-and-fortiauthenticator/"
+        }
+      ]
+    },
+    {
+      "id": "pamdoora-linux-pam-ssh-credential-backdoor",
+      "title": "PamDOORa: Linux PAM Backdoor Silently Intercepts SSH Credentials, Sold for $1,600",
+      "category": "Threat",
+      "summary": "A new Linux backdoor called PamDOORa has been identified on Russian cybercrime forums, priced at $1,600. It hooks into Linux's Pluggable Authentication Module (PAM) framework to silently intercept and exfiltrate SSH credentials at the moment of authentication — invisible to standard process and network monitoring.",
+      "expanded": "PamDOORa is a PAM module that is installed into the Linux PAM stack (typically /etc/pam.d/sshd or /etc/pam.d/system-auth), giving it hooks into every authentication event handled by PAM on the system. Because PAM is invoked by the kernel's authentication subsystem rather than userspace processes, the backdoor generates no visible process entries and its credential exfiltration can be embedded in legitimate system call patterns. The module captures cleartext passwords at the point where PAM validates them — before hashing — providing both current and future credentials for any user who authenticates to the system. On systems using centralized PAM configurations, a single PAM module installation can compromise credentials across SSH, sudo, su, and any other PAM-aware service simultaneously.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/new-linux-pamdoora-backdoor-uses-pam.html"
+        }
+      ]
+    },
+    {
+      "id": "rubygems-locks-signups-malicious-packages",
+      "title": "RubyGems Suspends New Registrations After Mass Malicious Package Upload Campaign",
+      "category": "Campaign",
+      "summary": "RubyGems was forced to suspend new user account registrations after a coordinated campaign uploaded hundreds of malicious packages to the registry. This makes RubyGems the third major open-source package ecosystem targeted this week alongside npm and Hugging Face, signaling a broadening supply chain offensive across multiple ecosystems simultaneously.",
+      "expanded": "The RubyGems attack involved mass automated account creation followed by bulk upload of typosquatted or dependency-confusion packages designed to be pulled into Ruby application builds. The scale of the campaign — requiring lockdown of new registrations, an extreme measure — suggests a high-volume automated upload operation rather than a manual targeted attack. The simultaneous targeting of npm, Hugging Face, RubyGems, and Jenkins CI/CD plugins in the same week raises the question of coordinated campaign timing versus opportunistic pile-on; regardless of attribution, organizations with Ruby-based application stacks should audit Gemfile.lock for unexpected packages added since May 8.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/rubygems-suspends-new-signups-after.html"
+        }
+      ]
+    }
+  ],
+  "deep_dive": {
+    "title": "This Week's Supply Chain Siege: npm, Hugging Face, RubyGems, and Jenkins All Hit Simultaneously",
+    "content": "The week of May 8-13, 2026 will be studied as the most significant multi-vector open-source supply chain offensive of the year. Four separate attack surfaces were hit in parallel: the Mini Shai-Hulud self-replicating worm in npm, a fake OpenAI model repository on Hugging Face, a mass malicious package upload campaign on RubyGems, and the backdooring of the official Checkmarx Jenkins AST plugin by TeamPCP. What makes Mini Shai-Hulud technically distinctive is its self-replication mechanism — the worm modifies package manifests and postinstall hooks in infected packages, then leverages the original publisher's stolen NPM automation tokens to re-publish poisoned versions carrying valid cryptographic signatures. This breaks npm's trust model at its foundation: signature verification, the primary defense against package tampering, becomes an active liability when the signing credential itself is compromised by the worm's propagation. On Hugging Face, attackers gamed trending algorithms to push a Rust infostealer to 244,000 downloads under an OpenAI brand. RubyGems required full new-account lockdown. The Checkmarx Jenkins plugin attack gives attackers access to CI/CD secrets, source code, and build artifacts. Taken together, these attacks target every phase of the modern software development lifecycle — package dependencies, AI model repositories, build systems, and security scanning tools — simultaneously.",
+    "sources": [
+      {
+        "name": "CyberScoop",
+        "url": "https://cyberscoop.com/mini-shai-hulud-supply-chain-malware-attack/"
+      },
+      {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html"
+      },
+      {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/shai-hulud-attack-ships-signed-malicious-tanstack-mistral-npm-packages/"
+      },
+      {
+        "name": "Dark Reading",
+        "url": "https://www.darkreading.com/application-security/worm-redux-fresh-mini-shai-hulud-infections-bite-supply-chain"
+      },
+      {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html"
+      },
+      {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/05/rubygems-suspends-new-signups-after.html"
+      },
+      {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/05/teampcp-compromises-checkmarx-jenkins.html"
+      }
+    ]
+  },
+  "biggest_hacks": [
+    {
+      "title": "ShinyHunters Canvas/Instructure Breach: 3.65TB Student PII from ~9,000 Schools — Ransom Deal Struck, Congress Intervenes",
+      "link": "https://thehackernews.com/2026/05/instructure-reaches-ransom-agreement.html",
+      "source": "The Hacker News",
+      "severity": "Critical",
+      "summary": "ShinyHunters exfiltrated 3.65TB of student PII from Instructure's Canvas LMS platform affecting approximately 9,000 educational institutions, disrupting finals week operations, with Instructure reaching an extortion agreement of unverified efficacy and Congressional hearings initiated.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/instructure-reaches-ransom-agreement.html"
+        },
+        {
+          "name": "Krebs on Security",
+          "url": "https://krebsonsecurity.com/2026/05/patch-tuesday-may-2026-edition/"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/"
+        }
+      ]
+    },
+    {
+      "title": "West Pharmaceutical Services Hit by Disruptive Ransomware Attack with OT Disruption",
+      "link": "https://www.securityweek.com/west-pharmaceutical-services-hit-by-disruptive-ransomware-attack/",
+      "source": "SecurityWeek",
+      "severity": "High",
+      "summary": "West Pharmaceutical Services suffered a disruptive ransomware attack with reported operational technology (OT) disruption affecting manufacturing operations.",
+      "sources": [
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/west-pharmaceutical-services-hit-by-disruptive-ransomware-attack/"
+        }
+      ]
+    },
+    {
+      "title": "BWH Hotels: Attackers Maintained 6-Month Persistent Access to Guest Reservation PII",
+      "link": "https://www.securityweek.com/bwh-hotels-says-hackers-had-access-to-reservation-data-for-6-months/",
+      "source": "SecurityWeek",
+      "severity": "High",
+      "summary": "Best Western Hotels disclosed that an unauthorized party maintained persistent access to guest reservation data for approximately six months before detection.",
+      "sources": [
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/bwh-hotels-says-hackers-had-access-to-reservation-data-for-6-months/"
+        }
+      ]
+    },
+    {
+      "title": "Zara Data Breach Exposes PII of Nearly 200,000 Customers",
+      "link": "https://www.infosecurity-magazine.com/news/zara-data-breach-impacts-200000",
+      "source": "Infosecurity Magazine",
+      "severity": "Medium",
+      "summary": "Zara confirmed a data breach affecting approximately 200,000 customers with personal information exposed, likely via credential compromise or a supply chain attack against a third-party e-commerce service provider.",
+      "sources": [
+        {
+          "name": "Infosecurity Magazine",
+          "url": "https://www.infosecurity-magazine.com/news/zara-data-breach-impacts-200000"
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "cve": "CVE-2026-41940",
+      "product": "cPanel / WHM",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Authentication bypass or privilege escalation in cPanel/WHM allowing unauthenticated or low-privileged attackers to deploy a persistent Filemanager backdoor. Actively exploited in the wild.",
+      "exploited": true,
+      "source": "The Hacker News"
+    },
+    {
+      "cve": "CVE-2026-TBD (Dirty Frag)",
+      "product": "Linux Kernel (esp4/esp6/rxrpc subsystems)",
+      "cvss": 7.8,
+      "severity": "High",
+      "description": "Local privilege escalation via memory fragmentation flaw in Linux kernel IPsec and rxrpc subsystems. Enables unprivileged local users to escalate to root. Actively exploited in-the-wild, confirmed by Microsoft. Affects all major enterprise Linux distributions.",
+      "exploited": true,
+      "source": "Microsoft Security Blog"
+    },
+    {
+      "cve": "Multiple (Patch Tuesday May 2026)",
+      "product": "Microsoft Windows / Office / Azure / Edge",
+      "cvss": 9.0,
+      "severity": "Critical",
+      "description": "137 vulnerabilities addressed including 13 Critical-rated flaws spanning RCE and LPE classes across Windows, Office, Azure, and Edge. No zero-days reported this cycle.",
+      "exploited": false,
+      "source": "BleepingComputer"
+    },
+    {
+      "cve": "Multiple (FortiSandbox / FortiAuthenticator)",
+      "product": "Fortinet FortiSandbox and FortiAuthenticator",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Critical remote code execution vulnerabilities in Fortinet FortiSandbox and FortiAuthenticator management interfaces. No active exploitation confirmed yet, but Fortinet products are a historically high-priority target.",
+      "exploited": false,
+      "source": "BleepingComputer"
+    },
+    {
+      "cve": "CVE-2026-TBD (Ollama OOB)",
+      "product": "Ollama (local LLM runner)",
+      "cvss": 7.5,
+      "severity": "High",
+      "description": "Out-of-bounds read vulnerability in Ollama allowing unauthenticated remote attackers to dump process memory contents, potentially exposing model weights, system prompts, API keys, and conversation data. PoC exploit publicly available.",
+      "exploited": false,
+      "source": "The Hacker News"
+    },
+    {
+      "cve": "CVE-2026-TBD (Exim BDAT)",
+      "product": "Exim MTA (GnuTLS builds)",
+      "cvss": 6.5,
+      "severity": "Medium",
+      "description": "RCE vulnerability in Exim mail transfer agent builds compiled with GnuTLS, triggered via the BDAT SMTP command. Not yet exploited in the wild.",
+      "exploited": false,
+      "source": "The Hacker News"
+    }
+  ],
+  "recent_headlines": [
+    {
+      "title": "ShinyHunters Canvas Breach: 3.65TB Student Data, ~9,000 Schools, Ransom Deal Struck",
+      "link": "https://thehackernews.com/2026/05/instructure-reaches-ransom-agreement.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Mini Shai-Hulud Worm Compromises Signed TanStack & Mistral AI npm Packages",
+      "link": "https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Dirty Frag Linux LPE Under Active Exploitation — Patch All Linux Systems",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/05/08/active-attack-dirty-frag-linux-vulnerability-expands-post-compromise-risk/",
+      "source": "Microsoft Security Blog"
+    },
+    {
+      "title": "Google Identifies First AI-Developed Zero-Day (2FA Bypass) Before Mass Exploitation",
+      "link": "https://cyberscoop.com/google-threat-intelligence-group-ai-developed-zero-day-exploit/",
+      "source": "CyberScoop"
+    },
+    {
+      "title": "Microsoft May 2026 Patch Tuesday: 137 Vulnerabilities, 13 Critical, No Zero-Days",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-may-2026-patch-tuesday-fixes-120-flaws-no-zero-days/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "CVE-2026-41940: cPanel Actively Exploited — Filemanager Backdoor Deployed",
+      "link": "https://thehackernews.com/2026/05/cpanel-cve-2026-41940-under-active.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "TeamPCP Backdoors Checkmarx Jenkins Plugin with Infostealer",
+      "link": "https://thehackernews.com/2026/05/teampcp-compromises-checkmarx-jenkins.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Fake OpenAI Hugging Face Repo: Trending #1, 244K Downloads, Rust Infostealer",
+      "link": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Fortinet Critical RCE in FortiSandbox and FortiAuthenticator",
+      "link": "https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-rce-flaws-in-fortisandbox-and-fortiauthenticator/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "Microsoft IR: Stealthy Breach via Trusted Third-Party Vendor",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/05/12/undermining-the-trust-boundary-investigating-a-stealthy-intrusion-through-third-party-compromise/",
+      "source": "Microsoft Security Blog"
+    },
+    {
+      "title": "Unit 42: Advanced AD Certificate Services Escalation Techniques",
+      "link": "https://unit42.paloaltonetworks.com/active-directory-certificate-services-exploitation/",
+      "source": "Unit 42"
+    },
+    {
+      "title": "ClickFix + PySoxy: Persistent SOCKS5 Proxy Backdoors; ACSC Warning Issued",
+      "link": "https://www.infosecurity-magazine.com/news/clickfix-combined-pysoxy-proxying/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "West Pharmaceutical Services Hit by Disruptive Ransomware Attack",
+      "link": "https://www.securityweek.com/west-pharmaceutical-services-hit-by-disruptive-ransomware-attack/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "PamDOORa: Linux PAM Backdoor Steals SSH Credentials Silently",
+      "link": "https://thehackernews.com/2026/05/new-linux-pamdoora-backdoor-uses-pam.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Quasar Linux RAT Targets Developer Systems for Supply Chain Pivot",
+      "link": "https://thehackernews.com/2026/05/quasar-linux-rat-steals-developer.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "RubyGems Suspends New Registrations After Mass Malicious Package Campaign",
+      "link": "https://thehackernews.com/2026/05/rubygems-suspends-new-signups-after.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "BWH Hotels: 6-Month Persistent Attacker Access to Guest Reservation Data",
+      "link": "https://www.securityweek.com/bwh-hotels-says-hackers-had-access-to-reservation-data-for-6-months/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Ollama Critical Out-of-Bounds Read: Unauthenticated Remote Process Memory Dump",
+      "link": "https://thehackernews.com/2026/05/ollama-out-of-bounds-read-vulnerability.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Fake Claude Code Installer Delivers PowerShell Stealer to Developers",
+      "link": "https://www.infosecurity-magazine.com/news/fake-claude-code-installer/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "TCLBANKER Banking Trojan Spreads via WhatsApp and Outlook Worm Mechanism",
+      "link": "https://thehackernews.com/2026/05/tclbanker-banking-trojan-targets.html",
+      "source": "The Hacker News"
+    }
+  ],
+  "source_counts": {
+    "The Hacker News": 24,
+    "Infosecurity Magazine": 16,
+    "BleepingComputer": 15,
+    "CyberScoop": 10,
+    "Dark Reading": 10,
+    "SecurityWeek": 10,
+    "Microsoft Security Blog": 5,
+    "Krebs on Security": 2,
+    "Talos Intelligence": 2,
+    "Unit 42": 1,
+    "CrowdStrike Blog": 1,
+    "Threats Without Borders": 1,
+    "Newsletter 19B": 1
+  }
+}
