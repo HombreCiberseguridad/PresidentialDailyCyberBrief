@@ -1,5 +1,6 @@
 {
-  "entries": [    {
+  "entries": [
+    {
       "date": "May 13, 2026",
       "slug": "2026-05-13",
       "path": "archive/2026-05-13/data.json"
@@ -34,5 +35,8 @@
       "slug": "2026-03-23",
       "path": "archive/2026-03-23/data.json"
     }
+  ],
+  "dates": [
+    "2026-05-19"
   ]
 }
