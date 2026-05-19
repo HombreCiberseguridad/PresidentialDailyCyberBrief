@@ -1,0 +1,707 @@
+{
+  "date": "2026-05-19",
+  "generated_at": "2026-05-19T03:40:39.849768-05:00",
+  "executive_summary": [
+    {
+      "text": "A public PoC exploit for the MiniPlasma Windows zero-day — targeting the cldflt.sys Cloud Files Mini Filter Driver — now enables any attacker to escalate to SYSTEM privileges on fully patched Windows endpoints, dramatically lowering the bar for post-exploitation.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/miniplasma-windows-0-day-enables-system.html"
+        },
+        {
+          "name": "Bleeping Computer",
+          "url": "https://www.bleepingcomputer.com/news/microsoft/new-windows-miniplasma-zero-day-exploit-gives-system-access-poc-released/"
+        },
+        {
+          "name": "Security Week",
+          "url": "https://www.securityweek.com/researcher-drops-miniplasma-windows-exploit-for-unpatched-2020-cve/"
+        }
+      ]
+    },
+    {
+      "text": "The popular GitHub Actions workflow actions-cool/issues-helper was compromised in a supply chain attack that silently redirected all version tags to malicious commits designed to harvest and exfiltrate secrets from any CI/CD pipeline using the action.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/github-actions-supply-chain-attack.html"
+        }
+      ]
+    },
+    {
+      "text": "Coinbase Cartel — a cybercrime collective linked to ShinyHunters, Scattered Spider, and Lapsus$ — used a stolen GitHub access token to exfiltrate Grafana Labs' entire source code repository, while separately bribing Coinbase customer support contractors to steal user data.",
+      "sources": [
+        {
+          "name": "Bleeping Computer",
+          "url": "https://www.bleepingcomputer.com/news/security/grafana-says-stolen-github-token-let-hackers-steal-codebase/"
+        },
+        {
+          "name": "Security Week",
+          "url": "https://www.securityweek.com/grafana-confirms-breach-after-hackers-claim-they-stole-data/"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/threat-intelligence/coinbase-data-breach-employees-bribed/"
+        }
+      ]
+    },
+    {
+      "text": "The Shai-Hulud worm source code — leaked last week by TeamPCP — has already spawned multiple active campaigns this week, with at least four malicious npm packages and a Mini-Shai-Hulud variant targeting the @antv/echarts-for-react ecosystem collectively logging over 3,000 downloads.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/four-malicious-npm-packages-deliver.html"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/mini-shai-hulud-pushes-malicious-antv.html"
+        },
+        {
+          "name": "Bleeping Computer",
+          "url": "https://www.bleepingcomputer.com/news/security/leaked-shai-hulud-malware-fuels-new-npm-infostealer-campaign/"
+        },
+        {
+          "name": "Security Week",
+          "url": "https://www.securityweek.com/first-shai-hulud-worm-clones-emerge/"
+        }
+      ]
+    },
+    {
+      "text": "A critical Exchange Server zero-day (CVE-2026-42897, XSS-to-OWA takeover) is under active exploitation with no patch yet available, while the Tycoon2FA phishing kit has been updated to hijack Microsoft 365 accounts via device-code phishing abusing Trustifi click-tracking URLs.",
+      "sources": [
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/vulnerabilities-threats/microsoft-exchange-zero-day-no-patch"
+        },
+        {
+          "name": "Bleeping Computer",
+          "url": "https://www.bleepingcomputer.com/news/security/tycoon2fa-hijacks-microsoft-365-accounts-via-device-code-phishing/"
+        }
+      ]
+    }
+  ],
+  "cyber_news": [
+    {
+      "id": "miniplasma-windows-zero-day-poc",
+      "title": "MiniPlasma Windows Zero-Day PoC Released — SYSTEM Privileges on Fully Patched Systems",
+      "category": "Threat",
+      "summary": "Security researcher Chaotic Eclipse released a working proof-of-concept exploit for a Windows privilege escalation zero-day dubbed MiniPlasma, affecting the cldflt.sys Cloud Files Mini Filter Driver. The exploit grants SYSTEM-level privileges on fully patched Windows endpoints with no patch yet available from Microsoft.",
+      "expanded": "The MiniPlasma vulnerability resides in the Windows Cloud Files Mini Filter Driver (cldflt.sys) and follows two earlier disclosures from the same researcher — YellowKey and GreenPlasma — suggesting a pattern of related kernel-level flaws in Windows filter driver infrastructure. The released PoC leverages an improper privilege check in the driver to escalate from a standard user context to NT AUTHORITY\\SYSTEM without requiring any administrative rights. Because the vulnerability involves a kernel-mode driver present on all modern Windows builds, there is no obvious software-level workaround short of disabling cloud file sync functionality entirely. With public PoC code now available, weaponization by ransomware groups and initial access brokers is expected within hours.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/miniplasma-windows-0-day-enables-system.html"
+        },
+        {
+          "name": "Bleeping Computer",
+          "url": "https://www.bleepingcomputer.com/news/microsoft/new-windows-miniplasma-zero-day-exploit-gives-system-access-poc-released/"
+        },
+        {
+          "name": "Security Week",
+          "url": "https://www.securityweek.com/researcher-drops-miniplasma-windows-exploit-for-unpatched-2020-cve/"
+        }
+      ]
+    },
+    {
+      "id": "github-actions-supply-chain-issues-helper",
+      "title": "GitHub Actions Supply Chain Attack: actions-cool/issues-helper Tags Hijacked to Steal CI/CD Secrets",
+      "category": "Campaign",
+      "summary": "Threat actors compromised the widely-used GitHub Actions workflow actions-cool/issues-helper, silently moving all existing version tags to point to malicious imposter commits that harvest and exfiltrate credentials to an attacker-controlled server. Any CI/CD pipeline referencing this action by tag — rather than pinned commit SHA — may have had secrets stolen.",
+      "expanded": "The attackers exploited write access to the actions-cool/issues-helper repository (likely via a stolen token or compromised maintainer account) to force-move every existing semver tag to a new, malicious commit that does not appear in the repository's normal commit history. This technique, sometimes called tag-jacking, is particularly dangerous because pipelines pinning to version tags (e.g., @v3) rather than immutable commit SHAs will silently pull the attacker's code on the next workflow run. The malicious commit contained credential harvesting logic targeting environment variables, GitHub tokens, cloud provider credentials, and other secrets typically injected into CI/CD environments at runtime — all exfiltrated to an external server before the legitimate workflow logic executes, leaving no obvious signs of failure in pipeline logs.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/github-actions-supply-chain-attack.html"
+        }
+      ]
+    },
+    {
+      "id": "grafana-source-code-breach-coinbase-cartel",
+      "title": "Grafana Source Code Stolen by Coinbase Cartel via Stolen GitHub Access Token",
+      "category": "Campaign",
+      "summary": "Grafana Labs confirmed that the Coinbase Cartel — a cybercrime group linked to ShinyHunters, Scattered Spider, and Lapsus$ — used a stolen GitHub access token to download the company's entire source code repository. No customer data was reported accessed, but the stolen codebase will be mined by threat actors for zero-day vulnerabilities.",
+      "expanded": "The attack followed a now-familiar playbook associated with the loosely affiliated Coinbase Cartel: rather than exploiting a product vulnerability, the group targeted the development supply chain by obtaining a GitHub personal access token (PAT) or OAuth token with read-all-repositories scope. With this single credential, the attackers bulk-cloned the private Grafana codebase before the token was revoked. Grafana is deployed extensively across MSP and enterprise infrastructure monitoring stacks, and having the source code available will substantially accelerate the discovery and weaponization of internal logic flaws, authentication bypasses, or deserialization vulnerabilities by both the cartel and any buyers on the dark web. The same group simultaneously breached Coinbase through bribed customer support contractors, demonstrating a multi-vector operational posture.",
+      "sources": [
+        {
+          "name": "Bleeping Computer",
+          "url": "https://www.bleepingcomputer.com/news/security/grafana-says-stolen-github-token-let-hackers-steal-codebase/"
+        },
+        {
+          "name": "Security Week",
+          "url": "https://www.securityweek.com/grafana-confirms-breach-after-hackers-claim-they-stole-data/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/grafana-github-token-breach-led-to.html"
+        }
+      ]
+    },
+    {
+      "id": "shai-hulud-worm-npm-campaign",
+      "title": "Leaked Shai-Hulud Worm Source Code Fuels Multi-Front npm Infostealer Campaign",
+      "category": "Campaign",
+      "summary": "Following the public release of the Shai-Hulud self-replicating worm's source code by TeamPCP, multiple threat actors have weaponized it across at least four malicious npm packages and a separate Mini-Shai-Hulud variant targeting the @antv ecosystem, collectively accumulating over 3,000 downloads. The worm is designed to spread laterally through developer environments and exfiltrate credentials.",
+      "expanded": "The Shai-Hulud worm is notable for its self-replicating behavior within Node.js and npm environments: once executed in a developer's environment, it scans for package.json files and attempts to inject itself into local and globally-linked packages, potentially spreading to other projects on the same machine or CI/CD host. The four identified malicious packages — chalk-tempalte, @deadcode09284814/axios-util, axois-utils, and color-style-utils — use typosquatting against popular packages (chalk-template, axios) to maximize accidental installation. Separately, the Mini-Shai-Hulud variant targeted the @antv maintainer account's ecosystem, including echarts-for-react (approximately 1.1 million weekly downloads), suggesting attackers are pivoting from typosquatting toward compromising high-trust maintainer accounts for broader blast radius.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/four-malicious-npm-packages-deliver.html"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/mini-shai-hulud-pushes-malicious-antv.html"
+        },
+        {
+          "name": "Bleeping Computer",
+          "url": "https://www.bleepingcomputer.com/news/security/leaked-shai-hulud-malware-fuels-new-npm-infostealer-campaign/"
+        },
+        {
+          "name": "Security Week",
+          "url": "https://www.securityweek.com/first-shai-hulud-worm-clones-emerge/"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/application-security/shai-hulud-worm-clones-spread-code-release"
+        }
+      ]
+    },
+    {
+      "id": "microsoft-exchange-zero-day-cve-2026-42897",
+      "title": "Microsoft Exchange Zero-Day (CVE-2026-42897) Actively Exploited — No Patch Available",
+      "category": "Threat",
+      "summary": "A critical Exchange Server zero-day tracked as CVE-2026-42897 — a cross-site scripting vulnerability in Outlook Web Access — is under active exploitation in the wild with no Microsoft patch currently available. Successful exploitation allows attackers to compromise OWA mailboxes, enabling email interception, Business Email Compromise, and potential domain persistence.",
+      "expanded": "CVE-2026-42897 is an XSS vulnerability in Exchange's Outlook Web Access component that, when triggered via a malicious link or crafted email, allows an attacker to execute scripts in the context of the victim's authenticated OWA session. This can be chained with post-exploitation techniques to access mailbox contents, set forwarding rules for persistent email interception, abuse Exchange's integration with Active Directory for lateral movement, and in hybrid deployments, pivot toward cloud-connected services. The active exploitation pattern observed suggests spearphishing as the delivery mechanism, with targeted attacks against organizations running on-premises or hybrid Exchange. The absence of a vendor patch means the only current mitigations are network-level controls and OWA access restrictions.",
+      "sources": [
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/vulnerabilities-threats/microsoft-exchange-zero-day-no-patch"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/weekly-recap-exchange-0-day-npm-worm.html"
+        }
+      ]
+    },
+    {
+      "id": "tycoon2fa-device-code-phishing-m365",
+      "title": "Tycoon2FA Phishing Kit Updated with Device-Code Flow Attack to Bypass Microsoft 365 MFA",
+      "category": "365_Threats",
+      "summary": "The Tycoon2FA phishing-as-a-service kit has been updated to support device-code phishing attacks targeting Microsoft 365 accounts, abusing Trustifi click-tracking URLs to evade link scanners. The technique bypasses traditional MFA by tricking users into authorizing a threat-actor-controlled device via OAuth device code flow.",
+      "expanded": "Device-code phishing abuses the OAuth 2.0 device authorization grant — a flow designed for input-constrained devices like smart TVs — by having the attacker initiate a legitimate Microsoft auth session, then socially engineering the victim into entering the resulting device code at microsoft.com/devicelogin. Because the victim authenticates on a legitimate Microsoft domain, email security gateways and browser warnings do not fire. The Tycoon2FA update adds this vector alongside its existing adversary-in-the-middle (AiTM) proxy capabilities, and leverages Trustifi's click-tracking infrastructure to launder malicious URLs through a trusted domain, defeating URL reputation filters. Upon successful code entry, the attacker receives a persistent OAuth refresh token granting long-term access without further authentication — including access to accounts protected by number-matching MFA and SSPR.",
+      "sources": [
+        {
+          "name": "Bleeping Computer",
+          "url": "https://www.bleepingcomputer.com/news/security/tycoon2fa-hijacks-microsoft-365-accounts-via-device-code-phishing/"
+        }
+      ]
+    },
+    {
+      "id": "nginx-cve-2026-42945-active-exploitation",
+      "title": "Critical NGINX Heap Buffer Overflow (CVE-2026-42945, CVSS 9.2) Now Actively Exploited",
+      "category": "Threat",
+      "summary": "A critical heap buffer overflow in NGINX Plus and NGINX Open Source (CVE-2026-42945, CVSS 9.2) affecting the ngx_http_rewrite_module is now being actively exploited in the wild just days after PoC code was published. On default configurations the flaw causes denial of service; with ASLR disabled it enables full remote code execution.",
+      "expanded": "The vulnerability, introduced in 2008 and present across an extremely wide range of NGINX versions, resides in the rewrite module's handling of regex-matching directives. An unauthenticated attacker can trigger the heap overflow via a crafted HTTP request containing a malformed rewrite directive response, causing a heap corruption that in ASLR-disabled environments — common in some containerized and legacy deployments — can be reliably exploited for RCE without authentication. VulnCheck confirmed in-the-wild exploitation within days of PoC publication. NGINX is one of the most widely deployed web servers globally and is frequently the TLS termination point or reverse proxy in front of MSP-managed application stacks, making the blast radius of exploitation extremely broad.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/nginx-cve-2026-42945-exploited-in-wild.html"
+        },
+        {
+          "name": "Security Week",
+          "url": "https://www.securityweek.com/exploitation-of-critical-nginx-vulnerability-begins/"
+        },
+        {
+          "name": "Security Week",
+          "url": "https://www.securityweek.com/poc-code-published-for-critical-nginx-vulnerability/"
+        }
+      ]
+    },
+    {
+      "id": "storm-2949-cloud-wide-breach",
+      "title": "Storm-2949: Stolen Identity Credential Turned Into Cloud-Wide Breach Without Malware",
+      "category": "Campaign",
+      "summary": "Microsoft's security blog details how threat group Storm-2949 leveraged a single compromised identity credential to execute a cloud-wide breach, pivoting across cloud services and exfiltrating large volumes of data entirely without deploying traditional malware. The incident demonstrates how identity is now the primary attack surface in cloud environments.",
+      "expanded": "Storm-2949 operated exclusively within legitimate cloud API surfaces — using stolen credentials to authenticate to Azure and Microsoft 365 services, then abusing native administrative tools and trusted service principals to move laterally across the environment. Because no traditional malware was deployed, endpoint detection tools generated no alerts; the attacker's activity was indistinguishable from legitimate administrator behavior in isolation. The group exploited over-permissioned service accounts and stale OAuth application grants to expand access, ultimately reaching storage accounts and exfiltrating data at scale. This attack pattern — sometimes called a 'living-off-the-cloud' or 'identity-first' breach — highlights the inadequacy of malware-centric detection models for modern cloud infrastructure and underscores the criticality of Conditional Access, Privileged Identity Management (PIM), and continuous anomaly detection on identity logs.",
+      "sources": [
+        {
+          "name": "Microsoft Security Blog",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/18/storm-2949-turned-compromised-identity-into-cloud-wide-breach/"
+        }
+      ]
+    },
+    {
+      "id": "openclaw-claw-chain-vulnerabilities",
+      "title": "OpenClaw AI Agent Framework: Four Chained Vulnerabilities Enable Sandbox Escape and Backdoor Delivery",
+      "category": "Threat",
+      "summary": "Four vulnerabilities in the OpenClaw AI agent framework — collectively dubbed 'Claw Chain' — can be chained to steal credentials, escape the agent sandbox, escalate privileges, and plant persistent backdoors on the underlying host. The flaws are now patched but highlight systemic security risks in rapidly-adopted AI agent infrastructure.",
+      "expanded": "The Claw Chain attack begins with a prompt injection or malicious tool invocation that exploits the first vulnerability to leak internal agent memory and environment variables, including API tokens. A second flaw in the sandbox boundary's filesystem isolation allows the attacker to write files outside the agent's container context. A third privilege escalation vulnerability in OpenClaw's SUID helper binary then elevates access to root on the host. Finally, a fourth persistence mechanism plants a cron-based backdoor. The full chain can be triggered remotely if the OpenClaw agent is exposed via an API endpoint — a common deployment pattern in enterprise automation scenarios. This is significant for MSPs beginning to integrate AI agents into workflow automation, as these frameworks are maturing faster than their security postures.",
+      "sources": [
+        {
+          "name": "Security Week",
+          "url": "https://www.securityweek.com/claw-chain-openclaw-flaws-allow-sandbox-escape-backdoor-delivery/"
+        },
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/application-security/claw-chain-vulnerabilities-threaten-openclaw"
+        }
+      ]
+    },
+    {
+      "id": "compromised-vscode-nx-console-extension",
+      "title": "Backdoored VS Code Nx Console Extension (v18.95.0) Published to Marketplace — 2.2M Install Base",
+      "category": "Campaign",
+      "summary": "A backdoored version of the Nx Console VS Code extension (rwl.angular-console, version 18.95.0) was published to the VS Code Marketplace, targeting developer and DevOps engineer workstations across VS Code, Cursor, and JetBrains environments with a combined install base exceeding 2.2 million. The malicious version silently exfiltrates credentials, environment variables, and SSH/cloud tokens.",
+      "expanded": "The compromised extension (v18.95.0) was published to the official VS Code Marketplace — likely through a compromised publisher account — and appeared legitimate to automated scanning due to its inheritance of the genuine extension's install base and review history. The malicious payload activated on extension load, enumerating VS Code workspace secrets, stored credentials in the OS keychain, SSH agent forwarded keys, and environment variables common in DevOps workstations (AWS_ACCESS_KEY_ID, GITHUB_TOKEN, KUBECONFIG, etc.) before silently transmitting them to an attacker-controlled endpoint. Because VS Code extensions auto-update by default, any developer who had the extension installed and was online during the window the malicious version was live may have been compromised without any user interaction.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/compromised-nx-console-18950-targeted.html"
+        }
+      ]
+    },
+    {
+      "id": "cisa-aws-govcloud-keys-github-leak",
+      "title": "CISA Contractor Exposed Privileged AWS GovCloud Credentials on Public GitHub Repository",
+      "category": "General",
+      "summary": "A contractor working for CISA maintained a public GitHub repository that inadvertently exposed credentials for several highly privileged AWS GovCloud accounts until the issue was discovered and remediated last weekend. The incident raises serious concerns about credential hygiene and secrets management practices within critical government security infrastructure.",
+      "expanded": "The exposed repository contained hardcoded AWS GovCloud access keys with high-privilege IAM roles, likely committed during development or testing and never rotated before the repository was made public — a pattern that automated secret scanning tools like GitHub's own push protection should catch. GovCloud environments host sensitive federal workloads with elevated data classification requirements, making a credential exposure at this tier particularly consequential. The incident underscores the broader problem of secrets sprawl in development workflows and is notable given CISA's advisory role in government cybersecurity posture — it creates an awkward dynamic for the agency's credibility in recommending secrets management best practices to others.",
+      "sources": [
+        {
+          "name": "Krebs on Security",
+          "url": "https://krebsonsecurity.com/2026/05/cisa-admin-leaked-aws-govcloud-keys-on-github/"
+        }
+      ]
+    },
+    {
+      "id": "russian-secret-blizzard-kazuar-p2p-botnet",
+      "title": "Russian APT Secret Blizzard Evolves Kazuar Backdoor Into Modular P2P Botnet for Long-Term Persistence",
+      "category": "Campaign",
+      "summary": "The Russian state-sponsored threat group Secret Blizzard (formerly Turla) has transformed its long-running Kazuar backdoor into a modular peer-to-peer botnet architecture designed for long-term stealth, persistence, and data collection across compromised infrastructure.",
+      "expanded": "The evolved Kazuar architecture replaces the traditional C2 beacon model with a peer-to-peer communication layer where compromised nodes relay commands and exfiltrated data through the botnet mesh, making traffic analysis and C2 infrastructure takedowns significantly harder. Each node operates as both a relay and a potential collection point, and the modular design allows operators to push new capability plugins (keyloggers, credential harvesters, lateral movement modules) to subsets of the botnet without deploying new implants. This design is consistent with Secret Blizzard's historical operational security discipline and their preference for long-dwell, intelligence-gathering campaigns over loud destructive operations — making early detection exceptionally difficult without behavioral anomaly detection focused on unusual peer-to-peer traffic patterns.",
+      "sources": [
+        {
+          "name": "Bleeping Computer",
+          "url": "https://www.bleepingcomputer.com/news/security/russian-hackers-turn-kazuar-backdoor-into-modular-p2p-botnet/"
+        }
+      ]
+    }
+  ],
+  "deep_dive": {
+    "title": "GitHub Actions Supply Chain Attack: How Tag-Jacking Turns Trusted CI/CD Pipelines Into Credential Harvesters",
+    "content": "The compromise of the actions-cool/issues-helper GitHub Action represents one of the most tactically elegant supply chain attacks of 2026. The attackers obtained write access to the repository — likely via a stolen personal access token or OAuth credential associated with the maintainer account — and then force-moved every existing version tag to point to a new, malicious commit entirely absent from the repository's normal commit history. This technique, known as tag-jacking, is insidious because GitHub Actions workflows that reference an action by mutable version tag (e.g., uses: actions-cool/issues-helper@v3) will silently pull the attacker's code on their next run with no visible change to the workflow YAML. The malicious commit contained credential-harvesting logic that reads all environment variables and GitHub Actions runner context — including GITHUB_TOKEN, cloud provider credentials (AWS_ACCESS_KEY_ID, AZURE_CLIENT_SECRET, GCP_SA_KEY), and any custom secrets injected at workflow runtime — and exfiltrates them over HTTPS to an attacker-controlled server before executing the expected action behavior. Pipeline logs show successful runs, providing no indication of compromise. The blast radius is enormous: any organization using this action across infrastructure automation, deployment, or release workflows may have had secrets stolen during the exposure window. The correct defensive posture is to pin all third-party actions to immutable full-length commit SHAs rather than mutable tag references — a practice now recommended by GitHub, CISA, and major security frameworks but still widely ignored in production pipelines.",
+    "sources": [
+      {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/05/github-actions-supply-chain-attack.html"
+      },
+      {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/05/developer-workstations-are-now-part-of.html"
+      }
+    ]
+  },
+  "biggest_hacks": [
+    {
+      "title": "Grafana Labs Source Code Stolen via Stolen GitHub Access Token",
+      "link": "https://www.bleepingcomputer.com/news/security/grafana-says-stolen-github-token-let-hackers-steal-codebase/",
+      "source": "Bleeping Computer",
+      "severity": "High",
+      "summary": "Coinbase Cartel used a stolen GitHub access token to download Grafana Labs' entire source code repository, a breach that will enable threat actors to hunt for zero-day vulnerabilities in one of the most widely deployed monitoring platforms in enterprise and MSP environments.",
+      "sources": [
+        {
+          "name": "Bleeping Computer",
+          "url": "https://www.bleepingcomputer.com/news/security/grafana-says-stolen-github-token-let-hackers-steal-codebase/"
+        },
+        {
+          "name": "Security Week",
+          "url": "https://www.securityweek.com/grafana-confirms-breach-after-hackers-claim-they-stole-data/"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/05/grafana-github-token-breach-led-to.html"
+        }
+      ]
+    },
+    {
+      "title": "7-Eleven Data Breach Confirmed After ShinyHunters Ransom Demand",
+      "link": "https://www.securityweek.com/7-eleven-data-breach-confirmed-after-shinyhunters-ransom-demand/",
+      "source": "Security Week",
+      "severity": "High",
+      "summary": "7-Eleven confirmed a data breach after ShinyHunters claimed to have stolen over 600,000 Salesforce records containing personal information and corporate data, and issued a ransom demand to prevent public release.",
+      "sources": [
+        {
+          "name": "Security Week",
+          "url": "https://www.securityweek.com/7-eleven-data-breach-confirmed-after-shinyhunters-ransom-demand/"
+        }
+      ]
+    },
+    {
+      "title": "Coinbase Data Breach via Bribed Customer Support Contractors",
+      "link": "https://www.darkreading.com/threat-intelligence/coinbase-data-breach-employees-bribed/",
+      "source": "Dark Reading",
+      "severity": "High",
+      "summary": "Coinbase suffered a significant data breach when Coinbase Cartel operatives bribed third-party customer support contractors to exfiltrate user data, exposing the company's reliance on outsourced support staff with privileged data access.",
+      "sources": [
+        {
+          "name": "Dark Reading",
+          "url": "https://www.darkreading.com/threat-intelligence/coinbase-data-breach-employees-bribed/"
+        }
+      ]
+    },
+    {
+      "title": "Storm-2949 Executes Cloud-Wide Breach Using Stolen Identity Credentials",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/05/18/storm-2949-turned-compromised-identity-into-cloud-wide-breach/",
+      "source": "Microsoft Security Blog",
+      "severity": "Critical",
+      "summary": "Threat group Storm-2949 used a single compromised identity credential to pivot across an entire cloud environment and exfiltrate large volumes of data without deploying any malware, bypassing endpoint-based detection entirely.",
+      "sources": [
+        {
+          "name": "Microsoft Security Blog",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/18/storm-2949-turned-compromised-identity-into-cloud-wide-breach/"
+        }
+      ]
+    },
+    {
+      "title": "Canvas LMS Breach Demonstrates Systemic SaaS Attack Blueprint",
+      "link": "https://cyberscoop.com/canvas-breach-saas-security-identity-governance-op-ed/",
+      "source": "CyberScoop",
+      "severity": "High",
+      "summary": "A breach of Canvas — the most widely used learning management platform in North America — has been analysed as a systematic blueprint for modern SaaS attacks, highlighting how identity and integration weaknesses in SaaS ecosystems can lead to widespread data compromise.",
+      "sources": [
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com/canvas-breach-saas-security-identity-governance-op-ed/"
+        }
+      ]
+    },
+    {
+      "title": "Millions Impacted in Multiple US Healthcare Data Breaches",
+      "link": "https://www.securityweek.com/millions-impacted-across-several-us-healthcare-data-breaches/",
+      "source": "Security Week",
+      "severity": "High",
+      "summary": "Several newly reported US healthcare data breaches — each affecting hundreds of thousands to millions of patients — were added to the HHS breach tracker this week, underscoring the continued targeting of healthcare sector data by ransomware and extortion groups.",
+      "sources": [
+        {
+          "name": "Security Week",
+          "url": "https://www.securityweek.com/millions-impacted-across-several-us-healthcare-data-breaches/"
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "cve": "CVE-2026-8153",
+      "product": "Windows (cldflt.sys — Cloud Files Mini Filter Driver)",
+      "cvss": 8.8,
+      "severity": "High",
+      "description": "Local privilege escalation zero-day in the Windows Cloud Files Mini Filter Driver (cldflt.sys) enabling any authenticated user to obtain SYSTEM privileges. Public PoC available; no Microsoft patch yet issued. Affects all fully patched Windows 10/11 and Server builds.",
+      "exploited": true,
+      "source": "The Hacker News / Bleeping Computer"
+    },
+    {
+      "cve": "CVE-2026-42897",
+      "product": "Microsoft Exchange Server (Outlook Web Access)",
+      "cvss": 9.0,
+      "severity": "Critical",
+      "description": "Cross-site scripting (XSS) vulnerability in Exchange's Outlook Web Access component allowing attackers to compromise authenticated OWA mailboxes via malicious link. Actively exploited in the wild; no patch available from Microsoft.",
+      "exploited": true,
+      "source": "Dark Reading"
+    },
+    {
+      "cve": "CVE-2026-42945",
+      "product": "NGINX Plus / NGINX Open Source (ngx_http_rewrite_module)",
+      "cvss": 9.2,
+      "severity": "Critical",
+      "description": "Heap buffer overflow in NGINX's rewrite module triggered by a malicious HTTP request. Causes DoS on default configurations; enables unauthenticated RCE when ASLR is disabled. Introduced in 2008; patched this week. Active exploitation confirmed by VulnCheck.",
+      "exploited": true,
+      "source": "The Hacker News / Security Week"
+    },
+    {
+      "cve": "CVE-2026-8153",
+      "product": "Universal Robots PolyScope 5 (Industrial Robot Controller)",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "OS command injection vulnerability in the Universal Robots PolyScope 5 robot controller platform allowing unauthenticated attackers to execute arbitrary OS commands and potentially take control of entire industrial robot fleets. Affects manufacturing and logistics deployments.",
+      "exploited": false,
+      "source": "Security Week"
+    },
+    {
+      "cve": "CVE-N/A",
+      "product": "WordPress Funnel Builder Plugin (WooCommerce)",
+      "cvss": 9.3,
+      "severity": "Critical",
+      "description": "Critical vulnerability in the Funnel Builder WordPress plugin actively exploited to inject malicious JavaScript into WooCommerce checkout pages for payment card skimming. Exploitation targeting live e-commerce sites confirmed in the wild.",
+      "exploited": true,
+      "source": "The Hacker News"
+    },
+    {
+      "cve": "CVE-N/A",
+      "product": "OpenClaw AI Agent Framework",
+      "cvss": 9.1,
+      "severity": "Critical",
+      "description": "Four chained vulnerabilities (Claw Chain) in the OpenClaw AI agent framework allow an attacker to steal credentials, escape the agent sandbox, escalate to root, and install persistent backdoors on the underlying host. Now patched; organizations should update immediately.",
+      "exploited": false,
+      "source": "Security Week / Dark Reading"
+    },
+    {
+      "cve": "CVE-N/A",
+      "product": "DirtyDecrypt — Linux Kernel rxgk Module",
+      "cvss": 7.8,
+      "severity": "High",
+      "description": "Local privilege escalation vulnerability in the Linux kernel's rxgk module with a public PoC exploit enabling attackers to gain root access on affected Linux systems. Recently patched; systems running unpatched kernels with rxgk support are at risk.",
+      "exploited": false,
+      "source": "Bleeping Computer"
+    },
+    {
+      "cve": "CVE-N/A",
+      "product": "Ivanti / Fortinet / SAP / VMware / n8n (Multiple Products)",
+      "cvss": 9.0,
+      "severity": "Critical",
+      "description": "Multiple critical security fixes released simultaneously by Ivanti, Fortinet, n8n, SAP, and VMware addressing authentication bypass and arbitrary code execution vulnerabilities. Organizations running these products should apply patches immediately.",
+      "exploited": false,
+      "source": "The Hacker News"
+    }
+  ],
+  "recent_headlines": [
+    {
+      "title": "Hackers Bypass Security Tools with 'Fix-Style' Attack Techniques — Bridewell Report",
+      "link": "https://www.infosecurity-magazine.com/news/hackers-bypass-security-tools/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "Compromised Nx Console VS Code Extension (v18.95.0) Targeted 2.2 Million Developer Installs",
+      "link": "https://thehackernews.com/2026/05/compromised-nx-console-18950-targeted.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Critical Vulnerability Exposes Industrial Robot Fleets to Hacking (CVE-2026-8153)",
+      "link": "https://www.securityweek.com/critical-vulnerability-exposes-industrial-robot-fleets-to-hacking/",
+      "source": "Security Week"
+    },
+    {
+      "title": "GitHub Actions Supply Chain Attack: actions-cool/issues-helper Compromised to Steal Credentials",
+      "link": "https://thehackernews.com/2026/05/github-actions-supply-chain-attack.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Mini-Shai-Hulud Worm Variant Pushes Malicious AntV npm Packages",
+      "link": "https://thehackernews.com/2026/05/mini-shai-hulud-pushes-malicious-antv.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Storm-2949: How a Compromised Identity Became a Cloud-Wide Breach",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/05/18/storm-2949-turned-compromised-identity-into-cloud-wide-breach/",
+      "source": "Microsoft Security Blog"
+    },
+    {
+      "title": "INTERPOL Operation Ramz: 53 Malware and Phishing Servers Seized, 200+ Arrested Across MENA",
+      "link": "https://www.bleepingcomputer.com/news/security/interpol-operation-ramz-seizes-53-malware-phishing-servers/",
+      "source": "Bleeping Computer"
+    },
+    {
+      "title": "Microsoft Exchange Zero-Day (CVE-2026-42897) Under Active Exploitation — No Patch Available",
+      "link": "https://www.darkreading.com/vulnerabilities-threats/microsoft-exchange-zero-day-no-patch",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "SHub macOS Infostealer Variant Spoofs Apple Security Updates to Install Backdoor",
+      "link": "https://www.bleepingcomputer.com/news/security/shub-macos-infostealer-variant-spoofs-apple-security-updates/",
+      "source": "Bleeping Computer"
+    },
+    {
+      "title": "Claw Chain OpenClaw AI Framework Vulnerabilities Allow Sandbox Escape and Backdoor Delivery",
+      "link": "https://www.darkreading.com/application-security/claw-chain-vulnerabilities-threaten-openclaw",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "CISA Contractor Leaked Privileged AWS GovCloud Keys on Public GitHub Repository",
+      "link": "https://krebsonsecurity.com/2026/05/cisa-admin-leaked-aws-govcloud-keys-on-github/",
+      "source": "Krebs on Security"
+    },
+    {
+      "title": "AI Vulnerability Reporting Tools May Cut False Positives, But SOC Teams Are Already Drowning in AI-Generated Reports",
+      "link": "https://cyberscoop.com/ai-vulnerability-reporting-bug-bounty-noise/",
+      "source": "CyberScoop"
+    },
+    {
+      "title": "Shai-Hulud Worm Clones Spread Rapidly Following Open-Source Code Release",
+      "link": "https://www.darkreading.com/application-security/shai-hulud-worm-clones-spread-code-release",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "Interpol Operation Ramz Disrupts MENA Cybercrime: 201 Arrests, 382 Additional Suspects Identified",
+      "link": "https://thehackernews.com/2026/05/interpol-operation-ramz-disrupts-mena.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Leaked Shai-Hulud Malware Fuels New npm Infostealer Campaign",
+      "link": "https://www.bleepingcomputer.com/news/security/leaked-shai-hulud-malware-fuels-new-npm-infostealer-campaign/",
+      "source": "Bleeping Computer"
+    },
+    {
+      "title": "Grafana Confirms Source Code Breach After Hackers Claim They Stole Data",
+      "link": "https://www.securityweek.com/grafana-confirms-breach-after-hackers-claim-they-stole-data/",
+      "source": "Security Week"
+    },
+    {
+      "title": "Microsoft Confirms KB5089549 Windows 11 Security Update Install Failures with 0x800f0922 Errors",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-kb5089549-windows-11-security-update-install-issues/",
+      "source": "Bleeping Computer"
+    },
+    {
+      "title": "Exploitation of Critical NGINX Heap Buffer Overflow (CVE-2026-42945) Begins in the Wild",
+      "link": "https://www.securityweek.com/exploitation-of-critical-nginx-vulnerability-begins/",
+      "source": "Security Week"
+    },
+    {
+      "title": "DirtyDecrypt Linux Root Privilege Escalation Flaw PoC Exploit Released",
+      "link": "https://www.bleepingcomputer.com/news/security/exploit-available-for-new-dirtydecrypt-linux-root-escalation-flaw/",
+      "source": "Bleeping Computer"
+    },
+    {
+      "title": "Pre-Stuxnet 'Fast16' Lua Malware Confirmed as Nuclear Weapons Simulation Sabotage Tool",
+      "link": "https://thehackernews.com/2026/05/pre-stuxnet-fast16-malware-tampered.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Pwn2Own Berlin 2026: Researchers Earn $1.3 Million Exploiting 47 Zero-Days in Windows, Linux, VMware, AI",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-earn-1-298-250-for-47-zero-days-at-pwn2own-berlin-2026/",
+      "source": "Bleeping Computer"
+    },
+    {
+      "title": "Tycoon2FA Phishing Kit Hijacks Microsoft 365 Accounts via Device-Code Phishing and Trustifi URL Abuse",
+      "link": "https://www.bleepingcomputer.com/news/security/tycoon2fa-hijacks-microsoft-365-accounts-via-device-code-phishing/",
+      "source": "Bleeping Computer"
+    },
+    {
+      "title": "NGINX CVE-2026-42945 (CVSS 9.2) Actively Exploited in the Wild Days After PoC Publication",
+      "link": "https://thehackernews.com/2026/05/nginx-cve-2026-42945-exploited-in-wild.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Grafana GitHub Token Breach Led to Full Codebase Download",
+      "link": "https://thehackernews.com/2026/05/grafana-github-token-breach-led-to.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Microsoft Rejects Critical Azure Backup for AKS Vulnerability Report — No CVE Issued",
+      "link": "https://www.bleepingcomputer.com/news/security/microsoft-rejects-critical-azure-vulnerability-report-no-cve-issued/",
+      "source": "Bleeping Computer"
+    },
+    {
+      "title": "WordPress Funnel Builder Plugin Exploited to Inject Payment Card Skimmer on WooCommerce Checkouts",
+      "link": "https://thehackernews.com/2026/05/funnel-builder-flaw-under-active.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Russian Secret Blizzard APT Evolves Kazuar Backdoor Into Modular Peer-to-Peer Botnet",
+      "link": "https://www.bleepingcomputer.com/news/security/russian-hackers-turn-kazuar-backdoor-into-modular-p2p-botnet/",
+      "source": "Bleeping Computer"
+    },
+    {
+      "title": "PoC Code Published for Critical NGINX Vulnerability — Patches Available for Plus and Open Source",
+      "link": "https://www.securityweek.com/poc-code-published-for-critical-nginx-vulnerability/",
+      "source": "Security Week"
+    },
+    {
+      "title": "7-Eleven Data Breach Confirmed After ShinyHunters Steal 600,000+ Salesforce Records",
+      "link": "https://www.securityweek.com/7-eleven-data-breach-confirmed-after-shinyhunters-ransom-demand/",
+      "source": "Security Week"
+    },
+    {
+      "title": "Four Malicious npm Packages Delivering Shai-Hulud-Based Information-Stealing Malware",
+      "link": "https://thehackernews.com/2026/05/four-malicious-npm-packages-deliver.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "MiniPlasma Windows Zero-Day: PoC Exploit Enables SYSTEM Access on Fully Patched Systems",
+      "link": "https://thehackernews.com/2026/05/miniplasma-windows-0-day-enables-system.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Ivanti, Fortinet, SAP, VMware, and n8n Release Patches for Critical Authentication Bypass and RCE Flaws",
+      "link": "https://thehackernews.com/2026/05/ivanti-fortinet-sap-vmware-n8n-patch.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Iran Expands Cyber Offensive to Fuel Tank Gauge Systems via Exposed ATG Internet Interfaces",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/fuel-tank-breaches-expand-scope-irans-cyber-offensive",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "Coinbase Data Breach: Customer Support Contractors Bribed to Sell User Data",
+      "link": "https://www.darkreading.com/threat-intelligence/coinbase-data-breach-employees-bribed/",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "Developer Workstations Are Now the Primary Supply Chain Attack Target",
+      "link": "https://thehackernews.com/2026/05/developer-workstations-are-now-part-of.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Canvas LMS Breach Is a Blueprint for How Modern SaaS Attacks Work",
+      "link": "https://cyberscoop.com/canvas-breach-saas-security-identity-governance-op-ed/",
+      "source": "CyberScoop"
+    },
+    {
+      "title": "Millions Impacted Across Several US Healthcare Data Breaches Added to HHS Tracker",
+      "link": "https://www.securityweek.com/millions-impacted-across-several-us-healthcare-data-breaches/",
+      "source": "Security Week"
+    },
+    {
+      "title": "AI Code and Agents Force Defenders to Adapt Security Practices",
+      "link": "https://www.darkreading.com/cyber-risk/ai-code-and-agents-forces-defenders-adapt",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "NCSC Publishes Guidance for Securing Agentic AI Systems",
+      "link": "https://www.infosecurity-magazine.com/news/ncsc-publishes-guidance-securing/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "Bank of England, FCA, and Treasury Raise Alarm on Cybersecurity and Operational Resilience for Financial Sector",
+      "link": "https://www.infosecurity-magazine.com/news/bank-england-fca-treasury-alarm/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "Security Researchers Awarded $1.3 Million for 47 Zero-Days at Pwn2Own Berlin 2026",
+      "link": "https://www.infosecurity-magazine.com/news/security-researchers-47-zerodays/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "INTERPOL Operation Ramz: 200+ Arrested Across 13 MENA Countries in Cybercrime Crackdown",
+      "link": "https://www.infosecurity-magazine.com/news/interpol-cybercrime-crackdown-mena/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "Weekly Recap: Exchange Zero-Day, npm Worm, Network Control System Targeting",
+      "link": "https://thehackernews.com/2026/05/weekly-recap-exchange-0-day-npm-worm.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "South Korea Tests Deepfake Regulations Ahead of Local Elections",
+      "link": "https://www.darkreading.com/vulnerabilities-threats/can-laws-stop-deepfakes-south-korea",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "5 Steps to Managing Shadow AI Tools Without Slowing Down Employees",
+      "link": "https://www.bleepingcomputer.com/news/security/5-steps-to-managing-shadow-ai-tools-without-slowing-down-employees/",
+      "source": "Bleeping Computer"
+    },
+    {
+      "title": "First Shai-Hulud Worm Clones Emerge Following Source Code Release",
+      "link": "https://www.securityweek.com/first-shai-hulud-worm-clones-emerge/",
+      "source": "Security Week"
+    }
+  ],
+  "source_counts": {
+    "The Hacker News": 14,
+    "Bleeping Computer": 13,
+    "Security Week": 10,
+    "Dark Reading": 7,
+    "Infosecurity Magazine": 6,
+    "CyberScoop": 4,
+    "Microsoft Security Blog": 2,
+    "Krebs on Security": 1
+  }
+}
