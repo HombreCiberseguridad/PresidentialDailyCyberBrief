@@ -1,5 +1,48 @@
 {
+  "entries": [
+    {
+      "date": "May 20, 2026",
+      "slug": "2026-05-20",
+      "path": "archive/2026-05-20/data.json"
+    },
+    {
+      "date": "May 13, 2026",
+      "slug": "2026-05-13",
+      "path": "archive/2026-05-13/data.json"
+    },
+    {
+      "date": "May 7, 2026",
+      "slug": "2026-05-07",
+      "path": "archive/2026-05-07/data.json"
+    },
+    {
+      "date": "May 5, 2026",
+      "slug": "2026-05-05",
+      "path": "archive/2026-05-05/data.json"
+    },
+    {
+      "date": "May 4, 2026",
+      "slug": "2026-05-04",
+      "path": "archive/2026-05-04/data.json"
+    },
+    {
+      "date": "May 1, 2026",
+      "slug": "2026-05-01",
+      "path": "archive/2026-05-01/data.json"
+    },
+    {
+      "date": "April 30, 2026",
+      "slug": "2026-04-30",
+      "path": "archive/2026-04-30/data.json"
+    },
+    {
+      "date": "March 23, 2026",
+      "slug": "2026-03-23",
+      "path": "archive/2026-03-23/data.json"
+    }
+  ],
   "dates": [
-    "2026-05-20"
+    "2026-05-20",
+    "2026-05-19"
   ]
 }
