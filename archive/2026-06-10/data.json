@@ -44,117 +44,16 @@
     }
   ],
   "cyber_news": [
-    {
-      "id": "miasma-worm-github-supply-chain",
-      "title": "Miasma Worm Infects 73 Microsoft GitHub Repos in Major Supply Chain Attack",
-      "category": "Campaign",
-      "summary": "The Miasma worm compromised 73 public Microsoft GitHub repositories, primarily targeting the Azure Durable Task SDK and packages consumed by AI coding agents. GitHub disabled the infected repos after they began distributing password-stealing malware to developers; Microsoft has partially restored some repositories while forensic investigation continues.",
-      "expanded": "Miasma operated by injecting malicious commit hooks and workflow files into the repository pipeline, enabling it to self-propagate to downstream forks and dependent packages — a wormable supply chain pattern first documented in the Shai Hulud npm worm. The targeting of AI coding agent scaffolding libraries is particularly notable because agentic workflows can auto-fetch and execute code without human review checkpoints. The attack primarily targeted developers and CI/CD pipelines that trust Microsoft-signed packages, meaning credential theft could cascade into enterprise environments. Nightmare Eclipse and the broader researcher community have flagged that AI-accelerated coding pipelines dramatically expand the blast radius of repository-level compromises.",
-      "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html"},
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/github-disables-microsoft-repos-pushing-password-stealing-malware/"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/microsoft-restores-some-github-repos.html"}
-      ]
-    },
-    {
-      "id": "cisco-sdwan-cve-2026-20245-seventh-zero-day",
-      "title": "Cisco SD-WAN Logs Seventh Zero-Day of 2026 — CVE-2026-20245 — With No Patch Available",
-      "category": "Vulnerability",
-      "summary": "CVE-2026-20245, a validation error in Cisco Catalyst SD-WAN Manager, allows authenticated or local attackers to execute arbitrary commands as root. It marks the seventh actively exploited zero-day in Cisco SD-WAN this year; no patch or workaround is currently available and it has been added to the CISA KEV with a June 23 due date.",
-      "expanded": "The vulnerability stems from improper encoding and escaping of user-supplied input in the SD-WAN Manager's command processing pipeline, allowing crafted file arguments to break out of the intended execution context and run as root. Although exploitation currently requires authentication, the persistence of unpatched Cisco SD-WAN instances across enterprise WAN edges means a single compromised account — obtainable via credential theft or brute force — provides a direct path to full appliance control. The seven-zero-day pattern in a single product family within six months suggests either a systematic architecture flaw being worked by a focused threat group or coordinated vulnerability research targeting a high-value network choke point. CISA's KEV listing obligates federal agencies to remediate by June 23 despite the absence of vendor guidance.",
-      "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-manager-cve-2026.html"},
-        {"name": "CyberScoop", "url": "https://cyberscoop.com/cisco-sdwan-zero-day-vulnerability-exploited-cve202620245/"},
-        {"name": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}
-      ]
-    },
-    {
-      "id": "rogueplanet-defender-zero-day-public-exploit",
-      "title": "RoguePlanet Zero-Day: Public Exploit Grants SYSTEM on Fully Patched Windows via Microsoft Defender Race Condition",
-      "category": "Threat",
-      "summary": "Researcher Nightmare Eclipse publicly released a working exploit called RoguePlanet that exploits a race condition in Microsoft Defender to escalate local privileges to SYSTEM on fully updated Windows machines. The exploit dropped immediately after June Patch Tuesday, maximizing the window between exploit availability and enterprise patch deployment.",
-      "expanded": "The race condition exists in Defender's real-time protection scanning pipeline, where a time-of-check to time-of-use (TOCTOU) flaw can be triggered by a local, unprivileged process to substitute a malicious payload during the scan evaluation window. Because Microsoft Defender runs as SYSTEM and the race window is reliably wideable on modern multi-core hardware, the exploit achieves near-deterministic privilege escalation without requiring kernel exploits. The deliberate post-Patch-Tuesday release timing by Nightmare Eclipse mirrors the YellowKey and GreenPlasma disclosures and appears intended to maximize pressure on Microsoft's disclosure and patch process. Nightmare Eclipse has reportedly threatened a 'bone shattering' July 14 follow-on disclosure, suggesting additional unpatched vulnerabilities are being held.",
-      "sources": [
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/new-windows-zero-day-exploit-rogueplanet-released/"},
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-defender-rogueplanet-zero-day-grants-system-privileges/"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/microsoft-defender-rogueplanet-zero-day.html"},
-        {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/"}
-      ]
-    },
-    {
-      "id": "litellm-cve-2026-42271-rce-exploited",
-      "title": "LiteLLM CVE-2026-42271 Command Injection Exploited in the Wild, Chains to Unauthenticated RCE",
-      "category": "Vulnerability",
-      "summary": "CVE-2026-42271, a command injection flaw in BerriAI's LiteLLM AI gateway, is being actively exploited and can be chained to achieve unauthenticated remote code execution on host systems. CISA added it to the KEV catalog with a June 22 due date.",
-      "expanded": "LiteLLM's vulnerability lies in insufficient sanitization of model name or routing parameters passed to shell-invoked processes, allowing injected commands to execute in the context of the LiteLLM server process. The chain to unauthenticated RCE exploits the fact that LiteLLM's proxy API accepts certain configuration-altering requests before authentication state is enforced — effectively turning any network-reachable LiteLLM instance into an unauthenticated remote execution surface. The severity is amplified by LiteLLM's role as a centralized AI gateway: a compromise grants access to API keys for multiple LLM providers (OpenAI, Anthropic, Azure OpenAI) stored in the platform, enabling credential theft at scale. This represents the first major exploitation of an AI orchestration layer in the wild and signals that AI infrastructure is becoming a primary attack surface.",
-      "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/litellm-flaw-cve-2026-42271-exploited.html"},
-        {"name": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}
-      ]
-    },
-    {
-      "id": "pan-os-cve-2026-0257-active-exploitation",
-      "title": "PAN-OS CVE-2026-0257 Authentication Bypass Under Active Exploitation",
-      "category": "Vulnerability",
-      "summary": "Unit 42 has documented active exploitation of CVE-2026-0257, an authentication bypass in PAN-OS that allows attackers to bypass security restrictions and establish unauthorized VPN connections. The vulnerability affects Palo Alto Networks firewalls and secure access gateways.",
-      "expanded": "CVE-2026-0257 abuses a flaw in PAN-OS's IKE/VPN authentication state machine, where a specially crafted IKE packet sequence can convince the gateway to advance to an authenticated state without valid credentials being presented — similar in class to the Check Point IKEv1 flaw disclosed this week. Exploitation allows adversaries to establish fully-tunneled VPN sessions that appear legitimate in log telemetry, enabling stealthy lateral movement or data exfiltration through what defenders treat as trusted network paths. The simultaneous exploitation of authentication bypass vulnerabilities in both Check Point and PAN-OS VPN products suggests active threat actor interest in this vulnerability class, possibly coordinated reconnaissance across enterprise VPN gateway vendors. Unit 42 has published indicators and mitigation steps in its threat brief.",
-      "sources": [
-        {"name": "Unit 42", "url": "https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/"}
-      ]
-    },
-    {
-      "id": "hades-pypi-proto6-supply-chain",
-      "title": "Hades PyPI Attack and Proto6 Vulnerabilities: Dual Supply Chain Threats Hit Developer Ecosystems",
-      "category": "Campaign",
-      "summary": "Two simultaneous supply chain threats emerged this week: the 'Hades' campaign poisoned 19 PyPI packages to auto-execute a Bun-based credential stealer on installation, while six 'Proto6' vulnerabilities in protobuf.js expose Node.js applications to RCE and DoS. Together they represent sustained, multi-ecosystem targeting of developer infrastructure.",
-      "expanded": "The Hades PyPI attack used typosquatting and dependency confusion techniques to insert packages that execute a post-install script invoking Bun — a fast JavaScript runtime — to run an in-memory credential harvester that targets browser-stored credentials, cloud CLI tokens, and SSH keys. The Proto6 vulnerabilities in protobuf.js are distinct: they include prototype pollution, type confusion, and integer overflow flaws exploitable during deserialization of untrusted protobuf payloads, making any Node.js service that processes external protobuf data a potential RCE target. Both attacks underscore that supply chain targeting has matured beyond single-vector attacks into coordinated multi-ecosystem campaigns designed to maximize developer environment coverage. The Red Hat npm scope backdoor (32 packages stealing CI/CD secrets) reported earlier this week reinforces the same pattern.",
-      "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/hades-pypi-attack-19-packages-poisoned.html"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/six-proto6-vulnerabilities-in.html"},
-        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/red-hat-npm-scope-backdoored/"}
-      ]
-    },
-    {
-      "id": "cisa-risk-prioritization-directive",
-      "title": "CISA Shifts to Risk-Based Vulnerability Prioritization with New Binding Operational Directive",
-      "category": "Laws",
-      "summary": "CISA acting director Nick Andersen announced a forthcoming binding operational directive that moves federal agencies away from blanket fast-patching guidance toward risk-based, asset-specific prioritization aligned with the KEV catalog and internet-exposed asset posture. The directive signals a fundamental change in how CISA communicates vulnerability urgency to both federal and private-sector audiences.",
-      "expanded": "The new framework explicitly acknowledges that 'patch everything within 15 days' mandates have created compliance theater at the expense of genuine risk reduction, as teams sprint to patch low-exposure internal assets while internet-facing critical infrastructure lags. The directive will tier remediation timelines based on asset internet exposure, known exploitation status (KEV alignment), and asset criticality classification — a methodology already implied by KEV due date variance but now being formalized. For the private sector, CISA plans accompanying guidance rather than binding mandates. The announcement coincides with a week where seven zero-days in Cisco SD-WAN have no patch available, highlighting the operational tension between mandate-driven patching and prioritization when vendors cannot deliver fixes.",
-      "sources": [
-        {"name": "CyberScoop", "url": "https://cyberscoop.com/cisa-cyber-risk-prioritization-vulnerability-directive/"}
-      ]
-    },
-    {
-      "id": "ai-brand-phishing-social-engineering",
-      "title": "Threat Actors Weaponize AI Brand Impersonation in Phishing and Malvertising Campaigns",
-      "category": "Campaign",
-      "summary": "Microsoft Threat Intelligence documented campaigns impersonating ChatGPT, Claude, DeepSeek, and Copilot brands through phishing, malvertising, and SEO poisoning to deliver Vidar Stealer and credential harvesters. Initial access broker Storm-3075 and malware-signing service Fox Tempest are linked to multiple campaigns.",
-      "expanded": "The campaigns exploit high user trust in AI brand names and the expectation of downloading new AI tools or extensions, lowering the psychological barrier to execution of malicious payloads. Attackers are using Google Ads and SEO manipulation to surface malicious download pages above legitimate AI vendor sites, and in some cases cloning legitimate UI experiences to capture credentials entered into fake login portals. Fox Tempest's role as a signing service is particularly significant — it provides adversaries with Authenticode-signed binaries that bypass SmartScreen and endpoint reputation checks, giving Vidar Stealer a clean initial execution path. The confluence of AI brand hype and increasingly commoditized signing services represents a durable attack surface that will persist as long as new AI product launches generate search and advertising traffic.",
-      "sources": [
-        {"name": "Microsoft Security Blog", "url": "https://www.microsoft.com/en-us/security/blog/2026/06/08/ai-brands-as-bait-how-threat-actors-are-using-the-ai-hype-in-social-engineering/"}
-      ]
-    },
-    {
-      "id": "cloud-logging-defense-evasion-unit42",
-      "title": "Unit 42: Threat Actors Abusing Cloud Logging Services to Blind Defenders",
-      "category": "Hardening",
-      "summary": "Unit 42 research details attack scenarios in which threat actors manipulate or suppress cloud logging pipelines — including AWS CloudTrail, Azure Monitor, and GCP Cloud Logging — to achieve defense evasion and eliminate forensic visibility during intrusions.",
-      "expanded": "Attacker techniques include using legitimate IAM permissions to disable log delivery, modifying log filter exclusions to suppress high-signal event categories (such as IAM changes and data plane access), and leveraging cloud-native event bridge features to redirect logs to attacker-controlled sinks — actions that are often achievable with mid-level cloud permissions obtainable through credential theft. The research demonstrates that defenders who rely on SIEM ingestion of cloud logs have a critical blind spot: if an attacker disables logging before executing their primary objective, the intrusion may leave no retrievable forensic record. Unit 42's mitigations focus on immutable log archiving to separate accounts, alerting on log configuration changes, and enforcing SCPs that prevent log disablement — controls that must be proactively implemented before an incident occurs.",
-      "sources": [
-        {"name": "Unit 42", "url": "https://unit42.paloaltonetworks.com/cloud-logging-defense-evasion/"}
-      ]
-    },
-    {
-      "id": "nightmare-eclipse-disclosure-controversy",
-      "title": "Nightmare Eclipse Controversy Reignites Coordinated Vulnerability Disclosure Debate After Microsoft Zero-Days Exploited Pre-Patch",
-      "category": "General",
-      "summary": "The uncoordinated public disclosure of multiple Windows zero-days by researcher Nightmare Eclipse — three of which were exploited before patches were available — has sparked a major industry debate about disclosure ethics, vendor accountability, and the limits of coordinated vulnerability disclosure frameworks. Microsoft has threatened legal action.",
-      "expanded": "Nightmare Eclipse disclosed YellowKey, GreenPlasma, MiniPlasma, and RoguePlanet without notifying Microsoft, arguing that vendors exploit long disclosure windows to delay patching while leaving users exposed. Microsoft's counter-position is that uncoordinated disclosure created a weaponizable window that threat actors exploited, harming the very users the researcher claims to protect. The case exposes a structural tension: CVD frameworks depend on vendor good faith in delivering timely patches, but vendors have historically deprioritized externally reported bugs. The researcher's threat of a 'bone shattering' July 14 disclosure suggests the pressure campaign is ongoing. Security community opinion is split, with some researchers arguing that public disclosure remains the only reliable mechanism to force vendor action on long-neglected vulnerability classes.",
-      "sources": [
-        {"name": "CyberScoop", "url": "https://cyberscoop.com/microsoft-coordinated-vulnerability-disclosure-debacle/"},
-        {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/"}
-      ]
-    }
+    {"id": "miasma-worm-github-supply-chain", "title": "Miasma Worm Infects 73 Microsoft GitHub Repos in Major Supply Chain Attack", "category": "Campaign", "summary": "The Miasma worm compromised 73 public Microsoft GitHub repositories, primarily targeting the Azure Durable Task SDK and packages consumed by AI coding agents. GitHub disabled the infected repos after they began distributing password-stealing malware to developers; Microsoft has partially restored some repositories while forensic investigation continues.", "expanded": "Miasma operated by injecting malicious commit hooks and workflow files into the repository pipeline, enabling it to self-propagate to downstream forks and dependent packages — a wormable supply chain pattern first documented in the Shai Hulud npm worm. The targeting of AI coding agent scaffolding libraries is particularly notable because agentic workflows can auto-fetch and execute code without human review checkpoints. The attack primarily targeted developers and CI/CD pipelines that trust Microsoft-signed packages, meaning credential theft could cascade into enterprise environments. Nightmare Eclipse and the broader researcher community have flagged that AI-accelerated coding pipelines dramatically expand the blast radius of repository-level compromises.", "sources": [{"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html"}, {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/github-disables-microsoft-repos-pushing-password-stealing-malware/"}, {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/microsoft-restores-some-github-repos.html"}]},
+    {"id": "cisco-sdwan-cve-2026-20245-seventh-zero-day", "title": "Cisco SD-WAN Logs Seventh Zero-Day of 2026 — CVE-2026-20245 — With No Patch Available", "category": "Vulnerability", "summary": "CVE-2026-20245, a validation error in Cisco Catalyst SD-WAN Manager, allows authenticated or local attackers to execute arbitrary commands as root. It marks the seventh actively exploited zero-day in Cisco SD-WAN this year; no patch or workaround is currently available and it has been added to the CISA KEV with a June 23 due date.", "expanded": "The vulnerability stems from improper encoding and escaping of user-supplied input in the SD-WAN Manager's command processing pipeline, allowing crafted file arguments to break out of the intended execution context and run as root. Although exploitation currently requires authentication, the persistence of unpatched Cisco SD-WAN instances across enterprise WAN edges means a single compromised account — obtainable via credential theft or brute force — provides a direct path to full appliance control. The seven-zero-day pattern in a single product family within six months suggests either a systematic architecture flaw being worked by a focused threat group or coordinated vulnerability research targeting a high-value network choke point. CISA's KEV listing obligates federal agencies to remediate by June 23 despite the absence of vendor guidance.", "sources": [{"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-manager-cve-2026.html"}, {"name": "CyberScoop", "url": "https://cyberscoop.com/cisco-sdwan-zero-day-vulnerability-exploited-cve202620245/"}, {"name": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}]},
+    {"id": "rogueplanet-defender-zero-day-public-exploit", "title": "RoguePlanet Zero-Day: Public Exploit Grants SYSTEM on Fully Patched Windows via Microsoft Defender Race Condition", "category": "Threat", "summary": "Researcher Nightmare Eclipse publicly released a working exploit called RoguePlanet that exploits a race condition in Microsoft Defender to escalate local privileges to SYSTEM on fully updated Windows machines. The exploit dropped immediately after June Patch Tuesday, maximizing the window between exploit availability and enterprise patch deployment.", "expanded": "The race condition exists in Defender's real-time protection scanning pipeline, where a time-of-check to time-of-use (TOCTOU) flaw can be triggered by a local, unprivileged process to substitute a malicious payload during the scan evaluation window. Because Microsoft Defender runs as SYSTEM and the race window is reliably wideable on modern multi-core hardware, the exploit achieves near-deterministic privilege escalation without requiring kernel exploits. The deliberate post-Patch-Tuesday release timing by Nightmare Eclipse mirrors the YellowKey and GreenPlasma disclosures and appears intended to maximize pressure on Microsoft's disclosure and patch process. Nightmare Eclipse has reportedly threatened a 'bone shattering' July 14 follow-on disclosure, suggesting additional unpatched vulnerabilities are being held.", "sources": [{"name": "SecurityWeek", "url": "https://www.securityweek.com/new-windows-zero-day-exploit-rogueplanet-released/"}, {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-defender-rogueplanet-zero-day-grants-system-privileges/"}, {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/microsoft-defender-rogueplanet-zero-day.html"}, {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/"}]},
+    {"id": "litellm-cve-2026-42271-rce-exploited", "title": "LiteLLM CVE-2026-42271 Command Injection Exploited in the Wild, Chains to Unauthenticated RCE", "category": "Vulnerability", "summary": "CVE-2026-42271, a command injection flaw in BerriAI's LiteLLM AI gateway, is being actively exploited and can be chained to achieve unauthenticated remote code execution on host systems. CISA added it to the KEV catalog with a June 22 due date.", "expanded": "LiteLLM's vulnerability lies in insufficient sanitization of model name or routing parameters passed to shell-invoked processes, allowing injected commands to execute in the context of the LiteLLM server process. The chain to unauthenticated RCE exploits the fact that LiteLLM's proxy API accepts certain configuration-altering requests before authentication state is enforced — effectively turning any network-reachable LiteLLM instance into an unauthenticated remote execution surface. The severity is amplified by LiteLLM's role as a centralized AI gateway: a compromise grants access to API keys for multiple LLM providers (OpenAI, Anthropic, Azure OpenAI) stored in the platform, enabling credential theft at scale. This represents the first major exploitation of an AI orchestration layer in the wild and signals that AI infrastructure is becoming a primary attack surface.", "sources": [{"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/litellm-flaw-cve-2026-42271-exploited.html"}, {"name": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}]},
+    {"id": "pan-os-cve-2026-0257-active-exploitation", "title": "PAN-OS CVE-2026-0257 Authentication Bypass Under Active Exploitation", "category": "Vulnerability", "summary": "Unit 42 has documented active exploitation of CVE-2026-0257, an authentication bypass in PAN-OS that allows attackers to bypass security restrictions and establish unauthorized VPN connections. The vulnerability affects Palo Alto Networks firewalls and secure access gateways.", "expanded": "CVE-2026-0257 abuses a flaw in PAN-OS's IKE/VPN authentication state machine, where a specially crafted IKE packet sequence can convince the gateway to advance to an authenticated state without valid credentials being presented — similar in class to the Check Point IKEv1 flaw disclosed this week. Exploitation allows adversaries to establish fully-tunneled VPN sessions that appear legitimate in log telemetry, enabling stealthy lateral movement or data exfiltration through what defenders treat as trusted network paths. The simultaneous exploitation of authentication bypass vulnerabilities in both Check Point and PAN-OS VPN products suggests active threat actor interest in this vulnerability class, possibly coordinated reconnaissance across enterprise VPN gateway vendors. Unit 42 has published indicators and mitigation steps in its threat brief.", "sources": [{"name": "Unit 42", "url": "https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/"}]},
+    {"id": "hades-pypi-proto6-supply-chain", "title": "Hades PyPI Attack and Proto6 Vulnerabilities: Dual Supply Chain Threats Hit Developer Ecosystems", "category": "Campaign", "summary": "Two simultaneous supply chain threats emerged this week: the 'Hades' campaign poisoned 19 PyPI packages to auto-execute a Bun-based credential stealer on installation, while six 'Proto6' vulnerabilities in protobuf.js expose Node.js applications to RCE and DoS. Together they represent sustained, multi-ecosystem targeting of developer infrastructure.", "expanded": "The Hades PyPI attack used typosquatting and dependency confusion techniques to insert packages that execute a post-install script invoking Bun — a fast JavaScript runtime — to run an in-memory credential harvester that targets browser-stored credentials, cloud CLI tokens, and SSH keys. The Proto6 vulnerabilities in protobuf.js are distinct: they include prototype pollution, type confusion, and integer overflow flaws exploitable during deserialization of untrusted protobuf payloads, making any Node.js service that processes external protobuf data a potential RCE target. Both attacks underscore that supply chain targeting has matured beyond single-vector attacks into coordinated multi-ecosystem campaigns designed to maximize developer environment coverage. The Red Hat npm scope backdoor (32 packages stealing CI/CD secrets) reported earlier this week reinforces the same pattern.", "sources": [{"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/hades-pypi-attack-19-packages-poisoned.html"}, {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/six-proto6-vulnerabilities-in.html"}, {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/red-hat-npm-scope-backdoored/"}]},
+    {"id": "cisa-risk-prioritization-directive", "title": "CISA Shifts to Risk-Based Vulnerability Prioritization with New Binding Operational Directive", "category": "Laws", "summary": "CISA acting director Nick Andersen announced a forthcoming binding operational directive that moves federal agencies away from blanket fast-patching guidance toward risk-based, asset-specific prioritization aligned with the KEV catalog and internet-exposed asset posture.", "expanded": "The new framework explicitly acknowledges that 'patch everything within 15 days' mandates have created compliance theater at the expense of genuine risk reduction. The directive will tier remediation timelines based on asset internet exposure, known exploitation status (KEV alignment), and asset criticality classification. For the private sector, CISA plans accompanying guidance rather than binding mandates.", "sources": [{"name": "CyberScoop", "url": "https://cyberscoop.com/cisa-cyber-risk-prioritization-vulnerability-directive/"}]},
+    {"id": "ai-brand-phishing-social-engineering", "title": "Threat Actors Weaponize AI Brand Impersonation in Phishing and Malvertising Campaigns", "category": "Campaign", "summary": "Microsoft Threat Intelligence documented campaigns impersonating ChatGPT, Claude, DeepSeek, and Copilot brands through phishing, malvertising, and SEO poisoning to deliver Vidar Stealer and credential harvesters. Initial access broker Storm-3075 and malware-signing service Fox Tempest are linked to multiple campaigns.", "expanded": "The campaigns exploit high user trust in AI brand names and the expectation of downloading new AI tools or extensions, lowering the psychological barrier to execution of malicious payloads. Attackers are using Google Ads and SEO manipulation to surface malicious download pages above legitimate AI vendor sites. Fox Tempest provides adversaries with Authenticode-signed binaries that bypass SmartScreen and endpoint reputation checks, giving Vidar Stealer a clean initial execution path.", "sources": [{"name": "Microsoft Security Blog", "url": "https://www.microsoft.com/en-us/security/blog/2026/06/08/ai-brands-as-bait-how-threat-actors-are-using-the-ai-hype-in-social-engineering/"}]},
+    {"id": "cloud-logging-defense-evasion-unit42", "title": "Unit 42: Threat Actors Abusing Cloud Logging Services to Blind Defenders", "category": "Hardening", "summary": "Unit 42 research details attack scenarios in which threat actors manipulate or suppress cloud logging pipelines — including AWS CloudTrail, Azure Monitor, and GCP Cloud Logging — to achieve defense evasion and eliminate forensic visibility during intrusions.", "expanded": "Attacker techniques include using legitimate IAM permissions to disable log delivery, modifying log filter exclusions to suppress high-signal event categories, and leveraging cloud-native event bridge features to redirect logs to attacker-controlled sinks. Unit 42's mitigations focus on immutable log archiving to separate accounts, alerting on log configuration changes, and enforcing SCPs that prevent log disablement.", "sources": [{"name": "Unit 42", "url": "https://unit42.paloaltonetworks.com/cloud-logging-defense-evasion/"}]},
+    {"id": "nightmare-eclipse-disclosure-controversy", "title": "Nightmare Eclipse Controversy Reignites Coordinated Vulnerability Disclosure Debate After Microsoft Zero-Days Exploited Pre-Patch", "category": "General", "summary": "The uncoordinated public disclosure of multiple Windows zero-days by researcher Nightmare Eclipse — three of which were exploited before patches were available — has sparked a major industry debate about disclosure ethics, vendor accountability, and the limits of coordinated vulnerability disclosure frameworks. Microsoft has threatened legal action.", "expanded": "Nightmare Eclipse disclosed YellowKey, GreenPlasma, MiniPlasma, and RoguePlanet without notifying Microsoft, arguing that vendors exploit long disclosure windows to delay patching. Microsoft's counter-position is that uncoordinated disclosure created a weaponizable window that threat actors exploited. The researcher's threat of a 'bone shattering' July 14 disclosure suggests the pressure campaign is ongoing.", "sources": [{"name": "CyberScoop", "url": "https://cyberscoop.com/microsoft-coordinated-vulnerability-disclosure-debacle/"}, {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/"}]}
   ],
   "deep_dive": {
     "title": "Microsoft June 2026 Patch Tuesday: Record 206 CVEs, Three Pre-Exploited Zero-Days, and the Nightmare Eclipse Disclosure Crisis",
@@ -169,173 +68,25 @@
     ]
   },
   "biggest_hacks": [
-    {
-      "title": "Miasma Worm Compromises 73 Microsoft GitHub Repositories in Supply Chain Attack Targeting AI Agents",
-      "link": "https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html",
-      "source": "The Hacker News",
-      "severity": "Critical",
-      "summary": "A self-propagating worm infected 73 public Microsoft GitHub repos — primarily the Azure Durable Task SDK and AI agent scaffolding packages — and used them to distribute password-stealing malware to developers before GitHub disabled the repositories.",
-      "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html"},
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/github-disables-microsoft-repos-pushing-password-stealing-malware/"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/microsoft-restores-some-github-repos.html"}
-      ]
-    },
-    {
-      "title": "ServiceNow Vulnerability Exploited Against Customer Instances — Company Had Knowledge Since April 7",
-      "link": "https://www.securityweek.com/servicenow-patches-vulnerability-exploited-against-some-customers/",
-      "source": "SecurityWeek",
-      "severity": "High",
-      "summary": "A ServiceNow security vulnerability was actively exploited to gain unauthorized access to customer instances and potentially expose customer data; SecurityWeek reports the company was aware of the issue since April 7 before deploying a fix to hosted environments.",
-      "sources": [
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/servicenow-patches-vulnerability-exploited-against-some-customers/"},
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/servicenow-discloses-security-incident-exposing-customer-data/"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/servicenow-flaw-exploited-to-gain.html"}
-      ]
-    },
-    {
-      "title": "Meta AI Support Bot Exploited to Hijack 20,000+ Instagram Accounts",
-      "link": "https://krebsonsecurity.com/2026/06/hackers-used-metas-ai-support-bot-to-seize-instagram-accounts/",
-      "source": "Krebs on Security",
-      "severity": "High",
-      "summary": "Pro-Iran hackers exploited a flaw in Meta's AI customer support chatbot to bypass email verification during password resets, linking attacker-controlled emails to target Instagram accounts — primarily those without MFA — and seizing control at scale before Meta issued an emergency patch.",
-      "sources": [
-        {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2026/06/hackers-used-metas-ai-support-bot-to-seize-instagram-accounts/"},
-        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/over-20000-instagram-accounts/"}
-      ]
-    },
-    {
-      "title": "Red Hat npm Scope Backdoored: 32 Packages Steal Cloud Secrets from CI/CD Pipelines",
-      "link": "https://www.infosecurity-magazine.com/news/red-hat-npm-scope-backdoored/",
-      "source": "Infosecurity Magazine",
-      "severity": "Critical",
-      "summary": "Attackers compromised Red Hat's official npm scope and backdoored 32 packages to exfiltrate cloud provider credentials and CI/CD pipeline secrets from any environment that installed the poisoned packages — a high-trust supply chain compromise that exploited Red Hat's identity as a trusted open-source publisher.",
-      "sources": [
-        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/red-hat-npm-scope-backdoored/"}
-      ]
-    },
-    {
-      "title": "Check Point VPN CVE-2026-50751 Exploited by Qilin Ransomware to Bypass Authentication",
-      "link": "https://thehackernews.com/2026/06/critical-check-point-vpn-flaw-exploited.html",
-      "source": "The Hacker News",
-      "severity": "Critical",
-      "summary": "The Qilin ransomware group is actively exploiting CVE-2026-50751 in Check Point Security Gateways to bypass IKEv1 VPN authentication and establish unauthorized remote access connections, leading CISA to issue an emergency KEV due date of June 11.",
-      "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/critical-check-point-vpn-flaw-exploited.html"},
-        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/check-point-critical-auth-bypass/"},
-        {"name": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}
-      ]
-    }
+    {"title": "Miasma Worm Compromises 73 Microsoft GitHub Repositories in Supply Chain Attack Targeting AI Agents", "link": "https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html", "source": "The Hacker News", "severity": "Critical", "summary": "A self-propagating worm infected 73 public Microsoft GitHub repos and used them to distribute password-stealing malware to developers before GitHub disabled the repositories.", "sources": [{"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html"}, {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/github-disables-microsoft-repos-pushing-password-stealing-malware/"}]},
+    {"title": "ServiceNow Vulnerability Exploited Against Customer Instances — Company Had Knowledge Since April 7", "link": "https://www.securityweek.com/servicenow-patches-vulnerability-exploited-against-some-customers/", "source": "SecurityWeek", "severity": "High", "summary": "A ServiceNow security vulnerability was actively exploited to gain unauthorized access to customer instances; the company was aware since April 7 before deploying a fix.", "sources": [{"name": "SecurityWeek", "url": "https://www.securityweek.com/servicenow-patches-vulnerability-exploited-against-some-customers/"}, {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/servicenow-discloses-security-incident-exposing-customer-data/"}]},
+    {"title": "Meta AI Support Bot Exploited to Hijack 20,000+ Instagram Accounts", "link": "https://krebsonsecurity.com/2026/06/hackers-used-metas-ai-support-bot-to-seize-instagram-accounts/", "source": "Krebs on Security", "severity": "High", "summary": "Pro-Iran hackers exploited a flaw in Meta's AI customer support chatbot to bypass email verification during password resets and hijack Instagram accounts at scale.", "sources": [{"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2026/06/hackers-used-metas-ai-support-bot-to-seize-instagram-accounts/"}, {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/over-20000-instagram-accounts/"}]},
+    {"title": "Red Hat npm Scope Backdoored: 32 Packages Steal Cloud Secrets from CI/CD Pipelines", "link": "https://www.infosecurity-magazine.com/news/red-hat-npm-scope-backdoored/", "source": "Infosecurity Magazine", "severity": "Critical", "summary": "Attackers backdoored 32 packages in Red Hat's official npm scope to exfiltrate cloud credentials and CI/CD pipeline secrets.", "sources": [{"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/red-hat-npm-scope-backdoored/"}]},
+    {"title": "Check Point VPN CVE-2026-50751 Exploited by Qilin Ransomware to Bypass Authentication", "link": "https://thehackernews.com/2026/06/critical-check-point-vpn-flaw-exploited.html", "source": "The Hacker News", "severity": "Critical", "summary": "Qilin ransomware is actively exploiting CVE-2026-50751 in Check Point Security Gateways to bypass IKEv1 VPN authentication, earning CISA's shortest remediation window of 2026.", "sources": [{"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/critical-check-point-vpn-flaw-exploited.html"}, {"name": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}]}
   ],
   "vulnerabilities": [
-    {
-      "cve": "CVE-2026-50751",
-      "product": "Check Point Security Gateway (IKEv1 VPN)",
-      "cvss": 10.0,
-      "severity": "Critical",
-      "description": "Improper authentication in IKEv1 implementation allows unauthenticated remote attackers to establish VPN sessions without valid credentials. Actively exploited by Qilin ransomware group. Emergency CISA KEV due date: 2026-06-11.",
-      "exploited": true,
-      "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
-    },
-    {
-      "cve": "CVE-2026-11645",
-      "product": "Google Chrome / Chromium V8 JavaScript Engine",
-      "cvss": 9.6,
-      "severity": "Critical",
-      "description": "Out-of-bounds read/write in V8 allows remote code execution inside a sandbox via a crafted HTML page. Actively exploited in the wild. Affects Chrome, Edge, Opera. CISA KEV due date: 2026-06-23.",
-      "exploited": true,
-      "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
-    },
-    {
-      "cve": "CVE-2026-20245",
-      "product": "Cisco Catalyst SD-WAN Manager",
-      "cvss": 8.2,
-      "severity": "High",
-      "description": "Improper encoding/escaping of input allows authenticated or local attacker to execute arbitrary commands as root via crafted file. Seventh actively exploited Cisco SD-WAN zero-day this year. No patch or workaround available. CISA KEV due date: 2026-06-23.",
-      "exploited": true,
-      "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
-    },
-    {
-      "cve": "CVE-2026-42271",
-      "product": "BerriAI LiteLLM AI Gateway",
-      "cvss": 9.8,
-      "severity": "Critical",
-      "description": "Command injection in LiteLLM allows any authenticated user to run arbitrary commands on the host; chains to unauthenticated RCE via pre-auth API surface. Actively exploited in the wild. CISA KEV due date: 2026-06-22.",
-      "exploited": true,
-      "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
-    },
-    {
-      "cve": "CVE-2026-0257",
-      "product": "Palo Alto Networks PAN-OS",
-      "cvss": 9.1,
-      "severity": "Critical",
-      "description": "Authentication bypass in PAN-OS IKE/VPN state machine allows unauthenticated attackers to establish unauthorized VPN sessions that appear legitimate in logs. Actively exploited per Unit 42 threat brief.",
-      "exploited": true,
-      "source": "https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/"
-    },
-    {
-      "cve": "CVE-2026-28318",
-      "product": "SolarWinds Serv-U",
-      "cvss": 7.5,
-      "severity": "High",
-      "description": "Unauthenticated uncontrolled resource consumption via crafted POST requests with Content-Encoding: deflate header causes service crash. Actively exploited. CISA KEV due date: 2026-06-19.",
-      "exploited": true,
-      "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
-    },
-    {
-      "cve": "CVE-2026-7473",
-      "product": "Arista Extensible Operating System (EOS)",
-      "cvss": 8.6,
-      "severity": "High",
-      "description": "Incomplete comparison causes switch to incorrectly decapsulate and forward unexpected tunneled packets matching its configured decapsulation IP, enabling traffic interception or bypass. Actively exploited. CISA KEV due date: 2026-06-23.",
-      "exploited": true,
-      "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
-    },
-    {
-      "cve": "CVE-2026-45247",
-      "product": "Mirasvit Full Page Cache Warmer (Magento/Adobe Commerce)",
-      "cvss": 9.8,
-      "severity": "Critical",
-      "description": "Deserialization of untrusted PHP object in CacheWarmer cookie enables unauthenticated RCE. Actively exploited. CISA KEV due date: 2026-06-06 (passed).",
-      "exploited": true,
-      "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
-    },
-    {
-      "cve": "CVE-2025-48595",
-      "product": "Android Framework",
-      "cvss": 7.8,
-      "severity": "High",
-      "description": "Integer overflow in Android Framework enables local privilege escalation via code execution. Actively exploited. CISA KEV due date: 2026-06-05 (passed).",
-      "exploited": true,
-      "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
-    },
-    {
-      "cve": "N/A (RoguePlanet)",
-      "product": "Microsoft Defender / Windows (fully patched)",
-      "cvss": 7.8,
-      "severity": "High",
-      "description": "Race condition (TOCTOU) in Microsoft Defender real-time protection scanning pipeline allows local unprivileged user to escalate to SYSTEM. Public working exploit released by Nightmare Eclipse. Patched in June 2026 Patch Tuesday.",
-      "exploited": true,
-      "source": "https://www.securityweek.com/new-windows-zero-day-exploit-rogueplanet-released/"
-    },
-    {
-      "cve": "N/A (ServiceNow)",
-      "product": "ServiceNow",
-      "cvss": 8.8,
-      "severity": "High",
-      "description": "Unspecified vulnerability actively exploited to gain unauthorized access to customer instances; company was reportedly aware since April 7. Patch deployed to hosted environments June 2026.",
-      "exploited": true,
-      "source": "https://www.securityweek.com/servicenow-patches-vulnerability-exploited-against-some-customers/"
-    },
-    {
-      "cve": "N/A (Exchange Server zero-day)",
-      "product": "Microsoft Exchange Server",
-      "cvss": 8.8,
-      "severity": "High",
-      "description": "Exchange Server zero-day actively exploited in attacks prior to June 2026 Patch Tuesday disclosure. Patched June 10, 2026.",
-      "exploited": true,
-      "source": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-exchange-server-zero-day-exploited-in-attacks/"
-    }
+    {"cve": "CVE-2026-50751", "product": "Check Point Security Gateway (IKEv1 VPN)", "cvss": 10.0, "severity": "Critical", "description": "Improper authentication in IKEv1 implementation allows unauthenticated remote attackers to establish VPN sessions without valid credentials. Actively exploited by Qilin ransomware group. Emergency CISA KEV due date: 2026-06-11.", "exploited": true, "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+    {"cve": "CVE-2026-11645", "product": "Google Chrome / Chromium V8 JavaScript Engine", "cvss": 9.6, "severity": "Critical", "description": "Out-of-bounds read/write in V8 allows remote code execution inside a sandbox via a crafted HTML page. Actively exploited. Affects Chrome, Edge, Opera. CISA KEV due date: 2026-06-23.", "exploited": true, "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+    {"cve": "CVE-2026-20245", "product": "Cisco Catalyst SD-WAN Manager", "cvss": 8.2, "severity": "High", "description": "Improper encoding/escaping allows root command execution. Seventh actively exploited Cisco SD-WAN zero-day this year. No patch available. CISA KEV due date: 2026-06-23.", "exploited": true, "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+    {"cve": "CVE-2026-42271", "product": "BerriAI LiteLLM AI Gateway", "cvss": 9.8, "severity": "Critical", "description": "Command injection chains to unauthenticated RCE. Actively exploited. CISA KEV due date: 2026-06-22.", "exploited": true, "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+    {"cve": "CVE-2026-0257", "product": "Palo Alto Networks PAN-OS", "cvss": 9.1, "severity": "Critical", "description": "Authentication bypass in PAN-OS IKE/VPN state machine allows unauthenticated attackers to establish unauthorized VPN sessions. Actively exploited.", "exploited": true, "source": "https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/"},
+    {"cve": "CVE-2026-28318", "product": "SolarWinds Serv-U", "cvss": 7.5, "severity": "High", "description": "Unauthenticated uncontrolled resource consumption causes service crash. Actively exploited. CISA KEV due date: 2026-06-19.", "exploited": true, "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+    {"cve": "CVE-2026-7473", "product": "Arista Extensible Operating System (EOS)", "cvss": 8.6, "severity": "High", "description": "Incomplete comparison enables traffic interception via unexpected tunneled packets. Actively exploited. CISA KEV due date: 2026-06-23.", "exploited": true, "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+    {"cve": "CVE-2026-45247", "product": "Mirasvit Full Page Cache Warmer (Magento/Adobe Commerce)", "cvss": 9.8, "severity": "Critical", "description": "Deserialization of untrusted PHP object enables unauthenticated RCE. Actively exploited. CISA KEV due date: 2026-06-06 (passed).", "exploited": true, "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+    {"cve": "CVE-2025-48595", "product": "Android Framework", "cvss": 7.8, "severity": "High", "description": "Integer overflow enables local privilege escalation. Actively exploited. CISA KEV due date: 2026-06-05 (passed).", "exploited": true, "source": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+    {"cve": "N/A (RoguePlanet)", "product": "Microsoft Defender / Windows (fully patched)", "cvss": 7.8, "severity": "High", "description": "TOCTOU race condition in Defender allows local privilege escalation to SYSTEM. Public working exploit released. Patched June 2026 Patch Tuesday.", "exploited": true, "source": "https://www.securityweek.com/new-windows-zero-day-exploit-rogueplanet-released/"},
+    {"cve": "N/A (ServiceNow)", "product": "ServiceNow", "cvss": 8.8, "severity": "High", "description": "Unspecified vulnerability exploited to gain unauthorized access to customer instances. Company aware since April 7. Patched June 2026.", "exploited": true, "source": "https://www.securityweek.com/servicenow-patches-vulnerability-exploited-against-some-customers/"},
+    {"cve": "N/A (Exchange Server zero-day)", "product": "Microsoft Exchange Server", "cvss": 8.8, "severity": "High", "description": "Exchange Server zero-day actively exploited pre-patch. Patched June 10, 2026.", "exploited": true, "source": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-exchange-server-zero-day-exploited-in-attacks/"}
   ],
   "recent_headlines": [
     {"title": "ServiceNow Flaw Exploited to Gain Unauthorized Access to Customer Instances", "link": "https://thehackernews.com/2026/06/servicenow-flaw-exploited-to-gain.html", "source": "The Hacker News"},
@@ -343,44 +94,35 @@
     {"title": "Six Proto6 Vulnerabilities in protobuf.js Expose Node.js Apps to RCE and DoS", "link": "https://thehackernews.com/2026/06/six-proto6-vulnerabilities-in.html", "source": "The Hacker News"},
     {"title": "Veeam Backup & Replication RCE Flaw Lets Domain Users Run Remote Code", "link": "https://thehackernews.com/2026/06/veeam-backup-replication-rce-flaw-lets.html", "source": "The Hacker News"},
     {"title": "Microsoft Restores Some GitHub Repos, Keeps Others Offline as Miasma Probe Continues", "link": "https://thehackernews.com/2026/06/microsoft-restores-some-github-repos.html", "source": "The Hacker News"},
-    {"title": "WinRAR Flaw Exploited by Russia-Aligned Groups to Deploy Stealers in Ukraine", "link": "https://thehackernews.com/2026/06/winrar-flaw-exploited-by-russia-aligned.html", "source": "The Hacker News"},
-    {"title": "Chrome V8 Zero-Day CVE-2026-11645 Exploited in the Wild - Patch Now", "link": "https://thehackernews.com/2026/06/chrome-v8-zero-day-cve-2026-11645.html", "source": "The Hacker News"},
-    {"title": "Hades PyPI Attack: 19 Packages Poisoned to Auto-Run Bun Credential Stealer", "link": "https://thehackernews.com/2026/06/hades-pypi-attack-19-packages-poisoned.html", "source": "The Hacker News"},
+    {"title": "Chrome V8 Zero-Day CVE-2026-11645 Exploited in the Wild — Patch Now", "link": "https://thehackernews.com/2026/06/chrome-v8-zero-day-cve-2026-11645.html", "source": "The Hacker News"},
     {"title": "Microsoft patches Exchange Server zero-day exploited in attacks", "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-exchange-server-zero-day-exploited-in-attacks/", "source": "BleepingComputer"},
     {"title": "Microsoft patches YellowKey, GreenPlasma, MiniPlasma zero-days", "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-yellowkey-greenplasma-miniplasma-zero-days/", "source": "BleepingComputer"},
     {"title": "Ivanti: Max severity Sentry flaw allows code execution as root", "link": "https://www.bleepingcomputer.com/news/security/new-max-severity-ivanti-sentry-flaw-allows-code-execution-as-root/", "source": "BleepingComputer"},
-    {"title": "GitHub disables Microsoft repos pushing password-stealing malware", "link": "https://www.bleepingcomputer.com/news/security/github-disables-microsoft-repos-pushing-password-stealing-malware/", "source": "BleepingComputer"},
     {"title": "Microsoft June 2026 Patch Tuesday fixes 3 zero-days, 200 flaws", "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-june-2026-patch-tuesday-fixes-3-zero-day-200-flaws/", "source": "BleepingComputer"},
-    {"title": "New Windows Zero-Day Exploit 'RoguePlanet' Released", "link": "https://www.securityweek.com/new-windows-zero-day-exploit-rogueplanet-released/", "source": "SecurityWeek"},
-    {"title": "ServiceNow Patches Vulnerability Exploited Against Some Customers", "link": "https://www.securityweek.com/servicenow-patches-vulnerability-exploited-against-some-customers/", "source": "SecurityWeek"},
-    {"title": "Critical Vulnerabilities Patched in Fortinet, Ivanti Products", "link": "https://www.securityweek.com/critical-vulnerabilities-patched-in-fortinet-ivanti-products/", "source": "SecurityWeek"},
-    {"title": "Infostealers Turn Millions of Devices Into Credential Theft Machines", "link": "https://www.securityweek.com/infostealers-turn-millions-of-devices-into-credential-theft-machines/", "source": "SecurityWeek"},
-    {"title": "Critical HVAC and UPS Vulnerabilities Could Let Hackers Disrupt Data Centers", "link": "https://www.securityweek.com/critical-hvac-and-ups-vulnerabilities-could-let-hackers-disrupt-data-centers/", "source": "SecurityWeek"},
-    {"title": "A Record-Breaking Patch Tuesday for June 2026", "link": "https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/", "source": "Krebs on Security"},
     {"title": "Microsoft breaks Patch Tuesday record with 206 vulnerabilities", "link": "https://cyberscoop.com/microsoft-patch-tuesday-june-2026/", "source": "CyberScoop"},
-    {"title": "CISA is rethinking how it prioritizes risks and vulnerabilities for feds, private sector", "link": "https://cyberscoop.com/cisa-cyber-risk-prioritization-vulnerability-directive/", "source": "CyberScoop"},
+    {"title": "CISA is rethinking how it prioritizes risks and vulnerabilities", "link": "https://cyberscoop.com/cisa-cyber-risk-prioritization-vulnerability-directive/", "source": "CyberScoop"},
     {"title": "Cisco customers encounter another SD-WAN zero-day under attack", "link": "https://cyberscoop.com/cisco-sdwan-zero-day-vulnerability-exploited-cve202620245/", "source": "CyberScoop"},
+    {"title": "Infostealers Turn Millions of Devices Into Credential Theft Machines", "link": "https://www.securityweek.com/infostealers-turn-millions-of-devices-into-credential-theft-machines/", "source": "SecurityWeek"},
+    {"title": "New Windows Zero-Day Exploit 'RoguePlanet' Released", "link": "https://www.securityweek.com/new-windows-zero-day-exploit-rogueplanet-released/", "source": "SecurityWeek"},
+    {"title": "Critical Vulnerabilities Patched in Fortinet, Ivanti Products", "link": "https://www.securityweek.com/critical-vulnerabilities-patched-in-fortinet-ivanti-products/", "source": "SecurityWeek"},
     {"title": "Check Point Warns Critical Auth Bypass Bug Exploited in the Wild", "link": "https://www.infosecurity-magazine.com/news/check-point-critical-auth-bypass/", "source": "Infosecurity Magazine"},
-    {"title": "75% of Firms Deploy Vulnerable Code Amid Pressure on CISOs, Report Finds", "link": "https://www.infosecurity-magazine.com/news/firms-deploy-vulnerable-code/", "source": "Infosecurity Magazine"},
     {"title": "Meta AI Bug Exposes Over 20,000 Instagram Accounts", "link": "https://www.infosecurity-magazine.com/news/over-20000-instagram-accounts/", "source": "Infosecurity Magazine"},
     {"title": "Attackers Hijack Red Hat npm Scope to Steal Cloud Secrets", "link": "https://www.infosecurity-magazine.com/news/red-hat-npm-scope-backdoored/", "source": "Infosecurity Magazine"},
+    {"title": "A Record-Breaking Patch Tuesday for June 2026", "link": "https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/", "source": "Krebs on Security"},
     {"title": "AI brands as bait: How threat actors are using the AI hype in social engineering", "link": "https://www.microsoft.com/en-us/security/blog/2026/06/08/ai-brands-as-bait-how-threat-actors-are-using-the-ai-hype-in-social-engineering/", "source": "Microsoft Security Blog"},
-    {"title": "Reconstructing AI activity in investigations", "link": "https://www.microsoft.com/en-us/security/blog/2026/06/09/reconstructing-ai-activity-investigations/", "source": "Microsoft Security Blog"},
-    {"title": "Microsoft Patch Tuesday for June 2026 — Snort rules and prominent vulnerabilities", "link": "https://blog.talosintelligence.com/microsoft-patch-tuesday-for-june-2026-snort-rules-and-prominent-vulnerabilities/", "source": "Cisco Talos Blog"},
     {"title": "Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion", "link": "https://unit42.paloaltonetworks.com/cloud-logging-defense-evasion/", "source": "Unit 42"},
-    {"title": "Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257", "link": "https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/", "source": "Unit 42"},
-    {"title": "When 'Hi, This Is IT' Comes Through Microsoft Teams", "link": "https://unit42.paloaltonetworks.com/microsoft-teams-phishing/", "source": "Unit 42"}
+    {"title": "Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257", "link": "https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/", "source": "Unit 42"}
   ],
   "source_counts": {
     "The Hacker News": 15,
     "BleepingComputer": 8,
     "CyberScoop": 5,
     "SecurityWeek": 6,
-    "Infosecurity Magazine": 8,
+    "Infosecurity Magazine": 9,
     "Krebs on Security": 2,
     "Microsoft Security Blog": 2,
     "Cisco Talos Blog": 1,
-    "Unit 42": 4,
+    "Unit 42": 5,
     "CISA KEV": 7,
     "Advisory Week": 1
   }
