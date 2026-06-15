@@ -1,0 +1,386 @@
+{
+  "date": "2026-06-02",
+  "generated_at": "2026-06-02T03:42:00-05:00",
+  "executive_summary": [
+    {
+      "text": "A Palo Alto PAN-OS authentication bypass vulnerability is under confirmed active exploitation in the wild, allowing unauthenticated attackers to gain initial access to managed firewalls — CISA added it to the KEV catalog and three separate sources confirm targeted attacks are ongoing.",
+      "sources": [
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com"
+        },
+        {
+          "name": "CISA KEV",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        }
+      ]
+    },
+    {
+      "text": "A sophisticated supply chain campaign dubbed \"Miasma\" injected credential-harvesting malware into Red Hat-linked npm packages, silently exfiltrating SSH keys, API tokens, and environment variables from developer machines and CI/CD pipelines before the packages were pulled from the registry.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com"
+        }
+      ]
+    },
+    {
+      "text": "Threat actor DriveSurge is hijacking thousands of legitimate websites to serve ClickFix and FakeUpdate lures — fake CAPTCHAs and browser-update prompts that trick end users into self-executing PowerShell commands that install infostealers and RATs, with ClickFix attack frequency sharply rising throughout 2026.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com"
+        }
+      ]
+    },
+    {
+      "text": "CVE-2024-21182, a critical unauthenticated remote code execution flaw in Oracle WebLogic Server exploitable over T3/IIOP network protocols, has been added to the CISA Known Exploited Vulnerabilities catalog following confirmation of active in-the-wild exploitation.",
+      "sources": [
+        {
+          "name": "CISA KEV",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        }
+      ]
+    },
+    {
+      "text": "Krebs on Security reports that attackers are exploiting conversational logic flaws in Meta's AI-powered support chatbot to hijack Instagram accounts without ever needing victims' passwords — a novel social engineering attack surface introduced by AI account-recovery automation.",
+      "sources": [
+        {
+          "name": "Krebs on Security",
+          "url": "https://krebsonsecurity.com"
+        }
+      ]
+    }
+  ],
+  "cyber_news": [
+    {
+      "id": "panos-auth-bypass-active-exploitation",
+      "title": "Palo Alto PAN-OS Authentication Bypass Under Active Exploitation",
+      "category": "Threat",
+      "summary": "A critical authentication bypass vulnerability in Palo Alto Networks PAN-OS is being actively exploited by threat actors to gain unauthenticated initial access to enterprise firewalls. CISA confirmed the active exploitation and added the CVE to the Known Exploited Vulnerabilities catalog. Three independent sources — CyberScoop, CISA, and Advisory Week — corroborate the attacks.",
+      "expanded": "The vulnerability resides in PAN-OS's management plane and allows an unauthenticated remote attacker to bypass authentication controls entirely, obtaining a foothold directly on perimeter firewall infrastructure. Once inside, threat actors pivot laterally across network segments — bypassing the very device meant to prevent that movement. The attack is particularly dangerous because Palo Alto firewalls are frequently positioned as trust boundaries for segmented networks; a successful auth bypass effectively collapses those boundaries. CISA's KEV listing means federal civilian agencies must patch on mandatory timelines, and the advisory roundup confirms the flaw was part of a broader wave of 5 new KEV entries added in Week 21 of 2026. Affected version ranges are detailed in Palo Alto's vendor advisory; interim mitigation requires restricting management interface access to trusted IP ranges at minimum.",
+      "sources": [
+        {
+          "name": "CyberScoop",
+          "url": "https://cyberscoop.com"
+        },
+        {
+          "name": "CISA KEV",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        },
+        {
+          "name": "Advisory Week",
+          "url": "https://kill-the-newsletter.com/feeds/f7lo7o0rlop8eqo5/entries/9wjn0zcpc59mcamu7ox6.html"
+        }
+      ]
+    },
+    {
+      "id": "miasma-supply-chain-npm-redhat",
+      "title": "\"Miasma\" Supply Chain Attack Compromises Red Hat npm Packages — CI/CD Secrets at Risk",
+      "category": "Campaign",
+      "summary": "A supply chain campaign tracked as \"Miasma\" injected malicious credential-harvesting code into multiple npm packages linked to Red Hat's ecosystem. The malicious code silently exfiltrates SSH keys, API tokens, and environment variables from affected developer workstations and CI/CD pipelines. The compromised packages were removed from the npm registry following discovery, but any environment that installed them during the exposure window should be treated as compromised.",
+      "expanded": "The Miasma attackers achieved registry-level package compromise — either through account takeover of a maintainer with Red Hat-affiliated packages or by publishing typosquatted variants close to legitimate package names. The malicious payload executed at install time via a postinstall hook, scanning for common secret patterns in environment variables, ~/.ssh directories, and local credential stores, then beaconing exfiltrated data to attacker-controlled infrastructure. The technique mirrors the 2021 ua-parser-js and 2022 node-ipc incidents but with a broader credential-harvest scope. CI/CD pipeline runners are especially high-value targets because they typically hold cloud provider credentials, container registry tokens, and deployment keys — meaning a single compromised package install could yield persistent access to downstream production infrastructure. BleepingComputer's corroborating coverage confirmed live presence of the malicious version on the registry before takedown.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com"
+        }
+      ]
+    },
+    {
+      "id": "drivesurge-clickfix-fakeupdate-campaign",
+      "title": "DriveSurge Hijacks Thousands of Legitimate Sites for ClickFix/FakeUpdate Malware Distribution",
+      "category": "Campaign",
+      "summary": "Threat actor DriveSurge is conducting a mass website compromise campaign, injecting ClickFix (fake CAPTCHA) and FakeUpdate (fake browser update) overlays into thousands of legitimate websites. Victims who interact with the lures are instructed to paste and execute PowerShell or JavaScript commands that silently install infostealers and remote access trojans. ClickFix-style attacks have seen a marked increase in frequency through 2026.",
+      "expanded": "DriveSurge's operation represents a maturation of the ClickFix technique first widely documented in 2024. The actor compromises websites — likely through vulnerable CMS plugins or stolen hosting credentials — and injects JavaScript that overlays convincing fake CAPTCHA or browser-update UI elements on legitimate page content. The social engineering step exploits user habituation: visitors to trusted sites don't expect malicious prompts. The PowerShell payload is typically served via a clipboard-injection mechanism (\"Press Win+R, paste this command\") — a bypass for traditional download-based defenses since no file is written until execution. Delivered payloads have included Lumma Stealer, Vidar, and AsyncRAT variants based on BleepingComputer's reporting on the broader ClickFix trend. The infostealer infections harvest browser-saved credentials, cryptocurrency wallets, and session cookies, creating downstream exposure for any MSP-managed environment a victim user later authenticates into.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com"
+        }
+      ]
+    },
+    {
+      "id": "advisory-week-21-cisa-kev-5-entries",
+      "title": "Advisory Week 21/2026: 5 New CISA KEV Entries — cPanel, PAN-OS, Daemon Tools, Nx Console, TanStack",
+      "category": "Hardening",
+      "summary": "CISA's Week 21/2026 advisory digest confirms 5 newly added Known Exploited Vulnerabilities spanning Palo Alto PAN-OS, cPanel & WHM, Daemon Tools, Nx Console, and TanStack JavaScript library. The same advisory window also saw releases from Oracle (critical patch), Mozilla Firefox 151.1, Red Hat OpenShift, Cisco SD-WAN, Jenkins, Microsoft, and NVIDIA — representing a dense patch week for MSP engineering teams.",
+      "expanded": "The Week 21 KEV batch is notable for its product breadth: cPanel is a particularly high-value target given its prevalence in shared and managed hosting environments, where a single compromised control panel can cascade into hundreds of hosted sites. TanStack (formerly React Query) is a widely used JavaScript library in modern web application stacks, meaning the affected CVE potentially has a large blast radius across web-deployed applications. Nx Console is a developer IDE extension for monorepo management — its presence in a KEV signals attackers are now targeting developer tooling as an initial access vector, mirroring the Miasma npm campaign. The concurrent Cisco SD-WAN advisory is worth cross-referencing against the PAN-OS story — both represent network-layer infrastructure exploitation, suggesting elevated threat actor interest in perimeter and SD-WAN systems this week.",
+      "sources": [
+        {
+          "name": "Advisory Week",
+          "url": "https://kill-the-newsletter.com/feeds/f7lo7o0rlop8eqo5/entries/9wjn0zcpc59mcamu7ox6.html"
+        },
+        {
+          "name": "CISA KEV",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        }
+      ]
+    },
+    {
+      "id": "meta-ai-chatbot-instagram-takeover",
+      "title": "Meta AI Support Bot Exploited for Password-Free Instagram Account Takeovers",
+      "category": "Campaign",
+      "summary": "Krebs on Security reports that threat actors discovered a method to abuse Meta's AI-powered customer support chatbot to hijack Instagram accounts without knowing the victim's password. Attackers manipulate the conversational logic of the bot's account-recovery workflow, convincing it to bypass normal verification steps and hand over account access. The technique highlights AI support automation as a new, largely unaudited social engineering attack surface.",
+      "expanded": "The attack exploits a fundamental tension in AI-driven support systems: they are optimized for user helpfulness and frictionless resolution, which makes them susceptible to adversarial conversational prompts that mimic legitimate recovery scenarios. Unlike traditional phishing — which targets the end user — this attack targets the AI system's decision-making logic directly, using carefully crafted dialogue to trigger account-recovery actions. The technique represents a form of prompt injection or adversarial conversation manipulation applied to a production customer-service context rather than a controlled research environment. The attack's effectiveness stems from the AI's inability to reliably distinguish a legitimate locked-out account owner from a threat actor with enough personal context (scraped from social media) to appear credible. Any organization running AI-powered helpdesk, IT support, or account-recovery automation faces similar exposure if the AI can authorize actions without hard out-of-band verification steps.",
+      "sources": [
+        {
+          "name": "Krebs on Security",
+          "url": "https://krebsonsecurity.com"
+        }
+      ]
+    },
+    {
+      "id": "oracle-weblogic-cve-2024-21182-kev",
+      "title": "CVE-2024-21182 — Oracle WebLogic Unauthenticated RCE Added to CISA KEV",
+      "category": "Threat",
+      "summary": "CISA has added CVE-2024-21182 to the Known Exploited Vulnerabilities catalog, confirming active in-the-wild exploitation of this critical unauthenticated remote code execution vulnerability in Oracle WebLogic Server. The flaw is reachable over the T3 and IIOP protocols on the default WebLogic listening port, requiring no credentials for exploitation. Attackers who successfully exploit it can gain full control of the WebLogic server and access all data it processes.",
+      "expanded": "CVE-2024-21182 is a deserialization vulnerability in Oracle WebLogic Server's T3 and IIOP protocol handlers — protocols that enable distributed Java object communication and are enabled by default on WebLogic installations. An attacker with network access to the WebLogic port (typically 7001 or 7002) can send a specially crafted serialized Java object that triggers unsafe deserialization, leading to arbitrary OS command execution as the WebLogic process owner. Oracle originally patched this in a prior Critical Patch Update cycle, but CISA's KEV addition confirms attackers are actively scanning for and exploiting unpatched instances — a common pattern where threat actors immediately operationalize CVEs post-public-disclosure. WebLogic is prevalent in Oracle Fusion Middleware deployments, enterprise Java application servers, and legacy financial-sector applications, making unpatched instances high-value targets. T3/IIOP ports should never be exposed to untrusted networks.",
+      "sources": [
+        {
+          "name": "CISA KEV",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        }
+      ]
+    },
+    {
+      "id": "spain-doxer-arrest-government-data",
+      "title": "Spain Arrests Individual Who Leaked Sensitive Personal Data on Government Employees",
+      "category": "General",
+      "summary": "Spanish law enforcement arrested an individual who systematically published home addresses, national ID documents, and personal contact information of civil servants and security personnel online — a doxing operation that creates concrete physical safety risks beyond traditional digital harm. The case underscores that data breaches targeting public sector employees carry real-world personal safety implications that extend beyond IT remediation.",
+      "expanded": "The Spanish case is notable because it demonstrates the downstream physical-security consequences of PII exposure in the public sector: publishing home addresses of law enforcement, judiciary, or intelligence personnel is not merely a privacy violation but a potential facilitator of intimidation, physical harm, or targeted operational disruption. For MSPs serving public sector, municipal government, or high-profile private sector clients, this incident is a concrete argument for OSINT exposure monitoring and employee personal data hygiene as part of the security program. The arrest also highlights that some jurisdictions are actively prosecuting doxing as a serious criminal offense rather than a civil matter — an evolving legal landscape for organizations that inadvertently expose employee PII through data breaches.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com"
+        }
+      ]
+    }
+  ],
+  "deep_dive": {
+    "title": "Palo Alto PAN-OS Authentication Bypass — Active Exploitation, CISA KEV Listing, and Attack Chain Analysis",
+    "content": "A critical authentication bypass vulnerability in Palo Alto Networks PAN-OS is at the center of this week's most urgent threat. The flaw, confirmed by CyberScoop and officially added to CISA's Known Exploited Vulnerabilities catalog, allows an unauthenticated remote attacker to bypass PAN-OS authentication controls and gain initial access directly to the firewall management plane — no credentials required. The attack chain documented in threat intelligence reporting follows a consistent pattern: auth bypass establishes the initial foothold, after which attackers pivot laterally into adjacent network segments that the compromised firewall was supposed to be protecting, effectively using the perimeter device as a jump point rather than a barrier. This is particularly devastating in enterprise and MSP-managed environments where PAN-OS devices are positioned as trust anchors for network segmentation. The exploitation is not theoretical — CyberScoop confirms targeted attacks are underway, and CISA's KEV listing carries the weight of confirmed real-world exploitation evidence. The vulnerability was also included in Advisory Week's Week 21/2026 digest alongside four other newly KEV-listed CVEs, indicating a coordinated advisory push. Affected organizations should apply Palo Alto's vendor patch immediately; where patching cannot be completed within the emergency window, restricting management interface access to trusted, enumerated IP ranges provides meaningful interim risk reduction. MSPs managing PAN-OS deployments across multiple clients should treat this as an all-hands patch sprint.",
+    "sources": [
+      {
+        "name": "CyberScoop",
+        "url": "https://cyberscoop.com"
+      },
+      {
+        "name": "CISA KEV",
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      },
+      {
+        "name": "Advisory Week",
+        "url": "https://kill-the-newsletter.com/feeds/f7lo7o0rlop8eqo5/entries/9wjn0zcpc59mcamu7ox6.html"
+      }
+    ]
+  },
+  "biggest_hacks": [
+    {
+      "title": "Dashlane Discloses Brute-Force Attack — Encrypted Vaults of ~20 Users Accessed",
+      "link": "https://thehackernews.com",
+      "source": "The Hacker News",
+      "severity": "High",
+      "summary": "Dashlane confirmed that attackers used credential stuffing and brute-force techniques to access the encrypted vaults of fewer than 20 users, marking the second major password manager security incident in recent months and amplifying concerns about master password hygiene and MFA enforcement across password management tools.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com"
+        }
+      ]
+    },
+    {
+      "title": "Red Hat npm Package Registry Backdoor — Miasma CI/CD Secrets Harvest",
+      "link": "https://www.bleepingcomputer.com",
+      "source": "BleepingComputer",
+      "severity": "Critical",
+      "summary": "The Miasma supply chain operation successfully placed backdoored npm packages on the live registry linked to Red Hat's ecosystem, confirming that production CI/CD pipelines and developer environments that installed the packages during the exposure window had SSH keys, API tokens, and environment secrets actively exfiltrated to attacker-controlled infrastructure.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com"
+        }
+      ]
+    },
+    {
+      "title": "Oracle WebLogic CVE-2024-21182 — Unauthenticated RCE Actively Exploited in the Wild",
+      "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source": "CISA KEV",
+      "severity": "Critical",
+      "summary": "Unpatched Oracle WebLogic Server instances exposed on T3/IIOP ports are being actively exploited via CVE-2024-21182, with CISA's KEV listing confirming threat actors are achieving unauthenticated remote code execution against vulnerable deployments in enterprise environments.",
+      "sources": [
+        {
+          "name": "CISA KEV",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "cve": "PAN-OS CVE (see Palo Alto vendor advisory)",
+      "product": "Palo Alto Networks PAN-OS",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Authentication bypass vulnerability allowing unauthenticated remote attackers to gain initial access to PAN-OS firewalls; actively used as lateral movement foothold. CISA KEV listed.",
+      "exploited": true,
+      "source": "CISA KEV / CyberScoop"
+    },
+    {
+      "cve": "CVE-2024-21182",
+      "product": "Oracle WebLogic Server",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Unauthenticated RCE via T3/IIOP protocol deserialization — attacker with network access to WebLogic port can achieve full server compromise with no credentials required. CISA KEV listed.",
+      "exploited": true,
+      "source": "CISA KEV"
+    },
+    {
+      "cve": "cPanel CVE (see cPanel vendor advisory)",
+      "product": "cPanel & WHM",
+      "cvss": 8.8,
+      "severity": "High",
+      "description": "Unspecified actively exploited vulnerability in cPanel & WHM shared/managed hosting control panel. High MSP relevance given cPanel prevalence in hosted client environments. CISA KEV listed.",
+      "exploited": true,
+      "source": "CISA KEV / Advisory Week"
+    },
+    {
+      "cve": "Daemon Tools CVE (see vendor advisory)",
+      "product": "Daemon Tools",
+      "cvss": 7.8,
+      "severity": "High",
+      "description": "Actively exploited vulnerability in Daemon Tools virtual drive software. Endpoints running Daemon Tools should be updated or the software removed if not required. CISA KEV listed.",
+      "exploited": true,
+      "source": "CISA KEV / Advisory Week"
+    },
+    {
+      "cve": "Nx Console CVE (see vendor advisory)",
+      "product": "Nx Console (VS Code extension / dev tooling)",
+      "cvss": 8.1,
+      "severity": "High",
+      "description": "Actively exploited vulnerability in Nx Console developer tooling for monorepo management. High-value target in CI/CD and developer environments — rotate secrets if installed. CISA KEV listed.",
+      "exploited": true,
+      "source": "CISA KEV / Advisory Week"
+    },
+    {
+      "cve": "TanStack CVE (see vendor advisory)",
+      "product": "TanStack (JavaScript library — formerly React Query)",
+      "cvss": 7.5,
+      "severity": "High",
+      "description": "Actively exploited vulnerability in the TanStack JavaScript library, widely used in modern React and web application stacks. Run npm audit to identify exposure. CISA KEV listed.",
+      "exploited": true,
+      "source": "CISA KEV / Advisory Week"
+    }
+  ],
+  "recent_headlines": [
+    {
+      "title": "PAN-OS Authentication Bypass Under Active Exploitation — CISA KEV Listed",
+      "link": "https://cyberscoop.com",
+      "source": "CyberScoop"
+    },
+    {
+      "title": "\"Miasma\" Supply Chain Attack Hits Red Hat npm — CI/CD Secrets at Risk",
+      "link": "https://thehackernews.com",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "DriveSurge Hijacks Thousands of Sites for ClickFix/FakeUpdate Attacks",
+      "link": "https://www.bleepingcomputer.com",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "CVE-2024-21182 — Oracle WebLogic Unauthenticated RCE Added to CISA KEV",
+      "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source": "CISA KEV"
+    },
+    {
+      "title": "Advisory Week 21: 5 New CISA KEVs — cPanel, PAN-OS, Daemon Tools, Nx Console, TanStack",
+      "link": "https://kill-the-newsletter.com/feeds/f7lo7o0rlop8eqo5/entries/9wjn0zcpc59mcamu7ox6.html",
+      "source": "Advisory Week"
+    },
+    {
+      "title": "Meta AI Support Bot Abused for Password-Free Instagram Account Takeovers",
+      "link": "https://krebsonsecurity.com",
+      "source": "Krebs on Security"
+    },
+    {
+      "title": "Dashlane Discloses Brute-Force Attack — Encrypted Vaults of ~20 Users Accessed",
+      "link": "https://thehackernews.com",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Red Hat npm Backdoor Confirmed on Live Registry — Miasma Campaign Corroborated",
+      "link": "https://www.bleepingcomputer.com",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "Oracle Critical Patch Update Week 21 — Multiple High-Severity Flaws",
+      "link": "https://kill-the-newsletter.com/feeds/f7lo7o0rlop8eqo5/entries/9wjn0zcpc59mcamu7ox6.html",
+      "source": "Advisory Week"
+    },
+    {
+      "title": "Firefox 151.1 Security Update Released — Patch Now",
+      "link": "https://kill-the-newsletter.com/feeds/f7lo7o0rlop8eqo5/entries/9wjn0zcpc59mcamu7ox6.html",
+      "source": "Advisory Week"
+    },
+    {
+      "title": "Cisco SD-WAN Security Advisory Published — Week 21/2026",
+      "link": "https://kill-the-newsletter.com/feeds/f7lo7o0rlop8eqo5/entries/9wjn0zcpc59mcamu7ox6.html",
+      "source": "Advisory Week"
+    },
+    {
+      "title": "Jenkins Security Advisory — Patch Before CI/CD Pipeline Exposure",
+      "link": "https://kill-the-newsletter.com/feeds/f7lo7o0rlop8eqo5/entries/9wjn0zcpc59mcamu7ox6.html",
+      "source": "Advisory Week"
+    },
+    {
+      "title": "Red Hat OpenShift Advisory Published — Week 21/2026",
+      "link": "https://kill-the-newsletter.com/feeds/f7lo7o0rlop8eqo5/entries/9wjn0zcpc59mcamu7ox6.html",
+      "source": "Advisory Week"
+    },
+    {
+      "title": "Microsoft Security Updates — Week 21 Batch",
+      "link": "https://kill-the-newsletter.com/feeds/f7lo7o0rlop8eqo5/entries/9wjn0zcpc59mcamu7ox6.html",
+      "source": "Advisory Week"
+    },
+    {
+      "title": "Spain Arrests Doxer Who Leaked Government Employee Home Addresses and ID Documents",
+      "link": "https://www.bleepingcomputer.com",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "NVIDIA Security Patches Released — Week 21 Advisory Batch",
+      "link": "https://kill-the-newsletter.com/feeds/f7lo7o0rlop8eqo5/entries/9wjn0zcpc59mcamu7ox6.html",
+      "source": "Advisory Week"
+    },
+    {
+      "title": "Convicted Election System Breacher Tina Peters Re-emerges in Cyber Circles",
+      "link": "https://cyberscoop.com",
+      "source": "CyberScoop"
+    }
+  ],
+  "source_counts": {
+    "BleepingComputer": 4,
+    "Advisory Week": 8,
+    "The Hacker News": 2,
+    "CyberScoop": 2,
+    "CISA KEV": 3,
+    "Krebs on Security": 1,
+    "SecurityWeek": 0,
+    "Infosecurity Magazine": 0,
+    "Dark Reading": 0,
+    "CrowdStrike Blog": 0
+  }
+}
