@@ -1,0 +1,662 @@
+{
+  "date": "2026-06-18",
+  "generated_at": "2026-06-18T19:58:00Z",
+  "executive_summary": [
+    {
+      "text": "A sweeping credential-harvesting campaign dubbed 'FortiBleed' has exposed VPN credentials for up to 73,000 Fortinet devices across nearly 200 countries, with active exploitation chaining three FortiSandbox vulnerabilities simultaneously — representing one of the most expansive Fortinet-targeting operations on record.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/fortibleed-leak-exposes-fortinet-vpn-credentials-for-73-000-devices/"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/cyberattacks-data-breaches/sweeping-credential-harvesting-heist-compromises-30k-fortinet-devices"},
+        {"name": "CyberScoop", "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/"}
+      ]
+    },
+    {
+      "text": "DragonForce ransomware operators abused Microsoft Teams visitor tokens to disguise C2 traffic as legitimate collaboration activity, and law enforcement simultaneously dismantled the Evil Corp-linked SocGholish fake-update network across nearly 15,000 compromised websites — marking a significant escalation and response in the ransomware ecosystem.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/dragonforce-hackers-abuse-microsoft.html"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/law-enforcement-nukes-socgholish-malware-from-nearly-15-000-sites/"}
+      ]
+    },
+    {
+      "text": "A supply chain attack compromised 145 Mastra npm packages via a hijacked contributor account, injecting a malicious typosquat that deployed persistent cross-platform implants with crypto wallet theft and credential exfiltration — affecting the entire Mastra AI developer ecosystem.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/144-mastra-npm-packages-compromised-via.html"},
+        {"name": "Microsoft Security Blog", "url": "https://www.microsoft.com/en-us/security/blog/2026/06/17/postinstall-payload-inside-mastra-npm-supply-chain-compromise/"}
+      ]
+    },
+    {
+      "text": "Google Threat Intelligence exposed UNC6508, a Chinese APT that lurked undetected in U.S. and Canadian government, academic, and medical research networks for over a year via REDCap servers — while the majority of internet-accessible REDCap instances remain unpatched today.",
+      "sources": [
+        {"name": "CyberScoop", "url": "https://cyberscoop.com/google-unc6508-china-espionage-threat/"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/majority-of-internet-accessible-redcap-servers-outdated/"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/threat-intelligence/china-nexus-actor-spies-us-researchers-undetected-year"}
+      ]
+    },
+    {
+      "text": "CISA issued three new KEV entries this week — including a critical Splunk Enterprise missing-authentication flaw (due June 21), a Joomla JCE RCE flaw (due June 19), and a LiteSpeed cPanel symlink privilege escalation — compressing remediation windows to as little as 24–72 hours for federal agencies.",
+      "sources": [
+        {"name": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/cisa-warns-of-actively-exploited-joomla.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/atlassian-splunk-patch-critical-vulnerabilities/"}
+      ]
+    }
+  ],
+  "cyber_news": [
+    {
+      "id": "dragonforce-teams-c2-abuse",
+      "title": "DragonForce Ransomware Abuses Microsoft Teams Visitor Tokens to Cloak C2 Traffic",
+      "category": "Campaign",
+      "summary": "DragonForce ransomware operators exploited Microsoft Teams visitor token flows to route malicious command-and-control traffic through legitimate Teams relay infrastructure during an attack on a major company. The technique allowed C2 communications to blend with normal enterprise collaboration traffic, significantly complicating network-based detection. This represents a novel abuse of a trusted SaaS platform to bypass perimeter and proxy controls.",
+      "expanded": "Attackers provisioned external guest/visitor tokens within Microsoft Teams, then used the resulting authenticated relay path to tunnel C2 traffic that appeared to originate from Microsoft's own infrastructure. Because Teams relay addresses belong to Microsoft's IP ranges and the traffic carries valid session tokens, network monitoring tools that allowlist Microsoft 365 traffic would pass the communications without inspection. This technique is analogous to the 2023 abuse of OneDrive and SharePoint as C2 channels but leverages real-time relay rather than file polling, lowering latency for operator commands. The C2 protocol rides atop Microsoft's own relay infrastructure, making the malicious communications indistinguishable from legitimate Teams meetings and collaboration flows at the network level.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/dragonforce-hackers-abuse-microsoft.html"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/dragonforce-ransomware-hidden/"}
+      ]
+    },
+    {
+      "id": "unc6508-redcap-china-espionage",
+      "title": "Chinese APT UNC6508 Exploited REDCap Servers to Spy on U.S. and Canadian Research Networks for Over a Year",
+      "category": "Threat",
+      "summary": "Google Threat Intelligence Group exposed UNC6508, a previously undocumented Chinese state-sponsored group that compromised U.S. and Canadian government, academic, medical, and military research networks starting in September 2023. The group deployed a custom backdoor called INFINITERED via vulnerable REDCap servers, stealing credentials and sensitive research data while remaining undetected for more than a year. The majority of internet-accessible REDCap instances remain unpatched against the exploited vulnerabilities.",
+      "expanded": "UNC6508 targeted REDCap — a widely used clinical and academic research data management platform — exploiting known vulnerabilities to gain initial access, then deploying INFINITERED, a custom-built backdoor designed for low-footprint persistence. The backdoor abused legitimate domain compliance and policy mechanisms to maintain access and blend with normal administrative traffic, consistent with Chinese APT tradecraft emphasizing long dwell times and minimal operational noise. The malware established persistent C2 channels by masquerading as routine system administration activity, leveraging REDCap's own logging and scheduled task infrastructure. Google's attribution is based on infrastructure overlaps and tooling consistent with Chinese state-sponsored actors. The continued exposure of unpatched REDCap servers means the attack surface for follow-on intrusions remains wide open across research and healthcare sectors.",
+      "sources": [
+        {"name": "CyberScoop", "url": "https://cyberscoop.com/google-unc6508-china-espionage-threat/"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/threat-intelligence/china-nexus-actor-spies-us-researchers-undetected-year"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/majority-of-internet-accessible-redcap-servers-outdated/"}
+      ]
+    },
+    {
+      "id": "mastra-npm-supply-chain",
+      "title": "145 Mastra npm Packages Poisoned via Hijacked Contributor Account in AI Supply Chain Attack",
+      "category": "Campaign",
+      "summary": "Attackers hijacked a Mastra AI ecosystem contributor account and injected a malicious typosquat dependency called easy-day-js into over 145 @mastra npm packages, triggering a postinstall payload on any npm install. The implant disabled TLS verification, exfiltrated credentials and browser history, stole crypto wallet data, and established persistent cross-platform C2 access. Microsoft Threat Intelligence published a detailed technical breakdown of the full kill chain.",
+      "expanded": "The attacker compromised the 'ehindero' maintainer account and published easy-day-js as a dependency across the Mastra package tree. On installation, an obfuscated JavaScript dropper executed automatically via npm's postinstall hook — a mechanism that runs scripts without explicit user interaction and prior to any code review or inspection. The dropper disabled TLS certificate validation at the process level, allowing subsequent HTTPS traffic to be intercepted or downgraded, then beaconed to a C2 server over cleartext HTTP. The C2 response delivered a persistent implant supporting reflective .NET injection into running processes, crypto wallet enumeration via file system and memory scanning, and browser history harvesting from multiple browser profiles. The attack is particularly significant because it targeted developer machines building AI agents and applications, meaning the blast radius extended to AI API keys, model weights, proprietary training pipelines, and organizational source code in addition to standard credentials.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/144-mastra-npm-packages-compromised-via.html"},
+        {"name": "Microsoft Security Blog", "url": "https://www.microsoft.com/en-us/security/blog/2026/06/17/postinstall-payload-inside-mastra-npm-supply-chain-compromise/"}
+      ]
+    },
+    {
+      "id": "fortibleed-credential-leak",
+      "title": "FortiBleed: Credential-Harvesting Campaign Exposes VPN Credentials for 73,000 Fortinet Devices Globally",
+      "category": "Campaign",
+      "summary": "A large-scale campaign dubbed FortiBleed has exposed VPN credentials for approximately 73,000 Fortinet firewall and VPN gateway devices across nearly 200 countries, in what is described as a sweeping credential-harvesting operation. Attackers actively chained three FortiSandbox vulnerabilities — CVE-2026-39808, CVE-2026-39813, and CVE-2026-25089 — with 49 observed exploitation events from 13 sources across 9 countries in just six days. The exposed credentials represent immediate lateral movement risk for any organization with affected perimeter devices.",
+      "expanded": "Researchers at Defused observed the exploitation cluster targeting FortiSandbox authentication bypass, privilege escalation, and arbitrary command execution flaws in chained sequence, consistent with automated exploitation tooling. The attack chain proceeds as follows: the authentication bypass (CVE-2026-39808) grants initial access to an otherwise protected administrative interface; the privilege escalation (CVE-2026-39813) elevates the attacker's context from guest or user-level to administrator; the command execution (CVE-2026-25089) then allows arbitrary shell commands to run with full appliance privileges. Once on the appliance, attackers dump configured VPN credentials, extract encryption keys, and establish persistence hooks. The FortiBleed credential dump itself appears to have been harvested via a separate but related campaign abusing Fortinet VPN endpoints, and the credential set is being actively circulated. The combination of live exploitation and a large-scale credential dump creates a compounding risk: even organizations that patch the FortiSandbox flaws may have already had gateway credentials exfiltrated prior to patching. One of the three FortiSandbox CVEs was only patched as recently as June 9, 2026, narrowing the available remediation window.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/fortibleed-leak-exposes-fortinet-vpn-credentials-for-73-000-devices/"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/cyberattacks-data-breaches/sweeping-credential-harvesting-heist-compromises-30k-fortinet-devices"},
+        {"name": "CyberScoop", "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/attackers-exploit-three-fortinet.html"}
+      ]
+    },
+    {
+      "id": "sprysocks-windows-kernel-driver",
+      "title": "China-Linked SprySOCKS Backdoor Expands to Windows with Kernel Driver Evasion",
+      "category": "Threat",
+      "summary": "The SprySOCKS backdoor, previously confined to Linux systems and attributed to Chinese state-linked actors, now has a Windows variant that leverages kernel driver techniques to bypass security controls and evade detection. The Windows implant supports over 30 C2 commands, representing a significant capability expansion for this threat. The use of a kernel driver places the malware below the visibility horizon of most user-mode endpoint detection tools.",
+      "expanded": "The Windows SprySOCKS variant loads a kernel-mode driver to perform operations that circumvent user-mode security products, including hooking system calls and masking process activity from EDR sensors operating in user space. The driver intercepts API calls at the kernel level before user-mode monitoring tools can observe them, allowing the implant to hide process execution, network connections, and file I/O from endpoint detection and response products. This technique — known as Bring Your Own Vulnerable Driver (BYOVD) or custom driver abuse — is increasingly common in Chinese APT tooling following the pattern established by groups like Volt Typhoon. The custom driver is loaded during system initialization or injected into kernel memory via a privileged process, providing persistent access below the operating system's security boundary. Supporting 30+ distinct C2 commands gives operators a broad capability set including file operations, network proxying, credential harvesting, and lateral movement enablement. The expansion from Linux to Windows dramatically increases the potential victim surface for this implant family.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/china-linked-sprysocks-backdoor-expands.html"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/threat-intelligence/sprysocks-windows-variant-abuses-kernel-drivers-evade-detection"}
+      ]
+    },
+    {
+      "id": "inc-ransomware-raas-2026",
+      "title": "INC Ransomware Claims 830+ Victims Since 2023, Emerges as Dominant RaaS in 2026",
+      "category": "Threat",
+      "summary": "INC ransomware-as-a-service has claimed over 830 victims since its 2023 debut and is establishing itself as one of the dominant ransomware groups in 2026 by mastering foundational attack techniques rather than novel exploits. The group primarily targets internet-facing VPNs and firewalls for initial access before moving rapidly to full network encryption. Dark Reading notes the group's success stems from disciplined execution of basic TTPs rather than technical sophistication.",
+      "expanded": "INC operators focus on exploiting perimeter devices — particularly unpatched VPN gateways and firewalls — as entry points, then use living-off-the-land techniques and legitimate remote management tools to traverse networks before deploying ransomware. The attack pattern begins with reconnaissance of externally-facing VPN appliances using port scanning and fingerprinting, identification of known unpatched vulnerabilities, exploitation to gain initial foothold with system-level privileges, enumeration of internal network topology and user activity via existing administrative tools like PsExec and WinRM, lateral movement using harvested credentials and pass-the-hash attacks, and finally deployment of the ransomware payload across networked systems with minimum dwell time. This approach mirrors the tradecraft that made LockBit and ALPHV/BlackCat successful: reliable, repeatable attack patterns that affiliates can execute consistently across victim types. The group's RaaS model is attracting skilled affiliates, and the 830+ victim count over roughly three years places it among the most prolific active RaaS operations. The correlation with the FortiBleed credential leak is notable — exposed Fortinet VPN credentials directly feed INC's preferred initial access vector.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/inc-ransomware-claims-830-victims-since.html"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/threat-intelligence/inc-ransomware-thrives-mastering-basics"}
+      ]
+    },
+    {
+      "id": "copilot-searchleak-attack",
+      "title": "Microsoft 365 Copilot 'SearchLeak' One-Click Attack Enables Silent Email and MFA Code Theft",
+      "category": "365_Threats",
+      "summary": "Researchers discovered a one-click attack against Microsoft 365 Copilot dubbed SearchLeak that silently searches and exfiltrates emails, files, and MFA codes by abusing the AI assistant's broad data access permissions. The attack requires only a single user interaction — such as clicking a malicious link — to trigger Copilot into performing and exfiltrating a silent search. This represents a significant data theft risk for any Microsoft 365 tenant with Copilot enabled.",
+      "expanded": "SearchLeak exploits the fact that Microsoft 365 Copilot has access to the full breadth of a user's organizational data — emails, Teams messages, SharePoint files, calendar entries — and can be instructed via prompt injection or a crafted external trigger to conduct searches and relay results to an attacker-controlled endpoint. The one-click attack vector involves a maliciously crafted email, document, or web link that, when opened or clicked, injects a Copilot prompt instruction through a side-channel mechanism such as HTML metadata, embedded iframes, or document macros. The Copilot assistant then executes the injected prompt in the authenticated user's security context, searching for keywords like 'MFA', 'password', 'token', or 'code', and exfiltrating matches to an attacker-controlled callback URL. Because the search originates from within the user's authenticated session and is initiated by the AI assistant itself, the activity bypasses traditional email filtering and data loss prevention rules. The ability to exfiltrate MFA codes is particularly severe as it could enable attackers to bypass multi-factor authentication for follow-on account takeover. This attack class is a natural evolution of the prompt injection threats documented against AI assistants throughout 2024–2025.",
+      "sources": [
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/application-security/copilot-searchleak-attack-allows-1-click-data-theft"}
+      ]
+    },
+    {
+      "id": "jetbrains-malicious-plugins-api-key-theft",
+      "title": "15 Malicious JetBrains Marketplace Plugins Found Stealing AI API Keys from Developer Environments",
+      "category": "Campaign",
+      "summary": "Aikido Security discovered at least 15 malicious IDE plugins on the JetBrains Marketplace that silently harvested AI API keys — including OpenAI, Anthropic, and GitHub tokens — from developer machines. A separate but concurrent campaign deployed malicious Chrome extensions that captured chatbot conversation histories. Both campaigns specifically target developer toolchains to steal high-value API credentials that grant access to AI services and sensitive organizational data.",
+      "expanded": "The malicious JetBrains plugins mimicked legitimate productivity and code assistance tools, passing surface-level review while containing code that enumerated environment variables and configuration files known to store API keys. Because IDEs run with broad filesystem and environment access, a malicious plugin can trivially access credentials stored in ~/.config, .env files, and system keychain integrations. The plugins also scanned running process memory and clipboard contents for additional tokens and secrets. The exfiltration occurs either via HTTP POST to attacker-controlled servers or by injecting credentials into seemingly legitimate plugin telemetry and diagnostic data streams. The concurrent Chrome extension campaign targeting chatbot conversations operates by injecting JavaScript into chat interfaces to harvest conversation transcripts, which are then exfiltrated via similar channels. Together, the campaigns capture both the credentials needed to impersonate legitimate developers and the evidence of what those credentials can access — API keys enable direct impersonation and billing fraud, while captured chatbot histories may contain proprietary code, internal architecture details, unreleased product information, and training data for competitors' AI models. The JetBrains Marketplace ecosystem has hundreds of millions of plugin downloads, making it a high-value supply chain target.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/malicious-jetbrains-plugins-steal-ai.html"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/fifteen-jetbrains-marketplace/"}
+      ]
+    },
+    {
+      "id": "popa-botnet-alarum-technologies",
+      "title": "Popa Botnet Infecting 1.5–2.5 Million Android TV Boxes Daily Linked to Publicly-Traded Israeli Firm",
+      "category": "Threat",
+      "summary": "Researchers from Qurium, Synthient, and Nokia Deepfield linked the Popa botnet — which silently routes traffic through 1.5 to 2.5 million infected Android TV box IPs daily — to NetNut, a residential proxy service operated by Nasdaq-listed Alarum Technologies. The botnet is used for advertising fraud, account takeovers, and AI training data scraping. The link to a publicly-traded company elevates this from a criminal botnet story to a potential corporate accountability issue.",
+      "expanded": "Popa infects Android TV boxes — consumer streaming devices with persistent network connectivity, root-level process access, and minimal security oversight — transforming them into residential proxy nodes without device owner knowledge or consent. The infection vector typically involves compromised firmware updates, malicious apps in third-party app stores, or exploitation of unpatched vulnerabilities in TV OS components. Once infected, the device runs a lightweight proxy daemon that intercepts and tunnels all network traffic through NetNut's infrastructure, providing the service's customers with residential IP addresses that appear to originate from legitimate consumer internet connections. The infected devices provide residential IPs highly effective for bypassing fraud detection systems, scraping platforms that block datacenter IPs, and conducting account takeover attacks at scale because the traffic appears to originate from real consumer devices and ISP networks. Network-level analysis by Nokia Deepfield identified the botnet's C2 infrastructure and command patterns, revealing direct linkage to NetNut's operational networks through IP ranges, domain registrations, and payment infrastructure. Residential proxy networks occupy a legal grey area, but research directly linking botnet-infected devices to a commercial proxy service — especially one listed on Nasdaq — represents potential securities, consumer protection, and computer fraud liability exposure. The 1.5–2.5 million daily active IP count makes Popa one of the largest active consumer-device botnets currently documented.",
+      "sources": [
+        {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2026/06/popa-botnet-linked-to-publicly-traded-israeli-firm/"}
+      ]
+    },
+    {
+      "id": "north-korean-it-worker-ai-laptop-farms",
+      "title": "North Korean IT Worker Fraud Operation Uses AI Interview Tools and U.S. Laptop Farms to Infiltrate Western Companies",
+      "category": "Threat",
+      "summary": "Nisos infiltrated a North Korean IT worker fraud ring that uses AI-powered interview assistance tools and U.S.-based laptop farms to help DPRK operatives fraudulently obtain remote employment at Western companies. Earnings are funneled back to North Korea, funding weapons programs. The use of AI interview tools marks an escalation in the sophistication of this persistent DPRK revenue-generation scheme.",
+      "expanded": "The operation combines AI tools that provide real-time interview coaching and answer generation — enabling operatives with limited English proficiency or technical gaps to pass technical screening — with physical laptop farms in the U.S. that create a domestic-appearing work presence. The AI tools analyze interviewer questions via speech-to-text, generate appropriate technical answers via LLM, and feed responses back to the operative via earpiece or text overlay. Facilitators in the U.S. manage the hardware infrastructure, receive paychecks from employer bank accounts, and forward funds overseas after taking a cut. The infrastructure setup includes residential proxy networks to mask IP geolocation, VPN tunneling to obscure Korean origin, and document forgery to create convincing employment histories and identity documentation. The fraud is particularly insidious because the operatives, once hired, often perform competent technical work — fulfilling job responsibilities to avoid immediate detection — while simultaneously conducting insider threat activities such as exfiltrating source code, planting backdoors in production systems, establishing persistent access for later exploitation, or harvesting additional employee credentials. The AI augmentation of the interview process closes a detection gap that had previously allowed some companies to identify operatives during technical interviews by asking unpredictable questions or assessing nuanced communication skills.",
+      "sources": [
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/north-korea-it-worker-fraud-ai/"}
+      ]
+    }
+  ],
+  "deep_dive": {
+    "title": "FortiBleed: How Chained FortiSandbox Exploits and a Mass Credential Dump Are Compounding Enterprise Risk",
+    "content": "The FortiBleed campaign represents a convergence of two distinct but reinforcing threats. First, active exploitation of three Fortinet FortiSandbox vulnerabilities — CVE-2026-39808 (authentication bypass), CVE-2026-39813 (privilege escalation), and CVE-2026-25089 (arbitrary command execution), the last of which was patched only on June 9, 2026 — has been observed from 13 distinct source IPs across 9 countries, with Defused logging 49 exploitation events in six days. Attackers chain these three flaws in sequence: the authentication bypass grants initial entry, the privilege escalation elevates attacker context, and the command execution achieves full appliance control. Second, a parallel but related credential-harvesting campaign has exfiltrated VPN credentials from approximately 73,000 Fortinet gateway devices across nearly 200 countries, with the resulting dump now circulating. The compounding risk is severe: organizations that patch the FortiSandbox flaws may still have had gateway credentials harvested prior to patching, leaving them exposed to credential-based VPN compromise regardless of patch status. Combined with INC ransomware's stated preference for Fortinet VPN initial access and the broad geographic spread of affected devices, this campaign represents a near-term ransomware precursor event at scale. Immediate credential rotation on all Fortinet VPN gateways is warranted independent of patch status.",
+    "sources": [
+      {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/fortibleed-leak-exposes-fortinet-vpn-credentials-for-73-000-devices/"},
+      {"name": "CyberScoop", "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/"},
+      {"name": "Dark Reading", "url": "https://www.darkreading.com/cyberattacks-data-breaches/sweeping-credential-harvesting-heist-compromises-30k-fortinet-devices"},
+      {"name": "The Hacker News", "url": "https://thehackernews.com/2026/06/attackers-exploit-three-fortinet.html"}
+    ]
+  },
+  "biggest_hacks": [
+    {
+      "title": "FortiBleed: VPN Credentials for 73,000 Fortinet Devices Exposed in Mass Credential Harvest",
+      "link": "https://www.bleepingcomputer.com/news/security/fortibleed-leak-exposes-fortinet-vpn-credentials-for-73-000-devices/",
+      "source": "BleepingComputer",
+      "severity": "Critical",
+      "summary": "A large-scale credential-harvesting campaign exposed VPN credentials for approximately 73,000 Fortinet firewall and VPN gateway devices across nearly 200 countries, with the dump actively circulating and three FortiSandbox CVEs being chained in live exploitation.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/fortibleed-leak-exposes-fortinet-vpn-credentials-for-73-000-devices/"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/cyberattacks-data-breaches/sweeping-credential-harvesting-heist-compromises-30k-fortinet-devices"},
+        {"name": "CyberScoop", "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/"}
+      ]
+    },
+    {
+      "title": "Nintendo Confirms Data Stolen in WebMD Subsidiary Cyberattack",
+      "link": "https://www.bleepingcomputer.com/news/security/nintendo-confirms-data-stolen-in-webmd-subsidiary-cyberattack/",
+      "source": "BleepingComputer",
+      "severity": "High",
+      "summary": "Nintendo confirmed user data was stolen in a cyberattack against a WebMD subsidiary that processed Nintendo user information, highlighting third-party vendor risk in the consumer gaming and media sector.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/nintendo-confirms-data-stolen-in-webmd-subsidiary-cyberattack/"}
+      ]
+    },
+    {
+      "title": "Klue OAuth Breach Linked to 'Icarus' Salesforce Data Theft Campaign",
+      "link": "https://www.bleepingcomputer.com/news/security/klue-oauth-breach-linked-to-icarus-salesforce-data-theft-attacks/",
+      "source": "BleepingComputer",
+      "severity": "High",
+      "summary": "The OAuth breach at competitive intelligence platform Klue was attributed to threat actor 'Icarus,' who exploited OAuth token flows to exfiltrate corporate CRM data from Salesforce environments, indicating a systematic campaign against SaaS OAuth implementations.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/klue-oauth-breach-linked-to-icarus-salesforce-data-theft-attacks/"}
+      ]
+    },
+    {
+      "title": "Kodak Admits Data Breach Following ShinyHunters Hack Claims",
+      "link": "https://www.securityweek.com/kodak-admits-data-breach-after-shinyhunters-hack-claims/",
+      "source": "SecurityWeek",
+      "severity": "Medium",
+      "summary": "Kodak acknowledged a cybersecurity incident after notorious threat group ShinyHunters claimed responsibility for a breach, though the company stated it believes there is no ongoing threat to systems or operations.",
+      "sources": [
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/kodak-admits-data-breach-after-shinyhunters-hack-claims/"}
+      ]
+    },
+    {
+      "title": "Law Enforcement Cleans SocGholish Malware from Nearly 15,000 Evil Corp-Linked Sites",
+      "link": "https://www.bleepingcomputer.com/news/security/law-enforcement-nukes-socgholish-malware-from-nearly-15-000-sites/",
+      "source": "BleepingComputer",
+      "severity": "High",
+      "summary": "International law enforcement dismantled and cleaned SocGholish fake-browser-update malware from nearly 15,000 compromised websites tied to Evil Corp, in one of the largest single takedowns of a malware distribution network to date.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/law-enforcement-nukes-socgholish-malware-from-nearly-15-000-sites/"}
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "cve": "CVE-2026-39808",
+      "product": "Fortinet FortiSandbox",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Authentication bypass vulnerability in FortiSandbox being actively chained with CVE-2026-39813 and CVE-2026-25089 for full appliance takeover. Observed exploitation from 13 source IPs across 9 countries.",
+      "exploited": true,
+      "source": "CyberScoop / The Hacker News"
+    },
+    {
+      "cve": "CVE-2026-39813",
+      "product": "Fortinet FortiSandbox",
+      "cvss": 8.8,
+      "severity": "High",
+      "description": "Privilege escalation vulnerability in FortiSandbox actively chained with authentication bypass and command execution flaws in ongoing exploitation campaign.",
+      "exploited": true,
+      "source": "CyberScoop / The Hacker News"
+    },
+    {
+      "cve": "CVE-2026-25089",
+      "product": "Fortinet FortiSandbox",
+      "cvss": 9.1,
+      "severity": "Critical",
+      "description": "Arbitrary command execution in FortiSandbox, patched June 9 2026 and already under active exploitation as part of the FortiBleed chained attack campaign.",
+      "exploited": true,
+      "source": "CyberScoop"
+    },
+    {
+      "cve": "CVE-2026-20253",
+      "product": "Splunk Enterprise AI Toolkit",
+      "cvss": 9.1,
+      "severity": "Critical",
+      "description": "Missing authentication for critical function allows unauthenticated users to create or truncate arbitrary files via a PostgreSQL sidecar service endpoint. CISA KEV due date: 2026-06-21.",
+      "exploited": true,
+      "source": "CISA KEV / SecurityWeek"
+    },
+    {
+      "cve": "CVE-2026-48907",
+      "product": "Joomla Content Editor (JCE) Plugin",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Improper access control allows unauthenticated users to upload and execute arbitrary PHP code by creating new editor profiles. CISA KEV due date: 2026-06-19.",
+      "exploited": true,
+      "source": "CISA KEV / The Hacker News"
+    },
+    {
+      "cve": "CVE-2026-54420",
+      "product": "LiteSpeed cPanel Plugin",
+      "cvss": 8.8,
+      "severity": "High",
+      "description": "UNIX symlink following vulnerability allows privilege escalation to root on shared hosting servers running CloudLinux and CageFS. CISA KEV due date: 2026-06-18.",
+      "exploited": true,
+      "source": "CISA KEV"
+    },
+    {
+      "cve": "CVE-2026-20262",
+      "product": "Cisco Catalyst SD-WAN Manager",
+      "cvss": 8.1,
+      "severity": "High",
+      "description": "Directory/path traversal vulnerability allows authenticated remote attacker to create or overwrite any file on the filesystem. CISA KEV due date: 2026-06-29.",
+      "exploited": true,
+      "source": "CISA KEV"
+    },
+    {
+      "cve": "CVE-2026-35273",
+      "product": "Oracle PeopleSoft Enterprise PeopleTools",
+      "cvss": 10.0,
+      "severity": "Critical",
+      "description": "Missing authentication allows unauthenticated attacker to fully take over the system. Known ransomware campaign use; exploited by ShinyHunters against universities. CISA KEV due date: 2026-06-15.",
+      "exploited": true,
+      "source": "CISA KEV"
+    },
+    {
+      "cve": "CVE-2026-10520",
+      "product": "Ivanti Sentry (formerly MobileIron Sentry)",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "OS command injection allows remote unauthenticated attackers to achieve root-level RCE when the appliance is in an unmanaged state with externally reachable endpoints. CISA KEV due date: 2026-06-14.",
+      "exploited": true,
+      "source": "CISA KEV"
+    },
+    {
+      "cve": "CVE-2026-11645",
+      "product": "Google Chromium V8 Engine",
+      "cvss": 8.8,
+      "severity": "High",
+      "description": "Out-of-bounds read and write in V8 allows remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. Affects Chrome, Edge, Opera, and all Chromium-based browsers. CISA KEV due date: 2026-06-23.",
+      "exploited": true,
+      "source": "CISA KEV"
+    }
+  ],
+  "recent_headlines": [
+    {
+      "title": "Microsoft Details Windows Clipper Malware Campaign Using USB LNK Worm and Tor-Based C2",
+      "link": "https://thehackernews.com/2026/06/microsoft-details-windows-clipper.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "INC Ransomware Emerges as Major RaaS Threat in 2026 with 830+ Victims Since 2023",
+      "link": "https://thehackernews.com/2026/06/inc-ransomware-claims-830-victims-since.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "DragonForce Hackers Abuse Microsoft Teams Relays to Hide Backdoor C2 Traffic",
+      "link": "https://thehackernews.com/2026/06/dragonforce-hackers-abuse-microsoft.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Crypto Clipper Campaign Abuses Fake Reviews, AI Narrators, and VirusTotal Comments",
+      "link": "https://thehackernews.com/2026/06/crypto-clipper-campaign-abuses-fake.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Microsoft Confirms RoguePlanet Defender Zero-Day, Says Patch is in Development",
+      "link": "https://thehackernews.com/2026/06/microsoft-confirms-rogueplanet-defender_02022423645.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Junior Hacker Used Tailscale and OpenSSH to Keep Access After His C2 Went Offline",
+      "link": "https://thehackernews.com/2026/06/junior-hacker-used-tailscale-and.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Malicious JetBrains Plugins Steal AI API Keys as Chrome Extensions Capture Chatbot Chats",
+      "link": "https://thehackernews.com/2026/06/malicious-jetbrains-plugins-steal-ai.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "145 Mastra npm Packages Compromised via Hijacked Contributor Account",
+      "link": "https://thehackernews.com/2026/06/144-mastra-npm-packages-compromised-via.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "CISA Warns of Actively Exploited Joomla JCE Flaw Allowing PHP Code Execution",
+      "link": "https://thehackernews.com/2026/06/cisa-warns-of-actively-exploited-joomla.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Google Vertex AI SDK Flaw Let Attackers Hijack Model Uploads via Bucket Squatting",
+      "link": "https://thehackernews.com/2026/06/google-vertex-ai-sdk-flaw-let-attackers.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "ClickFix Campaigns Expand Malware Delivery With New Loaders and Fake Update Lures",
+      "link": "https://thehackernews.com/2026/06/clickfix-campaigns-expand-malware.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "New Rokarolla Android Malware Steals PINs, SMS Codes, and Crypto Wallet Funds",
+      "link": "https://thehackernews.com/2026/06/new-rokarolla-android-malware-steals.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Attackers Exploit Three Fortinet FortiSandbox Flaws, One Patched Last Week",
+      "link": "https://thehackernews.com/2026/06/attackers-exploit-three-fortinet.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "China-Linked SprySOCKS Backdoor Expands to Windows with Driver-Based Stealth",
+      "link": "https://thehackernews.com/2026/06/china-linked-sprysocks-backdoor-expands.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Fake Microsoft Alerts Used to Deploy North Korean NarwhalRAT Malware",
+      "link": "https://thehackernews.com/2026/06/fake-microsoft-alerts-used-to-deploy.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Nintendo confirms data stolen in WebMD subsidiary cyberattack",
+      "link": "https://www.bleepingcomputer.com/news/security/nintendo-confirms-data-stolen-in-webmd-subsidiary-cyberattack/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "USB worm spreads crypto-stealing malware via Windows shortcut files",
+      "link": "https://www.bleepingcomputer.com/news/security/usb-worm-spreads-crypto-stealing-malware-via-windows-shortcut-files/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "Klue OAuth breach linked to 'Icarus' Salesforce data theft attacks",
+      "link": "https://www.bleepingcomputer.com/news/security/klue-oauth-breach-linked-to-icarus-salesforce-data-theft-attacks/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "Police cleans nearly 15,000 SocGholish-infected sites tied to Evil Corp",
+      "link": "https://www.bleepingcomputer.com/news/security/law-enforcement-nukes-socgholish-malware-from-nearly-15-000-sites/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "ShapedPlugin update flow hacked to infect WordPress sites",
+      "link": "https://www.bleepingcomputer.com/news/security/shapedplugin-update-flow-hacked-to-infect-wordpress-sites/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "FortiBleed leak exposes Fortinet VPN credentials for 73,000 devices",
+      "link": "https://www.bleepingcomputer.com/news/security/fortibleed-leak-exposes-fortinet-vpn-credentials-for-73-000-devices/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "Apple fixes Beats Studio Buds flaw that let hackers spy on conversations",
+      "link": "https://www.bleepingcomputer.com/news/security/apple-fixes-beats-studio-buds-flaw-that-let-hackers-spy-on-conversations/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "F5 issues out-of-band patches for critical NGINX vulnerabilities",
+      "link": "https://www.bleepingcomputer.com/news/security/f5-issues-out-of-band-patches-for-critical-nginx-vulnerabilities/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "Attackers hit pair of critical Fortinet vulnerabilities the vendor disclosed in April",
+      "link": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/",
+      "source": "CyberScoop"
+    },
+    {
+      "title": "Lawmakers leery about Trump administration's Anthropic order",
+      "link": "https://cyberscoop.com/congress-reacts-anthropic-ai-export-controls/",
+      "source": "CyberScoop"
+    },
+    {
+      "title": "AI's constant patching treadmill can be a security problem",
+      "link": "https://cyberscoop.com/claude-code-security-vulnerabilities-ai-patches-backslash-security/",
+      "source": "CyberScoop"
+    },
+    {
+      "title": "Google exposes China espionage group that's been lurking in networks undetected since 2023",
+      "link": "https://cyberscoop.com/google-unc6508-china-espionage-threat/",
+      "source": "CyberScoop"
+    },
+    {
+      "title": "Cybersecurity experts don't think Anthropic's Fable 5 presents a unique threat",
+      "link": "https://cyberscoop.com/cybersecurity-experts-anthropic-fable-5-not-unique-ai-threat/",
+      "source": "CyberScoop"
+    },
+    {
+      "title": "INC Ransomware Thrives by Mastering the Basics",
+      "link": "https://www.darkreading.com/threat-intelligence/inc-ransomware-thrives-mastering-basics",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "Sweeping Credential-Harvesting Heist Compromises 30K+ Fortinet Devices",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/sweeping-credential-harvesting-heist-compromises-30k-fortinet-devices",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "Fileless Phantom Stealer Targets Browser Credentials",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/fileless-phantom-stealer-targets-browser-credentials",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "SprySOCKS Windows Variant Abuses Kernel Drivers to Evade Detection",
+      "link": "https://www.darkreading.com/threat-intelligence/sprysocks-windows-variant-abuses-kernel-drivers-evade-detection",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "HTTP/2 Bomb Attacks Put Telcos, Healthcare Orgs at Risk",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/http2-bomb-attacks-put-telcos-healthcare-orgs-at-risk",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "Copilot 'SearchLeak' Attack Allows 1-Click Data Theft",
+      "link": "https://www.darkreading.com/application-security/copilot-searchleak-attack-allows-1-click-data-theft",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "China-Nexus Actor Spies on US Researchers Undetected for a Year",
+      "link": "https://www.darkreading.com/threat-intelligence/china-nexus-actor-spies-us-researchers-undetected-year",
+      "source": "Dark Reading"
+    },
+    {
+      "title": "Majority of Internet-Accessible REDCap Servers Outdated",
+      "link": "https://www.securityweek.com/majority-of-internet-accessible-redcap-servers-outdated/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Accenture to Acquire Majority Stake in Dragos, All of runZero, NetRise in $4.1 Billion OT Cybersecurity Push",
+      "link": "https://www.securityweek.com/accenture-to-acquire-majority-stake-in-dragos-all-of-runzero-netrise-in-4-1-billion-ot-cybersecurity-push/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Atlassian, Splunk Patch Critical Vulnerabilities",
+      "link": "https://www.securityweek.com/atlassian-splunk-patch-critical-vulnerabilities/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Rokarolla Banking Trojan Targets 200 Applications",
+      "link": "https://www.securityweek.com/rokarolla-banking-trojan-targets-200-applications/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Critical Command Execution Vulnerability Patched in Cisco ISE",
+      "link": "https://www.securityweek.com/critical-command-execution-vulnerability-patched-in-cisco-ise/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "F5 Patches Critical, High-Severity NGINX Vulnerabilities",
+      "link": "https://www.securityweek.com/f5-patches-critical-high-severity-nginx-vulnerabilities/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Kodak Admits Data Breach After ShinyHunters Hack Claims",
+      "link": "https://www.securityweek.com/kodak-admits-data-breach-after-shinyhunters-hack-claims/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "North Korean Hiring Fraud Runs on AI and US Laptop Farms",
+      "link": "https://www.infosecurity-magazine.com/news/north-korea-it-worker-fraud-ai/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "Serverless Phishing Kit on GitHub Targets Mexican Banks",
+      "link": "https://www.infosecurity-magazine.com/news/gitbait-github-pages-sheetbest/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "Sensitive Enterprise Data Uploads to AI Models Double in a Year",
+      "link": "https://www.infosecurity-magazine.com/news/sensitive-ai-data-upload-doubles/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "EU Security Experts to Support Ukrainian Organizations in Case of Cyber-Attacks",
+      "link": "https://www.infosecurity-magazine.com/news/ukraine-included-eu-cyber-reserve/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "Fifteen JetBrains Marketplace Plugins Found Stealing API Keys",
+      "link": "https://www.infosecurity-magazine.com/news/fifteen-jetbrains-marketplace/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "DragonForce Ransomware Exploited Microsoft Teams to Hide in Attack Against Major Company",
+      "link": "https://www.infosecurity-magazine.com/news/dragonforce-ransomware-hidden/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "FBI Warns Courier Cash Pickups Are Driving Crypto Scams",
+      "link": "https://www.infosecurity-magazine.com/news/fbi-warns-courier-cash-pickups/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "Attackers Hijack Popular WordPress Plugins to Deploy Backdoors",
+      "link": "https://www.infosecurity-magazine.com/news/wordpress-plugin-supply-chain/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "Ransomware Payment Crypto Laundering Platform Taken Out by FBI and Europol",
+      "link": "https://www.infosecurity-magazine.com/news/ransomware-crypto-laundering/",
+      "source": "Infosecurity Magazine"
+    },
+    {
+      "title": "'Popa' Botnet Linked to Publicly-Traded Israeli Firm",
+      "link": "https://krebsonsecurity.com/2026/06/popa-botnet-linked-to-publicly-traded-israeli-firm/",
+      "source": "Krebs on Security"
+    },
+    {
+      "title": "Who Runs the Ransomware Group 'The Gentlemen?'",
+      "link": "https://krebsonsecurity.com/2026/06/who-runs-the-ransomware-group-the-gentlemen/",
+      "source": "Krebs on Security"
+    },
+    {
+      "title": "From package to postinstall payload: Inside the Mastra npm supply chain compromise",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/06/17/postinstall-payload-inside-mastra-npm-supply-chain-compromise/",
+      "source": "Microsoft Security Blog"
+    },
+    {
+      "title": "Crypto Clipper uses Tor and worm-like propagation for persistence and control",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/06/17/crypto-clipper-uses-tor-worm-like-propagation-for-persistence-control/",
+      "source": "Microsoft Security Blog"
+    },
+    {
+      "title": "Close Encounters of the Human Kind (Threat Source Newsletter)",
+      "link": "https://blog.talosintelligence.com/close-encounters-of-the-human-kind/",
+      "source": "Cisco Talos"
+    },
+    {
+      "title": "Scripting the disassembler: Local agentic reverse engineering through vbdec's live COM object model",
+      "link": "https://blog.talosintelligence.com/scripting-the-disassembler/",
+      "source": "Cisco Talos"
+    },
+    {
+      "title": "Pickle in the Middle: Hijacking Vertex AI Model Uploads for Cross-Tenant RCE",
+      "link": "https://unit42.paloaltonetworks.com/hijacking-vertex-ai-model/",
+      "source": "Unit 42 (Palo Alto Networks)"
+    },
+    {
+      "title": "Inside the Modern SOC: The 72-Minute Race",
+      "link": "https://unit42.paloaltonetworks.com/soc-72-minute-race/",
+      "source": "Unit 42 (Palo Alto Networks)"
+    },
+    {
+      "title": "Tracing Digital Intent: New MacOS Tahoe 26 Artifact Discovered",
+      "link": "https://unit42.paloaltonetworks.com/new-macos-artifact-discovered/",
+      "source": "Unit 42 (Palo Alto Networks)"
+    },
+    {
+      "title": "CISA KEV: Splunk Enterprise Missing Authentication Vulnerability (CVE-2026-20253)",
+      "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source": "CISA KEV"
+    },
+    {
+      "title": "CISA KEV: Widget Factory Joomla Content Editor Improper Access Control (CVE-2026-48907)",
+      "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source": "CISA KEV"
+    },
+    {
+      "title": "CISA KEV: LiteSpeed cPanel Plugin Symlink Following Vulnerability (CVE-2026-54420)",
+      "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source": "CISA KEV"
+    },
+    {
+      "title": "CISA KEV: Cisco Catalyst SD-WAN Manager Path Traversal (CVE-2026-20262)",
+      "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source": "CISA KEV"
+    },
+    {
+      "title": "CISA KEV: Oracle PeopleSoft Enterprise Missing Authentication (CVE-2026-35273)",
+      "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source": "CISA KEV"
+    },
+    {
+      "title": "CISA KEV: Ivanti Sentry OS Command Injection (CVE-2026-10520)",
+      "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source": "CISA KEV"
+    },
+    {
+      "title": "CISA KEV: Google Chromium V8 Out-of-Bounds Read/Write (CVE-2026-11645)",
+      "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source": "CISA KEV"
+    }
+  ],
+  "source_counts": {
+    "The Hacker News": 15,
+    "BleepingComputer": 8,
+    "CyberScoop": 5,
+    "Dark Reading": 7,
+    "SecurityWeek": 6,
+    "Infosecurity Magazine": 9,
+    "Krebs on Security": 2,
+    "Microsoft Security Blog": 2,
+    "Cisco Talos": 2,
+    "Unit 42 (Palo Alto Networks)": 3,
+    "CISA KEV": 7
+  }
+}
