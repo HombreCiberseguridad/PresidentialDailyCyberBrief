@@ -1,1 +1,12 @@
-{"archives": [{"date": "2026-08-06", "file": "2026-08-06/data.json", "story_count": 10, "generated_at": "2026-08-06T14:42:03.503761-05:00"}], "last_updated": "2026-08-06T14:42:03.503761-05:00", "total_archives": 1}
+{
+  "archives": [
+    {
+      "date": "2026-08-06",
+      "file": "2026-08-06/data.json",
+      "story_count": 137,
+      "generated_at": "2026-08-06T15:18:00-05:00"
+    }
+  ],
+  "last_updated": "2026-08-06T15:18:00-05:00",
+  "total_archives": 1
+}
