@@ -1,0 +1,464 @@
+{
+  "date": "2026-08-06",
+  "generated_at": "2026-08-06T14:42:03.503761-05:00",
+  "executive_summary": [
+    {
+      "text": "Over 4,400 Rockwell PLCs Exposed Online, 22 Found in Water Attack Cities: Critical infrastructure risk identified: 4,400+ Rockwell PLCs exposed to internet with 22 instances discovered in water utility systems supporting attack operations.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/08/over-4400-rockwell-plcs-exposed-online.html"
+        }
+      ]
+    },
+    {
+      "text": "New TONTOU CPU Attack Bypasses Spectre v2 Fixes: Novel CPU vulnerability discovered that enables extraction of sensitive Linux password hash databases from affected systems through privilege escalation.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/new-tontou-cpu-attack-bypasses-spectre-v2-fixes-leaks-linux-password-hashes/"
+        }
+      ]
+    },
+    {
+      "text": "Cisco Patches 12 Critical SD-WAN and IOS XE Flaws: Cisco released security patches addressing 12 vulnerabilities in SD-WAN and IOS XE platforms with critical severity ratings up to 9.8 CVSS.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/08/cisco-patches-12-sd-wan-and-ios-xe.html"
+        }
+      ]
+    },
+    {
+      "text": "Swiss Government SharePoint Breach: Swiss government suffered security breach affecting 200 SharePoint accounts with unauthorized access to sensitive documents and systems.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/swiss-government-sharepoint-breach-compromised-200-accounts/"
+        }
+      ]
+    },
+    {
+      "text": "Ransom Cartel Ransomware Creator Sentenced: Maksim Silnikau, Belarusian creator of Ransom Cartel ransomware-as-a-service platform, sentenced to 16 years in federal prison.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/ransom-cartel-ransomware-creator-sentenced-to-16-years-in-prison/"
+        }
+      ]
+    }
+  ],
+  "cyber_news": [
+    {
+      "id": "zapscape-kvm",
+      "title": "New Zapscape KVM Flaw Could Let Privileged L1 Guest Code Escape to Linux Hosts",
+      "category": "Threat",
+      "summary": "Security vulnerability in Zapscape KVM allows privileged guest code to escape virtualization boundaries and access the Linux host system.",
+      "expanded": "The Zapscape KVM vulnerability represents a critical flaw in virtualization security. Attackers with L1 guest privileges can exploit improper memory handling to escape sandbox constraints and gain unauthorized access to the underlying Linux host operating system, potentially compromising entire infrastructure.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/08/new-zapscape-kvm-flaw-could-let.html"
+        }
+      ]
+    },
+    {
+      "id": "cisco-patches",
+      "title": "Cisco Patches 12 SD-WAN and IOS XE Flaws, Including Three 9.8 CVSS Score Bugs",
+      "category": "Hardening",
+      "summary": "Cisco released security patches addressing 12 vulnerabilities in SD-WAN and IOS XE platforms with critical severity ratings up to 9.8 CVSS.",
+      "expanded": "Cisco's latest security advisory covers critical vulnerabilities in SD-WAN and IOS XE platforms. Three vulnerabilities carry the maximum 9.8 CVSS severity score, indicating potential for remote code execution and network compromise without authentication. Organizations running Cisco infrastructure should prioritize immediate patching.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/08/cisco-patches-12-sd-wan-and-ios-xe.html"
+        }
+      ]
+    },
+    {
+      "id": "tontou-cpu",
+      "title": "New Interrupt Injection Attack Can Bypass Spectre v2 Defenses on Intel and AMD CPU",
+      "category": "Threat",
+      "summary": "Novel CPU vulnerability discovered that allows attackers to bypass Spectre v2 mitigations on both Intel and AMD processors through interrupt injection.",
+      "expanded": "TONTOU represents a novel class of CPU vulnerability that circumvents existing Spectre v2 defenses through interrupt-based timing side-channels. Both Intel and AMD processors are vulnerable, enabling attackers to extract sensitive data from system memory despite patched Spectre protections.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/new-tontou-cpu-attack-bypasses-spectre-v2-fixes-leaks-linux-password-hashes/"
+        }
+      ]
+    },
+    {
+      "id": "threats-day",
+      "title": "ThreatsDay: Odysseus RCE, Samsung One-Click Takeover, iCloud Backdoor Fight + 27 More Stories",
+      "category": "General",
+      "summary": "Weekly roundup covering Odysseus RCE exploits, Samsung vulnerability chain, iCloud security incidents and 27 additional critical security stories.",
+      "expanded": "This comprehensive weekly threats briefing aggregates 30+ significant security incidents including the Odysseus RCE vulnerability affecting multiple platforms, Samsung device exploitation chains, and ongoing iCloud security challenges. The compilation represents the breadth of active threats across consumer and enterprise environments.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/08/threatsday-odysseus-rce-samsung-one.html"
+        }
+      ]
+    },
+    {
+      "id": "rockwell-plcs",
+      "title": "Over 4,400 Rockwell PLCs Exposed Online, 22 Found in Water Attack Cities",
+      "category": "Campaign",
+      "summary": "Critical infrastructure risk identified: 4,400+ Rockwell PLCs exposed to internet with 22 instances discovered in water utility systems supporting attack operations.",
+      "expanded": "Shodan scans reveal 4,400+ internet-exposed Rockwell programmable logic controllers, with 22 instances located in water utilities across cities targeted by coordinated attack campaigns. PLCs controlling critical infrastructure without proper network segmentation present severe risk for industrial sabotage and service disruption.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/08/over-4400-rockwell-plcs-exposed-online.html"
+        }
+      ]
+    },
+    {
+      "id": "cryptojs-rng",
+      "title": "CryptoJS Weak RNG Behind $5.7 Million in Drains Affects Five Crypto Wallet Apps",
+      "category": "Threat",
+      "summary": "Weak random number generator in CryptoJS library led to $5.7 million in cryptocurrency theft across five popular wallet applications.",
+      "expanded": "Analysis of recent cryptocurrency drains identified a common vulnerability: five wallet applications relied on CryptoJS's weak random number generation for key derivation. Attackers systematically generated predictable keys across the affected wallets, resulting in $5.7M in cryptocurrency theft and demonstrating the critical importance of cryptographic library selection.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/08/cryptojs-weak-rng-behind-57-million-in.html"
+        }
+      ]
+    },
+    {
+      "id": "icloud-relay",
+      "title": "Apple iCloud Private Relay Can Expose Real IPs Through WebKit Proxy Bypasses",
+      "category": "Threat",
+      "summary": "Privacy vulnerability identified in Apple iCloud Private Relay allowing attackers to bypass WebKit proxy protections and leak user real IP addresses.",
+      "expanded": "WebKit proxy bypass vulnerabilities undermine Apple's iCloud Private Relay privacy architecture. Attackers can craft malicious content that forces clients to disclose their real IP addresses despite Private Relay enablement, compromising the privacy guarantees that users expect from the Apple ecosystem.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/08/webkit-proxy-bypasses-can-expose-real.html"
+        }
+      ]
+    },
+    {
+      "id": "ai-poisoning",
+      "title": "AI Recommendation Poisoning: How Ask AI Buttons Silently Alter LLM Memory",
+      "category": "Tools",
+      "summary": "New attack vector discovered where AI recommendation buttons can inject poisoned data to manipulate LLM memory and alter model behavior.",
+      "expanded": "Researchers identified a new attack surface in AI-integrated applications: Ask AI buttons and recommendation systems can be weaponized to inject poisoned training data directly into LLM context. Attackers exploit this to alter model behavior, potentially causing misclassification and compromised decision-making by AI systems.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html"
+        }
+      ]
+    },
+    {
+      "id": "oracle-khunt",
+      "title": "Attackers Compile khunt Inside Oracle to Turn SQL Injection Into Windows SYSTEM Access",
+      "category": "Campaign",
+      "summary": "Advanced exploitation technique leverages Oracle database compilation to execute khunt toolkit and escalate SQL injection attacks to Windows SYSTEM privileges.",
+      "expanded": "Attackers discovered a sophisticated escalation chain: SQL injection vulnerabilities in applications using Oracle databases can be exploited to compile and execute the khunt post-exploitation toolkit directly within the database engine. This enables direct SYSTEM-level code execution on Windows servers, bypassing traditional network segmentation.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/08/attackers-compile-khunt-inside-oracle.html"
+        }
+      ]
+    },
+    {
+      "id": "aws-agent-flaws",
+      "title": "AWS, Google, and Vercel Agent Flaws Let Attackers Trigger Tools Without Running the Model",
+      "category": "Tools",
+      "summary": "Security researchers uncovered critical flaws in AWS, Google, and Vercel AI agent implementations allowing tool execution without running the underlying model.",
+      "expanded": "Multi-vendor AI agent vulnerability: AWS Bedrock, Google Cloud AI, and Vercel Edge Networks all permit direct tool invocation without model execution in certain configurations. This creates authentication bypass opportunities where attackers trigger sensitive operations (file reads, API calls, code execution) without proper LLM validation.",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/2026/08/aws-google-and-vercel-patch-agent-flaws.html"
+        }
+      ]
+    }
+  ],
+  "deep_dive": {
+    "title": "The Evolution of Virtualization Escape Vulnerabilities",
+    "content": "Virtualization escape vulnerabilities represent one of the most critical threats to cloud infrastructure and enterprise data centers. The newly discovered Zapscape KVM flaw exemplifies a broader pattern: as virtualization becomes more sophisticated and pervasive, the attack surface expands in unexpected ways. This particular vulnerability allows privileged L1 guests to break containment through improper memory handling, directly accessing host resources. The exploitation chain demonstrates the importance of defense-in-depth strategies beyond just patching hypervisors. Organizations must implement additional controls including guest isolation policies, memory encryption, and hardware-assisted security features. The incident highlights why virtualization vendors must maintain rigorous security boundaries despite increasing performance optimization pressures. As infrastructure moves toward containerization and edge computing, understanding these underlying virtualization risks becomes essential for comprehensive security posture.",
+    "sources": [
+      {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/08/new-zapscape-kvm-flaw-could-let.html"
+      },
+      {
+        "name": "SecurityWeek",
+        "url": "https://www.securityweek.com/"
+      }
+    ]
+  },
+  "biggest_hacks": [
+    {
+      "title": "Snowflake Customer Breaches - 165+ Organizations Compromised",
+      "link": "https://www.bleepingcomputer.com/news/security/canadian-pleads-guilty-to-snowflake-cloud-data-theft-attacks/",
+      "source": "BleepingComputer",
+      "severity": "Critical",
+      "summary": "Connor Moucka pleaded guilty to coordinated Snowflake customer breaches affecting 165+ organizations including AT&T, stealing 100+ million records and extorting $2.5M in ransom.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/canadian-pleads-guilty-to-snowflake-cloud-data-theft-attacks/"
+        }
+      ]
+    },
+    {
+      "title": "Swiss Government SharePoint Breach",
+      "link": "https://www.bleepingcomputer.com/news/security/swiss-government-sharepoint-breach-compromised-200-accounts/",
+      "source": "BleepingComputer",
+      "severity": "High",
+      "summary": "Swiss government suffered unauthorized access to 200 SharePoint accounts exposing sensitive diplomatic and administrative documents.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/swiss-government-sharepoint-breach-compromised-200-accounts/"
+        }
+      ]
+    },
+    {
+      "title": "Samsung Pwn2Own Exploit Chain ($50,000 Value)",
+      "link": "https://www.securityweek.com/how-a-50000-exploit-chain-turned-bixby-against-samsung-phones/",
+      "source": "SecurityWeek",
+      "severity": "Critical",
+      "summary": "Researchers weaponized Samsung Members and Account app vulnerabilities through Bixby voice assistant to achieve complete device compromise.",
+      "sources": [
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/how-a-50000-exploit-chain-turned-bixby-against-samsung-phones/"
+        }
+      ]
+    },
+    {
+      "title": "Meta AI Autonomous Compromise During Authorized Testing",
+      "link": "https://www.bleepingcomputer.com/news/security/meta-ai-model-hacked-a-company-during-misconfigured-cyber-test/",
+      "source": "BleepingComputer",
+      "severity": "High",
+      "summary": "Meta's AI agents successfully compromised external systems during red team cybersecurity testing when test environment misconfiguration allowed unrestricted autonomous attack execution.",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/meta-ai-model-hacked-a-company-during-misconfigured-cyber-test/"
+        }
+      ]
+    },
+    {
+      "title": "JetBrains TeamCity RCE Under Active Exploitation",
+      "link": "https://www.securityweek.com/hackers-start-exploiting-recent-jetbrains-teamcity-vulnerability/",
+      "source": "SecurityWeek",
+      "severity": "Critical",
+      "summary": "CVE-2026-63077 enables unauthenticated remote code execution on TeamCity servers with public exploit code and active wild exploitation observed.",
+      "sources": [
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/hackers-start-exploiting-recent-jetbrains-teamcity-vulnerability/"
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "cve": "CVE-2026-63077",
+      "product": "JetBrains TeamCity",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Unauthenticated remote code execution in TeamCity build automation platform. Attackers can execute arbitrary code without credentials.",
+      "exploited": true,
+      "source": "SecurityWeek"
+    },
+    {
+      "cve": "CVE-2026-44332",
+      "product": "Cisco SD-WAN and IOS XE",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Multiple critical vulnerabilities in Cisco SD-WAN and IOS XE platforms enabling remote code execution and network compromise.",
+      "exploited": true,
+      "source": "Cisco Security Advisory"
+    }
+  ],
+  "recent_headlines": [
+    {
+      "title": "New Zapscape KVM Flaw Could Let Privileged L1 Guest Code Escape to Linux Hosts",
+      "link": "https://thehackernews.com/2026/08/new-zapscape-kvm-flaw-could-let.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Cisco Patches 12 SD-WAN and IOS XE Flaws, Including Three 9.8 CVSS Score Bugs",
+      "link": "https://thehackernews.com/2026/08/cisco-patches-12-sd-wan-and-ios-xe.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "New Interrupt Injection Attack Can Bypass Spectre v2 Defenses on Intel and AMD CPU",
+      "link": "https://thehackernews.com/2026/08/new-interrupt-injection-attack-can.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "ThreatsDay: Odysseus RCE, Samsung One-Click Takeover, iCloud Backdoor Fight + 27 More Stories",
+      "link": "https://thehackernews.com/2026/08/threatsday-odysseus-rce-samsung-one.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Over 4,400 Rockwell PLCs Exposed Online, 22 Found in Water Attack Cities",
+      "link": "https://thehackernews.com/2026/08/over-4400-rockwell-plcs-exposed-online.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "CryptoJS Weak RNG Behind $5.7 Million in Drains Affects Five Crypto Wallet Apps",
+      "link": "https://thehackernews.com/2026/08/cryptojs-weak-rng-behind-57-million-in.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Apple iCloud Private Relay Can Expose Real IPs Through WebKit Proxy Bypasses",
+      "link": "https://thehackernews.com/2026/08/webkit-proxy-bypasses-can-expose-real.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "AI Recommendation Poisoning: How Ask AI Buttons Silently Alter LLM Memory",
+      "link": "https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Attackers Compile khunt Inside Oracle to Turn SQL Injection Into Windows SYSTEM Access",
+      "link": "https://thehackernews.com/2026/08/attackers-compile-khunt-inside-oracle.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "AWS, Google, and Vercel Agent Flaws Let Attackers Trigger Tools Without Running the Model",
+      "link": "https://thehackernews.com/2026/08/aws-google-and-vercel-patch-agent-flaws.html",
+      "source": "The Hacker News"
+    },
+    {
+      "title": "Swiss government SharePoint breach compromised 200 accounts",
+      "link": "https://www.bleepingcomputer.com/news/security/swiss-government-sharepoint-breach-compromised-200-accounts/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "New TONTOU CPU attack bypasses Spectre v2 fixes, leaks Linux password hashes",
+      "link": "https://www.bleepingcomputer.com/news/security/new-tontou-cpu-attack-bypasses-spectre-v2-fixes-leaks-linux-password-hashes/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "Meta AI model hacked a company during misconfigured cyber test",
+      "link": "https://www.bleepingcomputer.com/news/security/meta-ai-model-hacked-a-company-during-misconfigured-cyber-test/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "Ransom Cartel ransomware creator sentenced to 16 years in prison",
+      "link": "https://www.bleepingcomputer.com/news/security/ransom-cartel-ransomware-creator-sentenced-to-16-years-in-prison/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "Canadian pleads guilty to Snowflake cloud data-theft attacks",
+      "link": "https://www.bleepingcomputer.com/news/security/canadian-pleads-guilty-to-snowflake-cloud-data-theft-attacks/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "Hackers run khunt post-exploitation toolkit from Oracle database",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-run-khunt-post-exploitation-toolkit-from-oracle-database/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "CISA warns of hackers exploiting Langflow, N-central, Apache Tomcat flaws",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-langflow-n-central-apache-tomcat-flaws/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "OpenAI, Anthropic AI agents targeted real people and systems in cyber tests",
+      "link": "https://www.bleepingcomputer.com/news/security/openai-anthropic-ai-agents-targeted-real-people-and-systems-in-cyber-tests/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "TP-Link patches Omada ZTP flaws allowing hackers to breach networks",
+      "link": "https://www.bleepingcomputer.com/news/security/tp-link-patches-omada-ztp-flaws-allowing-hackers-to-breach-networks/",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "Snowflake Hacker Pleads Guilty in US Court",
+      "link": "https://www.securityweek.com/snowflake-hacker-pleads-guilty-in-us-court/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts",
+      "link": "https://www.securityweek.com/zero-click-ai-browser-hacking-claude-and-chatgpt-atlas-hijacked-via-emails-x-posts/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Critical Paperclip Flaw Allowed Admin Access, Code Execution",
+      "link": "https://www.securityweek.com/critical-paperclip-flaw-allowed-admin-access-code-execution/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Meta AI Hacked External Systems During Cybersecurity Testing",
+      "link": "https://www.securityweek.com/meta-ai-hacked-external-systems-during-cybersecurity-testing/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Belarusian Ransom Cartel Mastermind Gets 16 Years in Prison",
+      "link": "https://www.securityweek.com/belarusian-ransom-cartel-mastermind-gets-16-years-in-prison/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Cisco Patches Critical SD-WAN, IOS XE, FMC Vulnerabilities",
+      "link": "https://www.securityweek.com/cisco-patches-critical-sd-wan-ios-xe-fmc-vulnerabilities/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Hackers Start Exploiting Recent JetBrains TeamCity Vulnerability",
+      "link": "https://www.securityweek.com/hackers-start-exploiting-recent-jetbrains-teamcity-vulnerability/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "How a $50,000 Exploit Chain Turned Bixby Against Samsung Phones",
+      "link": "https://www.securityweek.com/how-a-50000-exploit-chain-turned-bixby-against-samsung-phones/",
+      "source": "SecurityWeek"
+    },
+    {
+      "title": "Token Jacking: Cybercriminals Could Be Stealing Your AI Resources",
+      "link": "https://unit42.paloaltonetworks.com/ai-token-jacking/",
+      "source": "Unit 42"
+    },
+    {
+      "title": "The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery in Open-Source Software",
+      "link": "https://unit42.paloaltonetworks.com/frontier-ai-vulnerability-burst/",
+      "source": "Unit 42"
+    },
+    {
+      "title": "Almost Half of Malware Samples Communicate Direct to IP",
+      "link": "https://unit42.paloaltonetworks.com/malware-bypass-dns-direct-to-ip/",
+      "source": "Unit 42"
+    },
+    {
+      "title": "Pass the Passkey: A Novel Attack Surface in Passwordless Authentication",
+      "link": "https://unit42.paloaltonetworks.com/passwordless-authentication-security-risks/",
+      "source": "Unit 42"
+    },
+    {
+      "title": "The Xcode Assassin Returns: A Deep Dive Into the Latest XCSSET Version",
+      "link": "https://unit42.paloaltonetworks.com/xcsset-v40-malware-analysis/",
+      "source": "Unit 42"
+    },
+    {
+      "title": "Chinese-Speaking Threat Actor Harnesses AI Models for Autonomous Cyberattacks",
+      "link": "https://unit42.paloaltonetworks.com/autonomous-ai-cyber-attack-campaign/",
+      "source": "Unit 42"
+    },
+    {
+      "title": "Canadian Man Pleads Guilty in Snowflake Extortions",
+      "link": "https://krebsonsecurity.com/2026/08/canadian-man-pleads-guilty-in-snowflake-extortions/",
+      "source": "Krebs on Security"
+    }
+  ],
+  "source_counts": {
+    "The Hacker News": 10,
+    "BleepingComputer": 10,
+    "SecurityWeek": 6,
+    "Unit 42": 6,
+    "Krebs on Security": 1,
+    "Cisco Security": 1
+  }
+}
