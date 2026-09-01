@@ -1,12 +1,22 @@
 {
-  "archives": [
-    {
-      "date": "2026-08-06",
-      "file": "2026-08-06/data.json",
-      "story_count": 137,
-      "generated_at": "2026-08-06T15:18:00-05:00"
-    }
+  "entries": [
+    {"date": "August 06, 2026", "slug": "2026-08-06", "path": "archive/2026-08-06/data.json"},
+    {"date": "July 23, 2026", "slug": "2026-07-23", "path": "archive/2026-07-23/data.json"},
+    {"date": "July 17, 2026", "slug": "2026-07-17", "path": "archive/2026-07-17/data.json"},
+    {"date": "July 09, 2026", "slug": "2026-07-09", "path": "archive/2026-07-09/data.json"},
+    {"date": "June 18, 2026", "slug": "2026-06-18", "path": "archive/2026-06-18/data.json"},
+    {"date": "June 10, 2026", "slug": "2026-06-10", "path": "archive/2026-06-10/data.json"},
+    {"date": "June 02, 2026", "slug": "2026-06-02", "path": "archive/2026-06-02/data.json"},
+    {"date": "May 26, 2026", "slug": "2026-05-26", "path": "archive/2026-05-26/data.json"},
+    {"date": "May 20, 2026", "slug": "2026-05-20", "path": "archive/2026-05-20/data.json"},
+    {"date": "May 19, 2026", "slug": "2026-05-19", "path": "archive/2026-05-19/data.json"},
+    {"date": "May 12, 2026", "slug": "2026-05-12", "path": "archive/2026-05-12/data.json"},
+    {"date": "May 07, 2026", "slug": "2026-05-07", "path": "archive/2026-05-07/data.json"},
+    {"date": "May 05, 2026", "slug": "2026-05-05", "path": "archive/2026-05-05/data.json"},
+    {"date": "May 04, 2026", "slug": "2026-05-04", "path": "archive/2026-05-04/data.json"},
+    {"date": "May 01, 2026", "slug": "2026-05-01", "path": "archive/2026-05-01/data.json"},
+    {"date": "April 30, 2026", "slug": "2026-04-30", "path": "archive/2026-04-30/data.json"},
+    {"date": "March 23, 2026", "slug": "2026-03-23", "path": "archive/2026-03-23/data.json"}
   ],
-  "last_updated": "2026-08-06T15:18:00-05:00",
-  "total_archives": 1
+  "dates": ["2026-08-06", "2026-07-23", "2026-07-17", "2026-07-09", "2026-06-18", "2026-06-10", "2026-06-02", "2026-05-26", "2026-05-20", "2026-05-19", "2026-05-12", "2026-05-07", "2026-05-05", "2026-05-04", "2026-05-01", "2026-04-30", "2026-03-23"]
 }
