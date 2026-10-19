@@ -1,356 +1,319 @@
 {
-  "date": "2026-09-23",
-  "generated_at": "2026-09-23T10:11:44.978648-05:00",
+  "date": "2026-10-19",
+  "generated_at": "2026-10-19T20:48:00Z",
   "executive_summary": [
     {
-      "text": "Microsoft Disrupts EvilTokens Device Code Phishing Service. Microsoft seized 50 websites and disabled more than 150 domains as part of a coordinated disruption effort against a phishing-as-a-service operation that uses device code authentication flows.",
+      "text": "Unknown threat actors abused a compromised ConnectWise Cloud Backup credential to sign in to 173 Microsoft 365 customer tenants, forcing ConnectWise to take Cloud Backup, SaaS Security, and Cloud Management offline while investigating whether stolen tokens still grant access to client environments.",
       "sources": [
-        {
-          "name": "Dark Reading",
-          "url": "https://www.darkreading.com/identity-access-management-security/microsoft-disrupts-eviltokens-device-code-phishing-service"
-        }
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/hackers-breach-microsoft-365-tenants-via-connectwise-supply-chain-attack/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/connectwise-suspends-cloud-backup-after.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/connectwise-suspends-cloud-services-in-response-to-cyberattack/"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/connectwise-shuts-off-cloud/"},
+        {"name": "CSO Online", "url": "https://www.csoonline.com/article/4237087/connectwise-backup-credentials-exposed-multiple-microsoft-365-tenants.html"}
       ]
     },
     {
-      "text": "New Exvicy ClickFix Framework Built on Rival ErrTraffic's Code. Sekoia said Exvicy, a new ClickFix MaaS framework, reused code from rival service ErrTraffic",
+      "text": "An intruder reached a legacy OpenCode system on the night of October 16 and may have exposed OpenAI, Anthropic, and Google API keys saved by users of the hosted OpenCode Console, with the breach also tied to AI distillation attacks run against customer provider accounts.",
       "sources": [
-        {
-          "name": "Infosecurity Magazine",
-          "url": "https://www.infosecurity-magazine.com/news/exvicy-clickfix-framework/"
-        }
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/opencode-console-breach-may-have.html"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/opencode-hack-exposes-api-keys-amid-ai-distillation-attacks/"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/opencode-breach-openai-anthropic/"}
       ]
     },
     {
-      "text": "Improving email security outcomes with real-world Microsoft Defender insights. <p>The latest email security benchmarking reports show strong Microsoft Defender performance across phishing, malware, and spoofing attacks.</p>",
+      "text": "Rank Math PRO, a paid WordPress SEO plugin, distributed a self-restoring backdoor from the official rankmath.com site and through automatic updates during an 11-hour supply-chain window on October 15-16, infecting every site that installed or updated version 3.0.123 in that period.",
       "sources": [
-        {
-          "name": "Microsoft Security Blog",
-          "url": "https://www.microsoft.com/en-us/security/blog/2026/09/17/improving-email-security-outcomes-with-real-world-microsoft-defender-insights/"
-        }
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/popular-wordpress-seo-plugin-rank-math.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/rank-math-pro-wordpress-plugin-compromised-in-supply-chain-attack/"}
       ]
     },
     {
-      "text": "545 Hackers Tested It First. Now XRanges for AI Scores Your Security Agent. Autonomous security agents are getting good at finding bugs. Nobody has a good way to measure how good. Now there's a benchmark: AI agents found 50% more 0-days than the crowd.",
+      "text": "CISA added actively exploited BeyondTrust Remote Support authentication bypass CVE-2026-102764 to its KEV catalog on October 16, triggering BOD 26-04 remediation requirements for federal agencies.",
       "sources": [
-        {
-          "name": "The Hacker's News",
-          "url": "https://thehackernews.com/2026/09/545-hackers-tested-it-first-now-xranges.html"
-        }
+        {"name": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog#CVE-2026-102764"}
       ]
     },
     {
-      "text": "Anthropic and OpenAI Models Still Attempt Restricted Actions in Safety Tests. Anthropic and OpenAI on Tuesday announced new models, with both artificial intelligence (AI) companies noting that they are continuing to invest in improving alignment to combat risky behavior.",
+      "text": "Fortinet path traversal CVE-2025-61624, also added to the KEV catalog on October 16, has been linked to a stealthy and persistent FortiGate implant deployed against a telecommunications organization.",
       "sources": [
-        {
-          "name": "The Hacker's News",
-          "url": "https://thehackernews.com/2026/09/anthropic-and-openai-models-still.html"
-        }
+        {"name": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog#CVE-2025-61624"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/exploited-fortinet-bug-linked-to-stealthy-fortigate-implant-in-telecom-hack/"}
       ]
     }
   ],
   "cyber_news": [
     {
-      "id": "compromised-memtensor-packages-deliver.html",
-      "title": "Compromised MemTensor Packages Deliver sckit Credential Stealer via npm and PyPI",
+      "id": "plex2shell-exploitation-crypto-miners-proxy-backdoor",
+      "title": "Hackers Exploit Plex2Shell Flaws to Install Crypto Miners and Linux Proxy Backdoor",
       "category": "Campaign",
-      "summary": "Unknown threat actors have managed to compromise two legitimate MemTensor packages across the npm and Python Package Index (PyPI) repositories to push a platform-specific Go-based implant dubbed sckit designed for Windows, Linux, and macOS systems.",
-      "expanded": "This campaign demonstrates coordinated threat actor operations. Unknown threat actors have managed to compromise two legitimate MemTensor packages across the npm and Python Package Index (PyPI) repositories to push a platform-specific Go-based implant dubbed sckit designed for Windows, Linux, and macOS systems. The implant is obfuscated and designed to steal credentials. Detection patterns indicate sophisticated command-and-control infrastructure with failover mechanisms.",
+      "summary": "Threat actors began exploiting a chain of Plex Media Server vulnerabilities just one day after a proof-of-concept went public, deploying cryptocurrency miners and reverse proxy software on compromised servers. The in-the-wild activity was surfaced by researcher boredhackerblog.",
+      "expanded": "The Plex2Shell chain stitches multiple Plex Media Server flaws into a pre-auth remote code execution path, and mass exploitation began within roughly 24 hours of the PoC's publication. Observed payloads include a cryptocurrency miner and a Linux reverse-proxy backdoor that lets attackers relay traffic through the compromised host, useful for laundering malicious connections or reselling proxy access. The speed from disclosure to weaponization mirrors classic internet-exposed self-hosted software patterns: hobbyist media servers, often unmanaged and unpatched, became monetization infrastructure almost immediately.",
       "sources": [
-        {
-          "name": "The Hacker's News",
-          "url": "https://thehackernews.com/2026/09/compromised-memtensor-packages-deliver.html"
-        }
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/hackers-exploit-plex2shell-flaws-to.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/plex2shell-exploit-chain-weaponized-against-plex-servers-hours-after-disclosure/"}
       ]
     },
     {
-      "id": "new-cpanel-flaw-lets-hosting-account_0272795595.html",
-      "title": "New cPanel Flaw Lets a Hosting Account Run Code as Root, Take Full Server Control",
-      "category": "Vulnerability",
-      "summary": "A flaw in cPanel's CalDAV and CardDAV service lets anyone with a cPanel hosting account run code as root and take full control of the server, according to cPanel on September 22. A second bug in the WP Toolkit plugin allows WordPress installations to be exposed.",
-      "expanded": "This vulnerability affects cPanel. A flaw in cPanel's CalDAV and CardDAV service lets anyone with a cPanel hosting account run code as root and take full control of the server, the company said on September 22. A second bug in the WP Toolkit plugin, used to install and manage WordPress installations, exposes WordPress sites to privilege escalation. Both vulnerabilities leverage Perl Unsafe package imports for execution.",
-      "sources": [
-        {
-          "name": "The Hacker's News",
-          "url": "https://thehackernews.com/2026/09/new-cpanel-flaw-lets-hosting-account_0272795595.html"
-        }
-      ]
-    },
-    {
-      "id": "545-hackers-tested-it-first-now-xranges.html",
-      "title": "545 Hackers Tested It First. Now XRanges for AI Scores Your Security Agent",
-      "category": "General",
-      "summary": "Autonomous security agents are getting good at finding bugs. Nobody has a good way to measure how good. Point one at a realistic target and what comes back is a report the agent wrote about itself.",
-      "expanded": "Autonomous security agents are getting good at finding bugs. Nobody has a good way to measure how good. Point one at a realistic target and what comes back is a report the agent wrote about itself: confident prose, a list of findings, and no way to tell which of them happened. Someone with a security background would need to validate each finding. This benchmarking challenge mirrors the adversarial testing community's historical approach to LLM safety validation.",
-      "sources": [
-        {
-          "name": "The Hacker's News",
-          "url": "https://thehackernews.com/2026/09/545-hackers-tested-it-first-now-xranges.html"
-        }
-      ]
-    },
-    {
-      "id": "anthropic-and-openai-models-still.html",
-      "title": "Anthropic and OpenAI Models Still Attempt Restricted Actions in Safety Tests",
-      "category": "General",
-      "summary": "Anthropic and OpenAI on Tuesday announced new models, with both companies noting that they are continuing to invest in improving alignment to combat risky behavior. Opus 5.5 and GPT-4o mini represent new benchmarks for alignment research.",
-      "expanded": "Anthropic and OpenAI on Tuesday announced new models, with both artificial intelligence (AI) companies noting that they are continuing to invest in improving alignment to combat risky behavior. Opus 5.5, per Anthropic, is a major step up from Opus 5 and achieves the best scores of any model to date on academic reasoning benchmarks. However, both models still exhibit attempts to bypass restrictions in red team assessments. This indicates ongoing research challenges in alignment techniques across scaling regimes.",
-      "sources": [
-        {
-          "name": "The Hacker's News",
-          "url": "https://thehackernews.com/2026/09/anthropic-and-openai-models-still.html"
-        }
-      ]
-    },
-    {
-      "id": "exploit-released-for-unpatched-ubuntu.html",
-      "title": "Exploit Released for Unpatched Ubuntu Linux Flaw Enabling Host-Root Container Escape",
-      "category": "Vulnerability",
-      "summary": "A use-after-free flaw in the Linux kernel's AF_UNIX socket subsystem can be exploited to escape a container and gain root on the host, per DepthFirst security research published September 22. The vulnerability CVE-2026-80521 has a CVSS score of 7.8.",
-      "expanded": "This vulnerability affects Ubuntu Linux. A use-after-free in the Linux kernel's AF_UNIX socket subsystem can be used to escape a container and gain root on the host, security firm DepthFirst said in research published September 22. The flaw, tracked as CVE-2026-80521 (CVSS score: 7.8), involves memory corruption in socket communication primitives. The attack requires local process execution within the container to trigger the race condition through socket options manipulation.",
-      "sources": [
-        {
-          "name": "The Hacker's News",
-          "url": "https://thehackernews.com/2026/09/exploit-released-for-unpatched-ubuntu.html"
-        }
-      ]
-    },
-    {
-      "id": "uae-saudi-arabia-face-onslaught-of-increasingly-so",
-      "title": "UAE, Saudi Arabia Face Onslaught of Increasingly Complex Cyberattacks",
-      "category": "General",
-      "summary": "The United Arab Emirates and Kingdom of Saudi Arabia together absorbed 50% of all cyberattacks recorded across the Gulf region in the first half of 2026, reflecting sophisticated targeting of critical infrastructure and financial systems.",
-      "expanded": "The United Arab Emirates and Kingdom of Saudi Arabia together absorbed 50% of all cyberattacks recorded across the Gulf region in the first half of 2026. Analysis reveals multi-stage attacks utilizing legitimate tools and custom malware variants. Threat actors employ reconnaissance techniques targeting energy, telecommunications, and financial sectors with sustained persistence mechanisms.",
-      "sources": [
-        {
-          "name": "Dark Reading",
-          "url": "https://www.darkreading.com/threat-intelligence/uae-saudi-arabia-face-onslaught-of-increasingly-sophisticated-automated-cyberattacks"
-        }
-      ]
-    },
-    {
-      "id": "attackers-manipulate-ai-chatbots-mass-disinformati",
-      "title": "Attackers Manipulate AI Chatbots in Mass Disinformation, Phishing Campaign",
+      "id": "rank-math-pro-supply-chain-backdoor",
+      "title": "Popular WordPress SEO Plugin Rank Math PRO Hijacked to Deliver Self-Restoring Backdoor",
       "category": "Campaign",
-      "summary": "Threat actors are poisoning ChatGPT, Gemini, and Google AI Overview answers by seeding the Web with malicious links and data and then optimizing the content for search engine indexing.",
-      "expanded": "This campaign demonstrates coordinated threat actor operations. Threat actors are poisoning ChatGPT, Gemini, and Google AI Overview answers by seeding the Web with malicious links and data and then optimizing the content. Attack patterns indicate advanced reconnaissance and targeting. The exploitation vector leverages AI model response generation to legitimate malicious domains through LLM-optimized content injection techniques.",
+      "summary": "Copies of Rank Math PRO downloaded from rankmath.com or delivered as automatic updates between 20:02 UTC on October 15 and 07:12 UTC on October 16 contained malware. Any site that installed or updated version 3.0.123 during that window was infected with a backdoor that reinstalls itself when removed.",
+      "expanded": "The attackers compromised Rank Math's distribution pipeline so the malicious build shipped through two channels simultaneously: fresh downloads from the official site and the WordPress auto-update mechanism, which pushed the trojanized 3.0.123 package to existing installs without any admin action. The embedded backdoor is self-restoring, using WordPress hooks and scheduled events to re-inject its files and re-establish access after cleanup attempts. Because the payload arrived inside a legitimately signed, trusted plugin update, it bypassed integrity expectations entirely, and the 11-hour distribution window makes infection timing the key forensic pivot for identifying affected sites.",
       "sources": [
-        {
-          "name": "Dark Reading",
-          "url": "https://www.darkreading.com/threat-intelligence/attackers-manipulate-ai-chatbots-mass-disinformation-phishing-campaign"
-        }
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/popular-wordpress-seo-plugin-rank-math.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/rank-math-pro-wordpress-plugin-compromised-in-supply-chain-attack/"}
       ]
     },
     {
-      "id": "ransomware-attacks-reach-record",
-      "title": "Ransomware Attacks Reach Record High for 2026",
+      "id": "aomei-update-server-malware-hijack",
+      "title": "Hackers Hijack AOMEI Update Servers to Secretly Spread Malware",
+      "category": "Campaign",
+      "summary": "Attackers compromised AOMEI's servers to distribute malware through a built-in promotional feature in its backup software. The tampering was brief and the configuration files were restored to their original state afterward to hide the attack.",
+      "expanded": "The intrusion abused a legitimate promotional/offers feature in AOMEI Backupper that pulls configuration from AOMEI-controlled servers: the attackers modified the server-side configuration to push malware installers to endpoints running the backup product. Crucially, the malicious configuration was only in place briefly before being reverted to its clean state, a deliberate anti-forensics choice that leaves a narrow detection window and makes server-side logs the primary evidence source. AOMEI Backupper's large install base among home users and small businesses makes the promotional channel a high-yield distribution vector that inherits the vendor's trust.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/hackers-hijack-aomei-update-servers-to-secretly-spread-malware/"}
+      ]
+    },
+    {
+      "id": "drupal-critical-core-rce-fast-exploitation-risk",
+      "title": "Drupal Warns of Fast Exploitation Risk for Critical Core RCE Flaw",
+      "category": "Hardening",
+      "summary": "Drupal patched two critical vulnerabilities allowing remote code execution on any supported version of the CMS, and warned that exploits may emerge soon. The flaws affect the Entity List and Field UI modules, with additional exploit paths through contributed modules.",
+      "expanded": "The critical flaws live in Drupal core's Entity List and Field UI modules, and Drupal's security team explicitly flagged that exploit paths also exist through contributed modules, dramatically widening the attack surface beyond stock core installs. The bugs permit remote code execution on any supported Drupal version, and patches were shipped with an unusual explicit warning that exploitation may follow quickly. That caution is grounded in history: Drupalgeddon-era core RCEs saw mass automated exploitation within days of disclosure, and the contributed-module angle means attackers can reach sites even where the vulnerable core modules are not directly exposed.",
+      "sources": [
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/drupal-warns-of-fast-exploitation-risk-for-critical-core-rce-flaw/"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaws-warns-exploits-may-emerge-soon/"}
+      ]
+    },
+    {
+      "id": "f5-nginx-out-of-band-critical-patches",
+      "title": "F5 Releases Out-of-Band Patches for Critical NGINX Vulnerabilities",
+      "category": "Hardening",
+      "summary": "F5 shipped out-of-band security patches for multiple NGINX web server flaws, including three critical-severity vulnerabilities that allow attackers to execute code on vulnerable systems.",
+      "expanded": "The fixes landed outside F5's normal release cycle, which the vendor typically reserves for flaws it considers urgent enough to not wait for the scheduled cadence. Three of the vulnerabilities are rated critical and enable remote code execution against vulnerable NGINX deployments. NGINX's role as edge and reverse-proxy infrastructure makes these particularly consequential: a compromised instance sits in front of application tiers, terminates TLS, and inspects all proxied traffic, giving an attacker both a code-execution foothold and a privileged vantage point over everything behind it.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/f5-releases-out-of-band-patches-for-critical-nginx-vulnerabilities/"}
+      ]
+    },
+    {
+      "id": "siteguard-waf-command-injection-active-exploitation",
+      "title": "Hackers Exploit SiteGuard WAF Flaw to Run Commands as Root",
+      "category": "Hardening",
+      "summary": "Attackers are actively targeting an OS command injection vulnerability in SiteGuard Server Edition that lets them execute commands with root or SYSTEM privileges on affected servers.",
+      "expanded": "The vulnerability is an OS command injection in SiteGuard Server Edition, and exploitation is already occurring in the wild. The impact is amplified by the product's role: SiteGuard is a WAF designed to sit inline and inspect application traffic, so injected commands run with root (Linux) or SYSTEM (Windows) privileges on the very appliance guarding the application it protects. Command injection at that privilege level typically yields full host takeover, and because the WAF is positioned at the network edge, it is frequently internet-reachable by design, making it a prime initial-access target.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-siteguard-waf-flaw-to-run-commands-as-system-root/"}
+      ]
+    },
+    {
+      "id": "ghostaction-github-credential-stealer-font-lure",
+      "title": "GhostAction Attackers Plant Credential Stealer Disguised as Font in 94 GitHub Repositories",
+      "category": "Campaign",
+      "summary": "The threat actor behind the GhostAction supply-chain attack has expanded from injecting malicious GitHub Actions workflows into compromised projects to phishing open-source developers, planting a credential stealer disguised as a font file across 94 GitHub repositories.",
+      "expanded": "GhostAction's first stage poisoned CI/CD by injecting malicious GitHub Actions workflows into compromised projects, abusing trusted build infrastructure to run attacker code. The newly documented evolution, detailed by OpenSourceMalware, pivots to the humans: fake font files that are actually stealer malware, distributed across 94 GitHub repositories to phish open-source developers. The campaign illustrates a compounding supply-chain pattern, where compromised maintainer accounts cascade downstream, and developer workstations, rich in tokens, SSH keys, and repository access, become the true target rather than the code itself.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/ghostaction-attackers-plant-credential.html"}
+      ]
+    },
+    {
+      "id": "adfection-zero-click-spyware-ad-delivery",
+      "title": "'AdFection' Turns Ad Impressions Into Zero-Click Spyware Delivery",
       "category": "Threat",
-      "summary": "A total of 1,073 firms fell victim to ransomware attacks globally in August, with the industrial sector the most affected, according to NCC Group incident response data. Attack sophistication continues to escalate.",
-      "expanded": "Threat actors deployed a sophisticated implant. A total of 1073 firms fell victim to ransomware attacks globally in August, with the industrial sector the most affected, according to new NCC data. The malware is designed for multi-platform deployment with polymorphic encryption and anti-forensics capabilities. Attack chains utilize initial access brokers distributing commodity RATs followed by lateral movement with custom post-exploitation tools.",
+      "summary": "Spyware vendors are abusing targeted ad bidding in the digital advertising ecosystem to identify and track individuals and organizations of interest, delivering spyware through ad impressions with no user click required.",
+      "expanded": "The AdFection technique abuses real-time bidding (RTB) infrastructure: spyware vendors purchase ad impressions targeted at specific individuals, and the ad creative itself carries the spyware payload, making delivery zero-click. The ad-tech ecosystem's granular targeting data doubles as a surveillance tool for identifying marks, while delivery rides on legitimate advertising infrastructure and domains, evading conventional web filtering and reputation systems. The technique effectively converts the programmatic ad chain, already criticized for privacy leakage via bid-stream data, into an active spyware distribution and targeting platform.",
       "sources": [
-        {
-          "name": "Bleeping Computer",
-          "url": "https://www.bleepingcomputer.com/news/security/ransomware-attacks-reach-record-high-for-2026/"
-        }
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/data-privacy/adfection-online-ads-spyware-delivery"}
       ]
     },
     {
-      "id": "critical-rce-vulnerability-discovered-in-popular-w",
-      "title": "Critical RCE Vulnerability Discovered in Popular Web Framework",
-      "category": "Vulnerability",
-      "summary": "A critical remote code execution vulnerability has been discovered in a widely-used web application framework. CVE-2026-89432 (CVSS 9.8) allows unauthenticated attackers to execute arbitrary code on vulnerable servers.",
-      "expanded": "This vulnerability affects widely deployed web framework versions. A critical remote code execution vulnerability has been discovered with CVSS score 9.8 allowing unauthenticated arbitrary code execution. The vulnerability exists in the request parsing logic where improper input validation on serialized objects permits deserialization gadget chain exploitation. Proof-of-concept code is publicly available demonstrating exploitation.",
+      "id": "fortigate-stealth-implant-telecom-hack",
+      "title": "Exploited Fortinet Bug Linked to Stealthy FortiGate Implant in Telecom Hack",
+      "category": "Threat",
+      "summary": "A persistent, stealthy FortiGate implant was deployed against a telecommunications organization, and researchers have linked the intrusion to an actively exploited Fortinet vulnerability now listed in CISA's KEV catalog.",
+      "expanded": "The implant was purpose-built for FortiGate edge devices and is described as both persistent and stealthy, indicating custom tooling rather than commodity malware. FortiGate appliances are high-value targets because they terminate VPNs, enforce policy, and hold network-wide credentials and configuration, so a resident implant grants durable network access without re-exploitation. Telecom targeting plus implant sophistication points toward an espionage-motivated, capable actor, and the link to the KEV-listed path traversal bug suggests initial access came through an unpatched edge device rather than credential theft.",
       "sources": [
-        {
-          "name": "CISA",
-          "url": "https://www.cisa.gov/news-events/alerts/2026/09/22/critical-rce-web-framework"
-        }
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/exploited-fortinet-bug-linked-to-stealthy-fortigate-implant-in-telecom-hack/"}
       ]
     },
     {
-      "id": "chrome-154-patches-108-vulnerabilities",
-      "title": "Chrome 154 Patches 108 Vulnerabilities",
-      "category": "Vulnerability",
-      "summary": "Google Chrome 154 resolves 108 vulnerabilities including several critical-severity memory safety and memory corruption flaws. This release includes protections against exploit chains targeting browser internals.",
-      "expanded": "This vulnerability affects Unknown. The browser update resolves several critical-severity memory safety and memory corruption flaws. Attack patterns tracked in the wild indicate attackers have been crafting multi-stage exploits targeting the browser renderer process. The patch includes improved memory tagging extension (MTE) integration and control flow guard hardening to mitigate exploitation techniques.",
+      "id": "dhs-deepseek-federal-ban",
+      "title": "DHS to Ban DeepSeek from Federal Civilian Agencies",
+      "category": "Laws",
+      "summary": "DHS will ban DeepSeek from federal civilian agencies, with the order citing national security concerns including data being sent to servers in China, the potential for malware, and overall risk to federal IT systems.",
+      "expanded": "The ban order cites three rationales: user data transiting servers in China, the potential for malware distribution through the app, and systemic risk to federal IT environments. It continues a pattern of escalating US government action against Chinese-origin AI applications on government devices, following earlier state-level prohibitions and reflecting intelligence-community concerns that consumer AI apps double as data-collection platforms. The directive also creates downstream pressure on contractors and federally-funded entities, where compliance-driven removal of the app from managed fleets typically follows agency-level bans.",
       "sources": [
-        {
-          "name": "SecurityWeek",
-          "url": "https://www.securityweek.com/chrome-154-patches-108-vulnerabilities/"
-        }
+        {"name": "CyberScoop", "url": "https://cyberscoop.com/dhs-bans-deepseek-federal-agencies/"}
+      ]
+    },
+    {
+      "id": "mitre-attck-v20-ai-abuse-mfa-bypass",
+      "title": "MITRE ATT&CK v20 Catalogs AI Abuse, MFA Bypass, Water Utility Attacks",
+      "category": "Tools",
+      "summary": "MITRE released ATT&CK v20, adding coverage for AI abuse, MFA bypass techniques, and attacks against water utilities, with 15 new detection strategies backed by 38 analytics.",
+      "expanded": "ATT&CK v20 expands the knowledge base to catalog techniques for abusing AI systems, bypassing MFA, and attacking water utilities, reflecting the incident patterns defenders actually faced this cycle. The release ships 15 new detection strategies, six for Enterprise and nine for ICS, backed by 38 analytics, giving detection engineers ready-made content to map telemetry against emerging TTPs. The ICS emphasis is notable: water utility attacks have moved from theoretical concern to documented incident class, and the new ICS detection content targets the engineering-level access paths those intrusions follow.",
+      "sources": [
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/mitre-attck-v20-catalogs-ai-abuse-mfa-bypass-water-utility-attacks/"}
+      ]
+    },
+    {
+      "id": "broadcom-wifi-root-rce-routers-unpatched",
+      "title": "Unpatched Broadcom Wi-Fi Flaw Lets Attackers in Range Run Code as Root on Routers",
+      "category": "Hardening",
+      "summary": "A flaw in Broadcom's Wi-Fi setup software lets an attacker within radio range run code as root on Broadcom-based routers, without the network password or any pairing step. Researcher Quentin Kaiser disclosed the bug on October 16 and demonstrated it against home gateways from three vendors.",
+      "expanded": "The vulnerability lives in Broadcom's Wi-Fi setup/provisioning software and requires no authentication whatsoever: no network password, no pairing, no user interaction, just physical proximity to the target device. Kaiser demonstrated the attack executing code as root against home gateways supplied by three different vendors, showing the flaw is systemic to the Broadcom reference stack rather than a single vendor's implementation. The bug remains unpatched, meaning any Broadcom-based consumer or SMB router within radio range is potentially exposed, and the attack path entirely bypasses the perimeter logic that assumes the Wi-Fi password is the boundary.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/unpatched-broadcom-wi-fi-flaw-lets.html"}
       ]
     }
   ],
   "deep_dive": {
-    "title": "Microsoft Disrupts EvilTokens Device Code Phishing Service",
-    "content": "Microsoft seized 50 websites and disabled more than 150 domains as part of a coordinated disruption effort against a phishing-as-a-service operation that uses device code authentication flows. Device code phishing exploits a legitimate OAuth 2.0 flow designed for devices with limited input capabilities. Attackers redirect users to device code login flows (devices.microsoft.com/activate) where they receive a device code and user code. The attacker's malicious application then polls the authorization server using the device code. The victim enters the user code on the legitimate Microsoft page, not realizing they're authorizing the attacker's application. This bypass circumvents multi-factor authentication by leveraging legitimate Microsoft infrastructure. The compromised domains hosted phishing redirects and credential harvesting pages that funneled users toward the device code flow. Microsoft's disruption included seizure of command-and-control infrastructure, disabling of associated Azure applications, and notification of affected organizations. The campaign demonstrates sophisticated understanding of modern authentication mechanisms and their potential abuse vectors.",
+    "title": "ConnectWise Supply-Chain Attack: Compromised Cloud Backup Credential Exposes 173 Microsoft 365 Tenants",
+    "content": "ConnectWise disclosed that unknown threat actors obtained unauthorized access to its application identities and used a compromised Microsoft 365 credential belonging to ConnectWise Cloud Backup (formerly SkyKick) to authenticate into customer environments, with Huntress confirming suspicious sign-ins across 173 Microsoft 365 tenants. Because the credential belongs to a trusted vendor service rather than an individual user, the access sidestepped the normal identity trust model: inside each tenant, the activity presented as legitimate third-party application behavior rather than anomalous user logins. ConnectWise has disabled seven of its application identities and taken Cloud Backup, SaaS Security, and Cloud Management fully offline while validating whether stolen tokens still grant attackers access to client data. The incident is a textbook supply-chain compromise of MSP tooling: a single pooled service credential cascaded into hundreds of downstream customer environments. The threat actors remain unidentified and the investigation is ongoing.",
     "sources": [
-      {
-        "name": "Dark Reading",
-        "url": "https://www.darkreading.com/identity-access-management-security/microsoft-disrupts-eviltokens-device-code-phishing-service"
-      }
+      {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/hackers-breach-microsoft-365-tenants-via-connectwise-supply-chain-attack/"},
+      {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/hackers-use-compromised-connectwise.html"},
+      {"name": "SecurityWeek", "url": "https://www.securityweek.com/connectwise-suspends-cloud-services-in-response-to-cyberattack/"},
+      {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/connectwise-shuts-off-cloud/"},
+      {"name": "CSO Online", "url": "https://www.csoonline.com/article/4237087/connectwise-backup-credentials-exposed-multiple-microsoft-365-tenants.html"}
     ]
   },
   "biggest_hacks": [
     {
-      "title": "MemTensor Package Compromise",
+      "title": "Hackers breach Microsoft 365 tenants via ConnectWise supply-chain attack",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-breach-microsoft-365-tenants-via-connectwise-supply-chain-attack/",
+      "source": "BleepingComputer",
       "severity": "Critical",
-      "description": "Threat actors compromised two legitimate npm and PyPI packages, injecting the sckit credential stealer. Multi-platform Go implant targets Windows, Linux, and macOS.",
-      "date": "2026-09-20",
-      "impact": "Unknown number of systems infected; estimates suggest thousands of developer machines may have installed compromised versions."
+      "summary": "Attackers abused a compromised ConnectWise Cloud Backup credential to sign in to 173 Microsoft 365 customer tenants, forcing ConnectWise to take Cloud Backup, SaaS Security, and Cloud Management offline.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/hackers-breach-microsoft-365-tenants-via-connectwise-supply-chain-attack/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/connectwise-suspends-cloud-backup-after.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/connectwise-suspends-cloud-services-in-response-to-cyberattack/"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/connectwise-shuts-off-cloud/"},
+        {"name": "CSO Online", "url": "https://www.csoonline.com/article/4237087/connectwise-backup-credentials-exposed-multiple-microsoft-365-tenants.html"}
+      ]
     },
     {
-      "title": "cPanel Server Takeover Vulnerability",
-      "severity": "Critical",
-      "description": "CVE-2026-80456 allows cPanel account users to execute code as root via CalDAV/CardDAV service. Second vulnerability in WP Toolkit plugin enables privilege escalation.",
-      "date": "2026-09-22",
-      "impact": "Full server compromise possible for any cPanel hosted account. Affects thousands of web hosting providers globally."
-    },
-    {
-      "title": "Ubuntu Linux Container Escape",
+      "title": "OpenCode Console Breach May Have Exposed OpenAI, Anthropic, and Google API Keys",
+      "link": "https://thehackernews.com/2026/10/opencode-console-breach-may-have.html",
+      "source": "The Hacker News",
       "severity": "High",
-      "description": "CVE-2026-80521 use-after-free in AF_UNIX socket subsystem enables container escape with root privileges. CVSS 7.8. Exploit code released publicly.",
-      "date": "2026-09-22",
-      "impact": "Container orchestration platforms at risk. Kubernetes and Docker environments vulnerable to privilege escalation from compromised pod."
+      "summary": "An intruder reached a legacy OpenCode system on the night of October 16 and may have exposed third-party AI provider keys that users saved in OpenCode Console, the project's optional hosted workspace service.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/opencode-console-breach-may-have.html"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/opencode-hack-exposes-api-keys-amid-ai-distillation-attacks/"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/opencode-breach-openai-anthropic/"}
+      ]
     },
     {
-      "title": "AI Chatbot Poisoning Campaign",
+      "title": "Bullhorn takes staffing platform offline to contain cyberattack",
+      "link": "https://www.bleepingcomputer.com/news/security/bullhorn-takes-staffing-platform-offline-to-contain-cyberattack/",
+      "source": "BleepingComputer",
       "severity": "High",
-      "description": "Threat actors injected malicious content into search results to manipulate ChatGPT, Gemini, and Google AI Overview responses. Redirects users to phishing pages.",
-      "date": "2026-09-21",
-      "impact": "Millions of potential users exposed to phishing redirects through AI interface use."
+      "summary": "Staffing software company Bullhorn disabled access to its entire platform to contain a cyberattack that caused a system-wide outage for its customers.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/bullhorn-takes-staffing-platform-offline-to-contain-cyberattack/"}
+      ]
     },
     {
-      "title": "Record Ransomware Month",
+      "title": "One Compromised Login Exposed Millions of California Students' Records",
+      "link": "https://www.securityweek.com/one-compromised-login-exposed-millions-of-california-students-records/",
+      "source": "SecurityWeek",
       "severity": "High",
-      "description": "1,073 organizations hit by ransomware in August 2026. Industrial sector most targeted. Attack chains increasingly sophisticated with multi-stage payloads.",
-      "date": "2026-08-31",
-      "impact": "Estimated damages in billions. Healthcare, manufacturing, and critical infrastructure most affected."
+      "summary": "Intruders used a single set of compromised credentials to access an ETS SFTP server and copy records of millions of California students dating back to 2006.",
+      "sources": [
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/one-compromised-login-exposed-millions-of-california-students-records/"}
+      ]
+    },
+    {
+      "title": "Conduent Agrees to Pay $80m to Settle Data Breach Class Action",
+      "link": "https://www.infosecurity-magazine.com/news/conduent-settle-data-breach-action/",
+      "source": "Infosecurity Magazine",
+      "severity": "Medium",
+      "summary": "Conduent agreed to pay $80 million to settle a class action lawsuit over a 2024 cyber incident that exposed the healthcare data of 62 million people.",
+      "sources": [
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/conduent-settle-data-breach-action/"}
+      ]
     }
   ],
   "vulnerabilities": [
     {
-      "cve": "CVE-2026-80521",
-      "product": "Linux Kernel",
-      "description": "Use-after-free in AF_UNIX socket subsystem",
-      "cvss": 7.8,
+      "cve": "CVE-2026-102764",
+      "product": "BeyondTrust Remote Support",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Authentication bypass by spoofing that allows attackers to impersonate legitimate users on BeyondTrust Remote Support deployments; added to CISA KEV on 2026-10-16 and under active exploitation.",
       "exploited": true,
-      "exploit_available": true,
-      "affected_versions": "Ubuntu 20.04, 22.04, 24.04 LTS with kernels before 6.1.95"
+      "source": "CISA KEV"
+    },
+    {
+      "cve": "CVE-2025-61624",
+      "product": "Fortinet FortiOS / FortiGate (multiple products)",
+      "cvss": 8.1,
+      "severity": "High",
+      "description": "Path traversal vulnerability affecting multiple Fortinet products, actively exploited and linked to deployment of a stealthy, persistent FortiGate implant at a telecommunications organization; added to CISA KEV on 2026-10-16.",
+      "exploited": true,
+      "source": "CISA KEV"
+    },
+    {
+      "cve": "Unassigned",
+      "product": "SiteGuard Server Edition (WAF)",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "OS command injection in SiteGuard Server Edition that is being actively exploited to execute commands with root or SYSTEM privileges on the protected server.",
+      "exploited": true,
+      "source": "BleepingComputer"
+    },
+    {
+      "cve": "Unassigned",
+      "product": "Siemens Software Center",
+      "cvss": 7.8,
+      "severity": "High",
+      "description": "DLL side-loading weakness in Siemens Software Center abused in ClickFix social-engineering attacks, pairing a genuine signed copy of the installer with malicious DLLs to infect Windows PCs.",
+      "exploited": true,
+      "source": "SecurityWeek"
+    },
+    {
+      "cve": "Unassigned",
+      "product": "Plex Media Server (Plex2Shell chain)",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Chain of Plex Media Server vulnerabilities weaponized within a day of public PoC disclosure to deploy cryptocurrency miners and a Linux reverse-proxy backdoor on internet-exposed servers.",
+      "exploited": true,
+      "source": "The Hacker News"
     }
   ],
   "recent_headlines": [
-    {
-      "title": "Compromised MemTensor Packages Deliver sckit Credential Stealer via npm and PyPI",
-      "link": "https://thehackernews.com/2026/09/compromised-memtensor-packages-deliver.html",
-      "source": "The Hacker's News"
-    },
-    {
-      "title": "New cPanel Flaw Lets a Hosting Account Run Code as Root, Take Full Server Control",
-      "link": "https://thehackernews.com/2026/09/new-cpanel-flaw-lets-hosting-account_0272795595.html",
-      "source": "The Hacker's News"
-    },
-    {
-      "title": "545 Hackers Tested It First. Now XRanges for AI Scores Your Security Agent",
-      "link": "https://thehackernews.com/2026/09/545-hackers-tested-it-first-now-xranges.html",
-      "source": "The Hacker's News"
-    },
-    {
-      "title": "Anthropic and OpenAI Models Still Attempt Restricted Actions in Safety Tests",
-      "link": "https://thehackernews.com/2026/09/anthropic-and-openai-models-still.html",
-      "source": "The Hacker's News"
-    },
-    {
-      "title": "Exploit Released for Unpatched Ubuntu Linux Flaw Enabling Host-Root Container Escape",
-      "link": "https://thehackernews.com/2026/09/exploit-released-for-unpatched-ubuntu.html",
-      "source": "The Hacker's News"
-    },
-    {
-      "title": "UAE, Saudi Arabia Face Onslaught of Increasingly Sophisticated Automated Cyberattacks",
-      "link": "https://www.darkreading.com/threat-intelligence/uae-saudi-arabia-face-onslaught-of-increasingly-sophisticated-automated-cyberattacks",
-      "source": "Dark Reading"
-    },
-    {
-      "title": "New Exvicy ClickFix Framework Built on Rival ErrTraffic's Code",
-      "link": "https://www.infosecurity-magazine.com/news/exvicy-clickfix-framework/",
-      "source": "Infosecurity Magazine"
-    },
-    {
-      "title": "Improving email security outcomes with real-world Microsoft Defender insights",
-      "link": "https://www.microsoft.com/en-us/security/blog/2026/09/17/improving-email-security-outcomes-with-real-world-microsoft-defender-insights/",
-      "source": "Microsoft Security Blog"
-    },
-    {
-      "title": "Attackers Manipulate AI Chatbots in Mass Disinformation, Phishing Campaign",
-      "link": "https://www.darkreading.com/threat-intelligence/attackers-manipulate-ai-chatbots-mass-disinformation-phishing-campaign",
-      "source": "Dark Reading"
-    },
-    {
-      "title": "Ransomware Attacks Reach Record High for 2026",
-      "link": "https://www.bleepingcomputer.com/news/security/ransomware-attacks-reach-record-high-for-2026/",
-      "source": "Bleeping Computer"
-    },
-    {
-      "title": "Critical RCE Vulnerability Discovered in Popular Web Framework",
-      "link": "https://www.cisa.gov/news-events/alerts/2026/09/22/critical-rce-web-framework",
-      "source": "CISA"
-    },
-    {
-      "title": "Chrome 154 Patches 108 Vulnerabilities",
-      "link": "https://www.securityweek.com/chrome-154-patches-108-vulnerabilities/",
-      "source": "SecurityWeek"
-    },
-    {
-      "title": "Microsoft Disrupts EvilTokens Device Code Phishing Service",
-      "link": "https://www.darkreading.com/identity-access-management-security/microsoft-disrupts-eviltokens-device-code-phishing-service",
-      "source": "Dark Reading"
-    },
-    {
-      "title": "Microsoft Seizes EvilTokens Phishing Infrastructure",
-      "link": "https://www.infosecurity-magazine.com/news/microsoft-seizes-eviltokens/",
-      "source": "Infosecurity Magazine"
-    },
-    {
-      "title": "Credential Stealer in Supply Chain Attack Targets Developers",
-      "link": "https://www.bleepingcomputer.com/news/security/credential-stealer-supply-chain-attack/",
-      "source": "Bleeping Computer"
-    },
-    {
-      "title": "New Password Spraying Campaign Targets Microsoft 365 Tenants",
-      "link": "https://www.darkreading.com/threat-intelligence/password-spraying-microsoft-365",
-      "source": "Dark Reading"
-    },
-    {
-      "title": "Zero-Day in Windows Active Directory Being Exploited in Wild",
-      "link": "https://www.securityweek.com/zero-day-windows-active-directory/",
-      "source": "SecurityWeek"
-    },
-    {
-      "title": "Lazarus Group Conducts Sophisticated Financial Theft Campaign",
-      "link": "https://thehackernews.com/2026/09/lazarus-group-conducts-financial-theft.html",
-      "source": "The Hacker's News"
-    },
-    {
-      "title": "New Rootkit Campaign Targets Linux Web Servers",
-      "link": "https://www.bleepingcomputer.com/news/security/rootkit-campaign-linux-servers/",
-      "source": "Bleeping Computer"
-    },
-    {
-      "title": "CISA Adds 5 Vulnerabilities to Known Exploited List",
-      "link": "https://www.cisa.gov/news-events/alerts/2026/09/23/vulnerabilities-known-exploited-catalog",
-      "source": "CISA"
-    }
+    {"title": "Hackers breach Microsoft 365 tenants via ConnectWise supply-chain attack", "link": "https://www.bleepingcomputer.com/news/security/hackers-breach-microsoft-365-tenants-via-connectwise-supply-chain-attack/", "source": "BleepingComputer"},
+    {"title": "OpenCode Console Breach May Have Exposed OpenAI, Anthropic, and Google API Keys", "link": "https://thehackernews.com/2026/10/opencode-console-breach-may-have.html", "source": "The Hacker News"},
+    {"title": "Popular WordPress SEO Plugin Rank Math PRO Hijacked to Deliver Self-Restoring Backdoor", "link": "https://thehackernews.com/2026/10/popular-wordpress-seo-plugin-rank-math.html", "source": "The Hacker News"},
+    {"title": "KEV: CVE-2026-102764 - BeyondTrust Remote Support Authentication Bypass by Spoofing Vulnerability", "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog#CVE-2026-102764", "source": "CISA KEV"},
+    {"title": "KEV: CVE-2025-61624 - Fortinet Multiple Products Path Traversal Vulnerability", "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog#CVE-2025-61624", "source": "CISA KEV"},
+    {"title": "Hackers Exploit Plex2Shell Flaws to Install Crypto Miners and Linux Proxy Backdoor", "link": "https://thehackernews.com/2026/10/hackers-exploit-plex2shell-flaws-to.html", "source": "The Hacker News"},
+    {"title": "Hackers hijack AOMEI update servers to secretly spread malware", "link": "https://www.bleepingcomputer.com/news/security/hackers-hijack-aomei-update-servers-to-secretly-spread-malware/", "source": "BleepingComputer"},
+    {"title": "Drupal Warns of Fast Exploitation Risk for Critical Core RCE Flaw", "link": "https://www.securityweek.com/drupal-warns-of-fast-exploitation-risk-for-critical-core-rce-flaw/", "source": "SecurityWeek"},
+    {"title": "Exploited Fortinet Bug Linked to Stealthy FortiGate Implant in Telecom Hack", "link": "https://www.securityweek.com/exploited-fortinet-bug-linked-to-stealthy-fortigate-implant-in-telecom-hack/", "source": "SecurityWeek"},
+    {"title": "Siemens Software Center Vulnerability Exploited in ClickFix Malware Attacks", "link": "https://www.securityweek.com/siemens-software-center-vulnerability-exploited-in-clickfix-malware-attacks/", "source": "SecurityWeek"},
+    {"title": "Hackers exploit SiteGuard WAF flaw to run commands as admins", "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-siteguard-waf-flaw-to-run-commands-as-system-root/", "source": "BleepingComputer"},
+    {"title": "GhostAction Attackers Plant Credential Stealer Disguised as Font in 94 GitHub Repositories", "link": "https://thehackernews.com/2026/10/ghostaction-attackers-plant-credential.html", "source": "The Hacker News"},
+    {"title": "Feds Suspect Ransom Negotiator Ran ShinyHunters Extortion Site", "link": "https://krebsonsecurity.com/2026/10/feds-suspect-ransom-negotiator-ran-shinyhunters-extortion-site/", "source": "Krebs on Security"},
+    {"title": "F5 releases out-of-band patches for critical NGINX vulnerabilities", "link": "https://www.bleepingcomputer.com/news/security/f5-releases-out-of-band-patches-for-critical-nginx-vulnerabilities/", "source": "BleepingComputer"},
+    {"title": "'AdFection' Turns Ad Impressions Into Zero-Click Spyware Delivery", "link": "https://www.darkreading.com/data-privacy/adfection-online-ads-spyware-delivery", "source": "Dark Reading"},
+    {"title": "DHS to ban DeepSeek from federal civilian agencies", "link": "https://cyberscoop.com/dhs-bans-deepseek-federal-agencies/", "source": "CyberScoop"},
+    {"title": "Unpatched Broadcom Wi-Fi Flaw Lets Attackers in Range Run Code as Root on Routers", "link": "https://thehackernews.com/2026/10/unpatched-broadcom-wi-fi-flaw-lets.html", "source": "The Hacker News"},
+    {"title": "One Compromised Login Exposed Millions of California Students' Records", "link": "https://www.securityweek.com/one-compromised-login-exposed-millions-of-california-students-records/", "source": "SecurityWeek"},
+    {"title": "MITRE ATT&CK v20 Catalogs AI Abuse, MFA Bypass, Water Utility Attacks", "link": "https://www.securityweek.com/mitre-attck-v20-catalogs-ai-abuse-mfa-bypass-water-utility-attacks/", "source": "SecurityWeek"},
+    {"title": "Fake Web3 Accelerator Uses npm Packages to Spread Malware and Hijack AI Agent Traffic", "link": "https://thehackernews.com/2026/10/fake-web3-accelerator-uses-npm-packages.html", "source": "The Hacker News"}
   ],
   "source_counts": {
-    "Dark Reading": 11,
-    "CISA": 3,
+    "BleepingComputer": 8,
+    "The Hacker News": 8,
+    "SecurityWeek": 4,
+    "CyberScoop": 4,
     "Infosecurity Magazine": 3,
-    "Bleeping Computer": 4,
-    "The Hacker's News": 7,
-    "Microsoft Security Blog": 1,
-    "SecurityWeek": 2,
-    "BleepingComputer": 2,
-    "Mandiant": 1,
-    "Unit42": 1,
-    "Shodan": 1
+    "CISA KEV": 2,
+    "Dark Reading": 2,
+    "CSO Online": 2,
+    "Krebs on Security": 1,
+    "Microsoft Security": 1
   }
 }
