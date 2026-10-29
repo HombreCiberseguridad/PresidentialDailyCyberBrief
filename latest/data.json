@@ -1,309 +1,385 @@
 {
-  "date": "2026-10-24",
-  "generated_at": "2026-10-24T23:34:00Z",
+  "date": "2026-10-29",
+  "generated_at": "2026-10-29T19:53:00Z",
   "executive_summary": [
     {
-      "text": "Critical PHP RCE flaws tracked as PHP2Shell (CVE-2026-109618, CVE-2026-109619) are under mass exploitation, with Amazon detecting attempts four days before patches shipped and Mirai botnet operators now joining in with ASLR-bypass exploits.",
+      "text": "China-nexus Volt Typhoon ran four zero-day exploitation campaigns through 'Silent Train', a covert network of rotating, compromised SOHO devices, and Cisco Talos tied the SD-WAN encryption-key-stealing 'KeyDrift' malware from APT group UAT-11473 to the same relay infrastructure ([The Hacker News](https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html), [BleepingComputer](https://www.bleepingcomputer.com/news/security/hackers-exploit-cisco-sd-wan-flaw-to-deploy-custom-keydrift-malware/), [Cisco Talos](https://blog.talosintelligence.com/uat-11473-keydrift/)).",
       "sources": [
-        {"name": "Palo Alto Unit42", "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/"},
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/mirai-botnet-operators-join-php2shell-attacks-as-aslr-bypass-exploits-emerge/"}
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-cisco-sd-wan-flaw-to-deploy-custom-keydrift-malware/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network/"},
+        {"name": "Cisco Talos", "url": "https://blog.talosintelligence.com/uat-11473-keydrift/"},
+        {"name": "CyberScoop", "url": "https://cyberscoop.com/volt-typhoon-silent-train-covert-ephemeral-network-black-lotus-labs/"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/volt-typhoon-hides-zero-day-attacks-using-silent-train-framework/"}
       ]
     },
     {
-      "text": "China-nexus actor Storm-0940 weaponized the ARTEX agentic AI framework in its ConnectWise Cloud Backup supply chain compromise, automating credential abuse against more than 2,250 Microsoft 365 tenants.",
+      "text": "CISA added the two critical PHP2Shell flaws (CVE-2026-109618/109619) to the KEV catalog after attackers rooted 25 servers — including a US government-affiliated network — by chaining them with the Linux 'Fragnesia' privilege-escalation flaw against internet-exposed Palo Alto management interfaces ([The Hacker News](https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html), [BleepingComputer](https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/)).",
       "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/china-linked-hackers-use-artex-ai.html"},
-        {"name": "CSO Online", "url": "https://www.csoonline.com/article/4239028/china-linked-hackers-used-agentic-ai-in-attack-on-2250-microsoft-365-tenants.html"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/china-apt-uses-ai-pentest-tool-artex-in-connectwise-attacks/"}
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/attackers-exploit-php2shell-flaws-in.html"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/infratrust-report-warns-of-exploited-flaws-in-critical-network-infrastructure/"},
+        {"name": "Palo Alto Unit42", "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/"}
       ]
     },
     {
-      "text": "LiteLLM's release pipeline was hijacked for the second supply chain compromise of 2026, with a leaked master key enabling attackers to steal GitHub CLI OAuth tokens and push info-stealer malware via PyPI and Docker releases.",
+      "text": "Cisco patched a second actively exploited ASA/FTD firewall VPN zero-day since August (CVE-2026-76418), which lets unauthenticated attackers remotely crash SSL VPN devices and was added to the KEV catalog ([The Hacker News](https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html), [SecurityWeek](https://www.securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august/)).",
       "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html"},
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/litellm-compromised-in-fresh-supply-chain-attack/"}
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august/"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices/"},
+        {"name": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}
       ]
     },
     {
-      "text": "A third Arista VeloCloud Orchestrator zero-day in four months, a critical SQL injection (CVE-2026-114625) that escalates read-only customer credentials to operator level, is actively exploited and now on the CISA KEV catalog.",
+      "text": "A CVSS 10.0 GitLab CE/EE flaw (CVE-2026-97229) reached the KEV catalog after an attacker tried to exploit the Alpine Linux project's own GitLab server through a crafted regular expression just one week after the fix shipped ([The Hacker News](https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html)).",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/arista-patches-new-velocloud-orchestrator-zero-day-exploited-in-attacks/"},
-        {"name": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/attackers-exploit-third-velocloud-orchestrator-zero-day-in-four-months/"}
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html"},
+        {"name": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}
       ]
     },
     {
-      "text": "Certificate authority eMudhra is exiting the global TLS business after eight intermediate CA private keys were found trivially guessable, including one that was simply '4', a trust-chain compromise that enables rogue certificate signing and MitM traffic interception.",
+      "text": "PolyShell attacks abusing an Adobe Commerce upload flaw (CVE-2026-48356) and a Google Brotli decoder bug (CVE-2026-111497) have breached hundreds of online stores, with both CVEs added to the KEV catalog as exploit traffic emerges ([The Hacker News](https://thehackernews.com/2026/10/adobe-commerce-polyshell-attacks-breach.html)).",
       "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/emudhra-to-exit-global-ssltls-business.html"},
-        {"name": "CyberScoop", "url": "https://cyberscoop.com/emudhra-shuts-down-certificate-business-weak-private-keys/"},
-        {"name": "Palo Alto Unit42", "url": "https://unit42.paloaltonetworks.com/emudhra-certificate-compromise/"}
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/adobe-commerce-polyshell-attacks-breach.html"},
+        {"name": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}
       ]
     }
   ],
   "cyber_news": [
     {
-      "id": "blackx-uefi-bootkit-secure-boot-bypass",
-      "title": "BlackX UEFI bootkit bypasses Secure Boot via Baton Drop flaw in espionage campaign against Central Asian diplomatic targets",
+      "id": "talos-q3-ir-trends-help-desk-vishing",
+      "title": "Talos Q3 IR Trends: IT Help-Desk Vishing Impersonation Rises as Ransomware Cases Climb",
       "category": "Threat",
-      "summary": "A new UEFI bootkit named BlackX was deployed in an early-2026 espionage campaign against diplomatic entities in Central Asia. The bootkit exploits the older Baton Drop vulnerability to bypass Secure Boot and loads a malicious driver that interferes with Kaspersky and Avast security products.",
-      "expanded": "BlackX abuses the Baton Drop flaw in the Windows boot manager to defeat Secure Boot protections and install a kernel-mode driver early in the boot sequence. The malicious driver is specifically engineered to neutralize security agents from Kaspersky and Avast by tampering with their driver components before they fully initialize. Notably, the bootkit remains effective even on fully patched Windows systems where SBAT revocation updates have not been applied, since the underlying boot manager vulnerability persists without those firmware-level revocations. The campaign's targeting of diplomatic missions in Central Asia is consistent with state-aligned espionage collection rather than financially motivated crime.",
+      "summary": "Cisco Talos's Q3 2026 incident-response trends show phishing remaining the top initial-access vector while IT help-desk impersonation vishing and ransomware/pre-ransomware engagements both increased, with finance and public administration tied as the most-targeted sectors ([Cisco Talos](https://blog.talosintelligence.com/ir-trends-q3-2026/)).",
+      "expanded": "The help-desk vishing pattern has attackers calling support desks armed with harvested employee PII to convince agents to reset credentials and approve new MFA enrollments on attacker-controlled devices, sidestepping phishing-resistant MFA without ever touching the user. Because the reset flows through a legitimate support workflow, the fraudulent enrollment looks like routine account recovery in audit logs. Ransomware and pre-ransomware engagements rose quarter-over-quarter, and the finance and public-administration verticals tied as the most-targeted industries.",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/blackx-uefi-bootkit-exploits-baton-drop-flaw-to-bypass-secure-boot/"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/blackx-uefi-bootkit-bypasses-secure.html"},
-        {"name": "SC Magazine", "url": "https://www.scworld.com/brief/diplomatic-entities-in-central-asia-targeted-by-new-blackx-uefi-bootkit"}
+        {"name": "Cisco Talos", "url": "https://blog.talosintelligence.com/ir-trends-q3-2026/"}
       ]
     },
     {
-      "id": "token-spraying-microsoft-365-bec",
-      "title": "Widespread token-spraying attacks target Microsoft 365 accounts for BEC and email compromise",
-      "category": "365_Threats",
-      "summary": "Attackers are running broad token-spraying campaigns against Microsoft 365 accounts, replaying stolen authentication tokens to establish sessions and pivot into business email compromise. The activity blends phishing, stolen session tokens, and social engineering against help desks.",
-      "expanded": "Rather than password spraying, the actors spray stolen or fraudulently obtained tokens (including OAuth refresh tokens and session cookies) against Microsoft 365 authentication endpoints. Because the tokens are replayed directly, password-based MFA is sidestepped entirely and the session appears legitimate to services that trust the issued token. Where token replay fails, the operators fall back to help-desk social engineering to trigger MFA resets or credential changes on targeted accounts. The end goal is mailbox access for BEC: inbox rule creation, payment-fraud lures, and lateral movement into partner communications.",
-      "sources": [
-        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/tokenspraying-attacks-target/"}
-      ]
-    },
-    {
-      "id": "brotli-decoder-flaw-nodejs-rce-ecosystem",
-      "title": "Brotli decoder flaw (CVE-2026-111497) behind Node.js RCE also affects Bun, Python, and Envoy; Node2Shell PoC demonstrated",
-      "category": "General",
-      "summary": "A memory-corruption flaw in the Brotli decompression library that enables RCE in Node.js also affects Bun, Python's Brotli and brotlicffi bindings, and Envoy proxy. Researchers have published a working Node2Shell proof of concept demonstrating full remote code execution.",
-      "expanded": "The vulnerability is a memory-corruption bug in the Brotli decoder that triggers when decompressing specially crafted compressed data, making any service that decompresses attacker-controlled Brotli streams externally reachable. Node.js shipped fixes across all supported lines (22.x, 24.x, and 26.x) on October 21, but the shared upstream library means Bun, Python's Brotli and brotlicffi packages, and Envoy inherit the same decoder defect until each project pulls the patched code. The public Node2Shell PoC demonstrates a complete exploit chain from crafted compressed payload to shell execution, significantly lowering the barrier for opportunistic exploitation of unpatched runtimes.",
-      "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/nodejs-brotli-decoder-bug-could-allow.html"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/researchers-demonstrate-node2shell-rce.html"}
-      ]
-    },
-    {
-      "id": "edge-device-credential-harvesting-fortigate-globalprotect",
-      "title": "Campaign breaches enterprise firewalls and VPN edge devices, exposing 70,000+ credentials",
+      "id": "skyw4lker-device-code-phishing",
+      "title": "Skyw4lker Device-Code Phishing Campaign Targets US Organizations",
       "category": "Campaign",
-      "summary": "An ongoing campaign has compromised enterprise edge devices including FortiGate firewalls and Palo Alto GlobalProtect VPN appliances, harvesting more than 70,000 credentials. Operators are following up with active compromise attempts against the exposed environments.",
-      "expanded": "The campaign focuses on internet-facing network edge appliances, exploiting weak or default administrative credentials and unpatched firmware on FortiGate and GlobalProtect deployments to establish footholds. Once inside, the actors extract configuration data and stored credential material, including VPN accounts and potentially password stores, amassing a pool of 70,000+ credentials. The harvested credentials are then used for follow-on intrusion attempts, including attempts to authenticate into the corporate networks behind the breached edge devices. The scale and appliance focus mirror prior edge-device campaigns where harvested VPN credentials became the initial access commodity for ransomware operators.",
+      "summary": "ANY.RUN's analysis of 'Skyw4lker', a device-code phishing campaign primarily targeting US organizations, shows attackers abusing legitimate cloud authentication flows instead of stealing credentials to compromise corporate accounts with fewer obvious traces ([The Hacker News](https://thehackernews.com/2026/10/american-organizations-under-attack.html)).",
+      "expanded": "The campaign abuses the OAuth device authorization flow: the attacker initiates a login on the real provider's endpoint and phishes the victim into entering the displayed device code at the legitimate sign-in page. Once the victim completes authentication, the attacker's session receives valid tokens — no password is harvested, no fake login page is hosted, and all traffic flows to genuine cloud auth endpoints, defeating credential-theft detections. The only forensic artifact is an anomalous device-code approval in the sign-in logs.",
       "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/hackers-breach-enterprise-firewalls-and.html"}
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/american-organizations-under-attack.html"}
       ]
     },
     {
-      "id": "windows-server-2016-end-of-support-january",
-      "title": "Windows Server 2016 reaches end of support in January — plan client migrations now",
-      "category": "Hardening",
-      "summary": "Microsoft has confirmed Windows Server 2016 reaches end of support in January, after which no security updates will be released. Organizations running 2016 workloads need to inventory affected servers and complete upgrades or migrations before the deadline.",
-      "expanded": "After the January cutoff, Windows Server 2016 systems stop receiving security patches entirely, meaning any vulnerability disclosed after that date becomes a permanent, unpatchable exposure on those hosts. The risk is compounded by the large number of 2016 servers still running internet-reachable roles such as IIS, RDS, and file services, and by the fact that Extended Security Updates are not indefinitely available for all licensing scenarios. Because in-place upgrade paths from 2016 to newer Windows Server releases have specific licensing and application-compatibility constraints, migration planning typically requires application inventory, dependency mapping, and staged workload moves that take months, not weeks.",
+      "id": "teams-external-chat-15-minute-breach-chain",
+      "title": "External Teams Chats Anchor 15-Minute Mail-Bomb-to-Malware Chain",
+      "category": "365_Threats",
+      "summary": "A wide-scale social-engineering campaign — possibly tied to Black Basta — combines mail bombing with external Microsoft Teams chats to go from first contact to malware delivery in under 15 minutes ([Dark Reading](https://www.darkreading.com/cloud-security/email-bombing-external-teams-chats-repeatable-access-path), [Infosecurity Magazine](https://www.infosecurity-magazine.com/news/exploit-teams-chat-breach/)).",
+      "expanded": "The sequence floods a victim's mailbox with subscription spam to manufacture urgency, then an attacker posing as IT support makes contact over Teams external chat, which many tenants permit by default. Arctic Wolf's analysis shows the chat builds trust and pushes the user toward a malicious payload or remote-access tool, compressing a traditional multi-day social-engineering timeline into minutes. The pattern mirrors Black Basta's documented playbook in which email bombing precedes vishing and remote-support-tool installation.",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-windows-server-2016-reaches-end-of-support-in-january/"}
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/cloud-security/email-bombing-external-teams-chats-repeatable-access-path"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/exploit-teams-chat-breach/"}
       ]
     },
     {
-      "id": "meta-25-billion-privacy-fine",
-      "title": "Meta fined $25 billion over 43 million privacy violations with Cambridge Analytica lineage",
-      "category": "Laws",
-      "summary": "Meta has been hit with a $25 billion fine covering 43 million privacy violations tied to illegal user data sharing, with roots tracing back to the Cambridge Analytica scandal. The ruling is one of the largest privacy penalties ever imposed on a single company.",
-      "expanded": "The penalty aggregates violations affecting 43 million users whose data was shared without lawful consent, with the court drawing a direct lineage to the original Cambridge Analytica data-sharing practices. The size of the fine reflects per-violation statutory damages rather than a single lump assessment, a structure that materially changes the financial risk calculus for large platforms handling consumer data at scale. The ruling also establishes precedent on how historical data-sharing practices can be re-litigated under newer privacy statutes, which is significant for any organization holding legacy consent records that predate modern privacy laws.",
+      "id": "chrome-extensions-search-hijacking-13m-installs",
+      "title": "319 Chrome Extensions With 13.4M Installs Caught Hijacking Searches",
+      "category": "Campaign",
+      "summary": "A massive search-hijacking campaign involving 319 Chrome extensions with a combined 13.4 million reported installations redirected users' searches through tracking servers to generate advertising revenue from Bing and Yahoo results ([BleepingComputer](https://www.bleepingcomputer.com/news/security/chrome-extensions-with-134-million-installs-caught-hijacking-searches/)).",
+      "expanded": "The extensions intercept and rewrite search queries in flight, routing them through attacker-controlled tracking servers before landing on legitimate Bing or Yahoo result pages, making the hijack subtle enough that most users never notice. Monetization comes from injecting affiliate and referral identifiers into the search flow rather than overt ad injection. The scale — 319 separate extensions, many published with plausible utility functions — shows how extension-store review gaps let one operation distribute risk across hundreds of small-footprint entries.",
       "sources": [
-        {"name": "CSO Online", "url": "https://www.csoonline.com/article/4239754/meta-hit-with-25-billion-fine-for-illegally-sharing-user-data-2.html"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/meta-ordered-to-pay-25-billion-after.html"}
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/chrome-extensions-with-134-million-installs-caught-hijacking-searches/"}
       ]
     },
     {
-      "id": "phantom-ai-agent-ransomware-kill-chain",
-      "title": "Ransomware affiliates (INC, The Gentlemen) ran AI-agent 'Phantom' autonomous red-team kill chain",
+      "id": "yoba-fake-ai-apps-signed-miners",
+      "title": "Yoba Campaign Hides Crypto Miners Behind Signed Fake ChatGPT and Claude Apps",
+      "category": "Campaign",
+      "summary": "The 'Yoba' campaign distributes fake ChatGPT and Claude desktop apps — 'GPT-5.6 Sol', 'GPT-6 Astra', and 'Claude Opus' — through fake GitHub projects, abusing signed executables to drop loaders and cryptocurrency miners ([The Hacker News](https://thehackernews.com/2026/10/fake-chatgpt-and-claude-apps-abuse.html), [Infosecurity Magazine](https://www.infosecurity-magazine.com/news/attackers-hide-malware-behind/)).",
+      "expanded": "The operation banks on brand confusion around AI desktop clients that users have no reliable way to verify: fake GitHub repos host installers that abuse validly signed binaries to slip past SmartScreen and allowlist trust checks, then side-load the actual malicious payload. The loaders establish persistence and fetch a cryptocurrency miner, and because only the benign wrapper is signed, hash-based blocklists catch the wrapper rather than the payload. GitHub distribution lends the lures repository history and stars that superficially validate legitimacy.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/fake-chatgpt-and-claude-apps-abuse.html"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/attackers-hide-malware-behind/"}
+      ]
+    },
+    {
+      "id": "nik-c2-ai-enabled-framework",
+      "title": "NIK C2: AI-Enabled Command-and-Control Framework Borrows Victims' OpenAI Keys",
       "category": "Threat",
-      "summary": "Exposed threat infrastructure has revealed that ransomware affiliates including INC Ransomware and The Gentlemen operated an AI agent dubbed 'Phantom' that autonomously executed full intrusion kill chains. The finding marks one of the first confirmed uses of agentic AI in real-world ransomware operations.",
-      "expanded": "Analysis of the exposed infrastructure shows the 'Phantom' AI agent executing end-to-end intrusion tasks autonomously: reconnaissance of target networks, identification of exploitable entry points, credential abuse, and staging of ransomware deployment, effectively an automated red-team pipeline operated by criminal affiliates. The tooling was shared across affiliates of both INC Ransomware and The Gentlemen, indicating the agentic capability is circulating as rented or shared criminal infrastructure rather than being exclusive to one group. The significance is operational tempo: agentic execution compresses the traditional days-long intrusion timeline into hours, leaving far smaller windows for detection and response between initial access and ransomware detonation.",
+      "summary": "Cisco Talos spotted a new AI-integrated command-and-control framework dubbed 'NIK C2' in the wild, which can fall back on victims' own OpenAI API keys to run AI queries that assist attack operations ([Cisco Talos](https://blog.talosintelligence.com/nik-c2-new-ai-enabled-framework/), [Infosecurity Magazine](https://www.infosecurity-magazine.com/news/nik-c2-malware-victims-openai-keys/)).",
+      "expanded": "NIK C2 integrates an LLM into operator workflows — for tasks like parsing reconnaissance data, generating payloads, and crafting responses — and can extract OpenAI API keys from compromised hosts to run those queries on the victim's own account and quota. That fallback makes the AI-assisted attack traffic originate from the victim's own billing identity, blending with any legitimate AI usage in egress logs and leaving anomalous OpenAI spend as one of the few detectable artifacts.",
       "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/exposed-infrastructure-reveals-how.html"}
+        {"name": "Cisco Talos", "url": "https://blog.talosintelligence.com/nik-c2-new-ai-enabled-framework/"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/nik-c2-malware-victims-openai-keys/"}
       ]
     },
     {
-      "id": "linux-ksmbd-preauth-rce-disclosed-before-fixes",
-      "title": "Two CVSS 9.0 Linux KSMBD pre-auth RCE flaws disclosed publicly before kernel fixes exist",
-      "category": "General",
-      "summary": "Two CVSS 9.0 pre-authentication remote code execution flaws in the Linux kernel's KSMBD SMB server have been disclosed publicly ahead of available kernel fixes. Any internet-exposed system running KSMBD is critically exposed until patches land upstream.",
-      "expanded": "The flaws (tracked via ZDI-CAN-33774 among others) reside in the kernel-based SMB server (KSMBD) and are reachable before authentication completes, meaning an unauthenticated remote attacker can trigger memory corruption and achieve code execution in kernel context on exposed servers. The disclosure was published through zero-day initiative channels before upstream kernel fixes were merged, creating an unusual zero-patch window where the technical details are public but no remediation exists. KSMBD is not enabled in default kernel configurations, which limits the exposed population, but any deployment that enabled the in-kernel SMB server for file sharing, particularly internet-facing Linux hosts, is fully exposed in the interim.",
+      "id": "microsoft-authenticator-android-token-theft",
+      "title": "Microsoft Authenticator Flaw Let Permissionless Android Apps Steal Work-Account Tokens",
+      "category": "365_Threats",
+      "summary": "Microsoft fixed a flaw in Authenticator for Android (CVE-2026-80097) that let a malicious app holding no permissions impersonate a trusted Microsoft app such as Teams and collect sign-in tokens for a victim's work account ([The Hacker News](https://thehackernews.com/2026/10/microsoft-authenticator-flaw-let.html)).",
+      "expanded": "The weakness lived in how the Android token-broker flow establishes trust between apps: a permissionless malicious app could position itself in the broker handoff and capture sign-in tokens issued during Entra ID work-account authentication. Because the malicious app requested no Android permissions, it raised no installation-time red flags, and the capture occurred inside a flow users are trained to trust. Stolen tokens grant authenticated access without the password or any MFA prompt replay.",
       "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/two-cvss-90-linux-ksmbd-rce-flaws.html"}
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/microsoft-authenticator-flaw-let.html"}
       ]
     },
     {
-      "id": "gitlab-unauthenticated-rce-onigmo-regex",
-      "title": "GitLab critical patch fixes unauthenticated RCE (CVE-2026-110264); Ruby fixed underlying Onigmo regex bugs behind 4 critical GitLab RCEs",
-      "category": "General",
-      "summary": "GitLab has shipped a critical patch for CVE-2026-110264, an unauthenticated remote code execution flaw in self-hosted GitLab CE/EE. Separately, Ruby fixed three Onigmo regex engine bugs that were the root cause of four critical GitLab RCE vulnerabilities.",
-      "expanded": "CVE-2026-110264 stems from an integer overflow triggered during regex compilation, allowing an unauthenticated attacker to corrupt memory and achieve code execution on the GitLab application server without any valid session. The deeper story is the shared root cause: the underlying Onigmo regex engine bugs in Ruby were responsible for four separate critical GitLab RCEs, meaning GitLab instances remained exposed through multiple CVE entries until both the GitLab application patches and the Ruby-level fixes were applied. Self-hosted GitLab CE/EE instances are externally reachable by design, and unauthenticated RCE on a code-hosting platform grants attackers direct access to source repositories, CI/CD pipelines, and deployment credentials.",
+      "id": "lazarus-flashhole-post-quantum-malware",
+      "title": "Lazarus 'Operation FlashHole' Deploys Post-Quantum-Encrypted Malware via Abused Security Software",
+      "category": "Threat",
+      "summary": "Kaspersky attributed 'Operation FlashHole', a cyber-espionage campaign active since at least July 2025 against South Korean construction, software, and wire-communication equipment manufacturers, to North Korea's Lazarus Group, which abused a legitimate South Korean security product to deploy malware using post-quantum encryption ([The Hacker News](https://thehackernews.com/2026/10/lazarus-abuses-south-korean-security.html)).",
+      "expanded": "The initial access abuses a trusted domestic security agent already running on victim endpoints — turning the tool deployed for protection into the delivery mechanism — which blinds parent-process and signature controls tuned to flag unknown binaries. The implanted malware encrypts its C2 communications with post-quantum algorithms, ensuring both current interception and any future retrospective decryption of stored traffic fail. The targeting of wire-communication equipment manufacturers points to interest in telecommunications supply chains.",
       "sources": [
-        {"name": "CSO Online", "url": "https://www.csoonline.com/article/4239289/gitlab-critical-patches-include-one-for-a-bug-that-allows-code-execution-by-unauthenticated-users-2.html"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/ruby-fixes-three-regex-engine-bugs.html"}
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/lazarus-abuses-south-korean-security.html"}
       ]
     },
     {
-      "id": "hpe-arubaos-72-flaws-eight-max-severity",
-      "title": "HPE patches 72 ArubaOS flaws including eight max-severity auth-bypass and RCE issues",
-      "category": "General",
-      "summary": "HPE has released fixes for 72 vulnerabilities in ArubaOS, eight of which carry maximum severity ratings covering authentication bypass and remote code execution. The flaws affect Aruba mobility controllers, gateways, and APs that are commonly internet-reachable at network edges.",
-      "expanded": "The eight max-severity issues span unauthenticated authentication bypass and remote code execution paths in ArubaOS, the operating system powering HPE Aruba mobility controllers, campus gateways, and access points. Several of the flaws are reachable through the management and PAPI (Aruba's access point management protocol) surfaces that are frequently exposed to the internet on edge deployments, allowing unauthenticated attackers to execute code with high privileges on the appliance. Because these devices sit at the network perimeter and handle all transit traffic, code execution on a controller effectively grants an attacker a tap and control point over the entire wireless and branch infrastructure behind it.",
+      "id": "linux-kernel-tcp-cvss-98-ai-written-exploit",
+      "title": "Linux Kernel TCP Flaw (CVSS 9.8) Affects Ubuntu, RHEL, and Other Distros — AI Wrote a Working Exploit",
+      "category": "Threat",
+      "summary": "A flaw in the Linux kernel's TCP code tracked as CVE-2026-98432 and rated 9.8 by the kernel's own CVE team affects Ubuntu, RHEL, and other distributions, with Anthropic demonstrating an AI-written exploit that achieves unauthenticated remote root ([The Hacker News](https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html)).",
+      "expanded": "Anthropic reported on October 27 that its AI model independently produced a working exploit for the TCP vulnerability that lets a remote, unauthenticated attacker execute commands as root on affected Linux servers. Because the flaw lives in core TCP code rather than a distro-specific patch, it spans every major enterprise distribution. The demonstration is a milestone for AI-assisted offensive capability against a foundational internet-facing component.",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/hpe-patches-eight-max-severity-rce-and-auth-bypass-aos-flaws/"}
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html"}
       ]
     },
     {
-      "id": "pillow-eps-ghostscript-command-execution",
-      "title": "Critical Pillow flaw (CVE-2026-112900): crafted EPS image filename passed to Ghostscript enables command execution",
-      "category": "General",
-      "summary": "A critical flaw in Python's widely used Pillow image library allows command execution when a crafted EPS image with a malicious filename is processed and passed to Ghostscript. Any web service that processes user-uploaded images with Pillow is externally reachable.",
-      "expanded": "The vulnerability (CVE-2026-112900) arises because Pillow delegates EPS file handling to Ghostscript and passes the input filename through to the interpreter without sufficient sanitization. By embedding shell metacharacters in the crafted EPS image's filename, an attacker can break out of the intended Ghostscript invocation and execute arbitrary operating system commands with the privileges of the image-processing service. The attack surface is broad: any web application that accepts user image uploads and runs them through Pillow for resizing, conversion, or validation can be driven to the vulnerable code path, and the filename is frequently attacker-controlled in upload pipelines, making this a practical pre-authentication RCE vector against image-handling backends.",
+      "id": "oracle-ebs-rce-probing-days-after-patch",
+      "title": "Attackers Probe Critical Oracle E-Business Suite RCE Flaw Days After Patch",
+      "category": "Threat",
+      "summary": "Threat actors are already probing internet-facing Oracle E-Business Suite instances for CVE-2026-101767 (CVSS 9.8), an improper-authentication flaw in the Oracle Application Object Library patched only days ago in the October Critical Patch Update ([The Hacker News](https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html)).",
+      "expanded": "Defused Cyber reports scanning activity against the freshly patched authentication bypass, which sits in the Oracle Application Object Library and can expose EBS deployments to unauthenticated remote compromise. The speed — probing within days of the CPU release — reflects the standard race pattern in which attackers diff the patch to weaponize the flaw against organizations that lag on the quarterly cycle. Internet-facing EBS instances are the highest-value targets because the flaw sits in the web-facing authentication layer.",
       "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/critical-flaw-in-pythons-popular-pillow.html"}
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html"}
       ]
     },
     {
-      "id": "time4popcorn-updater-disabled-botnet-prevention",
-      "title": "Researchers remotely disabled abandoned Time4Popcorn updater (2M+ devices) that could have powered a botnet",
-      "category": "General",
-      "summary": "Researchers remotely disabled the abandoned Time4Popcorn (Popcorn Time) auto-updater still running on more than two million devices, closing a mass-RCE window before it could be abused. The dormant update mechanism could have been repurposed to push malware to the entire installed base.",
-      "expanded": "The abandoned Time4Popcorn application shipped with an auto-update mechanism that continued phoning home on over two million devices long after the project died, and the update infrastructure had lapsed into a state where its control could effectively be reclaimed. Had a malicious actor taken over the update path, they would have inherited a ready-made distribution channel capable of pushing arbitrary code to the full installed base, a botnet-in-waiting comparable to historical updater hijacks. The researchers executed a coordinated takedown that remotely disabled the updater across the fleet, a rare proactive defensive operation that neutralized a mass-RCE capability in abandoned consumer software before criminal actors found it.",
+      "id": "entra-id-passkey-migration-deadline",
+      "title": "Microsoft Urges Entra ID Admins to Migrate Users to Passkeys Before SMS Retirement",
+      "category": "365_Threats",
+      "summary": "Microsoft again asked Entra ID administrators to move users to passkeys and other phishing-resistant methods ahead of the February 2027 retirement of SMS and voice authentication, warning of sign-in disruptions for tenants that miss the deadline ([BleepingComputer](https://www.bleepingcomputer.com/news/microsoft/microsoft-reminds-entra-id-admins-to-migrate-users-to-passkeys/)).",
+      "expanded": "The retirement removes legacy SMS and voice OTP factors from Entra ID entirely, meaning tenants that have not inventoried which users still depend on those methods will see those users unable to complete MFA at cutover. Microsoft's guidance centers on passkey enrollment through the Authenticator app and FIDO2 security keys, with the admin work involving auditing per-user MFA methods and targeting residual SMS/voice users. The deadline effectively forces a phishing-resistant MFA baseline across every tenant.",
       "sources": [
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/researchers-push-over-2-million-updates.html"},
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/abandoned-popcorn-time-app-exposed-millions-of-device-to-rce-attacks/"}
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-reminds-entra-id-admins-to-migrate-users-to-passkeys/"}
+      ]
+    },
+    {
+      "id": "github-npm-firewall",
+      "title": "GitHub Launches npm Firewall to Block Malicious Packages at Install Time",
+      "category": "Tools",
+      "summary": "GitHub introduced npm Firewall in public preview, an install-time policy gate that inspects package metadata and download requests for signs of malicious activity and blocks suspicious npm packages before they reach a project ([The Hacker News](https://thehackernews.com/2026/10/github-launches-npm-firewall-to-block.html)).",
+      "expanded": "The firewall sits in the package-resolution path, evaluating both metadata requests and tarball downloads against malicious-activity indicators, so a typosquatted or newly weaponized package is rejected before it lands in the local node_modules tree. It currently supports only npm, and GitHub positions it as a supply-chain control that complements dependency review and lockfile auditing. For development clients it shifts malicious-package blocking from a post-install scan to the install boundary itself.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/github-launches-npm-firewall-to-block.html"}
       ]
     }
   ],
   "deep_dive": {
-    "title": "PHP2Shell: Critical PHP RCE vulnerabilities (CVE-2026-109618, CVE-2026-109619) actively exploited in the wild",
-    "content": "PHP2Shell refers to two critical remote code execution flaws in PHP's CGI handling (CVE-2026-109618 and CVE-2026-109619) that are under mass exploitation against internet-exposed PHP/CGI web servers. Amazon reported detecting exploitation attempts four days before patches were released, indicating actors were probing the weakness ahead of public disclosure, and Mirai botnet operators have since joined the attacks with working ASLR-bypass exploits. CrowdStrike's analysis suggests weaponization obstacles, including non-default configuration requirements and memory-layout constraints, likely constrain reliable exploitation, but the volume of attempts and public PoCs are driving opportunistic scanning at scale. Emergency patches shipped for affected PHP versions, yet a further unpatched RCE (CVE-2026-115560) disclosed two days later extends the exposure window. Detection guidance centers on anomalous CGI request patterns and lol-php style execution traces, and the episode has drawn sharp criticism of the coordinated vulnerability disclosure process that let exploitation precede patch availability.",
+    "title": "Volt Typhoon's 'Silent Train' Covert Network and the KeyDrift SD-WAN Malware",
+    "content": "China-nexus Volt Typhoon has been attributed to 'Silent Train', a now-disrupted covert access network first identified in late 2023 that routes operator traffic through rotating chains of compromised SOHO devices — routers, NAS units, and other edge appliances — compromised on demand, with each relay used ephemerally and discarded to defeat attribution ([The Hacker News](https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html), [CyberScoop](https://cyberscoop.com/volt-typhoon-silent-train-covert-ephemeral-network-black-lotus-labs/)). Lumen's Black Lotus Labs tied the infrastructure to four separate zero-day exploitation campaigns against high-value targets, including critical infrastructure. Separately, Cisco Talos identified APT group UAT-11473 exploiting CVE-2026-20127, an authentication-bypass flaw in Cisco Catalyst SD-WAN Controllers, to deploy 'KeyDrift', a custom framework that copies the encryption keys protecting inter-site SD-WAN traffic and stages them for later retrieval — enabling silent decryption of enterprise WAN communications long after access ([BleepingComputer](https://www.bleepingcomputer.com/news/security/hackers-exploit-cisco-sd-wan-flaw-to-deploy-custom-keydrift-malware/), [Cisco Talos](https://blog.talosintelligence.com/uat-11473-keydrift/)). Talos linked KeyDrift's infrastructure to the same Silent Train relays, underscoring a state-sponsored strategy that treats edge devices as both attack surface and covert transport, and key material as a durable espionage asset ([SecurityWeek](https://www.securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network/)).",
     "sources": [
-      {"name": "Palo Alto Unit42", "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/"},
-      {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/"},
-      {"name": "SecurityWeek", "url": "https://www.securityweek.com/mirai-botnet-operators-join-php2shell-attacks-as-aslr-bypass-exploits-emerge/"},
-      {"name": "CrowdStrike", "url": "https://www.crowdstrike.com/en-us/blog/obstacles-to-weaponizing-php2shell-likely-constrain-exploitation/"},
-      {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/php2shell-exploit-attempts-hit-millions.html"},
-      {"name": "Cisco Talos", "url": "https://blog.talosintelligence.com/i-had-plans-for-that-second/"},
-      {"name": "Detection Engineering Weekly", "url": "https://www.detectionengineering.net/p/dew-171-threat-emulation-context"}
+      {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html"},
+      {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-cisco-sd-wan-flaw-to-deploy-custom-keydrift-malware/"},
+      {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html"},
+      {"name": "SecurityWeek", "url": "https://www.securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network/"},
+      {"name": "Cisco Talos", "url": "https://blog.talosintelligence.com/uat-11473-keydrift/"},
+      {"name": "CyberScoop", "url": "https://cyberscoop.com/volt-typhoon-silent-train-covert-ephemeral-network-black-lotus-labs/"},
+      {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/volt-typhoon-hides-zero-day-attacks-using-silent-train-framework/"}
     ]
   },
   "biggest_hacks": [
     {
-      "title": "Capcom confirms CAPCOM ID breach exposing 11.7 million customer email addresses",
-      "link": "https://www.bleepingcomputer.com/news/security/capcom-confirms-data-breach-affecting-117-million-accounts/",
-      "source": "BleepingComputer",
-      "severity": "High",
-      "summary": "Capcom confirmed a breach of its CAPCOM ID system exposing the email addresses of 11.7 million customer accounts.",
+      "title": "Hackers Steal 2.6 Million Records From Sony's Japanese ISP So-net",
+      "link": "https://www.securityweek.com/hackers-steal-2-6-million-records-from-sonys-japanese-isp-so-net/",
+      "source": "SecurityWeek",
+      "severity": "Critical",
+      "summary": "Sony's Japanese ISP So-net disclosed a breach of roughly 2.5-2.6 million customer records, including 54,401 email account passwords and 16 bank account records ([SecurityWeek](https://www.securityweek.com/hackers-steal-2-6-million-records-from-sonys-japanese-isp-so-net/)).",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/capcom-confirms-data-breach-affecting-117-million-accounts/"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/11-million-impacted-by-capcom-data-breach/"},
-        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/capcom-confirms-data-breach/"}
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/hackers-steal-2-6-million-records-from-sonys-japanese-isp-so-net/"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/sony-isp-subsidiary-data-breach-exposes-25-million-customer-records/"}
       ]
     },
     {
-      "title": "Quest Diagnostics confirms breach of Quanum Lab Services Manager exposed patient records",
-      "link": "https://www.bleepingcomputer.com/news/security/quest-diagnostics-confirms-data-breach-exposed-patient-records/",
-      "source": "BleepingComputer",
-      "severity": "High",
-      "summary": "Quest Diagnostics confirmed that a breach of its Quanum Lab Services Manager platform exposed certain patient records, triggering healthcare breach notification procedures.",
+      "title": "Over 41,000 DHS Employee Records Leaked Online After Okta SSO Compromise",
+      "link": "https://www.securityweek.com/over-41000-dhs-employee-records-leaked-online/",
+      "source": "SecurityWeek",
+      "severity": "Critical",
+      "summary": "Hacktivist group 'Department of Peace' published personal and work data on more than 41,000 DHS employees, allegedly stolen from an Okta single sign-on system earlier this year and shared via DDoSecrets ([SecurityWeek](https://www.securityweek.com/over-41000-dhs-employee-records-leaked-online/)).",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/quest-diagnostics-confirms-data-breach-exposed-patient-records/"},
-        {"name": "SecurityWeek", "url": "https://www.securityweek.com/quest-diagnostics-reports-cyber-breach-affecting-certain-patient-records/"}
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/over-41000-dhs-employee-records-leaked-online/"},
+        {"name": "CyberScoop", "url": "https://cyberscoop.com/dhs-employee-data-leak-ddosecrets/"}
       ]
     },
     {
-      "title": "Railway (PaaS) warns intruder may have accessed customer environment variables — all users urged to rotate secrets",
-      "link": "https://www.bleepingcomputer.com/news/security/railway-warns-devs-to-rotate-secrets-after-potential-breach/",
-      "source": "BleepingComputer",
-      "severity": "High",
-      "summary": "Platform-as-a-service provider Railway warned that an intruder may have accessed customer environment variables, and urged all users to rotate every secret stored in the platform.",
+      "title": "Cyber Incident Forces UNM Health to Cancel Surgeries, Divert Ambulances",
+      "link": "https://www.infosecurity-magazine.com/news/cyber-unmhealth-surgeries/",
+      "source": "Infosecurity Magazine",
+      "severity": "Critical",
+      "summary": "A cyber incident claimed by the BYOD ransomware group forced UNM Health to cancel surgeries and divert ambulances while systems are restored ([Infosecurity Magazine](https://www.infosecurity-magazine.com/news/cyber-unmhealth-surgeries/)).",
       "sources": [
-        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/railway-warns-devs-to-rotate-secrets-after-potential-breach/"},
-        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/railway-says-intruder-may-have-accessed.html"}
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/cyber-unmhealth-surgeries/"}
       ]
     },
     {
-      "title": "State Bank of India suffers customer PII leak via underground market trading",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/state-bank-india-customer-pii-data-leak",
-      "source": "Dark Reading",
-      "severity": "Medium",
-      "summary": "Customer PII from the State Bank of India was found being traded on underground markets, exposing affected customers to fraud and identity-theft risk.",
+      "title": "Japan's GMO Internet Urges Customers to Disconnect PCs Ahead of Possible Ransomware",
+      "link": "https://www.infosecurity-magazine.com/news/japan-gmo-internet-disconnect/",
+      "source": "Infosecurity Magazine",
+      "severity": "High",
+      "summary": "GMO Internet told Onamae.com Desktop Cloud customers to disconnect their PCs ahead of a possible ransomware attack, refused the extortion demand, and opened a $1 million bounty for the attackers' identities ([Infosecurity Magazine](https://www.infosecurity-magazine.com/news/japan-gmo-internet-disconnect/)).",
       "sources": [
-        {"name": "Dark Reading", "url": "https://www.darkreading.com/cyberattacks-data-breaches/state-bank-india-customer-pii-data-leak"}
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/japan-gmo-internet-disconnect/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/japans-gmo-offers-1-million-bounty-to.html"}
+      ]
+    },
+    {
+      "title": "Copenhagen University Breach Compromises Data on Half a Million People",
+      "link": "https://www.infosecurity-magazine.com/news/copenhagen-university-data-breach/",
+      "source": "Infosecurity Magazine",
+      "severity": "High",
+      "summary": "The University of Copenhagen disclosed a breach exposing personal data on more than 520,000 people ([Infosecurity Magazine](https://www.infosecurity-magazine.com/news/copenhagen-university-data-breach/)).",
+      "sources": [
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/copenhagen-university-data-breach/"}
+      ]
+    },
+    {
+      "title": "Keystone to Destroy 18,835 Hardware Wallets After Hackers Steal Device Verification Key",
+      "link": "https://thehackernews.com/2026/10/keystone-to-destroy-18835-hardware.html",
+      "source": "The Hacker News",
+      "severity": "High",
+      "summary": "Keystone will destroy 18,835 hardware wallets after attackers stole the device verification key from its website, which would have let counterfeit devices pass the online authenticity check ([The Hacker News](https://thehackernews.com/2026/10/keystone-to-destroy-18835-hardware.html)).",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/keystone-to-destroy-18835-hardware.html"}
       ]
     }
   ],
   "vulnerabilities": [
     {
       "cve": "CVE-2026-109618",
-      "product": "PHP (CGI)",
-      "cvss": 9.8,
+      "product": "PHP (PHP2Shell)",
+      "cvss": 9.2,
       "severity": "Critical",
-      "description": "PHP2Shell critical remote code execution flaw in PHP CGI handling; under mass exploitation with attempts observed four days before patches shipped and Mirai operators deploying ASLR-bypass exploits.",
+      "description": "Critical PHP flaw enabling unauthenticated remote code execution; actively exploited against internet-exposed Palo Alto management interfaces and chained with the Linux Fragnesia privesc for full root.",
       "exploited": true,
-      "source": "Palo Alto Unit42"
+      "source": "The Hacker News"
     },
     {
       "cve": "CVE-2026-109619",
-      "product": "PHP (CGI)",
-      "cvss": 9.8,
-      "severity": "Critical",
-      "description": "Second PHP2Shell critical RCE flaw in PHP CGI handling, actively exploited in the wild alongside CVE-2026-109618; emergency patches released, with a further unpatched PHP RCE (CVE-2026-115560) disclosed days later.",
-      "exploited": true,
-      "source": "Palo Alto Unit42"
-    },
-    {
-      "cve": "CVE-2026-114625",
-      "product": "Arista VeloCloud Orchestrator",
-      "cvss": 9.8,
-      "severity": "Critical",
-      "description": "SQL injection zero-day in VeloCloud Orchestrator allowing read-only customer credentials to be escalated to operator privileges; third VCO zero-day in four months, added to CISA KEV on 2026-10-23 and actively exploited.",
-      "exploited": true,
-      "source": "CISA KEV"
-    },
-    {
-      "cve": "CVE-2026-110447",
-      "product": "Collabora Online Built-in CODE Server",
+      "product": "PHP (PHP2Shell)",
       "cvss": 9.2,
       "severity": "Critical",
-      "description": "OS command injection in Collabora Online's built-in CODE Server enabling remote command execution; actively exploited and added to CISA KEV on 2026-10-24.",
+      "description": "Second PHP2Shell RCE flaw, KEV-listed after in-the-wild exploitation; 25 servers rooted including a US government-affiliated network.",
+      "exploited": true,
+      "source": "The Hacker News"
+    },
+    {
+      "cve": "CVE-2026-76418",
+      "product": "Cisco Secure Firewall ASA / FTD Software",
+      "cvss": 8.6,
+      "severity": "High",
+      "description": "Unchecked return value in the Remote Access SSL VPN service lets unauthenticated attackers remotely crash ASA/FTD firewalls; second Cisco firewall VPN zero-day exploited since August.",
+      "exploited": true,
+      "source": "The Hacker News"
+    },
+    {
+      "cve": "CVE-2026-97229",
+      "product": "GitLab Community/Enterprise Edition",
+      "cvss": 10.0,
+      "severity": "Critical",
+      "description": "Integer overflow exploitable via a crafted regular expression allows remote code execution on GitLab servers; exploit attempt hit Alpine Linux's instance a week after patch.",
+      "exploited": true,
+      "source": "The Hacker News"
+    },
+    {
+      "cve": "CVE-2026-41709",
+      "product": "Broadcom VMware ESX",
+      "cvss": 5.3,
+      "severity": "Medium",
+      "description": "Insufficient logging flaw exploited by China-nexus 'Warp Panda' against the US legal sector to erode audit trail visibility on hypervisors.",
       "exploited": true,
       "source": "CISA KEV"
+    },
+    {
+      "cve": "CVE-2026-46300",
+      "product": "Linux Kernel (Fragnesia)",
+      "cvss": 7.8,
+      "severity": "High",
+      "description": "Missing initialization of a variable enables privilege escalation to root; chained in the wild with PHP2Shell RCE flaws.",
+      "exploited": true,
+      "source": "BleepingComputer"
+    },
+    {
+      "cve": "CVE-2026-48356",
+      "product": "Adobe Commerce / Magento",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Unrestricted upload of a file with dangerous type, abused in PolyShell attacks that breached hundreds of online stores.",
+      "exploited": true,
+      "source": "CISA KEV"
+    },
+    {
+      "cve": "CVE-2026-111497",
+      "product": "Google Brotli",
+      "cvss": 7.5,
+      "severity": "High",
+      "description": "Unchecked return value in the Brotli decoder library; exploit traffic observed in Adobe Commerce intrusions.",
+      "exploited": true,
+      "source": "CISA KEV"
+    },
+    {
+      "cve": "CVE-2026-86950",
+      "product": "Apple iOS / iPadOS (CoreGraphics)",
+      "cvss": 8.8,
+      "severity": "High",
+      "description": "Out-of-bounds write in CoreGraphics enabling arbitrary code execution when processing malicious content; exploited in the wild, fix backported to older iPhones and iPads.",
+      "exploited": true,
+      "source": "The Hacker News"
+    },
+    {
+      "cve": "CVE-2026-20127",
+      "product": "Cisco Catalyst SD-WAN Controller",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Authentication bypass exploited by APT UAT-11473 to deploy the KeyDrift encryption-key-stealing malware on SD-WAN control infrastructure (patched February).",
+      "exploited": true,
+      "source": "BleepingComputer"
     }
   ],
   "recent_headlines": [
-    {"title": "PHP2Shell critical PHP RCE flaws actively exploited in the wild", "link": "https://thehackernews.com/2026/10/php2shell-exploit-attempts-hit-millions.html", "source": "The Hacker News"},
-    {"title": "Storm-0940 used ARTEX agentic AI in ConnectWise supply chain attack on 2,250+ M365 tenants", "link": "https://thehackernews.com/2026/10/china-linked-hackers-use-artex-ai.html", "source": "The Hacker News"},
-    {"title": "LiteLLM release pipeline hijacked to distribute info-stealer malware", "link": "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html", "source": "The Hacker News"},
-    {"title": "Arista VeloCloud Orchestrator zero-day added to CISA KEV", "link": "https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html", "source": "The Hacker News"},
-    {"title": "eMudhra exits global TLS business after CA signing key compromise", "link": "https://thehackernews.com/2026/10/emudhra-to-exit-global-ssltls-business.html", "source": "The Hacker News"},
-    {"title": "BlackX UEFI bootkit bypasses Secure Boot in Central Asia espionage campaign", "link": "https://www.bleepingcomputer.com/news/security/blackx-uefi-bootkit-exploits-baton-drop-flaw-to-bypass-secure-boot/", "source": "BleepingComputer"},
-    {"title": "Token-spraying attacks target Microsoft 365 accounts for BEC", "link": "https://www.infosecurity-magazine.com/news/tokenspraying-attacks-target/", "source": "Infosecurity Magazine"},
-    {"title": "Brotli decoder flaw: Node.js RCE also affects Bun, Python, Envoy", "link": "https://thehackernews.com/2026/10/nodejs-brotli-decoder-bug-could-allow.html", "source": "The Hacker News"},
-    {"title": "Hackers breach enterprise firewalls/VPNs, exposing 70,000+ credentials", "link": "https://thehackernews.com/2026/10/hackers-breach-enterprise-firewalls-and.html", "source": "The Hacker News"},
-    {"title": "Windows Server 2016 reaches end of support in January", "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-windows-server-2016-reaches-end-of-support-in-january/", "source": "BleepingComputer"},
-    {"title": "Meta fined $25 billion for illegal data sharing", "link": "https://www.csoonline.com/article/4239754/meta-hit-with-25-billion-fine-for-illegally-sharing-user-data-2.html", "source": "CSO Online"},
-    {"title": "Ransomware affiliates used AI agents ('Phantom') to execute intrusions", "link": "https://thehackernews.com/2026/10/exposed-infrastructure-reveals-how.html", "source": "The Hacker News"},
-    {"title": "Two CVSS 9.0 Linux KSMBD pre-auth RCE flaws disclosed before kernel fixes", "link": "https://thehackernews.com/2026/10/two-cvss-90-linux-ksmbd-rce-flaws.html", "source": "The Hacker News"},
-    {"title": "Capcom breach exposes 11.7 million accounts", "link": "https://www.bleepingcomputer.com/news/security/capcom-confirms-data-breach-affecting-117-million-accounts/", "source": "BleepingComputer"},
-    {"title": "GitLab patches unauthenticated RCE (CVE-2026-110264)", "link": "https://www.csoonline.com/article/4239289/gitlab-critical-patches-include-one-for-a-bug-that-allows-code-execution-by-unauthenticated-users-2.html", "source": "CSO Online"},
-    {"title": "HPE patches eight max-severity ArubaOS flaws", "link": "https://www.bleepingcomputer.com/news/security/hpe-patches-eight-max-severity-rce-and-auth-bypass-aos-flaws/", "source": "BleepingComputer"},
-    {"title": "Quest Diagnostics breach exposed patient records", "link": "https://www.bleepingcomputer.com/news/security/quest-diagnostics-confirms-data-breach-exposed-patient-records/", "source": "BleepingComputer"},
-    {"title": "Railway urges all users to rotate secrets after intrusion", "link": "https://www.bleepingcomputer.com/news/security/railway-warns-devs-to-rotate-secrets-after-potential-breach/", "source": "BleepingComputer"},
-    {"title": "INTERPOL operation disrupts 10,909 cybercrime networks, arrests 1,462", "link": "https://thehackernews.com/2026/10/interpol-arrests-1462-suspects-disrupts.html", "source": "The Hacker News"},
-    {"title": "Critical Pillow image library flaw allows code execution via crafted image", "link": "https://thehackernews.com/2026/10/critical-flaw-in-pythons-popular-pillow.html", "source": "The Hacker News"}
+    {"title": "Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns", "link": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html", "source": "The Hacker News"},
+    {"title": "Hackers exploit Cisco SD-WAN flaw to deploy custom KeyDrift malware", "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-cisco-sd-wan-flaw-to-deploy-custom-keydrift-malware/", "source": "BleepingComputer"},
+    {"title": "CISA Confirms Active Exploitation of Two PHP2Shell Flaws Enabling Remote Code Execution", "link": "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html", "source": "The Hacker News"},
+    {"title": "Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls", "link": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html", "source": "The Hacker News"},
+    {"title": "Attacker Tried to Exploit Alpine Linux's GitLab via CVSS 10.0 Flaw Its Ruby Left Open", "link": "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html", "source": "The Hacker News"},
+    {"title": "Adobe Commerce PolyShell Attacks Breach Hundreds of Stores as Brotli Exploit Traffic Emerges", "link": "https://thehackernews.com/2026/10/adobe-commerce-polyshell-attacks-breach.html", "source": "The Hacker News"},
+    {"title": "China-Linked Hackers Exploited VMware ESX Zero-Day to Reduce Audit Trail Visibility", "link": "https://thehackernews.com/2026/10/china-linked-hackers-exploited-vmware.html", "source": "The Hacker News"},
+    {"title": "CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks", "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/", "source": "BleepingComputer"},
+    {"title": "IR trends Q3 2026: Actors impersonate IT help desks in vishing attacks as ransomware activity increases", "link": "https://blog.talosintelligence.com/ir-trends-q3-2026/", "source": "Cisco Talos"},
+    {"title": "American Organizations Under Attack: Skyw4lker Device Code Phishing Campaign Exposed", "link": "https://thehackernews.com/2026/10/american-organizations-under-attack.html", "source": "The Hacker News"},
+    {"title": "External Teams Chats Anchor 15-Minute Malware Delivery", "link": "https://www.darkreading.com/cloud-security/email-bombing-external-teams-chats-repeatable-access-path", "source": "Dark Reading"},
+    {"title": "Chrome extensions with 13.4 million installs caught hijacking searches", "link": "https://www.bleepingcomputer.com/news/security/chrome-extensions-with-134-million-installs-caught-hijacking-searches/", "source": "BleepingComputer"},
+    {"title": "Fake ChatGPT and Claude Apps Abuse Signed Executables to Deploy Crypto Miners", "link": "https://thehackernews.com/2026/10/fake-chatgpt-and-claude-apps-abuse.html", "source": "The Hacker News"},
+    {"title": "NIK C2: The new AI-enabled command-and-control framework", "link": "https://blog.talosintelligence.com/nik-c2-new-ai-enabled-framework/", "source": "Cisco Talos"},
+    {"title": "Microsoft Authenticator Flaw Let Permissionless Android Apps Steal Work Account Tokens", "link": "https://thehackernews.com/2026/10/microsoft-authenticator-flaw-let.html", "source": "The Hacker News"},
+    {"title": "Lazarus Abuses South Korean Security Software to Deploy Malware Using Post-Quantum Encryption", "link": "https://thehackernews.com/2026/10/lazarus-abuses-south-korean-security.html", "source": "The Hacker News"},
+    {"title": "Linux Kernel TCP Flaw With 9.8 CVSS Score Affects Ubuntu, Red Hat and Other Distributions", "link": "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html", "source": "The Hacker News"},
+    {"title": "Hackers Target Critical Oracle E-Business Suite RCE Flaw Days After Security Patch", "link": "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html", "source": "The Hacker News"},
+    {"title": "Police seize Virtualine bulletproof service tied to ransomware, cybercrime", "link": "https://www.bleepingcomputer.com/news/security/police-seize-virtualine-bulletproof-service-tied-to-ransowmare-cybercrime/", "source": "BleepingComputer"},
+    {"title": "Hackers Steal 2.6 Million Records From Sony's Japanese ISP So-net", "link": "https://www.securityweek.com/hackers-steal-2-6-million-records-from-sonys-japanese-isp-so-net/", "source": "SecurityWeek"}
   ],
   "source_counts": {
-    "The Hacker News": 29,
+    "The Hacker News": 39,
+    "Infosecurity Magazine": 18,
+    "Dark Reading": 16,
     "BleepingComputer": 15,
-    "Dark Reading": 12,
-    "CSO Online": 12,
-    "SC Magazine": 10,
     "SecurityWeek": 10,
-    "Infosecurity Magazine": 8,
-    "CyberScoop": 4,
-    "Palo Alto Unit42": 3,
-    "CrowdStrike": 2,
-    "CISA KEV": 1,
-    "Cisco Talos": 1,
-    "Detection Engineering Weekly": 1
+    "CyberScoop": 10,
+    "CISA KEV": 6,
+    "Cisco Talos": 5,
+    "Microsoft Security Blog": 3,
+    "CrowdStrike Blog": 3,
+    "Palo Alto Unit42": 2,
+    "SentinelOne Labs": 1,
+    "Detection Engineering Weekly": 1,
+    "Threats Without Borders": 1
   }
 }
