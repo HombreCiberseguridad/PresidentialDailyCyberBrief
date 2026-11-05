@@ -1,0 +1,318 @@
+{
+  "date": "2026-11-05",
+  "generated_at": "2026-11-05T20:58:00Z",
+  "executive_summary": [
+    {
+      "text": "A second wave of cold-chain attacks remotely warmed supermarket refrigeration systems across at least six European countries overnight into November 2, and a breach of a French Blood Service refrigeration supplier pushed cold-room settings to 110°C — proof that internet-exposed OT controllers now carry physical, safety-relevant consequences.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/second-wave-of-cyberattacks-hits.html"},
+        {"name": "SentinelOne Labs", "url": "https://www.sentinelone.com/labs/defrost-and-disrupt-an-assessment-of-europe-s-refrigeration-attacks/"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/cyberattack-disrupts-blood-storage-refrigeration-systems-in-france/"}
+      ]
+    },
+    {
+      "text": "Zyxel revealed that attackers exploited a GS1900 zero-day (CVE-2026-107441) to compromise roughly 996 switches across 48 countries, and that its June firmware fix never actually blocked the exploit, leaving 'patched' devices open to unauthenticated root command execution.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html"},
+        {"name": "CSO Online", "url": "https://www.csoonline.com/article/4245028/zyxel-patches-a-zero-day-hiding-behind-an-old-fix.html"}
+      ]
+    },
+    {
+      "text": "APT29-linked actors hijacked the Plerdy web analytics script to convert thousands of customer sites into watering holes that fingerprint visitors and serve iOS and Android exploit chains to targets in the US and Europe.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/apt29-linked-hackers-hijack-web.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/russia-linked-hackers-hit-ios-android-devices-with-exploit-chains-via-watering-holes/"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/mobile-security/apt29-watering-holes-target-mobile-users"}
+      ]
+    },
+    {
+      "text": "OpenAI unveiled GPT-6 Cyber alongside research showing an AI pipeline autonomously found, exploited and patched 948 Linux kernel privilege-escalation flaws — 588 of them previously unknown — in a 30-hour run costing roughly $1.2M in API credits.",
+      "sources": [
+        {"name": "CyberScoop", "url": "https://cyberscoop.com/openai-gpt-6-cyber-security-model/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/openai-ai-pipeline-generates-948-linux.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/ai-agents-got-root-on-linux-via-948-kernel-flaws-in-openai-research/"}
+      ]
+    },
+    {
+      "text": "Binance detailed how the record $6.43B theft began with fake job interviews, a tampered Homebrew installation and AI tool abuse on a single engineer's laptop before weak system separation cascaded it into systemic loss.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/binance-reveals-how-fake-job-interviews.html"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/fake-interview-software-engineer/"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/cyberattacks-data-breaches/binance-hack-test-attack-paths"}
+      ]
+    }
+  ],
+  "cyber_news": [
+    {
+      "id": "zyxel-gs1900-zero-day-patch-gap",
+      "title": "Zyxel GS1900 zero-day (CVE-2026-107441) hit ~996 switches; original June patch incomplete — re-patch and audit configs",
+      "category": "Threat",
+      "summary": "Attackers exploited a previously unknown flaw in Zyxel GS1900 switches to compromise about 996 devices across 48 countries, stealing configuration files, network information and hashed root credentials. Binarly found the June 2.90 firmware fix never blocked the actual exploit path, so devices patched then remained vulnerable.",
+      "expanded": "The flaw is an out-of-bounds write (CVSS 8.8) in the switches' web management interface that lets an unauthenticated attacker with network reach execute OS commands as root via crafted HTTP requests — no login required. GreyNoise traced attack activity to around August 17, and researchers initially misattributed the campaign to an older, already-patched vulnerability, which is why the incomplete fix went unnoticed. Zyxel has now released new firmware covering 10 GS1900 models that actually closes the hole.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/zyxel-switch-hacks-blamed-on-patched-flaw-actually-exploited-a-zero-day/"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/zyxel-gs1900-patch-missed-flaw/"},
+        {"name": "CSO Online", "url": "https://www.csoonline.com/article/4245028/zyxel-patches-a-zero-day-hiding-behind-an-old-fix.html"}
+      ]
+    },
+    {
+      "id": "apt29-plerdy-watering-hole-mobile-exploits",
+      "title": "APT29 watering holes push mobile exploit chains via compromised Plerdy analytics script",
+      "category": "Threat",
+      "summary": "Russia-linked APT29 compromised the Ukrainian web analytics service Plerdy and modified its tracking script to serve n-day exploit chains against iOS and Android devices visiting thousands of customer sites. Targets are concentrated in the US and Europe, with Ukraine the primary focus.",
+      "expanded": "The hijacked Plerdy script runs on thousands of customer websites, giving the operators server-side fingerprinting logic: visitors are profiled and only 'interesting' ones receive the exploit chains, which target unpatched mobile OS versions to enable silent information harvesting. The technique is notable because a single supply-chain compromise of a trusted third-party script converts the entire customer base into a mass mobile watering hole while the conditional serving reduces exposure of the group's exploit inventory. Dark Reading reports thousands of mobile users were touched before the activity was surfaced.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/apt29-linked-hackers-hijack-web.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/russia-linked-hackers-hit-ios-android-devices-with-exploit-chains-via-watering-holes/"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/apt29-watering-holes-iphones/"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/mobile-security/apt29-watering-holes-target-mobile-users"}
+      ]
+    },
+    {
+      "id": "llmjacking-enterprise-llm-access-hijacked",
+      "title": "LLMjacking: hijacked enterprise LLM access costs victims up to $1M in cloud compute (Google GTI)",
+      "category": "Campaign",
+      "summary": "Google Threat Intelligence warned that criminals are hijacking enterprise LLM access — obtaining API keys via phishing, source-code leaks, misconfigured environments or exposed client-side code — and reselling live access, with some victims absorbing up to $1M in fraudulent compute charges.",
+      "expanded": "Stolen keys are validated against the provider API and then brokered on criminal marketplaces, where buyers run expensive model invocations including OCR and other high-cost workloads under the victim's billing account. Google's reporting highlights one organization burning roughly $100,000 per day before the access was revoked. Because the usage is authenticated and superficially legitimate, it blends into normal cloud telemetry, and victims often discover the compromise only when the invoice arrives.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/google-warns-llmjacking-attacks-are.html"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/llmjacking-cost-business-1m-warns/"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/cloud-security/llmjacking-thriving-cybercriminal-enterprise"},
+        {"name": "CSO Online", "url": "https://www.csoonline.com/article/4243863/enterprises-pay-100000-a-day-for-ai-they-never-ordered.html"}
+      ]
+    },
+    {
+      "id": "xcpe-android-tv-box-botnet-dismantled",
+      "title": "Google + partners dismantle XCPE botnet of 1.3M malicious Android TV boxes (Videostrong)",
+      "category": "Campaign",
+      "summary": "Google, working with industry partners and police, dismantled the XCPE botnet — more than 1.3 million Android TV set-top boxes that shipped from the factory with malware secretly renting out owners' internet connections as residential proxies and running advertising fraud.",
+      "expanded": "Google attributes the operation to Chinese device manufacturer Videostrong, which preinstalled the backdoor on set-top boxes before sale, making the infection nearly impossible for owners to remediate without firmware replacement. The takedown is expected to sever the botnet's access to more than 10 million additional compromised systems, including Android-based healthcare devices and karaoke machines. The factory-installed nature distinguishes XCPE from typical IoT botnets assembled through post-sale exploitation of weak credentials.",
+      "sources": [
+        {"name": "KrebsOnSecurity", "url": "https://krebsonsecurity.com/2026/11/tech-firms-dismantle-botnet-that-turned-1-3m-tv-boxes-into-proxies/"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/endpoint-security/google-13-million-device-strong-xcpe-botnet"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/police-tech-firms-team-up-to/"}
+      ]
+    },
+    {
+      "id": "google-calendar-phishing-mfa-bypass",
+      "title": "Google Calendar phishing chain hijacks sessions and bypasses MFA via trusted redirects",
+      "category": "Campaign",
+      "summary": "A phishing campaign abused Google Calendar invites as the lure, then used trusted redirect endpoints and fake login pages to steal corporate Google session cookies, inheriting authenticated sessions and bypassing MFA entirely.",
+      "expanded": "The Calendar invite vector lands the lure inside a trusted Google service, sidestepping the scrutiny applied to unsolicited email links. Victims were routed through legitimate open-redirect endpoints to realistic credential-harvesting pages, after which an adversary-in-the-middle step captured the session cookie — meaning the attacker never needs to defeat MFA directly, they simply resume the already-authenticated session. Material Security, which tracked the activity as Operation CloudFire, helped block malicious messages and take down nearly 900 attacker-registered domains used in the chain.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/google-calendar-phishing-campaign-hijacks-sessions-bypasses-mfa/"}
+      ]
+    },
+    {
+      "id": "cpguard-update-channel-supply-chain-backdoor",
+      "title": "cPGuard (OpsShield) update channel hijacked to backdoor Linux servers and harvest password hashes",
+      "category": "Campaign",
+      "summary": "Attackers used compromised credentials to seize OpsShield's update infrastructure on November 2 and push a malicious update script to cPGuard customers' Linux servers, installing a backdoor and collecting password hashes and other sensitive files from roughly 2,950 servers that ran it.",
+      "expanded": "Beyond the poisoned update payload, the intruders accessed data stored on OpsShield's own servers and in customer billing-portal accounts and made copies of at least three of the company's cloud servers. OpsShield says it has shut the attacker out of every system it knows they reached and is rebuilding the ones it cannot fully trust, and has released updated packages. The incident is a textbook trusted-update-channel compromise: the very mechanism customers rely on for security updates became the delivery vehicle for the backdoor.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/cpguard-update-channel-hijacked-to.html"},
+        {"name": "CSO Online", "url": "https://www.csoonline.com/article/4244961/attackers-turned-opsshields-trusted-update-channel-into-a-supply-chain-attack-2.html"}
+      ]
+    },
+    {
+      "id": "3am-ransomware-ai-hybrid-uk-school",
+      "title": "3AM ransomware affiliate used human-AI hybrid tactics in UK school estate compromise",
+      "category": "Campaign",
+      "summary": "Bitdefender detailed a September intrusion against a UK school estate in which a 3AM ransomware affiliate exhibited command patterns consistent with an AI model generating and revising commands, resulting in financial data exfiltration before encryption.",
+      "expanded": "The forensic evidence shows iterative, loop-like command generation and revision cycles — phrasing and error-correction patterns characteristic of LLM assistance — though researchers explicitly stopped short of claiming full automation. The affiliate blended machine-generated command sequences with human decision-making across the intrusion chain, an early documented example of what a human-AI hybrid ransomware workflow looks like in a real environment. Financial data was exfiltrated prior to the 3AM payload deployment.",
+      "sources": [
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/3am-ransomware-hybrid-ai-uk-school/"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/data-privacy/3am-affiliate-ai-loops-european-school-attack"}
+      ]
+    },
+    {
+      "id": "debian-ubuntu-apt-mitm-package-swap",
+      "title": "Debian/Ubuntu APT flaw lets MitM attackers swap verified packages and run code as root",
+      "category": "Threat",
+      "summary": "A flaw in APT, the package manager for Debian, Ubuntu and derivatives, allows an attacker positioned to manipulate HTTP traffic between client and archive to substitute a verified package with a malicious one whose code then runs as root. Debian, Ubuntu and APT's developers published advisories and fixes on November 4.",
+      "expanded": "Tracked as CVE-2026-109518 and credited to researcher Max Justicz, the bug abuses APT's retry behavior for failed downloads — enabled by default from Debian 12 onward. The attacker forces the initial download to fail, then serves an attacker-controlled package during the automatic retry, which APT installs without proper verification; the package's maintainer scripts execute with root privileges. Ubuntu rated the flaw High. Exploitation requires an on-path MitM position against unencrypted package traffic, and no in-the-wild abuse has been confirmed yet.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/debian-and-ubuntu-apt-flaw-lets-mitm.html"},
+        {"name": "CSO Online", "url": "https://www.csoonline.com/article/4245109/debian-ubuntu-patch-apt-flaw-that-could-hand-attackers-root.html"}
+      ]
+    },
+    {
+      "id": "openssh-sshole-musl-auth-bypass",
+      "title": "OpenSSH '*sshole' flaw logs into password-disabled accounts on musl-based Linux (Alpine)",
+      "category": "Threat",
+      "summary": "A newly disclosed OpenSSH vulnerability dubbed '*sshole' lets remote attackers authenticate to Alpine Linux and other musl-based accounts configured to block password authentication, simply by submitting an oversized password.",
+      "expanded": "The bug lives in the interaction between OpenSSH and musl libc's crypt() implementation: an oversized password triggers a buffer overflow that skips the password check entirely, so accounts whose password field is set to '!' or '*' — which admins typically treat as locked or key-only — accept login. The result is a remotely reachable authentication bypass on exactly the accounts assumed to be safe from password attacks. The issue is specific to musl-based distributions; glibc-based systems are not affected.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/openssh-flaw-lets-attackers-log-into-password-disabled-linux-accounts/"}
+      ]
+    },
+    {
+      "id": "service-desk-identity-verification-mfa-bypass",
+      "title": "Service-desk MFA bypasses surge; identity-verification gap at enrollment/recovery targeted (Specops, Yubico YubiID)",
+      "category": "Hardening",
+      "summary": "Attackers are increasingly targeting IT service desks to defeat MFA by impersonating employees and convincing agents to reset passwords or enroll new authentication devices — after which the impostor holds legitimately issued credentials.",
+      "expanded": "The attack exploits the human identity-verification layer rather than any cryptographic weakness: phishing-resistant MFA is irrelevant once the attacker is the one enrolled. Specops and Yubico (with its YubiID identity-verification approach) both flag enrollment and recovery flows as the weakest link, because verification typically relies on easily-researched personal data that a prepared social engineer can supply. The pattern mirrors the Vishing/HELP desk tradecraft used in recent ransomware intrusions, where a single successful reset call becomes the initial access event.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/closing-the-identity-gap-at-the-service-desk/"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/identity-access-management-security/beyond-phishing-resistant-yubico-identity-verification-gap"}
+      ]
+    },
+    {
+      "id": "sonicwall-eol-gms-unpatched-flaws",
+      "title": "SonicWall won't patch two EoL GMS flaws (file exposure, DB tampering) — replacement required",
+      "category": "Threat",
+      "summary": "SonicWall warned of two vulnerabilities in end-of-life Global Management System (GMS) 9.5.2 and earlier that will never be patched: an unauthenticated file-read (CVE-2026-109593, CVSS 9.1) and a flaw allowing database record tampering.",
+      "expanded": "CVE-2026-109593 lets an unauthenticated attacker with network access read internal GMS files, while the second flaw enables tampering with database records — a serious exposure for a management platform that aggregates firewall policy and device data. Because GMS is end-of-life, no fixes will be issued and migration to a supported product is the only remediation path. In the same cycle, Cisco patched an RCE in UCS Central Software and WatchGuard shipped fixes for authentication and MitM flaws.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-unpatched-flaws-in-end-of-life-gms-software/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/sonicwall-wont-patch-eol-gms-flaws-that.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/cisco-watchguard-release-patches-sonicwall-wont-fix-gms-flaws/"}
+      ]
+    },
+    {
+      "id": "synology-nas-ransomware-dsm-flaw",
+      "title": "Synology NAS ransomware wave exploits patched DSM flaw; patch-and-review internet exposure now",
+      "category": "Campaign",
+      "summary": "Synology urged customers to update DiskStation Manager (DSM) after observing ransomware attacks encrypting data and extorting victims on NAS devices running versions that miss a vulnerability patched in December 2024.",
+      "expanded": "The campaign follows the familiar NAS-targeting playbook: internet-exposed units running outdated DSM give attackers both an initial foothold and a dense, high-value data store to encrypt for extortion. Synology's statement notes the attacks specifically aim to encrypt data and demand ransom, and the exploited flaw has been fixed since December 2024 — meaning every compromised device represents patch lag of nearly a year on an edge-facing storage appliance.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/synology-nas-devices-targeted-in.html"}
+      ]
+    }
+  ],
+  "deep_dive": {
+    "title": "Cold-chain cyberattacks: European supermarket refrigeration hijacked in second wave; French Blood Service supplier breach pushed blood-storage temperatures to 110°C — Russian-aligned suspects, attribution open",
+    "content": "A second wave of cold-chain attacks struck overnight on November 2–3, with attackers remotely altering temperature and defrost settings on supermarket refrigeration controllers in Belgium, Ireland, Sweden, Finland, Estonia and elsewhere, forcing stores to pull and discard chilled and frozen stock. Days later, France's national blood service confirmed that a cyberattack on a refrigeration equipment supplier raised temperature settings at three of its facilities — reportedly driving cold rooms to 110°C — though no blood products were compromised. SentinelOne's 'Defrost and Disrupt' assessment traces the intrusions to internet-exposed remote-access paths into refrigeration management platforms, echoing the mid-October French retailer attacks that prompted CERT-FR to advise disconnecting publicly addressed control systems and reconnecting only via verified VPN with factory-default restores. Danfoss-made controllers are among the affected equipment. Russian-aligned groups are credible suspects, but attribution remains open. The campaign demonstrates how a single supplier compromise of lightly defended OT/IoT controllers converts into physical, safety-relevant impact across national borders — and how victims of the first wave that ignored the CERT-FR guidance were hit again.",
+    "sources": [
+      {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/second-wave-of-cyberattacks-hits.html"},
+      {"name": "SentinelOne Labs", "url": "https://www.sentinelone.com/labs/defrost-and-disrupt-an-assessment-of-europe-s-refrigeration-attacks/"},
+      {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/cyber-refrigeration-supermarkets/"},
+      {"name": "CSO Online", "url": "https://www.csoonline.com/article/4243371/european-supermarkets-that-failed-to-act-after-french-freezer-attack-are-now-feeling-the-heat.html"},
+      {"name": "Dark Reading", "url": "https://www.darkreading.com/ics-ot-security/fresh-european-fridge-attacks-cold-chain-security"},
+      {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/cyberattack-disrupts-blood-storage-refrigeration-systems-in-france/"},
+      {"name": "SecurityWeek", "url": "https://www.securityweek.com/cyberattack-hits-french-blood-bank-site-but-no-blood-products-are-compromised/"},
+      {"name": "Threats Without Borders", "url": "https://www.threatswithoutborders.com/p/threats-without-borders-issue-311"}
+    ]
+  },
+  "biggest_hacks": [
+    {
+      "title": "Binance reveals how fake job interviews and AI tool abuse led to record $6.43B crypto theft",
+      "link": "https://thehackernews.com/2026/11/binance-reveals-how-fake-job-interviews.html",
+      "source": "The Hacker News",
+      "severity": "Critical",
+      "summary": "North Korean-linked attackers used recruitment-themed social engineering against two engineers and a tampered Homebrew installation on a single laptop to cascade into the record $6.43B theft from the world's largest crypto exchange.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/binance-reveals-how-fake-job-interviews.html"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/fake-interview-software-engineer/"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/cyberattacks-data-breaches/binance-hack-test-attack-paths"}
+      ]
+    },
+    {
+      "title": "DigiCert data breach exposes customer information and identity documents",
+      "link": "https://www.bleepingcomputer.com/news/security/digicert-data-breach-exposes-customer-information-identity-documents/",
+      "source": "BleepingComputer",
+      "severity": "High",
+      "summary": "A server migration mistakenly exposed a DigiCert internal business system to the internet, allowing unauthorized access to customer information and identity documents.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/digicert-data-breach-exposes-customer-information-identity-documents/"}
+      ]
+    },
+    {
+      "title": "DreamHost breach exposed customer FTP logins and webmail sessions (2-month File Manager access)",
+      "link": "https://www.bleepingcomputer.com/news/security/dreamhost-confirms-data-breach-exposed-ftp-logins-and-webmail-sessions/",
+      "source": "BleepingComputer",
+      "severity": "High",
+      "summary": "Attackers held access to DreamHost's File Manager platform for two months and stole customers' FTP/SFTP usernames, passwords and webmail session data.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/dreamhost-confirms-data-breach-exposed-ftp-logins-and-webmail-sessions/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/threatsday-apache-ofbiz-rce-dreamhost.html"}
+      ]
+    },
+    {
+      "title": "mSecure password manager incident prompts password reset, 2FA and passkey reset warnings",
+      "link": "https://www.bleepingcomputer.com/news/security/msecure-password-manager-hack-prompts-password-reset-warnings/",
+      "source": "BleepingComputer",
+      "severity": "High",
+      "summary": "mSeven Software warned current and former mSecure customers to change passwords, reset 2FA and remove passkeys after suspicious activity linked to an exposed encrypted customer database.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/msecure-password-manager-hack-prompts-password-reset-warnings/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/msecure-warns-users-to-change-passwords.html"}
+      ]
+    },
+    {
+      "title": "Chainstack discloses production systems breach exposing customer data and password hashes",
+      "link": "https://thehackernews.com/2026/11/chainstack-reports-production-systems.html",
+      "source": "The Hacker News",
+      "severity": "Medium",
+      "summary": "Blockchain infrastructure provider Chainstack disclosed that an unauthorized party accessed parts of its production infrastructure, exposing customer data and password hashes, in an incident assessed as part of a larger AI-powered attack campaign.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/chainstack-reports-production-systems.html"}
+      ]
+    },
+    {
+      "title": "NIKKE PC game launcher tampered in supply-chain attack to spread RAT/infostealer",
+      "link": "https://www.bleepingcomputer.com/news/security/nikke-pc-game-launcher-hacked-to-spread-remote-access-data-stealing-malware/",
+      "source": "BleepingComputer",
+      "severity": "Medium",
+      "summary": "Hackers tampered with Goddess of Victory: NIKKE's PC launcher scripts in a supply-chain attack distributing malware capable of stealing credentials and cryptocurrency wallet data from players.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/nikke-pc-game-launcher-hacked-to-spread-remote-access-data-stealing-malware/"}
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {"cve": "CVE-2026-107441", "product": "Zyxel GS1900 series switches", "cvss": 8.8, "severity": "High", "description": "Out-of-bounds write in the web management interface allows unauthenticated attackers with network access to execute OS commands as root via crafted HTTP requests; actively exploited on ~996 devices across 48 countries, and the June 2.90 patch did not block the exploit — new firmware required.", "exploited": true, "source": "BleepingComputer"},
+    {"cve": "CVE-2026-119977", "product": "WordPress Core", "cvss": 8.1, "severity": "High", "description": "Time-of-check time-of-use (TOCTOU) race condition during plugin/theme upgrades allows unauthenticated attackers to execute arbitrary code on the server during the upgrade window via predictable, web-accessible staging paths; added to CISA KEV.", "exploited": true, "source": "CISA KEV"},
+    {"cve": "CVE-2024-27834", "product": "Apple iOS/iPadOS/macOS/Safari/tvOS/watchOS 10.5", "cvss": 7.8, "severity": "High", "description": "Improper authentication allows an attacker with arbitrary read/write capability to bypass pointer authentication; added to CISA KEV and exploited to deliver infostealer malware.", "exploited": true, "source": "CISA KEV"},
+    {"cve": "CVE-2026-58115", "product": "Siemens SIMATIC IoT2050 Advanced (Node-RED admin API)", "cvss": 10.0, "severity": "Critical", "description": "Missing authentication for a critical function lets an unauthenticated remote attacker run arbitrary code; VulnCheck observed active exploitation planting remote command backdoors via a malicious Node-RED flow, with many deployments still unpatched months after the fix shipped.", "exploited": true, "source": "The Hacker News"},
+    {"cve": "N/A", "product": "BTCPay Server 2.4.1 and earlier", "cvss": 9.8, "severity": "Critical", "description": "Flaw in outdated BTCPay Server instances exploited to drain Bitcoin and Litecoin hot wallets, with at least $1.63M in thefts traced; fixed in versions after 2.4.1 (July 2026).", "exploited": true, "source": "The Hacker News"},
+    {"cve": "CVE-2026-81648", "product": "CryptoPayment Gateway WordPress plugin", "cvss": 10.0, "severity": "Critical", "description": "Unpatched max-severity flaw allows unauthenticated users to delete arbitrary files on the server and extract wallet credentials; active exploitation attempts observed by Defused Cyber with no vendor patch available.", "exploited": true, "source": "The Hacker News"},
+    {"cve": "N/A", "product": "Synology DiskStation Manager (DSM)", "cvss": 9.8, "severity": "Critical", "description": "A DSM vulnerability patched in December 2024 is being exploited in ransomware attacks against NAS devices running outdated versions, with attackers encrypting data and extorting ransom.", "exploited": true, "source": "The Hacker News"},
+    {"cve": "CVE-2026-109518", "product": "APT package manager (Debian 12+, Ubuntu and derivatives)", "cvss": 7.8, "severity": "High", "description": "Allows a MitM attacker who can manipulate HTTP traffic between APT client and archive to swap a verified package for an attacker-controlled one during a failed-download retry, executing code as root; patched November 4, not yet confirmed exploited.", "exploited": false, "source": "The Hacker News"},
+    {"cve": "N/A", "product": "OpenSSH on musl-based Linux (Alpine)", "cvss": 7.4, "severity": "High", "description": "The '*sshole' flaw lets remote attackers log into accounts configured with password authentication disabled (e.g., '!' or '*' password fields) by submitting an oversized password that overflows musl libc's crypt() check; remotely reachable, patch/verify configurations.", "exploited": false, "source": "BleepingComputer"},
+    {"cve": "CVE-2026-109618", "product": "PHP", "cvss": 9.8, "severity": "Critical", "description": "Memory corruption vulnerability in PHP added to CISA KEV in week 43 of 2026, alongside a stale internal request-state CVE, indicating active exploitation of the language runtime in exposed web workloads.", "exploited": true, "source": "Kill-the-Newsletter 19B (AdvisoryWeek)"}
+  ],
+  "recent_headlines": [
+    {"title": "Second wave of refrigeration cyberattacks hits European supermarkets; French Blood Service hit", "link": "https://thehackernews.com/2026/11/second-wave-of-cyberattacks-hits.html", "source": "The Hacker News"},
+    {"title": "Zyxel GS1900 patch fails to block zero-day exploited on ~996 switches (CVE-2026-107441)", "link": "https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/", "source": "BleepingComputer"},
+    {"title": "APT29 watering holes target iOS/Android users via hijacked analytics script", "link": "https://thehackernews.com/2026/11/apt29-linked-hackers-hijack-web.html", "source": "The Hacker News"},
+    {"title": "OpenAI GPT-6 Cyber unveiled; pipeline generated 948 Linux root-escalation exploits in 30 hours", "link": "https://thehackernews.com/2026/11/openai-ai-pipeline-generates-948-linux.html", "source": "The Hacker News"},
+    {"title": "Binance reveals fake job interviews and AI abuse behind record $6.43B theft", "link": "https://thehackernews.com/2026/11/binance-reveals-how-fake-job-interviews.html", "source": "The Hacker News"},
+    {"title": "Google warns LLMjacking costs enterprises up to $1M in hijacked AI compute", "link": "https://thehackernews.com/2026/11/google-warns-llmjacking-attacks-are.html", "source": "The Hacker News"},
+    {"title": "Google and partners dismantle 1.3M-device XCPE Android TV botnet", "link": "https://krebsonsecurity.com/2026/11/tech-firms-dismantle-botnet-that-turned-1-3m-tv-boxes-into-proxies/", "source": "KrebsOnSecurity"},
+    {"title": "Google Calendar phishing campaign hijacks sessions, bypasses MFA", "link": "https://www.bleepingcomputer.com/news/security/google-calendar-phishing-campaign-hijacks-sessions-bypasses-mfa/", "source": "BleepingComputer"},
+    {"title": "cPGuard update channel hijacked to backdoor Linux servers", "link": "https://thehackernews.com/2026/11/cpguard-update-channel-hijacked-to.html", "source": "The Hacker News"},
+    {"title": "3AM ransomware used human-AI hybrid tactics in UK school attack", "link": "https://www.infosecurity-magazine.com/news/3am-ransomware-hybrid-ai-uk-school/", "source": "Infosecurity Magazine"},
+    {"title": "Debian/Ubuntu patch APT flaw enabling MitM package swap to root", "link": "https://thehackernews.com/2026/11/debian-and-ubuntu-apt-flaw-lets-mitm.html", "source": "The Hacker News"},
+    {"title": "OpenSSH flaw allows login to password-disabled musl-based Linux accounts", "link": "https://www.bleepingcomputer.com/news/security/openssh-flaw-lets-attackers-log-into-password-disabled-linux-accounts/", "source": "BleepingComputer"},
+    {"title": "CISA adds exploited WordPress Core TOCTOU flaw (CVE-2026-119977) to KEV", "link": "https://thehackernews.com/2026/11/cisa-confirms-hackers-exploiting.html", "source": "The Hacker News"},
+    {"title": "Service-desk identity verification gap enables MFA resets by impostors", "link": "https://www.bleepingcomputer.com/news/security/closing-the-identity-gap-at-the-service-desk/", "source": "BleepingComputer"},
+    {"title": "SonicWall won't patch EoL GMS flaws; Cisco and WatchGuard ship fixes", "link": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-unpatched-flaws-in-end-of-life-gms-software/", "source": "BleepingComputer"},
+    {"title": "Synology NAS devices hit by ransomware exploiting patched DSM flaw", "link": "https://thehackernews.com/2026/11/synology-nas-devices-targeted-in.html", "source": "The Hacker News"},
+    {"title": "Network appliances go more than a year unpatched as exploit speed increases (Microsoft telemetry)", "link": "https://www.csoonline.com/article/4243874/network-appliances-go-more-than-a-year-without-patches-as-exploits-speed-up.html", "source": "CSO Online"},
+    {"title": "White House network addresses used as exits by 28 residential proxy services", "link": "https://krebsonsecurity.com/2026/11/want-to-rent-an-internet-address-at-the-white-house/", "source": "KrebsOnSecurity"},
+    {"title": "Siemens SIMATIC IoT2050 max-severity flaw under active exploitation", "link": "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html", "source": "The Hacker News"},
+    {"title": "Truffle Security launches program to revoke 1.4M still-valid exposed secrets", "link": "https://www.bleepingcomputer.com/news/security/truffle-security-launches-program-to-revoke-14-million-live-secrets/", "source": "BleepingComputer"}
+  ],
+  "source_counts": {
+    "The Hacker News": 33,
+    "CSO Online": 20,
+    "Infosecurity Magazine": 18,
+    "BleepingComputer": 15,
+    "Dark Reading": 13,
+    "SecurityWeek": 10,
+    "CyberScoop": 10,
+    "CrowdStrike Blog": 10,
+    "Microsoft Security Blog": 5,
+    "KrebsOnSecurity": 2,
+    "SentinelOne Labs": 2,
+    "CISA KEV": 2,
+    "Talos Intelligence Blog": 1,
+    "Unit 42": 1,
+    "Threats Without Borders": 1,
+    "Kill-the-Newsletter 19B (AdvisoryWeek)": 1
+  }
+}
