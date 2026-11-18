@@ -1,0 +1,356 @@
+{
+  "date": "2026-11-18",
+  "generated_at": "2026-11-18T22:17:00Z",
+  "executive_summary": [
+    {
+      "text": "Java4Shell (CVE-2026-114938), a critical OpenJDK memory-corruption flaw, enables pre-authentication remote code execution against widely deployed Java applications including Jira, Jenkins, Confluence and Keycloak, prompting CISA to urge immediate patching with fixes arriving in Oracle's November 17 Critical Patch Update.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/java4shell-cve-2026-114938-enables-pre.html"},
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/vulnerabilities-threats/java4shell-flaw-threatens-global-java-application-ecosystem"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/"}
+      ]
+    },
+    {
+      "text": "A decade-old NGINX HTTP/2 flaw dubbed 'nginx2root' (CVE-2026-123007) permits unauthenticated code execution on any server with HTTP/2 enabled, and researchers have already released five working exploits — including a kernel-chained chain that seizes the entire host.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/10-year-old-nginx-http2-flaw-lets.html"},
+        {"name": "CyberScoop", "url": "https://cyberscoop.com/nginx-critical-vulnerabilities-exploits/"}
+      ]
+    },
+    {
+      "text": "Attackers abused a flaw in Optimizely Web Experimentation to A/B-test malware — card skimmers and iOS exploit kits — against visitors to 178 major websites including CNN, the BBC and Zoom, a stark demonstration of third-party script risk.",
+      "sources": [
+        {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/2026/11/attackers-used-optimizely-to-a-b-test-malware-on-top-websites/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/hijacked-optimizely-scripts-served-card.html"}
+      ]
+    },
+    {
+      "text": "Microsoft's official agent-framework PyPI package was compromised, with versions 1.26.1 and 1.26.2 stealing Azure, Azure DevOps and GitHub Actions credentials at Python startup — a supply-chain hit on a vendor-owned package.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/microsoft-agent-framework-releases-poisoned-with-credential-stealer/"}
+      ]
+    },
+    {
+      "text": "The MSP/RMM layer was directly targeted three separate times this week: a breach at Irish provider Wellington IT exposed member data across roughly 40 credit unions, ConnectWise confirmed ongoing ScreenConnect attacks against partner environments, and N-able rushed out patches for 17 N-central flaws as earlier bugs were exploited to deploy crypto miners.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/data-breach-impacts-40-irish-credit-unions-in-reported-it-provider-hack/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html"}
+      ]
+    }
+  ],
+  "cyber_news": [
+    {
+      "id": "nginx-http2-nginx2root-rce",
+      "title": "10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers",
+      "category": "Hardening",
+      "summary": "Five critical NGINX vulnerabilities were disclosed, headlined by 'nginx2root' (CVE-2026-123007), an unauthenticated RCE affecting HTTP/2-enabled deployments that has lurked in the codebase since 2015. Fixes shipped in NGINX 1.31.9 and 1.30.7.",
+      "expanded": "The flaw has been present since NGINX 1.9.5, released September 22, 2015, meaning a decade of HTTP/2-enabled servers are exposed. F5, which maintains NGINX, confirmed attackers can run code without credentials wherever HTTP/2 is enabled. Researchers simultaneously dropped five working exploits, including one that chains the HTTP/2 bug with a separate kernel flaw to seize the entire machine behind the web server — converting a web-tier compromise into full host takeover.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/10-year-old-nginx-http2-flaw-lets.html"},
+        {"name": "CyberScoop", "url": "https://cyberscoop.com/nginx-critical-vulnerabilities-exploits/"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/five-critical-vulnerabilities/"}
+      ]
+    },
+    {
+      "id": "microsoft-agent-framework-pypi-supply-chain",
+      "title": "Attackers Compromise Microsoft's Agent Framework PyPI Package to Steal Cloud Credentials",
+      "category": "Campaign",
+      "summary": "Microsoft's official agent-framework package on PyPI was compromised, with versions 1.26.1 and 1.26.2 modified to steal cloud credentials. The malicious code executes at Python startup, before most defensive tooling loads.",
+      "expanded": "The poisoned releases harvest Azure, Azure DevOps and GitHub Actions credentials the moment a victim's Python environment initializes, exfiltrating tokens and secrets used across CI/CD pipelines. Because the package is Microsoft-owned and legitimately popular for building AI agents, developers had no reason to distrust it — a textbook compromise of a widely consumed dependency at its distribution point. The credential scope is significant: Azure subscriptions, DevOps pipelines and GitHub Actions runners frequently hold long-lived service principals whose theft enables persistent downstream access.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/microsoft-agent-framework-releases-poisoned-with-credential-stealer/"}
+      ]
+    },
+    {
+      "id": "apache-roller-rce-active-exploitation",
+      "title": "Critical Apache Roller RCE Flaw Under Active Exploitation, No Authentication Required",
+      "category": "Hardening",
+      "summary": "The Apache Software Foundation confirmed that a critical unauthenticated RCE in Apache Roller, the open-source Java blogging platform, is being actively exploited in the wild. Security updates are now available.",
+      "expanded": "Tracked as CVE-2026-129448 (CVSS 9.8), the bug is an unauthenticated deserialization of untrusted data in Roller's XML-RPC endpoint: an attacker sends a crafted serialized object, which the endpoint deserializes and executes without any credentials. It is the second Java deserialization RCE story this week after Java4Shell, and any internet-exposed Roller instance should be treated as presumptively compromised given confirmed in-the-wild exploitation.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html"},
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/apache-warns-of-roller-rce-vulnerability-exploited-in-attacks/"}
+      ]
+    },
+    {
+      "id": "perforce-puppet-rce-kev",
+      "title": "Hackers Exploiting Critical Puppet RCE Flaw Affecting Enterprise Management Servers",
+      "category": "Hardening",
+      "summary": "CISA added a critical Perforce Puppet Enterprise flaw (CVE-2026-115731) to its KEV catalog, citing active exploitation. The deserialization bug lets a client holding any CA-signed agent certificate execute code on the Puppet Server.",
+      "expanded": "The vulnerability lives in Puppet's report-processing code: submitting a report containing a crafted rich-data type via a PUT request triggers deserialization and arbitrary code execution as the service user. The kicker is certificate handling — if the certificate authority auto-signs certificate requests without strong verification, an unauthenticated network attacker can simply obtain a valid agent certificate and exploit the flaw, making weak CA policies the true exposure point.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/hackers-exploiting-critical-puppet-rce.html"},
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/critical-perforce-puppet-rce-exploited-in-attacks/"},
+        {"name": "CISA KEV", "url": "https://www.cve.org/CVERecord?id=CVE-2026-115731"}
+      ]
+    },
+    {
+      "id": "connectwise-screenconnect-sckit-attacks",
+      "title": "ConnectWise Warns ScreenConnect Attacks Continue as SCKit Targets Unpatched Systems",
+      "category": "Hardening",
+      "summary": "ConnectWise completed its investigation into unauthorized access targeting partner ScreenConnect environments and warned that attacks are continuing against on-premises deployments. The company urged partners to ensure technician clients run version 26.6.5 or later.",
+      "expanded": "The ongoing activity centers on on-premises environments where specific third-party extensions remain enabled, with SCKit tooling automating compromise of unpatched systems. Because ScreenConnect is one of the most widely deployed RMM tools in the MSP channel, the campaign effectively targets the administrative backbone of thousands of service providers — a single compromised instance grants remote control over every endpoint it manages.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html"}
+      ]
+    },
+    {
+      "id": "n-able-n-central-17-flaws-cryptominers",
+      "title": "N-able Patches 17 N-central Flaws as Attackers Exploit Earlier Bugs to Deploy Crypto Miners",
+      "category": "Hardening",
+      "summary": "N-able shipped N-central 2026.4 Hotfix 3, a critical security update fixing 17 flaws in its RMM/UEM platform, as attackers actively exploit earlier N-central bugs to deploy cryptocurrency miners.",
+      "expanded": "The hotfix stacks 17 security patches for the N-central server platform on top of earlier fixes. The active exploitation of prior bugs for cryptomining is a tell: attackers are landing on MSP management infrastructure and monetizing it quickly, and the same footholds that deliver miners are one step away from ransomware deployment. Internet-exposed N-central instances are the highest-value targets in this pattern.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/n-able-patches-17-n-central-flaws-as.html"}
+      ]
+    },
+    {
+      "id": "cisa-kev-batch-synology-litellm-redcap-axis",
+      "title": "CISA KEV Batch: Synology DSM, LiteLLM, REDCap and Apache Axis RCEs All Actively Exploited",
+      "category": "Hardening",
+      "summary": "CISA's latest KEV additions include four unauthenticated, remotely exploitable flaws: Synology DSM (CVE-2024-10441), BerriAI LiteLLM (CVE-2026-40217), Vanderbilt REDCap (CVE-2026-90817) and Apache Axis (CVE-2026-90436) — all confirmed exploited in the wild.",
+      "expanded": "The Synology flaw is an improper encoding/escaping bug in the system plugin daemon of BeeStation OS/DSM allowing remote arbitrary code execution. The batch is notable for its breadth across SMB-relevant stacks: NAS appliances sit on almost every small-business network, LiteLLM is an AI gateway increasingly deployed alongside LLM infrastructure, REDCap is ubiquitous in healthcare research and non-profit environments, and Apache Axis is legacy Java web-services middleware still running inside long-forgotten application stacks.",
+      "sources": [
+        {"name": "CISA KEV", "url": "https://www.cve.org/CVERecord?id=CVE-2024-10441"},
+        {"name": "CISA KEV", "url": "https://www.cve.org/CVERecord?id=CVE-2026-40217"},
+        {"name": "CISA KEV", "url": "https://www.cve.org/CVERecord?id=CVE-2026-90817"},
+        {"name": "CISA KEV", "url": "https://www.cve.org/CVERecord?id=CVE-2026-90436"}
+      ]
+    },
+    {
+      "id": "docker-hub-keys-stolen-in-seconds",
+      "title": "Cloud Keys Leaked in Docker Hub Images Are Stolen Within Seconds",
+      "category": "Hardening",
+      "summary": "Cloud credentials and access secrets baked into public Docker Hub images are being found and abused within as little as eight seconds of publication, according to new research.",
+      "expanded": "Automated bots continuously monitor newly pushed public images, scanning layers for AWS keys, API tokens and connection strings. Because image layers are immutable and cached across registries, a secret embedded in a layer is effectively public forever — the eight-second window means 'push then delete' hygiene is worthless, and any key that touches a public image is compromised the moment it lands.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/cloud-keys-leaked-in-docker-hub-images-are-stolen-within-seconds/"}
+      ]
+    },
+    {
+      "id": "tpm-lockout-bypass-windows-hello-bitlocker",
+      "title": "New Attack Bypasses TPM Lockout to Crack Windows Hello and BitLocker PINs in Days, Not Years",
+      "category": "Threat",
+      "summary": "Researchers at Technische Universität Berlin showed that opening a PC's case can reset the TPM lockout protecting Windows Hello and BitLocker PINs on AMD-based and some Intel machines, reducing crack time from years to days.",
+      "expanded": "The attack targets the TPM's anti-hammering lockout counter, which normally throttles PIN guessing to a rate that makes brute force infeasible. By physically power-cycling or resetting the flash chip that stores the counter state, the lockout is cleared and unlimited guessing resumes; in lab tests the researchers recovered a 4-digit Windows Hello PIN on an AMD laptop and a 6-digit BitLocker PIN on an Intel laptop this way. For physical-access threat models, short TPM-backed PINs provide far less protection than assumed.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/flash-chip-attack-bypasses-tpm-lockout.html"}
+      ]
+    },
+    {
+      "id": "google-ai-agents-autonomous-exploit-development",
+      "title": "Google Finds Hackers Using AI Agents to Build and Run Exploits From Software Patches",
+      "category": "Threat",
+      "summary": "Google reported that adversarial AI use has moved past manual prompting: threat actors now deploy autonomous multi-agent offensive frameworks such as ARTEX, CAIRN, CyberStrikeAI and PentAGI to execute multi-stage intrusions at greater operational velocity.",
+      "expanded": "The key shift is in exploit development: attackers feed patch diffs to LLM-driven agents that autonomously reverse-engineer the underlying vulnerability, then write and test working exploits. Combined with LLM-assisted reconnaissance and multi-stage orchestration, the practical consequence is that the window between a patch diff going public and a working exploit existing is collapsing from weeks to hours.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/google-finds-hackers-using-ai-agents-to.html"}
+      ]
+    },
+    {
+      "id": "trigram-campaign-ai-blockchain-infostealers",
+      "title": "Trigram Campaign Impersonates About 50 AI and Blockchain Brands to Target Devs with Infostealers",
+      "category": "Campaign",
+      "summary": "The industrialized 'Trigram' campaign impersonates roughly 50 AI and blockchain brands to trick developers in Europe and the US into executing infostealers themselves, according to Stormshield.",
+      "expanded": "Targets span the AI, blockchain and logistics sectors. The operation runs like a marketing funnel: cloned websites and fake tooling or job lures impersonating well-known brands deliver infostealer payloads that execute under the developer's own session, sidestepping browser-based defenses. The scale — dozens of simultaneous brand impersonations with rotating infrastructure — points to a polished, assembly-line operation rather than ad-hoc phishing.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/trigram-campaign-impersonates-about-50.html"}
+      ]
+    },
+    {
+      "id": "cold-relic-star-blizzard-cloud-identity-chaining",
+      "title": "Russian APT Poses as Employee of Hacked Firm to Breach Another US Organization",
+      "category": "Threat",
+      "summary": "Russia-linked espionage group Cold Relic (aka Star Blizzard, formerly COLDRIVER) weaponized a single Google Workspace compromise at one US organization to breach a second US organization, posing as an employee of the first victim.",
+      "expanded": "Google's Mandiant and Threat Intelligence Group documented the 2026 intrusion: after compromising the first organization's Workspace environment, the actors mined stolen mail and files for identity data and business relationships, then used a real employee's identity to phish their way into a second US organization. Google's analysis highlights the group's strategic pivot toward cloud identity compromise as a reusable launchpad for mass data theft — one cloud tenant breach becoming the credential and pretext for the next.",
+      "sources": [
+        {"name": "SecurityWeek", "url": "https://www.securityweek.com/russian-apt-poses-as-employee-of-hacked-firm-to-breach-another-us-organization/"},
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/russian-star-blizzard-cloud-data/"},
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/russian-cold-relic-hackers-use-stolen.html"}
+      ]
+    }
+  ],
+  "deep_dive": {
+    "title": "Java4Shell Flaw (CVE-2026-114938) Enables Pre-Auth RCE in Jira, Jenkins, Keycloak and More",
+    "content": "Java4Shell (CVE-2026-114938) is a critical memory-corruption flaw in OpenJDK that enables pre-authentication remote code execution in widely deployed Java applications, including Atlassian Jira, Confluence, Jenkins and Keycloak. Discovered by research firm Calif with the assistance of AI, the out-of-bounds write bug is present in Java 17.0.6 and later, but the vulnerable code path only executes on x86-64 Intel and AMD processors supporting the AVX-512 VBMI instruction set — a hardware dependency that shapes which estates are actually exposed. CISA has urged immediate patching, warning the flaw can lead to denial-of-service or RCE under certain conditions, and Oracle shipped fixes as part of its November 17 Critical Patch Update, which addressed 11 Java flaws overall. No threat actor has publicly been attributed to exploitation yet, but the combination of pre-auth reach, internet-facing Java application footprints, and AI-accelerated exploit development places it firmly in the highest-urgency tier.",
+    "sources": [
+      {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/java4shell-cve-2026-114938-enables-pre.html"},
+      {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/cisa-urges-immediate-patching-of.html"},
+      {"name": "Dark Reading", "url": "https://www.darkreading.com/vulnerabilities-threats/java4shell-flaw-threatens-global-java-application-ecosystem"},
+      {"name": "Talos Intelligence", "url": "https://blog.talosintelligence.com/java4shell/"},
+      {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/"},
+      {"name": "CyberScoop", "url": "https://cyberscoop.com/java4shell-critical-java-flaw-openjdk/"},
+      {"name": "SecurityWeek", "url": "https://www.securityweek.com/java4shell-vulnerability-puts-many-enterprise-applications-at-risk-of-takeover/"},
+      {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/java4shell-vulnerability-remote/"}
+    ]
+  },
+  "biggest_hacks": [
+    {
+      "title": "Data Breach Impacts 40 Irish Credit Unions in Reported IT Provider Hack",
+      "link": "https://www.bleepingcomputer.com/news/security/data-breach-impacts-40-irish-credit-unions-in-reported-it-provider-hack/",
+      "source": "BleepingComputer",
+      "severity": "Critical",
+      "summary": "A breach at Irish IT provider Wellington IT exposed sensitive member data across roughly 40-50 credit unions, a textbook demonstration of supply-chain risk concentrated in a single service provider.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/data-breach-impacts-40-irish-credit-unions-in-reported-it-provider-hack/"}
+      ]
+    },
+    {
+      "title": "La Poste Subsidiary Maileva Breach Exposes 22 Million People",
+      "link": "https://www.infosecurity-magazine.com/news/maileva-docaposte-22-million-breach/",
+      "source": "Infosecurity Magazine",
+      "severity": "High",
+      "summary": "A breach at La Poste subsidiary Maileva exposed the names and postal addresses of 22 million people.",
+      "sources": [
+        {"name": "Infosecurity Magazine", "url": "https://www.infosecurity-magazine.com/news/maileva-docaposte-22-million-breach/"}
+      ]
+    },
+    {
+      "title": "Japan Takes Fugaku Supercomputer Offline After Cyberattack",
+      "link": "https://www.bleepingcomputer.com/news/security/japan-takes-fugaku-supercomputer-offlline-after-cyberattack/",
+      "source": "BleepingComputer",
+      "severity": "High",
+      "summary": "Japan's RIKEN Center for Computational Science took the Fugaku supercomputer offline following a security breach.",
+      "sources": [
+        {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/japan-takes-fugaku-supercomputer-offlline-after-cyberattack/"}
+      ]
+    },
+    {
+      "title": "BO Team Exploits Log4Shell in VMware vCenter, Compromises Russian Firm's Code-Signing Server",
+      "link": "https://thehackernews.com/2026/11/bo-team-exploits-log4shell-in-vmware.html",
+      "source": "The Hacker News",
+      "severity": "High",
+      "summary": "BO Team exploited Log4Shell in VMware vCenter to maintain a months-long compromise of a Russian software developer's infrastructure, including its code-signing server.",
+      "sources": [
+        {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/bo-team-exploits-log4shell-in-vmware.html"}
+      ]
+    },
+    {
+      "title": "Cursor Traces Malicious Claude Code Extensions to Third-Party Breach",
+      "link": "https://www.darkreading.com/application-security/cursor-malicious-claude-code-extension-third-party-breach",
+      "source": "Dark Reading",
+      "severity": "Medium",
+      "summary": "Malicious Claude Code extensions were traced to a compromised key issued to AI infrastructure provider Fireworks, which threat actors used to access Cursor data and credentials.",
+      "sources": [
+        {"name": "Dark Reading", "url": "https://www.darkreading.com/application-security/cursor-malicious-claude-code-extension-third-party-breach"}
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "cve": "CVE-2026-114938",
+      "product": "OpenJDK / Oracle Java (17.0.6 and later)",
+      "cvss": 8.1,
+      "severity": "Critical",
+      "description": "Java4Shell out-of-bounds write enabling pre-auth RCE in Jira, Jenkins, Confluence, Keycloak and other Java apps on AVX-512-capable x86-64 hosts; CISA urging immediate patching, fixes in Oracle's Nov 17 CPU.",
+      "exploited": false,
+      "source": "The Hacker News"
+    },
+    {
+      "cve": "CVE-2026-123007",
+      "product": "NGINX (HTTP/2, versions since 1.9.5)",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "'nginx2root' unauthenticated RCE on HTTP/2-enabled servers, present since 2015; public exploit chain combines it with a kernel flaw for full host takeover. Fixed in 1.31.9/1.30.7.",
+      "exploited": false,
+      "source": "The Hacker News"
+    },
+    {
+      "cve": "CVE-2026-129448",
+      "product": "Apache Roller",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Unauthenticated deserialization in the XML-RPC endpoint leading to remote code execution; actively exploited in the wild per the Apache Software Foundation.",
+      "exploited": true,
+      "source": "The Hacker News"
+    },
+    {
+      "cve": "CVE-2026-115731",
+      "product": "Perforce Puppet Enterprise",
+      "cvss": 9.4,
+      "severity": "Critical",
+      "description": "Deserialization in report-processing code; any CA-signed agent certificate yields code execution on the Puppet Server, exploitable unauthenticated where the CA auto-signs. CISA KEV listed.",
+      "exploited": true,
+      "source": "CISA KEV"
+    },
+    {
+      "cve": "CVE-2024-10441",
+      "product": "Synology DiskStation Manager (DSM) / BeeStation OS",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Improper encoding or escaping of output in the system plugin daemon allows a remote attacker to execute arbitrary code; CISA KEV listed.",
+      "exploited": true,
+      "source": "CISA KEV"
+    },
+    {
+      "cve": "CVE-2026-40217",
+      "product": "BerriAI LiteLLM",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Unauthenticated, remotely exploitable flaw in the LLM gateway; CISA KEV listed amid active exploitation.",
+      "exploited": true,
+      "source": "CISA KEV"
+    },
+    {
+      "cve": "CVE-2026-90817",
+      "product": "Vanderbilt REDCap",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Unauthenticated, remotely exploitable flaw in the research data platform widely used by healthcare and non-profit organizations; CISA KEV listed.",
+      "exploited": true,
+      "source": "CISA KEV"
+    },
+    {
+      "cve": "CVE-2026-90436",
+      "product": "Apache Axis",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "description": "Unauthenticated, remotely exploitable flaw in legacy Java web-services middleware still common in older application stacks; CISA KEV listed.",
+      "exploited": true,
+      "source": "CISA KEV"
+    }
+  ],
+  "recent_headlines": [
+    {"title": "Java4Shell Flaw (CVE-2026-114938) Enables Pre-Auth RCE in Jira, Jenkins, Keycloak and More", "link": "https://thehackernews.com/2026/11/java4shell-cve-2026-114938-enables-pre.html", "source": "The Hacker News"},
+    {"title": "10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers", "link": "https://thehackernews.com/2026/11/10-year-old-nginx-http2-flaw-lets.html", "source": "The Hacker News"},
+    {"title": "Attackers Used Optimizely to A/B Test Malware on Top Websites", "link": "https://krebsonsecurity.com/2026/11/attackers-used-optimizely-to-a-b-test-malware-on-top-websites/", "source": "Krebs on Security"},
+    {"title": "Attackers Compromise Microsoft's Agent Framework PyPI Package to Steal Cloud Credentials", "link": "https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html", "source": "The Hacker News"},
+    {"title": "Microsoft Warns of Coordinated Phishing Campaign Leveraging M365 Service Outage", "link": "https://www.infosecurity-magazine.com/news/microsoft-phishing-service-outage/", "source": "Infosecurity Magazine"},
+    {"title": "Critical Apache Roller RCE Flaw Under Active Exploitation, No Authentication Required", "link": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html", "source": "The Hacker News"},
+    {"title": "Hackers Exploiting Critical Puppet RCE Flaw Affecting Enterprise Management Servers", "link": "https://thehackernews.com/2026/11/hackers-exploiting-critical-puppet-rce.html", "source": "The Hacker News"},
+    {"title": "Russian APT Poses as Employee of Hacked Firm to Breach Another US Organization", "link": "https://www.securityweek.com/russian-apt-poses-as-employee-of-hacked-firm-to-breach-another-us-organization/", "source": "SecurityWeek"},
+    {"title": "Data Breach Impacts 40 Irish Credit Unions in Reported IT Provider Hack", "link": "https://www.bleepingcomputer.com/news/security/data-breach-impacts-40-irish-credit-unions-in-reported-it-provider-hack/", "source": "BleepingComputer"},
+    {"title": "KEV: Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability (CVE-2024-10441)", "link": "https://www.cve.org/CVERecord?id=CVE-2024-10441", "source": "CISA KEV"},
+    {"title": "ConnectWise Warns ScreenConnect Attacks Continue as SCKit Targets Unpatched Systems", "link": "https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html", "source": "The Hacker News"},
+    {"title": "N-able Patches 17 N-central Flaws as Attackers Deploy Crypto Miners", "link": "https://thehackernews.com/2026/11/n-able-patches-17-n-central-flaws-as.html", "source": "The Hacker News"},
+    {"title": "New Attack Bypasses TPM Lockout to Crack Windows Hello and BitLocker PINs in Days, Not Years", "link": "https://thehackernews.com/2026/11/flash-chip-attack-bypasses-tpm-lockout.html", "source": "The Hacker News"},
+    {"title": "Cloud Keys Leaked in Docker Hub Images Are Stolen Within Seconds", "link": "https://www.bleepingcomputer.com/news/security/cloud-keys-leaked-in-docker-hub-images-are-stolen-within-seconds/", "source": "BleepingComputer"},
+    {"title": "Google Finds Hackers Using AI Agents to Build and Run Exploits From Software Patches", "link": "https://thehackernews.com/2026/11/google-finds-hackers-using-ai-agents-to.html", "source": "The Hacker News"},
+    {"title": "F5 Warns 6 Critical BIG-IP Flaws Can Crash Traffic in Specific Setups, May Allow RCE", "link": "https://thehackernews.com/2026/11/f5-warns-6-critical-big-ip-flaws-can.html", "source": "The Hacker News"},
+    {"title": "New EggStreme Malware Variant Goes Silent to Evade Security Tools in Government Attacks", "link": "https://thehackernews.com/2026/11/eggstreme-hackers-rebuild-malware-with.html", "source": "The Hacker News"},
+    {"title": "From Deepfakes to Helpdesk Impersonation: Why Stronger Verification Matters", "link": "https://www.bleepingcomputer.com/news/security/from-deepfakes-to-helpdesk-impersonation-why-stronger-verification-matters/", "source": "BleepingComputer"},
+    {"title": "Oracle Patches 950 Vulnerabilities With November 2026 CSPU", "link": "https://www.securityweek.com/oracle-patches-640-vulnerabilities-with-november-2026-cspu/", "source": "SecurityWeek"},
+    {"title": "Trigram Campaign Impersonates About 50 AI and Blockchain Brands to Target Devs with Infostealers", "link": "https://thehackernews.com/2026/11/trigram-campaign-impersonates-about-50.html", "source": "The Hacker News"}
+  ],
+  "source_counts": {
+    "The Hacker News": 29,
+    "Infosecurity Magazine": 18,
+    "BleepingComputer": 15,
+    "Dark Reading": 13,
+    "CyberScoop": 10,
+    "SecurityWeek": 10,
+    "CISA KEV": 5,
+    "Talos Intelligence": 3,
+    "CrowdStrike": 3,
+    "Microsoft Security": 3,
+    "Unit 42": 2,
+    "SentinelOne Labs": 1,
+    "Krebs on Security": 1,
+    "Threats Without Borders": 1,
+    "KillNewsletter 19A": 1,
+    "KillNewsletter 19B": 1
+  }
+}
